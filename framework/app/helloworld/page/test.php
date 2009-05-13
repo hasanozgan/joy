@@ -2,6 +2,10 @@
 
 using("helloworld.BasePage");
 
+#using("joy.web.Attribute");
+#using("joy.web.attributes");
+using("helloworld.attributes");
+
 class TestPage extends helloworld_BasePage
 {
     public $data;
@@ -18,6 +22,9 @@ class TestPage extends helloworld_BasePage
 //        echo "Post Action ($action) {$this->data}<br/>";
     }
 
+    /* 
+     * @Authorization(Roles="Admin") 
+     */
     public function index()
     {
         echo "home page";

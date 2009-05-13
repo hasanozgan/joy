@@ -9,11 +9,15 @@
  * file that was distributed with this source code.
  */
 
-using("joy.plugins.IORMap");
+using("joy.plugins.ITemplateEngine");
 
-class joy_plugins_DoctrineORMap implements joy_plugins_IORMap
+class joy_plugins_templateengines_Smarty implements joy_plugins_ITemplateEngine
 {
-
+    function __construct()
+    {
+        $smarty = new joy_vendors_Loader("smarty");
+        $smarty->Include("Smarty.inc.php");
+    }
 }
 
 

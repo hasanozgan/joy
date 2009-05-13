@@ -9,13 +9,17 @@
  * file that was distributed with this source code.
  */
 
-using("joy.web.ui");
+using("joy.plugins.IORMap");
 
-interface joy_web_ui_IPage
+class joy_plugins_ormaps_Doctrine implements joy_plugins_IORMap
 {
-    function preAction($action);
-    function postAction($action);
-    function setPageArguments($args);
+    public $dsn;
+
+    function __construct()
+    {
+        $doctrine = new joy_vendors_Loader("doctrine");
+        $doctrine->Include("Doctrine.class.php");
+    }
 }
 
 

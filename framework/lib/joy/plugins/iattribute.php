@@ -9,9 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.plugins.ITemplateEngine");
-
-class joy_plugins_SmartyTemplateEngine implements joy_plugins_ITemplateEngine
+interface joy_plugins_IAttribute
 {
 
 }

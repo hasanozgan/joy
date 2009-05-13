@@ -31,30 +31,33 @@ class joy_web_PageFactory extends joy_Object
 
     static function Loader($pageObj)
     {
-        var_dump($pageObj);
         require_once($pageObj->PagePath);
         $class = new ReflectionClass($pageObj->Page);
+        
         //TODO: Run Class Attributes
-
         if (!$class->hasMethod($pageObj->Action) || !$class->getMethod($pageObj->Action)->isPublic()) {
             throw new Exception("Action($pageObj->Action) Not Found");
         }
- 
+
         // Page Instance 
         $page = $class->newInstance();
-          
-       //TODO: Hook işlemleri için sayfa her yuklendiğinde araya girmek sayfada genel düzenlemeler yapmak için. 
-        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("PreAction")) {
-            $class->getMethod("PreAction")->invoke($page, $pageObj->Action);
+
+        // Set Page Arguments
+        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("setPageArguments")) {
+            $class->getMethod("setPageArguments")->invoke($page, $pageObj->PageArguments);
+        }
+
+        //TODO: Hook işlemleri için sayfa her yuklendiğinde araya girmek sayfada genel düzenlemeler yapmak için. 
+        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("preAction")) {
+            $class->getMethod("preAction")->invoke($page, $pageObj->Action);
         }
 
         //TODO: Run Method Attributes
-    
         $class->getMethod($pageObj->Action)->invoke($page, $pageObj->ActionArguments);
 
-       //TODO: Sayfanın çıktısı oluşturulması sırasında son müdahele için kullanılır.
-        if ($page instanceof joy_web_ui_IPage && $class->hasMethod("PostAction")) {
-            $class->getMethod("PostAction")->invoke($page, $pageObj->Action);
+        //TODO: Sayfanın çıktısı oluşturulması sırasında son müdahele için kullanılır.
+        if ($page instanceof joy_web_ui_IPage && $class->hasMethod("postAction")) {
+            $class->getMethod("postAction")->invoke($page, $pageObj->Action);
         }
 
         //TODO: Run Render Factory...
