@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-interface joy_plugins_IAttribute
+interface joy_plugins_IAnnotation
 {
 
 }

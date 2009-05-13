@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-using("joy.plugins.IAttribute");
+using("joy.plugins.IAnnotation");
 using("joy.vendors.Loader");
 
-class joy_plugins_attributes_Addendum implements joy_plugins_IAttribute
+class joy_plugins_annotations_Addendum implements joy_plugins_IAnnotation
 {
     function __construct()
     {
         $addendum = new joy_vendors_Loader("addendum");
-        $addendum->Include("Addendum.class.php");
+        $addendum->Include("annotations.php");
+
     }
 }
 
