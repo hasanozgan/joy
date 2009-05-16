@@ -9,10 +9,11 @@
  * file that was distributed with this source code.
  */
 
-interface joy_plugins_IAnnotation
-{
-    
-}
+using("joy.Object");
 
+class joy_web_Response extends joy_Object
+{
+
+}
 
 ?>

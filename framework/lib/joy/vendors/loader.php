@@ -9,19 +9,21 @@
  * file that was distributed with this source code.
  */
 
-class joy_vendors_Loader
+using("joy.Object");
+
+class joy_vendors_Loader extends joy_Object
 {
     public $path;
 
     function __construct($name)
     {
-        $this->path = joy_Logger::getInstance()->Get("joy.vendors.{$name}");
+        $this->path = $this->Config->Get("joy.vendors.path.{$name}");
         $this->path = rtrim($this->path, "/");
 
         set_include_path(get_include_path().PATH_SEPARATOR.$this->path);
     }   
 
-    public function Include($file) 
+    public function Import($file) 
     {
         $file = ltrim($file, "/");
         require_once(sprintf("%s/%s", $this->path, $file));

@@ -11,7 +11,16 @@
 
 class joy_Object
 {
+    public $Config;
+    public $Logger;
+    public $Event;
 
+    public function __construct()
+    {
+        $this->Config =& joy_Configure::getInstance();
+        $this->Logger =& joy_Logger::getInstance();
+        $this->Event =& joy_Event::getInstance();
+    }
 }
 
 

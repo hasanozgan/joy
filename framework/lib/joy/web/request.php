@@ -10,18 +10,21 @@
  */
 
 using("joy.Object");
-using("joy.plugins.IORMap");
 
-class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORMap
+class joy_web_Request extends joy_Object
 {
-    public $dsn;
+    public $Form;
+    public $QueryString;
 
-    function __construct()
+    public function __construct()
     {
-        $doctrine = new joy_vendors_Loader("doctrine");
-        $doctrine->Include("Doctrine.class.php");
+        // TODO: MagicQuote & XSS & SqlInjection Check.
+
+        $this->Form = new joy_data_Dictionary($_POST);
+        $this->QueryString = new joy_data_Dictionary($_GET);
+
+
     }
 }
-
 
 ?>

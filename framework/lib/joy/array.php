@@ -13,7 +13,8 @@ using("joy.Object");
 
 class joy_Array extends joy_Object
 {
-public $va1;
+    public $va1;
+
     function __construct($va1, $va2)
     {
         $this->va1 = $va1;

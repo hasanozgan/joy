@@ -6,6 +6,7 @@ if (!defined(FRAMEWORK_ROOT)) {
 
 // Load Log Handler...
 require_once(FRAMEWORK_ROOT."sys/logger.php");
+require_once(FRAMEWORK_ROOT."sys/event.php");
 
 // Load Config Handler...
 require_once(FRAMEWORK_ROOT."sys/configure.php");

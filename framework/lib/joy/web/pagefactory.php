@@ -17,6 +17,7 @@ define("PAGES_SHM_SIZE", 1024*50);
 define("PAGES_SHM_KEY", ftok(__FILE__, "P"));
 
 using("joy.Object");
+using("joy.plugins.annotations.Addendum");
 
 class joy_web_PageFactory extends joy_Object
 {
@@ -33,34 +34,42 @@ class joy_web_PageFactory extends joy_Object
     {
         require_once($pageObj->PagePath);
         $class = new ReflectionClass($pageObj->Page);
-        
-        //TODO: Run Class Attributes
+      
         if (!$class->hasMethod($pageObj->Action) || !$class->getMethod($pageObj->Action)->isPublic()) {
             throw new Exception("Action($pageObj->Action) Not Found");
         }
 
         // Page Instance 
         $page = $class->newInstance();
-
-        // Set Page Arguments
-        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("setPageArguments")) {
-            $class->getMethod("setPageArguments")->invoke($page, $pageObj->PageArguments);
-        }
+        $page->SetPageObject($pageObj);
 
         //TODO: Hook işlemleri için sayfa her yuklendiğinde araya girmek sayfada genel düzenlemeler yapmak için. 
-        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("preAction")) {
-            $class->getMethod("preAction")->invoke($page, $pageObj->Action);
+        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("PreAction")) {
+            $class->getMethod("PreAction")->invoke($page);
         }
+
+        //TODO: Run Class Attributes
+        joy_web_Attribute::Loader(&$page);
+
+/*
+        $namespace = joy_Configure::getInstance()->Get("joy.plugins.annotation");
+        $info = using($namespace);
+
+        $k =  new joy_plugins_annotations_Addendum(); 
+        var_dump($pageObj);    
+        $ref = new ReflectionAnnotatedClass($pageObj->Page);
+        var_dump($ref->getAnnotations());
+
+        $r = $ref->getMethod($pageObj->Action);
+        $attr = $r->getAnnotations();
+        var_dump($attr);
+        $attr[0]->Run($pageObj);
+*/
 
         //TODO: Run Method Attributes
         $class->getMethod($pageObj->Action)->invoke($page, $pageObj->ActionArguments);
 
-        //TODO: Sayfanın çıktısı oluşturulması sırasında son müdahele için kullanılır.
-        if ($page instanceof joy_web_ui_IPage && $class->hasMethod("postAction")) {
-            $class->getMethod("postAction")->invoke($page, $pageObj->Action);
-        }
-
-        //TODO: Run Render Factory...
+        //TODO: Run Render Method Factory...
     }
 
     static function GetPages()

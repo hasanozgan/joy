@@ -9,28 +9,20 @@
  * file that was distributed with this source code.
  */
 
+using("joy.data.Dictionary");
 using("joy.web.HttpContext");
 
 class joy_web_Controller extends joy_web_HttpContext
 {
-    private $layout;        // joy_web_ITemplateEngine
-    private $view;          // joy_web_ITemplateEngine
-    protected $Models;      // joy_web_IModelEngine
+    protected $Action;
+    protected $Parameters;
 
-    public function __construct()
+    public function SetPageObject($pageObject)
     {
-        $template_engine = joy_Configure::Get("joy.plugins.template_engine_class");
-        $or_map = joy_Configure::Get("joy.plugins.or_map_class");
-    }
+        $this->Action = $pageObject->Action;
+        $this->Parameters = new joy_data_Dictionary($pageObject->PageArguments);
 
-    public function setView()
-    {
-    
-    }
-
-    public function setLayout()
-    {
-    
+        $this->View->SetView($this->Action, $pageObject->Page);
     }
 }
 

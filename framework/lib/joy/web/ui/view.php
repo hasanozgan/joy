@@ -9,10 +9,27 @@
  * file that was distributed with this source code.
  */
 
+using("joy.Object");
 using("joy.web");
 
-class joy_web_ui_View extends joy_web_HttpContext
+class joy_web_ui_View extends joy_Object
 {
+    public function SetTheme(&$themeObj)
+    {
+    }
+
+    public function SetText(&$textObj)
+    {
+    }
+
+    public function SetLayout($layoutName)
+    {
+    }
+
+    public function SetView($viewName, $folderName="")
+    {
+    }
+
 
 }
 

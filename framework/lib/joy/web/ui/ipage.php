@@ -13,9 +13,6 @@ using("joy.web.ui");
 
 interface joy_web_ui_IPage
 {
-    function preAction($action);
-    function postAction($action);
-    function setPageArguments($args);
 }
 
 

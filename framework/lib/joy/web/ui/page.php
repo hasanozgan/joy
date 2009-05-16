@@ -14,28 +14,34 @@ using("joy.web.ui.IPage");
 
 class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 {
-    // Hook Methods...
-    public function preAction($action)
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->RegisterPageEvents();
+        $this->RegisterEvents();
+
+        $this->Event->Dispatch("Load");
+    }
+
+    protected function RegisterPageEvents()
+    {
+        $this->Event->Register("Load", "OnLoad", $this);
+        $this->Event->Register("Render", "OnRender", $this);
+    }
+
+    protected function RegisterEvents()
+    {
+        //TODO: Your Events...
+    }
+
+    protected function OnLoad()
     {
     }
 
-    public function postAction($action)
-    {
-    }
-
-    // Set Page Arguments...
-    public function setPageArguments($args)
-    {
-    }
-
-    public function setLayout($layout)
-    {
-    }
-
-    public function setView($view)
+    protected function OnRender()
     {
     }
 }
-
 
 ?>
