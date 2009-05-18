@@ -13,13 +13,12 @@ using("joy.Object");
 using("joy.web");
 using("joy.web.ui");
 
-
 class joy_web_HttpContext extends joy_Object
 {
     public $View;
     public $Theme;
-    public $Language;
-    public $Text;
+    public $Region;
+    public $Translate;
     public $Request;
     public $Response;
     public $Session;
@@ -30,7 +29,8 @@ class joy_web_HttpContext extends joy_Object
     {
         parent::__construct();
 
-        $this->Text = new joy_web_ui_Text($this->Language);
+        $this->Region = new joy_web_Region();
+        $this->Translate = new joy_web_Translate();
         $this->Request = new joy_web_Request();
         $this->Response = new joy_web_Response();
         $this->Session = new joy_web_Session();
@@ -39,9 +39,8 @@ class joy_web_HttpContext extends joy_Object
 
         $this->View = new joy_web_ui_View();
         $this->Theme = new joy_web_ui_Theme();
-        $this->Language = new joy_web_Language();
         $this->View->SetTheme($this->Theme);
-        $this->View->SetText($this->Text);
+        $this->View->SetTranslate($this->Translate);
     }
 
 }

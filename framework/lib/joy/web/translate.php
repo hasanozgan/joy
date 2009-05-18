@@ -11,7 +11,7 @@
 
 using("joy.Object");
 
-class joy_web_ui_Text extends joy_Object
+class joy_web_Translate extends joy_Object
 {
 
 }

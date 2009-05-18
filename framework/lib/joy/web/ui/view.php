@@ -18,7 +18,7 @@ class joy_web_ui_View extends joy_Object
     {
     }
 
-    public function SetText(&$textObj)
+    public function SetTranslate(&$translateObj)
     {
     }
 
