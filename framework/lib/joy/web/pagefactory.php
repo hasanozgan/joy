@@ -16,8 +16,8 @@ define("RULES_SHM_KEY", ftok(__FILE__, "R"));
 define("PAGES_SHM_SIZE", 1024*50);
 define("PAGES_SHM_KEY", ftok(__FILE__, "P"));
 
-using("joy.Object");
-using("joy.plugins.annotations.Addendum");
+import("joy.Object");
+import("joy.plugins.annotations.Addendum");
 
 class joy_web_PageFactory extends joy_Object
 {
@@ -53,7 +53,7 @@ class joy_web_PageFactory extends joy_Object
 
 /*
         $namespace = joy_Configure::getInstance()->Get("joy.plugins.annotation");
-        $info = using($namespace);
+        $info = import($namespace);
 
         $k =  new joy_plugins_annotations_Addendum(); 
         var_dump($pageObj);    

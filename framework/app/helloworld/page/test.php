@@ -1,28 +1,16 @@
 <?php
 
-using("helloworld.BasePage");
-#    using("joy.Todo");
+import("helloworld.BasePage");
+#    import("joy.Todo");
 
-#using("joy.web.Attribute");
-#using("joy.web.attributes");
-using("helloworld.attributes");
+#import("joy.web.Attribute");
+#import("joy.web.attributes");
+import("helloworld.attributes");
     /** 
      * @Persistence 
      */  
 class TestPage extends helloworld_BasePage
 {
-    public function PreAction()
-    {
-//        $this->data = 5;
-//        echo "Pre Action($action)<br/>";
-    }
-
-    public function PostAction()
-    {
-//        $this->data += 9;
-//        echo "Post Action ($action) {$this->data}<br/>";
-    }
-
     /* 
      * @Authorization(Roles="Admin") 
      */
@@ -31,11 +19,19 @@ class TestPage extends helloworld_BasePage
         echo "home page";
     }
 
+    public function OnLoad($obj, $args)
+    {
+        echo "ilk";
+    }
     /** 
-     * @Persistence 
+     * @Security 
      */ 
     public function get()
     {
+        $this->Models->User;
+
+        var_dump($this->Parameters->Get("code"));
+        var_dump($this->Request->QueryString->Get("a"));
         echo "get";
     }
 }

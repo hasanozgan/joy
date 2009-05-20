@@ -13,7 +13,6 @@ define("CLASS_EXTENSION", "php");
 define("NAMESPACE_SHM_SIZE", 1024*250);
 define("NAMESPACE_SHM_KEY", ftok(__FILE__, "H"));
 
-
 class joy_Namespace
 {
     static function Items($key=null, $value=null)
@@ -120,14 +119,14 @@ class joy_Namespace
     }
 }
 
-function using($namespace)
+function import($namespace)
 {
     return joy_Namespace::InsertTable($namespace);
 }
 
-function call($namespace) 
+function using($namespace) 
 {
-    $obj = using($namespace);
+    $obj = import($namespace);
 
     $args = func_get_args();
     array_shift($args);

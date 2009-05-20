@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.web.ui");
+import("joy.web.ui");
 
 interface joy_web_ui_IPage
 {

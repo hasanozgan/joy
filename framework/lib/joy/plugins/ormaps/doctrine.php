@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
-using("joy.plugins.IORMap");
+import("joy.Object");
+import("joy.plugins.IORMap");
 
 class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORMap
 {
@@ -18,8 +18,16 @@ class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORM
 
     function __construct()
     {
+        parent::__construct();
+
         $doctrine = new joy_vendors_Loader("doctrine");
-        $doctrine->Include("Doctrine.class.php");
+        $doctrine->Import("Doctrine.php");
+        spl_autoload_register(array("doctrine", "autoload"));
+    }
+
+    function GetTable($table)
+    {
+        return Doctrine::getTable($table);
     }
 }
 

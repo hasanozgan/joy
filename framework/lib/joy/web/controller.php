@@ -9,18 +9,21 @@
  * file that was distributed with this source code.
  */
 
-using("joy.data.Dictionary");
-using("joy.web.HttpContext");
+import("joy.data.Dictionary");
+import("joy.web.HttpContext");
+import("joy.web.Model");
 
 class joy_web_Controller extends joy_web_HttpContext
 {
     protected $Action;
     protected $Parameters;
+    protected $Models;
 
     public function SetPageObject($pageObject)
     {
         $this->Action = $pageObject->Action;
         $this->Parameters = new joy_data_Dictionary($pageObject->PageArguments);
+        $this->Models = new joy_web_Model();
 
         $this->View->SetView($this->Action, $pageObject->Page);
     }

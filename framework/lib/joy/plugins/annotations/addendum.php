@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-using("joy.plugins.IAnnotation");
-using("joy.vendors.Loader");
+import("joy.plugins.IAnnotation");
+import("joy.vendors.Loader");
 
 class joy_plugins_annotations_Addendum extends joy_Object implements joy_plugins_IAnnotation
 {

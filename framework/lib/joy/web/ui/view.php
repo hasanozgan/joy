@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
-using("joy.web");
+import("joy.Object");
+import("joy.web");
 
 class joy_web_ui_View extends joy_Object
 {

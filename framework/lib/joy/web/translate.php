@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
+import("joy.Object");
 
 class joy_web_Translate extends joy_Object
 {
-
+    //TODO: Anything...
 }
 
 ?>

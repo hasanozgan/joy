@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
+import("joy.Object");
 
 abstract class joy_web_Attribute extends joy_Object
 {
@@ -19,6 +19,7 @@ abstract class joy_web_Attribute extends joy_Object
 
     public function __construct($method)
     {
+        parent::__construct();
     }
 
     public function Run(&$page)
@@ -31,8 +32,8 @@ abstract class joy_web_Attribute extends joy_Object
 
     public static function Loader()
     {
-    }
-       
+        //TODO: Attributes Loading..
+    } 
 }
  
 ?>

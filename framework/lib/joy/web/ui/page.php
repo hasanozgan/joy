@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-using("joy.web.Controller");
-using("joy.web.ui.IPage");
+import("joy.web.Controller");
+import("joy.web.ui.IPage");
 
 class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 {
@@ -35,11 +35,11 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
         //TODO: Your Events...
     }
 
-    protected function OnLoad()
+    protected function OnLoad(&$object, &$args)
     {
     }
 
-    protected function OnRender()
+    protected function OnRender(&$object, &$args)
     {
     }
 }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
+import("joy.Object");
 
 class joy_web_Request extends joy_Object
 {
@@ -18,12 +18,17 @@ class joy_web_Request extends joy_Object
 
     public function __construct()
     {
-        // TODO: MagicQuote & XSS & SqlInjection Check.
+        parent::__construct();
 
         $this->Form = new joy_data_Dictionary($_POST);
         $this->QueryString = new joy_data_Dictionary($_GET);
 
+        $this->Event->Register("Security", "OnSecurity", $this);
+    }
 
+    public function OnSecurity(&$object, $args)
+    {
+        // TODO: MagicQuote & XSS & SqlInjection Check.
     }
 }
 

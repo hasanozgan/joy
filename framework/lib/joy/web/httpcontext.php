@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
-using("joy.web");
-using("joy.web.ui");
+import("joy.Object");
+import("joy.web");
+import("joy.web.ui");
 
 class joy_web_HttpContext extends joy_Object
 {
@@ -42,7 +42,6 @@ class joy_web_HttpContext extends joy_Object
         $this->View->SetTheme($this->Theme);
         $this->View->SetTranslate($this->Translate);
     }
-
 }
 
 ?>

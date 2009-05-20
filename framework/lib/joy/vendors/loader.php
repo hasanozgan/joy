@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
+import("joy.Object");
 
 class joy_vendors_Loader extends joy_Object
 {
@@ -17,6 +17,8 @@ class joy_vendors_Loader extends joy_Object
 
     function __construct($name)
     {
+        parent::__construct();
+
         $this->path = $this->Config->Get("joy.vendors.path.{$name}");
         $this->path = rtrim($this->path, "/");
 

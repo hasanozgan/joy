@@ -10,16 +10,19 @@
  */
 
 import("joy.Object");
-import("joy.plugins.ITemplateEngine");
 
-class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugins_ITemplateEngine
-{
-    function __construct()
+class joy_web_Model extends joy_Object
+{ 
+    public function __get($model)
     {
-        $smarty = new joy_vendors_Loader("smarty");
-        $smarty->Include("Smarty.inc.php");
-    }
-}
+        var_dump($model);
 
+        $namespace = $this->Config->Get("joy.plugins.ormap");
+        $ormap = using($namespace);
+        return $ormap->GetTable($model);
+    
+    }
+
+}
 
 ?>

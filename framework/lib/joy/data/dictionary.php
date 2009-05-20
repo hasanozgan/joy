@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.Object");
+import("joy.Object");
 
 class joy_data_Dictionary extends joy_Object
 {
@@ -24,12 +24,12 @@ class joy_data_Dictionary extends joy_Object
 
     public function Get($key)
     {
-        return $list[$key];
+        return $this->list[$key];
     }
 
     public function Set($key, $value)
     {
-        $list[$key] = $value; 
+        $this->list[$key] = $value; 
     }
 }
 
