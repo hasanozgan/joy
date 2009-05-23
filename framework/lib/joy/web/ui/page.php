@@ -18,28 +18,35 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     {
         parent::__construct();
 
-        $this->RegisterPageEvents();
-        $this->RegisterEvents();
-
+        $this->Event->Dispatch("PreLoad"); 
         $this->Event->Dispatch("Load");
-    }
-
-    protected function RegisterPageEvents()
-    {
-        $this->Event->Register("Load", "OnLoad", $this);
-        $this->Event->Register("Render", "OnRender", $this);
     }
 
     protected function RegisterEvents()
     {
+        parent::RegisterEvents();
+
+        $this->Event->Register("PreLoad", "OnPreLoad", $this);
+        $this->Event->Register("Load", "OnLoad", $this);
+        $this->Event->Register("Render", "OnRender", $this);
+
+        $this->PageEvents();
+    }
+
+    protected function PageEvents()
+    {
         //TODO: Your Events...
     }
 
-    protected function OnLoad(&$object, &$args)
+    public function OnPreLoad(&$object, &$args)
     {
     }
 
-    protected function OnRender(&$object, &$args)
+    public function OnLoad(&$object, &$args)
+    {
+    }
+
+    public function OnRender(&$object, &$args)
     {
     }
 }

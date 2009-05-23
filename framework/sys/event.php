@@ -23,16 +23,25 @@ class joy_Event
         return self::$instance;
     }
 
-    public function Register($name, $method, $class=null)
+    public function Register($name, $method, $class)
+    {
+        $this->values[$name][] = array("class"=>$class, "method"=>$method);
+    }
+
+    public function UnRegister($name, $method, $class)
     {
     }
 
-    public function UnRegister($name, $method, $class=null)
+    public function Dispatch($name, $object=null, $args=null)
     {
-    }
-
-    public function Dispatch($name)
-    {
+        if (empty($this->values[$name]) == false) 
+        {
+            foreach ($this->values[$name] as $item) 
+            {
+                $ref = new ReflectionClass($item["class"]);
+                $ref->getMethod($item["method"])->invoke($item["class"], &$object, &$args);
+            }
+        }
     }
 }
 

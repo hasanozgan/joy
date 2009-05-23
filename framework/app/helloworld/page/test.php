@@ -19,9 +19,14 @@ class TestPage extends helloworld_BasePage
         echo "home page";
     }
 
+    public function OnPreLoad($obj, $args)
+    {
+        var_dump("OnPreLoad");
+    }
+
     public function OnLoad($obj, $args)
     {
-        echo "ilk";
+        var_dump("OnLoad");
     }
     /** 
      * @Security 

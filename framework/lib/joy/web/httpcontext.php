@@ -13,6 +13,11 @@ import("joy.Object");
 import("joy.web");
 import("joy.web.ui");
 
+/* @TODO
+ *   All Classes will Singleton Class
+ *
+ *
+ */
 class joy_web_HttpContext extends joy_Object
 {
     public $View;
@@ -23,14 +28,16 @@ class joy_web_HttpContext extends joy_Object
     public $Response;
     public $Session;
     public $Cookie;
+    public $Server;
     public $Cache;
+    public $User; //Default Anonymous
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->Region = new joy_web_Region();
-        $this->Translate = new joy_web_Translate();
+        $this->Region = new joy_web_Region($ip_address);
+        $this->Translate = new joy_web_Translate(&$this->Region->Language);
         $this->Request = new joy_web_Request();
         $this->Response = new joy_web_Response();
         $this->Session = new joy_web_Session();

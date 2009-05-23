@@ -23,6 +23,16 @@ class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORM
         $doctrine = new joy_vendors_Loader("doctrine");
         $doctrine->Import("Doctrine.php");
         spl_autoload_register(array("doctrine", "autoload"));
+
+        $dsn_list = $this->Config->GetSection("app.servers.database");
+        
+        foreach($dsn_list as $dsn) 
+        {
+            $conn = Doctrine_Manager::connection($dsn);
+            if ($conn) {
+                $this->Event->Dispatch("DBConnection", $conn);
+            }
+        }
     }
 
     function GetTable($table)

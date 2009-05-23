@@ -20,6 +20,12 @@ class joy_Object
         $this->Config =& joy_Configure::getInstance();
         $this->Logger =& joy_Logger::getInstance();
         $this->Event =& joy_Event::getInstance();
+        $this->RegisterEvents();
+    }
+
+    protected function RegisterEvents()
+    {
+        //TODO ...
     }
 }
 

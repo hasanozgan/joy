@@ -27,6 +27,13 @@ class joy_web_Controller extends joy_web_HttpContext
 
         $this->View->SetView($this->Action, $pageObject->Page);
     }
+
+    protected function RegisterEvents()
+    {
+        parent::RegisterEvents();
+
+        $this->Event->Register("DBConnection", "OnConnection", $this);
+    }
 }
 
 ?>
