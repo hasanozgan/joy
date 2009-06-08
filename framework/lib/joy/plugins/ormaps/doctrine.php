@@ -41,5 +41,4 @@ class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORM
     }
 }
 
-
 ?>

@@ -19,13 +19,30 @@ class joy_web_Controller extends joy_web_HttpContext
     protected $Parameters;
     protected $Models;
 
-    public function SetPageObject($pageObject)
+    public function SetPageMeta($pageMeta)
     {
-        $this->Action = $pageObject->Action;
-        $this->Parameters = new joy_data_Dictionary($pageObject->PageArguments);
+        $this->Action = $pageMeta->Action;
+        $this->ActionArguments = $pageMeta->ActionArguments;
+        $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
 
-        $this->View->SetView($this->Action, $pageObject->Page);
+        $this->View->SetView($this->Action, $pageMeta->Page);
+    }
+
+    public function GetPageName()
+    {
+        return get_class($this);
+    }
+
+    public function GetActionName()
+    {
+        return $this->Action;
+    }
+
+    public function RunMethod()
+    {
+        $class = new ReflectionClass($this);
+        $class->getMethod($this->Action)->invoke($this, $this->ActionArguments);
     }
 
     protected function RegisterEvents()

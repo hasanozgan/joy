@@ -11,7 +11,8 @@
 
 interface joy_plugins_IAnnotation
 {
-    
+    function GetPageAttributes($page_name);
+    function GetActionAttributes($page_name, $action_name);    
 }
 
 

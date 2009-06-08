@@ -19,8 +19,7 @@ class joy_web_Model extends joy_Object
 
         $namespace = $this->Config->Get("joy.plugins.ormap");
         $ormap = using($namespace);
-        return $ormap->GetTable($model);
-    
+        return $ormap->GetTable($model);    
     }
 
 }

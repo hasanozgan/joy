@@ -6,9 +6,10 @@ import("helloworld.BasePage");
 #import("joy.web.Attribute");
 #import("joy.web.attributes");
 import("helloworld.attributes");
-    /** 
-     * @Persistence 
-     */  
+
+/** 
+ * @Persistence 
+ */  
 class TestPage extends helloworld_BasePage
 {
     /* 
@@ -28,12 +29,13 @@ class TestPage extends helloworld_BasePage
     {
         var_dump("OnLoad");
     }
+
     /** 
-     * @Security 
+     * @Security
      */ 
     public function get()
     {
-        $this->Models->User;
+        $this->Models->Event;
 
         var_dump($this->Parameters->Get("code"));
         var_dump($this->Request->QueryString->Get("a"));

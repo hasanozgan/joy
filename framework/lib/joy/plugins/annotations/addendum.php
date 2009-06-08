@@ -19,6 +19,20 @@ class joy_plugins_annotations_Addendum extends joy_Object implements joy_plugins
         $addendum = new joy_vendors_Loader("addendum");
         $addendum->Import("annotations.php");
     }
+
+    function GetPageAttributes($page_name)
+    {
+        $ref = new ReflectionAnnotatedClass($page_name);
+        return $ref->getAnnotations();
+    }
+
+    function GetActionAttributes($page_name, $action_name) 
+    {
+        $ref = new ReflectionAnnotatedClass($page_name);
+        $r = $ref->getMethod($action_name);
+
+        return $r->getAnnotations();
+    }
 }
 
 

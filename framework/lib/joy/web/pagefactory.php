@@ -23,31 +23,31 @@ class joy_web_PageFactory extends joy_Object
 {
     static function Builder()
     {
-        $rules = self::GetRules();
-        $uri = self::PrepareUri();
-        $pageObj = self::FindPageVariables($rules, $uri);
+        $pageMeta = self::PreparePageMeta();
 
-        return self::Loader($pageObj);
+        return self::Loader($pageMeta);
     }
 
-    static function Loader($pageObj)
+    static function CreatePage($pageMeta)
     {
-        require_once($pageObj->PagePath);
-        $class = new ReflectionClass($pageObj->Page);
+        require_once($pageMeta->PagePath);
+        $class = new ReflectionClass($pageMeta->Page);
       
-        if (!$class->hasMethod($pageObj->Action) || !$class->getMethod($pageObj->Action)->isPublic()) {
-            throw new Exception("Action($pageObj->Action) Not Found");
+        if (!$class->hasMethod($pageMeta->Action) || !$class->getMethod($pageMeta->Action)->isPublic()) {
+            throw new Exception("Action($pageMeta->Action) Not Found");
         }
 
         // Page Instance 
         $page = $class->newInstance();
-        $page->SetPageObject($pageObj);
+        $page->SetPageMeta($pageMeta);
 
-        //TODO: Hook işlemleri için sayfa her yuklendiğinde araya girmek sayfada genel düzenlemeler yapmak için. 
-        if ($page instanceof joy_web_ui_IPage &&  $class->hasMethod("PreAction")) {
-            $class->getMethod("PreAction")->invoke($page);
-        }
+        return $page;
+    }
 
+    static function Loader($pageMeta)
+    {
+        $page =& self::CreatePage($pageMeta);
+   
         //TODO: Run Class Attributes
         joy_web_Attribute::Loader(&$page);
 
@@ -66,9 +66,9 @@ class joy_web_PageFactory extends joy_Object
         $attr[0]->Run($pageObj);
 */
 
-        //TODO: Run Method Attributes
-        $class->getMethod($pageObj->Action)->invoke($page, $pageObj->ActionArguments);
+        $page->RunMethod();
 
+        //TODO: Run Method Attributes
         //TODO: Run Render Method Factory...
     }
 
@@ -189,8 +189,11 @@ class joy_web_PageFactory extends joy_Object
         return rtrim($path, "/")."/";
     }
 
-    static function FindPageVariables($rules, $uri)
+    static function PreparePageMeta()
     {
+        $rules = self::GetRules();
+        $uri = self::PrepareUri();
+
         $config = joy_Configure::getInstance();
  
         // Set Home Page
