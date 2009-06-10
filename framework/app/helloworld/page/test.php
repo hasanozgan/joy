@@ -3,16 +3,15 @@
 import("helloworld.BasePage");
 #    import("joy.Todo");
 
-#import("joy.web.Attribute");
-#import("joy.web.attributes");
+import("joy.web.attributes");
 import("helloworld.attributes");
 
-/** 
- * @Persistence 
+/**
+ * @helloworld_attributes_Persistence 
  */  
 class TestPage extends helloworld_BasePage
 {
-    /* 
+    /** 
      * @Authorization(Roles="Admin") 
      */
     public function index()
@@ -30,8 +29,8 @@ class TestPage extends helloworld_BasePage
         var_dump("OnLoad");
     }
 
-    /** 
-     * @Security
+    /**
+     * @joy_web_attributes_Security
      */ 
     public function get()
     {
