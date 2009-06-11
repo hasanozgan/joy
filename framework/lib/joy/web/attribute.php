@@ -37,7 +37,6 @@ abstract class joy_web_Attribute extends joy_Object
 
         // Run Page Attributes
         $attributes = $annotation_helper->GetPageAttributes($pageObject->GetPageName());
-        var_dump($attributes);
         foreach($attributes as $attribute) {
             if ($attribute instanceof joy_web_Attribute) 
                 $attribute->Run(&$_page);

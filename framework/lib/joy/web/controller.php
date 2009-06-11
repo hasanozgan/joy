@@ -12,6 +12,8 @@
 import("joy.data.Dictionary");
 import("joy.web.HttpContext");
 import("joy.web.Model");
+import("joy.web.Attribute");
+
 
 class joy_web_Controller extends joy_web_HttpContext
 {
@@ -39,10 +41,24 @@ class joy_web_Controller extends joy_web_HttpContext
         return $this->Action;
     }
 
+    public function LoadAttributes()
+    {
+        var_dump("Controller::LoadAttributes"); 
+
+        joy_web_Attribute::Loader(&$this);
+    }
+
     public function RunMethod()
     {
+        var_dump("Controller::RunMethod"); 
+
         $class = new ReflectionClass($this);
         $class->getMethod($this->Action)->invoke($this, $this->ActionArguments);
+    }
+
+    public function Render()
+    {
+        var_dump("Controller::Render"); 
     }
 
     protected function RegisterEvents()

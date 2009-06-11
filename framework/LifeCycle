@@ -1,0 +1,18 @@
+File/Class                       
+------------------------------------------------------
+index.php
+    bootstrap.php
+    PageFactory::Builder
+        PageFactory::PreparePageObject
+        PageFactory::Loader
+            PageFactory::CreatePage();
+                PageName < Page < Controller < HttpContext
+
+                    
+            joy_web_Attribute::Loader();
+            Page::RunMethod();
+            PageFactory::Render();
+
+
+
+

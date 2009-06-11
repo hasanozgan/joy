@@ -17,7 +17,6 @@ define("PAGES_SHM_SIZE", 1024*50);
 define("PAGES_SHM_KEY", ftok(__FILE__, "P"));
 
 import("joy.Object");
-import("joy.plugins.annotations.Addendum");
 
 class joy_web_PageFactory extends joy_Object
 {
@@ -47,29 +46,13 @@ class joy_web_PageFactory extends joy_Object
     static function Loader($pageMeta)
     {
         $page =& self::CreatePage($pageMeta);
-   
-        //TODO: Run Class Attributes
-        joy_web_Attribute::Loader(&$page);
-
-/*
-        $namespace = joy_Configure::getInstance()->Get("joy.plugins.annotation");
-        $info = import($namespace);
-
-        $k =  new joy_plugins_annotations_Addendum(); 
-        var_dump($pageObj);    
-        $ref = new ReflectionAnnotatedClass($pageObj->Page);
-        var_dump($ref->getAnnotations());
-
-        $r = $ref->getMethod($pageObj->Action);
-        $attr = $r->getAnnotations();
-        var_dump($attr);
-        $attr[0]->Run($pageObj);
-*/
+  
+        $page->LoadAttributes(); 
 
         $page->RunMethod();
 
-        //TODO: Run Method Attributes
         //TODO: Run Render Method Factory...
+        $page->Render();
     }
 
     static function GetPages()
