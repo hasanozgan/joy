@@ -1,6 +1,7 @@
 <?php
 
 import("joy.web.ui.Page");
+import("helloworld.attributes");
 
 // base page class
 class helloworld_BasePage extends joy_web_ui_Page

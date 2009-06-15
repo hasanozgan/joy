@@ -1,22 +1,16 @@
 <?php
 
 import("helloworld.BasePage");
-#    import("joy.Todo");
-
-import("joy.web.attributes");
-import("helloworld.attributes");
 
 /**
- * @helloworld_attributes_Persistence 
+ * @helloworld_attributes_TestAttribute 
+ * @joy_web_attributes_Authorization(Roles={"Admin"}) 
  */  
 class TestPage extends helloworld_BasePage
 {
-    /** 
-     * @Authorization(Roles="Admin") 
-     */
     public function index()
     {
-        echo "home page";
+        var_dump("Home Page");
     }
 
     public function OnPreLoad($obj, $args)
@@ -29,16 +23,29 @@ class TestPage extends helloworld_BasePage
         var_dump("OnLoad");
     }
 
+    public function OnRender($obj, $args)
+    {
+#   $obj->Out = "hasan ozgan";
+        var_dump("OnRender", $obj);
+    }
+
     /**
-     * @joy_web_attributes_Security
+     * @joy_web_attributes_SafeRequest
+     * @joy_web_attributes_Theme("BlueMoon")
+     * @joy_web_attributes_Layout("test")
+     * @joy_web_attributes_ViewFolder("test")
+     * @joy_web_attributes_View("get")
+     * @joy_web_attributes_Serialization{Renders={"xml","json","rest"})
      */ 
     public function get()
     {
         $this->Models->Event;
 
+        /*
         var_dump($this->Parameters->Get("code"));
         var_dump($this->Request->QueryString->Get("a"));
-        echo "get";
+        */
+        var_dump("get Action");
     }
 }
 

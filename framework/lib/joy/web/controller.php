@@ -14,12 +14,12 @@ import("joy.web.HttpContext");
 import("joy.web.Model");
 import("joy.web.Attribute");
 
-
 class joy_web_Controller extends joy_web_HttpContext
 {
     protected $Action;
     protected $Parameters;
     protected $Models;
+    protected $Output;
 
     public function SetPageMeta($pageMeta)
     {
@@ -58,14 +58,18 @@ class joy_web_Controller extends joy_web_HttpContext
 
     public function Render()
     {
-        var_dump("Controller::Render"); 
+        $render = joy_web_ui_RenderFactory::Builder(&$this);
+        $output = $render->Fetch();
+
+        $this->Event->Dispatch("Render", &$output);
+        print($output);
     }
 
     protected function RegisterEvents()
     {
         parent::RegisterEvents();
 
-        $this->Event->Register("DBConnection", "OnConnection", $this);
+        $this->Event->Register("DBConnection", "OnDBConnection", $this);
     }
 }
 

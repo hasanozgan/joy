@@ -14,12 +14,14 @@ import("joy.Object");
 abstract class joy_web_Attribute extends joy_Object
 {
     protected $page;
+    protected $values;
 
     abstract function Execute();
 
     public function __construct($method)
     {
         parent::__construct();
+        $this->values = (array)$method;
     }
 
     public function Run(&$page)

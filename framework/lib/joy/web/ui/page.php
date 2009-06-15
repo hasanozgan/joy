@@ -11,6 +11,7 @@
 
 import("joy.web.Controller");
 import("joy.web.ui.IPage");
+import("joy.web.attributes");
 
 class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 {
