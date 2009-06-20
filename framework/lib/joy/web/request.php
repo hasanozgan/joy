@@ -23,11 +23,12 @@ class joy_web_Request extends joy_Object
         $this->Form = new joy_data_Dictionary($_POST);
         $this->QueryString = new joy_data_Dictionary($_GET);
 
-        $this->Event->Register("Security", "OnSecurity", $this);
+        $this->Event->Register("SafeRequest", "OnSafeRequest", $this);
     }
 
-    public function OnSecurity(&$object, $args)
+    public function OnSafeRequest(&$object, $args)
     {
+        var_dump("Safe Request");
         // TODO: MagicQuote & XSS & SqlInjection Check.
     }
 }

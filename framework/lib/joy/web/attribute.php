@@ -18,10 +18,10 @@ abstract class joy_web_Attribute extends joy_Object
 
     abstract function Execute();
 
-    public function __construct($method)
+    public function __construct($values)
     {
         parent::__construct();
-        $this->values = (array)$method;
+        $this->values = (array)$values;
     }
 
     public function Run(&$page)

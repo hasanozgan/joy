@@ -16,12 +16,22 @@ class joy_web_ui_RenderFactory extends joy_Object
 {
     public static function Builder($page)
     {
-        //TODO:
         if ($page instanceof joy_web_ui_IPage) {
-            
+            $renderType = $page->GetRenderType();
+            return self::ClassLoader($renderType);
         }
+
         return null;
     }
+
+    public static function ClassLoader($type)
+    {
+        $config = joy_Configurable::getInstance();
+        $config->Get("joy.renders", $type);
+    }
+
+
+    
 }
 
 

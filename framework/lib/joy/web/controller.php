@@ -17,6 +17,7 @@ import("joy.web.Attribute");
 class joy_web_Controller extends joy_web_HttpContext
 {
     protected $Action;
+    protected $RenderType;
     protected $Parameters;
     protected $Models;
     protected $Output;
@@ -25,10 +26,16 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         $this->Action = $pageMeta->Action;
         $this->ActionArguments = $pageMeta->ActionArguments;
+        $this->RenderType = $pageMeta->RenderType;
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
 
         $this->View->SetView($this->Action, $pageMeta->Page);
+    }
+
+    public function GetRenderType()
+    {
+        return $this->RenderType;
     }
 
     public function GetPageName()

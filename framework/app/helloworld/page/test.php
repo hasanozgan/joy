@@ -4,7 +4,7 @@ import("helloworld.BasePage");
 
 /**
  * @helloworld_attributes_TestAttribute 
- * @joy_web_attributes_Authorization(Roles={"Admin"}) 
+ * @joy_web_attributes_Authorization(Roles={"Admin", "Developer"}) 
  */  
 class TestPage extends helloworld_BasePage
 {
@@ -35,7 +35,7 @@ class TestPage extends helloworld_BasePage
      * @joy_web_attributes_Layout("test")
      * @joy_web_attributes_ViewFolder("test")
      * @joy_web_attributes_View("get")
-     * @joy_web_attributes_Serialization{Renders={"xml","json","rest"})
+     * @joy_web_attributes_Serialization{Renders={"xml","json","rest","rdf"})
      */ 
     public function get()
     {

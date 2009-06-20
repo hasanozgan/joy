@@ -51,7 +51,6 @@ class joy_web_PageFactory extends joy_Object
 
         $page->RunMethod();
 
-        //TODO: Run Render Method Factory...
         $page->Render();
     }
 
@@ -223,11 +222,13 @@ class joy_web_PageFactory extends joy_Object
 
         if ($class_name) {
             $page = new stdClass();
+            list($action_name, $type) = split("\.", $method);
 
             $page->Page = $class_name;
             $page->PageArguments = $page_args;
             $page->PagePath = $class_path;
-            $page->Action = $method;
+            $page->Action = $action_name;
+            $page->RenderType = strtolower($type);
             $page->ActionArguments = $method_arguments;
         }
 
