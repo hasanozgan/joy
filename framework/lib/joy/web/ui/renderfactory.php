@@ -26,8 +26,13 @@ class joy_web_ui_RenderFactory extends joy_Object
 
     public static function ClassLoader($type)
     {
-        $config = joy_Configurable::getInstance();
-        $config->Get("joy.renders", $type);
+        $config = joy_Configure::getInstance();
+       
+        if (!($namespace = $config->Get("joy.renders.{$type}"))) {
+            $namespace = $config->Get("joy.renders.layout");
+        }
+
+        return using($namespace);
     }
 
 
