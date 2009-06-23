@@ -68,8 +68,14 @@ class joy_web_Controller extends joy_web_HttpContext
         $render = joy_web_ui_RenderFactory::Builder(&$this);
         $output = $render->Fetch();
 
+        $this->Event->Dispatch("Header");
         $this->Event->Dispatch("Render", &$output);
         print($output);
+    }
+
+    public function Complete()
+    {
+        $this->Event->Dispatch("Unload");
     }
 
     protected function RegisterEvents()

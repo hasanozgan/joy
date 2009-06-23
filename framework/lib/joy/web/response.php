@@ -13,9 +13,36 @@ import("joy.Object");
 
 class joy_web_Response extends joy_Object
 {
+    private $headers;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->Event->Register("Header", "OnHeader", $this);
+        $this->headers = array();
+    }
+
+    public function OnHeader(&$object, $args)
+    {
+        if (!empty($this->headers)) {
+            foreach ($this->headers as $item) {
+                header($item);
+            }
+        }
+
+        var_dump("Response Header (OnHeader)");
+    }
+
+    public function SetHeader($item)
+    {
+        $this->headers[] = $item;
+    }
+
     public function Redirect($url)
     {
         header("Location: $url");
+        die();
     }
 }
 

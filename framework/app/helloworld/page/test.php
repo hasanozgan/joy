@@ -13,9 +13,9 @@ class TestPage extends helloworld_BasePage
         var_dump("Home Page");
     }
 
-    public function OnPreLoad($obj, $args)
+    public function OnInit($obj, $args)
     {
-        var_dump("OnPreLoad");
+        var_dump("OnInit");
     }
 
     public function OnLoad($obj, $args)
@@ -28,6 +28,12 @@ class TestPage extends helloworld_BasePage
 #   $obj->Out = "hasan ozgan";
         var_dump("OnRender", $obj);
     }
+
+    public function OnUnload($obj, $args)
+    {
+        var_dump("OnUnload");
+    }
+
 
     /**
      * @joy_web_attributes_SafeRequest

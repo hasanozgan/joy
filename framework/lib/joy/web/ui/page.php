@@ -19,7 +19,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     {
         parent::__construct();
 
-        $this->Event->Dispatch("PreLoad"); 
+        $this->Event->Dispatch("Init"); 
         $this->Event->Dispatch("Load");
     }
 
@@ -27,10 +27,10 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     {
         parent::RegisterEvents();
 
-        $this->Event->Register("PreLoad", "OnPreLoad", $this);
+        $this->Event->Register("Init", "OnInit", $this);
         $this->Event->Register("Load", "OnLoad", $this);
         $this->Event->Register("Render", "OnRender", $this);
-
+        $this->Event->Register("Unload", "OnUnload", $this);
         $this->PageEvents();
     }
 
@@ -39,7 +39,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
         //TODO: Your Events...
     }
 
-    public function OnPreLoad(&$object, &$args)
+    public function OnInit(&$object, &$args)
     {
     }
 
@@ -48,6 +48,10 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     }
 
     public function OnRender(&$object, &$args)
+    {
+    }
+
+    public function OnUnload(&$object, &$args)
     {
     }
 }

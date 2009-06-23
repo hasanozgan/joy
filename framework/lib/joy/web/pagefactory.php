@@ -52,6 +52,8 @@ class joy_web_PageFactory extends joy_Object
         $page->RunMethod();
 
         $page->Render();
+
+        $page->Complete();
     }
 
     static function GetPages()
