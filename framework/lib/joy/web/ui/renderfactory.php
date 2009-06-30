@@ -18,13 +18,13 @@ class joy_web_ui_RenderFactory extends joy_Object
     {
         if ($page instanceof joy_web_ui_IPage) {
             $renderType = $page->GetRenderType();
-            return self::ClassLoader($renderType);
+            return self::ClassLoader($renderType, &$page);
         }
 
         return null;
     }
 
-    public static function ClassLoader($type)
+    public static function ClassLoader($type, $page)
     {
         $config = joy_Configure::getInstance();
        
@@ -32,11 +32,8 @@ class joy_web_ui_RenderFactory extends joy_Object
             $namespace = $config->Get("joy.renders.layout");
         }
 
-        return using($namespace);
-    }
-
-
-    
+        return using($namespace, $page);
+    }    
 }
 
 

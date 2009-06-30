@@ -14,16 +14,29 @@ import("joy.web.ui.renders.IRender");
 
 class joy_web_ui_renders_Xml extends joy_Object implements joy_web_ui_renders_IRender
 {
+    private $serializer;
+    private $page;
+
+    public function __construct($page)
+    {
+        parent::__construct();
+        $smartyLoader = new joy_vendors_Loader("misc");
+        $smartyLoader->Import("xml/class/xmlserialize.cls.php");
+
+        $this->page =& $page;
+        $this->page->Response->SetHeader("Content-Type: text/xml");
+        $this->serializer = new xmlserialize($this->page, $this->page->Data);
+    }
+
     public function Fetch()
     {
-
+        return $this->serializer->varsToXml();
     }
 
     public function Display()
     {
-
+        var_dump($this->serializer->varsToXml());
     }
-
 }
 
 ?>

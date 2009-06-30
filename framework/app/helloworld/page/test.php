@@ -25,8 +25,8 @@ class TestPage extends helloworld_BasePage
 
     public function OnRender($obj, $args)
     {
-#   $obj->Out = "hasan ozgan";
-        var_dump("OnRender", $obj);
+        $obj = "Joy Web Framework Output";
+        var_dump("OnRender");
     }
 
     public function OnUnload($obj, $args)
@@ -45,6 +45,7 @@ class TestPage extends helloworld_BasePage
      */ 
     public function get()
     {
+        $this->Data["netology"]="software foundation";
         $this->Models->Event;
 
         /*

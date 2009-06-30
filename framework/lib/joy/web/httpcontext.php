@@ -15,8 +15,6 @@ import("joy.web.ui");
 
 /* @TODO
  *   All Classes will Singleton Class
- *
- *
  */
 class joy_web_HttpContext extends joy_Object
 {

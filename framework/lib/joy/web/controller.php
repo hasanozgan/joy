@@ -67,9 +67,12 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         $render = joy_web_ui_RenderFactory::Builder(&$this);
         $output = $render->Fetch();
+//FIXME:
+        var_dump($output);
 
         $this->Event->Dispatch("Header");
         $this->Event->Dispatch("Render", &$output);
+//FIXME:
         print($output);
     }
 

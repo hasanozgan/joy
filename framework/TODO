@@ -6,15 +6,15 @@
 [*] Http Context
 [] Trace Log
 [] Log Management
-[] Template Engine
-[] Rendering
-[] Serializing
+[*] Template Engine
+[*] Rendering
+[*] Serializing
 [+] Attributes
 [] Code Generating Scripts
-[] Resource Loader (CSS, JS etc..) support with Attributes
+[*] Resource Loader (CSS, JS etc..) support with Attributes
 [] Authorization Module
 [] Validations & Form Wizards
 [] Documentation & Example Projects
 [] Web Objects (DataGrid, Paginations)
 [] Security 
-[] MVC
+[*] MVC

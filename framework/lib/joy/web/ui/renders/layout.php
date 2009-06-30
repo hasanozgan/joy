@@ -14,6 +14,14 @@ import("joy.web.ui.renders.IRender");
 
 class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders_IRender
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+        $namespace = $this->Config->Get("joy.plugins.template_engine");
+        $template = using($namespace);
+    }
+    
     public function Fetch()
     {
 
@@ -23,7 +31,6 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
     {
 
     }
-
 }
 
 ?>

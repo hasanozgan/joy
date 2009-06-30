@@ -11,7 +11,8 @@
 
 interface joy_plugins_ITemplateEngine
 {
-
+    public function Fetch();
+    public function Display();
 }
 
 
