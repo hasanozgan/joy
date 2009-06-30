@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class HV_ArrayToRDFCollection</title>
+			<link rel="stylesheet" href="stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class HV_ArrayToRDFCollection</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generate RDF of array as a collection serialised in XML.</p>
+<p class="description"><p>Called as a static class.  Can be used for template generation in Mozilla platform.  Example of use:  <pre> include 'HV_ArrayToRDFCollection.php';
+
+ $data = array();
+
+ $level1[1]['year'] = array('field_id' => 1, 'field_name' => '1st Year');
+ $level1[2]['year'] = array('field_id' => 2, 'field_name' => '2nd Year');
+
+ $level2 = array();
+ $level2[11]['quarter'] = array('field_id' => 11, 'field_name' => 'Y1 First Quarter');
+ $level2[12]['quarter'] = array('field_id' => 12, 'field_name' => 'Y1 Second Quarter');
+ $level2[13]['quarter'] = array('field_id' => 13, 'field_name' => 'Y1 Third Quarter');
+ $level2[14]['quarter'] = array('field_id' => 14, 'field_name' => 'Y1 Fourth Quarter');
+
+ $level3 = array();
+ $level3[21]['quarter'] = array('field_id' => 21, 'field_name' => 'Y2 First Quarter');
+ $level3[22]['quarter'] = array('field_id' => 22, 'field_name' => 'Y2 Second Quarter');
+ $level3[23]['quarter'] = array('field_id' => 23, 'field_name' => 'Y2 Third Quarter');
+ $level3[24]['quarter'] = array('field_id' => 24, 'field_name' => 'Y2 Fourth Quarter');
+
+ $level1[1]['year']['_seq'] = $level2;
+ $level1[2]['year']['_seq'] = $level3;
+
+ $data2 = array();
+ $data2[101]['amount']  = array('field_name' => 'Initial', 'field_amount' => '200');
+ $data2[102]['amount']  = array('field_name' => 'Final',   'field_amount' => '210');
+
+ $data3 = array();
+ $data3[201]['amount']  = array('field_name' => 'Initial', 'field_amount' => '300');
+ $data3[202]['amount']  = array('field_name' => 'Final',   'field_amount' => '410');
+
+ $level2[11]['quarter']['_seq'] = $data2;
+ $level3[22]['quarter']['_seq'] = $data3;
+
+ $level1[1]['year']['_seq'] = $level2;
+ $level1[2]['year']['_seq'] = $level3;
+
+ $data['_seq'] = $level1;
+
+ HV_ArrayToRDFCollection::output($data);</pre></p></p>
+	<ul class="tags">
+				<li><span class="field">version:</span> 1.0</li>
+				<li><span class="field">author:</span> Herman Veluwenkamp</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_HV_ArrayToRDFCollection_php.html">/HV_ArrayToRDFCollection.php</a> (line <span class="field">73</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$attributename_parseType" title="details" class="var-name">$attributename_parseType</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$key_container" title="details" class="var-name">$key_container</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$metadata" title="details" class="var-name">$metadata</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$rdf_resource" title="details" class="var-name">$rdf_resource</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$tag_collection" title="details" class="var-name">$tag_collection</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$uri_base" title="details" class="var-name">$uri_base</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$uri_model" title="details" class="var-name">$uri_model</a>
+				</div>
+								<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$uri_resource" title="details" class="var-name">$uri_resource</a>
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+								
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#generateRDF" title="details" class="method-name">generateRDF</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+								
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#output" title="details" class="method-name">output</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+							</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$attributename_parseType" id="$attributename_parseType"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$attributename_parseType</span>
+			 = <span class="var-default"> 'nc:parseType'</span>			(line <span class="line-number">109</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Attribute name for indicating RDF parseType.</p>
+<p class="description"><p>Should be in RDF namespace but Mozilla implementation of RDF is outdated.</p></p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$key_container" id="$key_container"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$key_container</span>
+			 = <span class="var-default"> '_seq'</span>			(line <span class="line-number">116</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Key used to indicate a collection in the input array.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$metadata" id="$metadata"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$metadata</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number">130</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Array of metadata associated with incoming data array.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$rdf_resource" id="$rdf_resource"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$rdf_resource</span>
+			 = <span class="var-default"> ''</span>			(line <span class="line-number">123</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extra RDF to append to RDF model.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$tag_collection" id="$tag_collection"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$tag_collection</span>
+			 = <span class="var-default"> 'list'</span>			(line <span class="line-number">101</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tag to use in RDF as collection element.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uri_base" id="$uri_base"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$uri_base</span>
+			 = <span class="var-default"> 'urn:record#'</span>			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">URI to use for data in RDF output.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uri_model" id="$uri_model"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$uri_model</span>
+			 = <span class="var-default"> 'urn:record:'</span>			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">URI of RDF model.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uri_resource" id="$uri_resource"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$uri_resource</span>
+			 = <span class="var-default"> 'urn:resource:'</span>			(line <span class="line-number">94</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">URI for extra RDF content attached to data with parseType of 'Resource'.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">public:</span> </li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgenerateRDF" id="generateRDF"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">generateRDF</span> (line <span class="line-number">191</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates the wrapper around the RDF collection and inserts the generated RDF collection.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> RDF serialised as XML</li>
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			generateRDF
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Array to be processed.</span>			</li>
+				</ul>
+		
+		
+	</div>
+<a name="methodoutput" id="output"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">output</span> (line <span class="line-number">217</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Generates and outputs the RDF including the HTTP content type header.</p>
+	<ul class="tags">
+				<li><span class="field">static:</span> </li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			output
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Array to be processed.</span>			</li>
+				</ul>
+		
+		
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 16 Nov 2005 14:10:35 +1300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.3.0RC3</a>
+	</p>
+	</div></body>
+</html>
