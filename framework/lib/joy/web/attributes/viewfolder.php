@@ -15,7 +15,7 @@ class joy_web_attributes_ViewFolder extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute ViewFolder");
+        $this->Logger->Debug("Attribute ViewFolder", __FILE__, __LINE__);
     }
 }
 

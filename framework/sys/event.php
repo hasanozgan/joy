@@ -25,6 +25,9 @@ class joy_Event
 
     public function Register($name, $method, $class)
     {
+        joy_Logger::getInstance()->Debug("Event Register (".get_class($class)."::".$method.")",
+                                         __FILE__, __LINE__);
+
         $this->values[$name][] = array("class"=>$class, "method"=>$method);
     }
 
@@ -38,6 +41,9 @@ class joy_Event
         {
             foreach ($this->values[$name] as $item) 
             {
+                joy_Logger::getInstance()->Debug("Event Dispatch (".get_class($item["class"])."::".$item["method"].")",
+                                                 __FILE__, __LINE__);
+
                 $ref = new ReflectionClass($item["class"]);
                 $ref->getMethod($item["method"])->invoke($item["class"], &$object, &$args);
             }

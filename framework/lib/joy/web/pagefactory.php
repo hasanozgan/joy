@@ -46,7 +46,7 @@ class joy_web_PageFactory extends joy_Object
     static function Loader($pageMeta)
     {
         $page =& self::CreatePage($pageMeta);
-  
+
         $page->LoadAttributes(); 
 
         $page->RunMethod();

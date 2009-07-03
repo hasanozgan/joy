@@ -4,8 +4,8 @@
 [+] Event Handler
 [+] Page Factory
 [*] Http Context
-[] Trace Log
-[] Log Management
+[*] Trace Log
+[*] Log Management
 [*] Template Engine
 [*] Rendering
 [*] Serializing

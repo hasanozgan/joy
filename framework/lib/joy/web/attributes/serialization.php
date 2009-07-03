@@ -15,7 +15,7 @@ class joy_web_attributes_Serialization extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute Serialization");
+        $this->Logger->Debug("Attribute Serialization", __FILE__, __LINE__);
     }
 }
 

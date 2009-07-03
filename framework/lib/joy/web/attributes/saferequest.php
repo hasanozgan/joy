@@ -15,7 +15,7 @@ class joy_web_attributes_SafeRequest extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute SafeRequest");
+        $this->Logger->Debug("Attribute SafeRequest", __FILE__, __LINE__);
         $this->Event->Dispatch("SafeRequest");
     }
 }

@@ -15,7 +15,7 @@ class joy_web_attributes_Theme extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute Theme");
+        $this->Logger->Debug("Attribute Theme", __FILE__, __LINE__);
     }
 }
 

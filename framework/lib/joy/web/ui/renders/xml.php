@@ -35,7 +35,7 @@ class joy_web_ui_renders_Xml extends joy_Object implements joy_web_ui_renders_IR
 
     public function Display()
     {
-        var_dump($this->serializer->varsToXml());
+        echo $this->Fetch();
     }
 }
 

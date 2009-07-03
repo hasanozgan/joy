@@ -50,35 +50,43 @@ class joy_web_Controller extends joy_web_HttpContext
 
     public function LoadAttributes()
     {
-        var_dump("Controller::LoadAttributes"); 
+        $this->Logger->Debug("Controller::LoadAttributes", __FILE__, __LINE__);
 
         joy_web_Attribute::Loader(&$this);
     }
 
     public function RunMethod()
     {
-        var_dump("Controller::RunMethod"); 
+        $this->Logger->Debug("Controller::RunMethod (".$this->Action.")", __FILE__, __LINE__);
 
         $class = new ReflectionClass($this);
         $class->getMethod($this->Action)->invoke($this, $this->ActionArguments);
+    }
+
+    private function appendTraceLog($output)
+    {
+        if (true == ((bool)$this->Config->Get("app.trace.enabled"))) {
+            $log_output = $this->Logger->Fetch();
+            $output = sprintf("%s<hr/><center>T R A C E &nbsp; L O G</center><hr/><small>%s</small>", $output, $log_output);
+        }
+
+        return $output;;
     }
 
     public function Render()
     {
         $render = joy_web_ui_RenderFactory::Builder(&$this);
         $output = $render->Fetch();
-//FIXME:
-        var_dump($output);
-
+      
         $this->Event->Dispatch("Header");
         $this->Event->Dispatch("Render", &$output);
-//FIXME:
-        print($output);
+        $this->PageOutput = $output;
     }
 
     public function Complete()
     {
         $this->Event->Dispatch("Unload");
+        echo $this->appendTraceLog($this->PageOutput);
     }
 
     protected function RegisterEvents()

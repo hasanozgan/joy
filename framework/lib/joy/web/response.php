@@ -31,7 +31,7 @@ class joy_web_Response extends joy_Object
             }
         }
 
-        var_dump("Response Header (OnHeader)");
+        $this->Logger->Debug("Response Header (OnHeader)", __FILE__, __LINE__);
     }
 
     public function SetHeader($item)

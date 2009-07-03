@@ -15,7 +15,7 @@ class joy_web_attributes_Charset extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute Charset");
+        $this->Logger->Debug("Attribute Charset", __FILE__, __LINE__);
     }
 }
 

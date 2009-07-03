@@ -15,7 +15,7 @@ class joy_web_attributes_ContentType extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute ContentType");
+        $this->Log->Debug("Attribute ContentType", __FILE__, __LINE__);
     }
 }
 

@@ -9,6 +9,10 @@
  * file that was distributed with this source code.
  */
 
+//@TODO:
+// 
+// 1) Required file save method
+// 2) 
 
 class joy_Logger
 {
@@ -16,45 +20,75 @@ class joy_Logger
     private static $instance;
 
     /* Log Levels */
-    const ALL = -1;
     const NONE = 0;
     const DEBUG = 2;
-    const WARNING = 4;
-    const ERROR = 8;
-    const FATAL = 16;
+    const INFO = 4;
+    const WARNING = 8;
+    const ERROR = 16;
+    const FATAL = 32;
+    const ALL = 256;
 
     static function &getInstance()
     {
-        if (is_object($instance)) {
-            $instance = new joy_Logger();
+        if (!is_object(self::$instance)) {
+            self::$instance = new joy_Logger();
         }
 
-        return $instance;
+        return self::$instance;
     }
 
-    function add($level, $description, $file, $line)
+    function statusToString($level)
     {
-        //TODO: Add to $log arra Add to $log array..
+        switch ($level) 
+        {
+            case self::DEBUG: return "DEBUG";
+            case self::INFO: return "INFO";
+            case self::WARNING: return "WARNING";
+            case self::ERROR: return "ERROR";
+            case self::FATAL: return "FATAL";
+        }
+
+        return "N/A";
     }
 
-    function debug($description, $file, $line)
+    public function Add($level, $description, $file="N/A", $line="N/A")
     {
-        return $this->add(self::DEBUG, $description, $file, $line);
+        $this->log_data[] = sprintf("[%s] [%s] [%s:%s] [%s]\n", 
+                                    date("Y-m-d H:i:s"), 
+                                    $this->statusToString($level), 
+                                    $file, 
+                                    $line, 
+                                    $description);
     }
 
-    function warning($description, $file, $line)
+    public function Debug($description, $file="N/A", $line="N/A")
     {
-        return $this->add(self::WARNING, $description, $file, $line);
+        return $this->Add(self::DEBUG, $description, $file, $line);
     }
 
-    function error($description, $file, $line)
+    function Info($description, $file="N/A", $line="N/A")
     {
-        return $this->add(self::ERROR, $description, $file, $line);
+        return $this->Add(self::INFO, $description, $file, $line);
     }
 
-    function fatal($description, $file, $line)
+    function Warning($description, $file="N/A", $line="N/A")
     {
-        return $this->add(self::FATAL, $description, $file, $line);
+        return $this->Add(self::WARNING, $description, $file, $line);
+    }
+
+    function Error($description, $file="N/A", $line="N/A")
+    {
+        return $this->Add(self::ERROR, $description, $file, $line);
+    }
+
+    function Fatal($description, $file="N/A", $line="N/A")
+    {
+        return $this->Add(self::FATAL, $description, $file, $line);
+    }
+
+    function Fetch()
+    {
+        return implode("<br/>", $this->log_data);
     }
 }
 

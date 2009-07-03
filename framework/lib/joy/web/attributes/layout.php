@@ -15,7 +15,7 @@ class joy_web_attributes_Layout extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute Layout");
+        $this->Logger->Debug("Attribute Layout", __FILE__, __LINE__);
     }
 }
 

@@ -32,7 +32,7 @@ class joy_web_Request extends joy_data_Dictionary
     public function OnSafeRequest(&$object, $args)
     {
         // TODO: MagicQuote & XSS & SqlInjection Check.
-        var_dump("Safe Request");
+        $this->Logger->Debug("Safe Request", __FILE__, __LINE__);
     }
 }
 

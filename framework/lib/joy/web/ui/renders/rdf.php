@@ -34,7 +34,7 @@ class joy_web_ui_renders_Rdf extends joy_Object implements joy_web_ui_renders_IR
 
     public function Display()
     {
-        var_dump(HV_ArrayToRDFCollection::generateRdf($this->page->Data));
+        echo $this->Fetch();
     }
 }
 

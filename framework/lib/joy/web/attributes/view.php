@@ -15,7 +15,7 @@ class joy_web_attributes_View extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute View");
+        $this->Logger->Debug("Attribute View", __FILE__, __LINE__);
     }
 }
 

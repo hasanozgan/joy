@@ -10,28 +10,28 @@ class TestPage extends helloworld_BasePage
 {
     public function index()
     {
-        var_dump("Home Page");
+    //    var_dump("Home Page");
     }
 
     public function OnInit($obj, $args)
     {
-        var_dump("OnInit");
+    //    var_dump("OnInit");
     }
 
     public function OnLoad($obj, $args)
     {
-        var_dump("OnLoad");
+    //    var_dump("OnLoad");
     }
 
     public function OnRender($obj, $args)
     {
-        $obj = "Joy Web Framework Output";
-        var_dump("OnRender");
+        $obj = "Joy Web Framework Output".$obj;
+    //    var_dump("OnRender");
     }
 
     public function OnUnload($obj, $args)
     {
-        var_dump("OnUnload");
+    //    var_dump("OnUnload");
     }
 
 
@@ -52,7 +52,7 @@ class TestPage extends helloworld_BasePage
         var_dump($this->Parameters->Get("code"));
         var_dump($this->Request->QueryString->Get("a"));
         */
-        var_dump("get Action");
+     //   var_dump("get Action");
     }
 }
 

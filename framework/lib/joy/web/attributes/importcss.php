@@ -15,7 +15,7 @@ class joy_web_attributes_ImportCSS extends joy_web_Attribute
 {
     public function Execute()
     {
-        var_dump("Attribute ImportCSS");
+        $this->Log->Debug("Attribute Import CSS", __FILE__, __LINE__);
     }
 }
 
