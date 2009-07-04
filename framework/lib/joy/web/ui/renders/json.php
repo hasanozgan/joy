@@ -24,7 +24,7 @@ class joy_web_ui_renders_Json extends joy_Object implements joy_web_ui_renders_I
         $smartyLoader->Import("json/FastJSON.class.php5");
 
         $this->page =& $page;
-        $this->page->Response->SetHeader("Content-Type: text/xml");
+        $this->page->Response->SetHeader("Content-Type: application/javascript");
     }
 
     public function Fetch()
