@@ -25,7 +25,7 @@ class TestPage extends helloworld_BasePage
 
     public function OnRender($obj, $args)
     {
-        $obj = "Joy Web Framework Output".$obj;
+#        $obj = "Joy Web Framework Output".$obj;
     //    var_dump("OnRender");
     }
 
