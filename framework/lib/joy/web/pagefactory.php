@@ -327,9 +327,6 @@ class joy_web_PageFactory extends joy_Object
 //            }
 //            var_dump($output);
 		}
-
- 
-
     }
 }
 

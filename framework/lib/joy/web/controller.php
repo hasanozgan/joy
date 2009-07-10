@@ -26,7 +26,7 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         $this->Action = $pageMeta->Action;
         $this->ActionArguments = $pageMeta->ActionArguments;
-        $this->RenderType = $pageMeta->RenderType;
+        $this->RenderType = (empty($pageMeta->RenderType) ? "layout" : $pageMeta->RenderType);
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
 
@@ -65,9 +65,10 @@ class joy_web_Controller extends joy_web_HttpContext
 
     private function appendTraceLog($output)
     {
-        if (true == ((bool)$this->Config->Get("app.trace.enabled"))) {
+        if (true == ((bool)$this->Config->Get("app.trace.enabled")) && ($this->RenderType == "layout")) {
             $log_output = $this->Logger->Fetch();
-            $output = sprintf("%s<hr/><center>T R A C E &nbsp; L O G</center><hr/><small>%s</small>", $output, $log_output);
+            $output = sprintf("%s<hr/><center>T R A C E &nbsp; L O G</center><hr/><small>%s</small>", 
+                              $output, $log_output);
         }
 
         return $output;;

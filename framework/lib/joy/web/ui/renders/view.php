@@ -12,16 +12,16 @@
 import("joy.Object");
 import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_Rest extends joy_Object implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_View extends joy_Object implements joy_web_ui_renders_IRender
 {
     public function Fetch()
     {
-
+        return "View";
     }
 
     public function Display()
     {
-
+        echo "View";
     }
 
 }
