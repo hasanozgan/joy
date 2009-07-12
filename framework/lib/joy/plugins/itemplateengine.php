@@ -15,5 +15,4 @@ interface joy_plugins_ITemplateEngine
     public function Display();
 }
 
-
 ?>

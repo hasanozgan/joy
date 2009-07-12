@@ -90,6 +90,12 @@ class joy_Logger
     {
         return implode("<br/>", $this->log_data);
     }
+
+    function Output()
+    {
+        return sprintf("<hr/><center><strong>T R A C E &nbsp; L O G</strong></center><hr/><small>%s</small>",
+                       $this->Fetch());
+    }
 }
 
 ?>

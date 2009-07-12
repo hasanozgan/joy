@@ -13,11 +13,13 @@ import("joy.data.Dictionary");
 import("joy.web.HttpContext");
 import("joy.web.Model");
 import("joy.web.Attribute");
+import("joy.web.ui.RenderFactory");
 
 class joy_web_Controller extends joy_web_HttpContext
 {
     protected $Action;
     protected $RenderType;
+    protected $Render;
     protected $Parameters;
     protected $Models;
     protected $Output;
@@ -26,7 +28,7 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         $this->Action = $pageMeta->Action;
         $this->ActionArguments = $pageMeta->ActionArguments;
-        $this->RenderType = (empty($pageMeta->RenderType) ? "layout" : $pageMeta->RenderType);
+        $this->RenderType = (empty($pageMeta->RenderType) ? joy_web_ui_RenderFactory::LAYOUT : $pageMeta->RenderType);
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
 
@@ -65,19 +67,22 @@ class joy_web_Controller extends joy_web_HttpContext
 
     private function appendTraceLog($output)
     {
-        if (true == ((bool)$this->Config->Get("app.trace.enabled")) && ($this->RenderType == "layout")) {
-            $log_output = $this->Logger->Fetch();
-            $output = sprintf("%s<hr/><center>T R A C E &nbsp; L O G</center><hr/><small>%s</small>", 
-                              $output, $log_output);
+        if (true == ((bool)$this->Config->Get("app.trace.enabled")) && 
+            (in_array($this->RenderType, array(joy_web_ui_RenderFactory::LAYOUT, joy_web_ui_RenderFactory::VIEW)))) {
+            $log_output = $this->Logger->Output();
+            $output .= $log_output;
         }
 
-        return $output;;
+        return $output;
     }
 
     public function Render()
     {
-        $render = joy_web_ui_RenderFactory::Builder(&$this);
-        $output = $render->Fetch();
+        $this->Render = joy_web_ui_RenderFactory::Builder(&$this);
+        if (!$this->Render) {
+            throw new Exception("Render Not Found");
+        }
+        $output = $this->Render->Fetch();
       
         $this->Event->Dispatch("Header");
         $this->Event->Dispatch("Render", &$output);

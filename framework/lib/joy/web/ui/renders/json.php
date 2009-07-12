@@ -29,7 +29,7 @@ class joy_web_ui_renders_Json extends joy_Object implements joy_web_ui_renders_I
 
     public function Fetch()
     {
-        return FastJSON::encode($this->page->Data);
+        return sprintf("%s = %s;", get_class($this->page), FastJSON::encode($this->page->Data));
     }
 
     public function Display()

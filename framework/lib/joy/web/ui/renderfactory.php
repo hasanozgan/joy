@@ -14,6 +14,10 @@ import("joy.web");
 
 class joy_web_ui_RenderFactory extends joy_Object
 {
+    const LAYOUT="layout";
+    const VIEW="view";
+    const PLACE_HOLDER_MARKER = "{* __PLACE_HOLDER__ *}";
+
     public static function Builder($page)
     {
         if ($page instanceof joy_web_ui_IPage) {
@@ -32,9 +36,8 @@ class joy_web_ui_RenderFactory extends joy_Object
             $namespace = $config->Get("joy.renders.layout");
         }
 
-        return using($namespace, $page);
+        return using($namespace, &$page);
     }    
 }
-
 
 ?>

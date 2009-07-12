@@ -11,6 +11,7 @@
 
 import("joy.Object");
 import("joy.plugins.ITemplateEngine");
+import("joy.web.ui.RenderFactory");
 
 class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugins_ITemplateEngine
 {
@@ -23,13 +24,14 @@ class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugi
         $smartyLoader->Import("Smarty.class.php");
 
         // Set smarty parameters app.vendors.smarty.settings section in config.ini file
-
         $this->smarty = new Smarty();
+
         $this->smarty->left_delimeter = "{%";
         $this->smarty->right_delimeter = "%}";
         $this->smarty->compile_dir = $compile_dir;
         $this->smarty->template_dir = $template_dir;
         $this->smarty->plugins_dir[] = $plugins_dir;
+        $this->smarty->JOY_PLACE_HOLDER_MARKER = joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER;
     }
 
     public function Fetch()
