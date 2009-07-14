@@ -27,8 +27,11 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
     
     public function Fetch()
     {
+        var_dump($this->page->GetThemeName());
         var_dump($this->page->GetLayoutFileName());
         var_dump($this->page->GetViewFileName());  
+        var_dump($this->page->GetViewFolderName());
+
     }
 
     public function Display()

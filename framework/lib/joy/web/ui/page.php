@@ -22,6 +22,8 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     private $nameViewFileExtension;
     private $nameViewFolder;
 
+    private $nameTheme;
+
     public function __construct()
     {
         parent::__construct();
@@ -29,6 +31,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
         $this->SetViewFileExtensionName($this->Config->Get("joy.extensions.view"));
         $this->SetLayoutFileExtensionName($this->Config->Get("joy.extension.layout"));
+        $this->SetThemeName($this->Config->Get("app.theme"));
         $this->SetViewFolderName(get_class($this));
 
         $this->Event->Dispatch("Init"); 
@@ -83,6 +86,16 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     public function GetViewFolderName()
     {
         return $this->nameViewFolder;
+    }
+
+    public function SetThemeName($name)
+    {
+        $this->nameTheme = $name;
+    }
+
+    public function GetThemeName()
+    {
+        return $this->nameTheme;
     }
 
     protected function RegisterEvents()

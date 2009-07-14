@@ -31,8 +31,9 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->RenderType = (empty($pageMeta->RenderType) ? joy_web_ui_RenderFactory::LAYOUT : $pageMeta->RenderType);
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
+        $this->SetViewFileName($this->Action);
 
-        $this->View->SetView($this->Action, $pageMeta->Page);
+#        $this->View->SetView($this->Action, $pageMeta->Page);
     }
 
     public function GetRenderType()

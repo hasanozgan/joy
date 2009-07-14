@@ -4,6 +4,8 @@ import("helloworld.BasePage");
 
 /**
  * @helloworld_attributes_TestAttribute 
+ * @joy_web_attributes_Layout("tes2t")
+ * @joy_web_attributes_ViewFolder("te2st") 
  * @joy_web_attributes_Authorization(Roles={"Admin", "Developer"}) 
  */  
 class TestPage extends helloworld_BasePage
