@@ -15,6 +15,8 @@ class joy_web_attributes_View extends joy_web_Attribute
 {
     public function Execute()
     {
+        $this->Page->SetViewFileName($this->Values["value"]);
+ 
         $this->Logger->Debug("Attribute View", __FILE__, __LINE__);
     }
 }

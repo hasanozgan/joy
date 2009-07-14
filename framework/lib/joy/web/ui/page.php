@@ -15,12 +15,74 @@ import("joy.web.attributes");
 
 class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 {
+    private $nameLayoutFile;
+    private $nameLayoutFileExtension;
+
+    private $nameViewFile;
+    private $nameViewFileExtension;
+    private $nameViewFolder;
+
     public function __construct()
     {
         parent::__construct();
+        //TODO: Themes Folders..
+
+        $this->SetViewFileExtensionName($this->Config->Get("joy.extensions.view"));
+        $this->SetLayoutFileExtensionName($this->Config->Get("joy.extension.layout"));
+        $this->SetViewFolderName(get_class($this));
 
         $this->Event->Dispatch("Init"); 
         $this->Event->Dispatch("Load");
+    }
+
+    public function SetViewFileExtensionName($name)
+    {
+        $this->nameViewFileExtension = $name;
+    }
+
+    public function GetViewFileExtensionName()
+    {
+        return $this->nameViewFileExtension;
+    }
+
+    public function SetViewFileName($name)
+    {
+        $this->nameViewFile = str_replace(".{$this->nameViewFileExtension}", "", $name);
+    }
+
+    public function GetViewFileName()
+    {
+        return $this->nameViewFile;
+    }
+
+    public function SetLayoutFileName($name)
+    {
+        $this->nameLayoutFile = str_replace(".{$this->nameLayoutFileExtension}", "", $name);
+    }
+
+    public function GetLayoutFileName()
+    {
+        return $this->nameLayoutFile;
+    }
+
+    public function SetLayoutFileExtensionName($name)
+    {
+        $this->nameLayoutFileExtension = $name;
+    }
+
+    public function GetLayoutFileExtensionName()
+    {
+        return $this->nameLayoutFileExtension;
+    }
+
+    public function SetViewFolderName($name)
+    {
+        $this->nameViewFolder = $name;
+    }
+
+    public function GetViewFolderName()
+    {
+        return $this->nameViewFolder;
     }
 
     protected function RegisterEvents()

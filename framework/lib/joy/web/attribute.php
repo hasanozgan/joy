@@ -13,20 +13,20 @@ import("joy.Object");
 
 abstract class joy_web_Attribute extends joy_Object
 {
-    protected $page;
-    protected $values;
+    protected $Page;
+    protected $Values;
 
     abstract function Execute();
 
     public function __construct($values)
     {
         parent::__construct();
-        $this->values = (array)$values;
+        $this->Values = (array)$values;
     }
 
     public function Run(&$page)
     {
-        $this->page =& $page;
+        $this->Page =& $page;
         if (method_exists($this, "Execute")) {
             joy_Logger::getInstance()->Debug("Execute Attribute (".get_class($this)."::Run)",
                                          __FILE__, __LINE__);
@@ -44,14 +44,14 @@ abstract class joy_web_Attribute extends joy_Object
         $attributes = $annotation_helper->GetPageAttributes($pageObject->GetPageName());
         foreach($attributes as $attribute) {
             if ($attribute instanceof joy_web_Attribute) 
-                $attribute->Run(&$_page);
+                $attribute->Run(&$pageObject);
         }
 
         // Run Action Attributes
         $attributes = $annotation_helper->GetActionAttributes($pageObject->GetPageName(), $pageObject->GetActionName());
         foreach($attributes as $attribute) {
             if ($attribute instanceof joy_web_Attribute) 
-                $attribute->Run(&$_page);
+                $attribute->Run(&$pageObject);
         }
     } 
 }

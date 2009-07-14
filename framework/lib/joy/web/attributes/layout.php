@@ -15,6 +15,8 @@ class joy_web_attributes_Layout extends joy_web_Attribute
 {
     public function Execute()
     {
+        $this->Page->SetLayoutFileName($this->Values["value"]);
+
         $this->Logger->Debug("Attribute Layout", __FILE__, __LINE__);
     }
 }
