@@ -15,6 +15,7 @@ import("joy.web.ui.renders.IRender");
 class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders_IRender
 {
     private $template;
+    private $page;
 
     public function __construct($page)
     {

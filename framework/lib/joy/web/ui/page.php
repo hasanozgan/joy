@@ -38,6 +38,18 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
         $this->Event->Dispatch("Load");
     }
 
+    public function GetViewFilePath()
+    {
+        var_dump($this->Config->Get("app.document_root.folders.path.view"));
+    
+    }
+
+    public function GetLayoutFilePath()
+    {
+         var_dump($this->Config->Get("app.document_root.folders.path.layout"));
+    
+    }
+
     public function SetViewFileExtensionName($name)
     {
         $this->nameViewFileExtension = $name;
