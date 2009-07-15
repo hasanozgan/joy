@@ -23,14 +23,16 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     private $nameViewFolder;
 
     private $nameTheme;
+    private $nameDefaultThemeFolder;
 
     public function __construct()
     {
         parent::__construct();
         //TODO: Themes Folders..
 
+        $this->SetDefaultThemeFolder($this->Config->Get("app.folders.default_theme"));
         $this->SetViewFileExtensionName($this->Config->Get("joy.extensions.view"));
-        $this->SetLayoutFileExtensionName($this->Config->Get("joy.extension.layout"));
+        $this->SetLayoutFileExtensionName($this->Config->Get("joy.extensions.layout"));
         $this->SetThemeName($this->Config->Get("app.theme"));
         $this->SetViewFolderName(get_class($this));
 
@@ -40,15 +42,40 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
     public function GetViewFilePath()
     {
-        var_dump($this->Config->Get("app.document_root.folders.path.view"));
-    
+        $default_view_path = sprintf("%s/%s/%s.%s", 
+                                     rtrim($this->Config->Get("app.document_root.folders.path.view"), "/"),
+                                     $this->GetViewFolderName(),
+                                     $this->GetViewFileName(),
+                                     $this->GetViewFileExtensionName());
+
+
+        var_dump($default_view_path);
+        $default_theme_folder = $this->GetDefaultThemeFolder();
+
+        $theme_folder = $this->GetThemeName();
     }
 
     public function GetLayoutFilePath()
     {
-         var_dump($this->Config->Get("app.document_root.folders.path.layout"));
-    
+        $default_layout_path = sprintf("%s/%s.%s", 
+                                     rtrim($this->Config->Get("app.document_root.folders.path.layout"), "/"),
+                                     $this->GetLayoutFileName(),
+                                     $this->GetLayoutFileExtensionName());
+
+        var_dump($default_layout_path);
+
     }
+
+    public function SetDefaultThemeFolder($name)
+    {
+        $this->nameDefaultThemeFolder = $name;
+    }
+
+    public function GetDefaultThemeFolder()
+    {
+        return $this->nameDefaultThemeFolder;
+    }
+
 
     public function SetViewFileExtensionName($name)
     {

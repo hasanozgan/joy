@@ -33,6 +33,10 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
         var_dump($this->page->GetViewFileName());  
         var_dump($this->page->GetViewFolderName());
 
+        $this->page->GetViewFilePath();
+        $this->page->GetLayoutFilePath();
+
+
     }
 
     public function Display()
