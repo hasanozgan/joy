@@ -28,6 +28,11 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
     
     public function Fetch()
     {
+        $view = $this->template->Fetch($this->page->GetViewFilePath());
+        $layout = $this->template->Fetch($this->page->GetLayoutFilePath());
+        $layout = str_replace(joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER, $view, $layout);
+        echo $layout;
+
         var_dump($this->page->GetThemeName());
         var_dump($this->page->GetLayoutFileName());
         var_dump($this->page->GetViewFileName());  

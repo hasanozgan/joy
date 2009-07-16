@@ -19,29 +19,43 @@ class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugi
 
     function __construct()
     {
-        // TODO: Find Smarty Folders...
+        parent::__construct();
+
+        // Prepare Smarty Folders..
+        $framework_root = rtrim($this->Config->Get("joy.root"), "/");
+        $app_root = rtrim($this->Config->Get("app.root"), "/");
+
+        $cache = (bool)$this->Config->Get("joy.vendors.smarty.settings.cache");
+        $compile_dir = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.smarty.settings.compile_dir"));
+        $plugin_dirs[] = sprintf("%s/%s", $framework_root, $this->Config->Get("joy.vendors.smarty.settings.joy_plugins_dir"));
+        $plugin_dirs[] = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.smarty.settings.app_plugins_dir"));
+
         $smartyLoader = new joy_vendors_Loader("smarty");
         $smartyLoader->Import("Smarty.class.php");
 
         // Set smarty parameters app.vendors.smarty.settings section in config.ini file
         $this->smarty = new Smarty();
 
-        $this->smarty->left_delimeter = "{%";
-        $this->smarty->right_delimeter = "%}";
+        $this->smarty->left_delimiter = "{%";
+        $this->smarty->right_delimiter = "%}";
         $this->smarty->compile_dir = $compile_dir;
-        $this->smarty->template_dir = $template_dir;
-        $this->smarty->plugins_dir[] = $plugins_dir;
-        $this->smarty->JOY_PLACE_HOLDER_MARKER = joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER;
+        $this->smarty->plugins_dir = array_merge((array)$this->smarty->plugins_dir, $plugin_dirs);
+        $this->smarty->PLACE_HOLDER_MARKER = joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER;
     }
 
-    public function Fetch()
+    public function Fetch($path)
     {
-        return $this->smarty->fetch();
+        return $this->smarty->fetch($path);
     }
 
-    public function Display()
+    public function Display($path)
     {
-        return $this->smarty->display();
+        return $this->smarty->display($path);
+    }
+
+    public function Assign($key, $value)
+    {
+        $this->smarty->assign($key, $value);
     }
 }
 
