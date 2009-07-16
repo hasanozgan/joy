@@ -42,28 +42,43 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
     public function GetViewFilePath()
     {
-        $default_view_path = sprintf("%s/%s/%s.%s", 
+        $view_path = sprintf("%s/%s/%s.%s", 
                                      rtrim($this->Config->Get("app.document_root.folders.path.view"), "/"),
                                      $this->GetViewFolderName(),
                                      $this->GetViewFileName(),
                                      $this->GetViewFileExtensionName());
 
-
-        var_dump($default_view_path);
-        $default_theme_folder = $this->GetDefaultThemeFolder();
-
         $theme_folder = $this->GetThemeName();
+
+        if ($theme_folder) {
+            $vpath = str_replace("%theme%", $theme_folder, $view_path);
+            if (file_exists($vpath)) {
+                return $vpath;
+            }
+        }
+
+        $default_theme_folder = $this->GetDefaultThemeFolder();
+        return str_replace("%theme%", $default_theme_folder, $view_path);
     }
 
     public function GetLayoutFilePath()
     {
-        $default_layout_path = sprintf("%s/%s.%s", 
+        $layout_path = sprintf("%s/%s.%s", 
                                      rtrim($this->Config->Get("app.document_root.folders.path.layout"), "/"),
                                      $this->GetLayoutFileName(),
                                      $this->GetLayoutFileExtensionName());
 
-        var_dump($default_layout_path);
+        $theme_folder = $this->GetThemeName();
 
+        if ($theme_folder) {
+            $lpath = str_replace("%theme%", $theme_folder, $layout_path);
+            if (file_exists($lpath)) {
+                return $lpath;
+            }
+        }
+
+        $default_theme_folder = $this->GetDefaultThemeFolder();
+        return str_replace("%theme%", $default_theme_folder, $layout_path);
     }
 
     public function SetDefaultThemeFolder($name)
