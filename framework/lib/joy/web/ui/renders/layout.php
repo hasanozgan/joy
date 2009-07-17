@@ -28,11 +28,22 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
     
     public function Fetch()
     {
-        $view = $this->template->Fetch($this->page->GetViewFilePath());
-        $layout = $this->template->Fetch($this->page->GetLayoutFilePath());
-        $layout = str_replace(joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER, $view, $layout);
-        echo $layout;
+        // Assign all data
+        foreach ($this->page->Data as $key=>$val) {
+            $this->template->Assign($key, $val);
+        }
 
+        $result = $this->template->Fetch($this->page->GetViewFilePath());
+
+        if (file_exists($this->page->GetLayoutFilePath())) {
+            $layout = $this->template->Fetch($this->page->GetLayoutFilePath());
+            $result = str_replace(joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER, $result, $layout);
+        }
+
+        return $result;
+
+/* Page Info *
+ *
         var_dump($this->page->GetThemeName());
         var_dump($this->page->GetLayoutFileName());
         var_dump($this->page->GetViewFileName());  
@@ -40,11 +51,12 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
 
         var_dump($this->page->GetViewFilePath());
         var_dump($this->page->GetLayoutFilePath());
+ */
     }
 
     public function Display()
     {
-
+        echo $this->Fetch();
     }
 }
 

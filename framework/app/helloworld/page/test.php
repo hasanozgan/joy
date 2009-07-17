@@ -48,7 +48,7 @@ class TestPage extends helloworld_BasePage
     public function get()
     {
         $this->Data["netology"]="software foundation";
-        $this->Models->Event;
+//      var_dump($this->Models->Event);
 
         /*
         var_dump($this->Parameters->Get("code"));

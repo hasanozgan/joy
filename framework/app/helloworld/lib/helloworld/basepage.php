@@ -6,7 +6,7 @@ import("helloworld.attributes");
 // base page class
 class helloworld_BasePage extends joy_web_ui_Page
 {
-    public function OnConnection(&$object, &$args)
+    public function OnDBConnection(&$object, &$args)
     {
         var_dump("OnConnection");
         $conn = $object;
@@ -30,8 +30,10 @@ class helloworld_BasePage extends joy_web_ui_Page
 
         $conn->setAttribute(Doctrine::ATTR_QUERY_CACHE, $cacheDriver); 
 
-        $model_path = $this->Config->Get("app.folders.path.model");
-        $dal_path = $this->Config->Get("app.folders.path.data_access_layer");
+        $app_root = rtrim($this->Config->Get("app.root"), "/");
+
+        $dal_path = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.doctrine.settings.data_access_layer_dir"));
+        $model_path = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.doctrine.settings.model.dir"));
 
         Doctrine::loadModels($dal_path);
         Doctrine::loadModels($model_path);

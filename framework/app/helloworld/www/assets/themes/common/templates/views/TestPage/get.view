@@ -1,5 +1,6 @@
 <div style="border:1px">
 
-    GET VIEW
+    <h4>GET VIEW</h4>
+    {% $netology %}
 
 </div>

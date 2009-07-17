@@ -4,9 +4,10 @@
 <title>Test Page</title>
 </head>
 <body>
-
+<fieldset>
+<legend>BlueMoon test.layout</legend>
     {% place_holder %}
-
+</fieldset>
 </body>
 
 </html>

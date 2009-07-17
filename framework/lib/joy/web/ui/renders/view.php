@@ -19,18 +19,23 @@ class joy_web_ui_renders_View extends joy_Object implements joy_web_ui_renders_I
         parent::__construct();
 
         $namespace = $this->Config->Get("joy.plugins.template_engine");
-        $template = using($namespace);
+        $this->template = using($namespace);
         $this->page =& $page;
     }
  
     public function Fetch()
     {
-        return "View";
+        // Assign all data
+        foreach ($this->page->Data as $key=>$val) {
+            $this->template->Assign($key, $val);
+        }
+
+        return $this->template->Fetch($this->page->GetViewFilePath());
     }
 
     public function Display()
     {
-        echo "View";
+        echo $this->Fetch();
     }
 
 }
