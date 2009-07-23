@@ -86,6 +86,7 @@ class joy_Configure
 
     public function load($config_file)
     {
+        //FIXME: En son kaydedilen config ini hepsini ezer.
         $success = false;
         $shm_id = shmop_open(CONFIG_SHM_KEY, "c", 0644, CONFIG_SHM_SIZE);
 

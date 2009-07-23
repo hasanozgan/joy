@@ -47,10 +47,12 @@ class joy_Namespace
         $lib_folders = array($config->get("joy.folders.path.library"),
                              $config->get("app.folders.path.library"));
 
+        $namespace_path_name = strtolower(str_replace(".", DIRECTORY_SEPARATOR, $namespace));
         foreach ($lib_folders as $lib_root) 
         {
-            $path = $lib_root.DIRECTORY_SEPARATOR.str_replace(".", DIRECTORY_SEPARATOR, $namespace);
-            $file = strtolower("$path.".CLASS_EXTENSION);
+            $lib_root = rtrim($lib_root, DIRECTORY_SEPARATOR);
+            $path = $lib_root.DIRECTORY_SEPARATOR.$namespace_path_name;
+            $file = $lib_root.DIRECTORY_SEPARATOR.$namespace_path_name.'.'.CLASS_EXTENSION;
 
             if (file_exists($file)) {
                 return self::ImportClass($file);
