@@ -5,7 +5,7 @@
 </head>
 <body>
 
-    {% place_holder}
+    {% place_holder %}
 
 </body>
 

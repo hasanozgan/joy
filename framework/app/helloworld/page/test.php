@@ -5,6 +5,7 @@ import("helloworld.BasePage");
 /**
  * @helloworld_attributes_TestAttribute 
  * @joy_web_attributes_Layout("tes2t")
+ *@joy_web_attributes_Theme("WhiteHouse")
  *@joy_web_attributes_ViewFolder("te2st") 
  * @joy_web_attributes_Authorization(Roles={"Admin", "Developer"}) 
  */  
@@ -43,12 +44,12 @@ class TestPage extends helloworld_BasePage
      * @joy_web_attributes_Layout("test")
      *@joy_web_attributes_ViewFolder("test")
      * @joy_web_attributes_View("get")
-     * @joy_web_attributes_Serialization{Renders={"xml","json","rest","rdf"})
+     * @joy_web_attributes_Serialization{Renders={"xml","json","view","rdf"})
      */ 
     public function get()
     {
         $this->Data["netology"]="software foundation";
-//      var_dump($this->Models->Event);
+//        $this->Models->User;
 
         /*
         var_dump($this->Parameters->Get("code"));

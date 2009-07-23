@@ -12,14 +12,20 @@
 import("joy.Object");
 
 class joy_web_Model extends joy_Object
-{ 
-    public function __get($model)
+{
+    public $ormap;
+
+    public function __construct()
     {
-        var_dump($model);
+        parent::__construct();
 
         $namespace = $this->Config->Get("joy.plugins.ormap");
-        $ormap = using($namespace);
-        return $ormap->GetTable($model);    
+        $this->ormap = using($namespace);
+    }
+
+    public function __get($model)
+    {
+        return $this->ormap->GetTable($model);    
     }
 
 }

@@ -42,10 +42,10 @@ class joy_web_HttpContext extends joy_Object
         $this->Cookie = new joy_web_Cookie();
         $this->Cache = new joy_web_Cache();
 
-        $this->View = new joy_web_ui_View();
+/*        $this->View = new joy_web_ui_View();
         $this->Theme = new joy_web_ui_Theme();
         $this->View->SetTheme($this->Theme);
-        $this->View->SetTranslate($this->Translate);
+        $this->View->SetTranslate($this->Translate);*/
     }
 }
 

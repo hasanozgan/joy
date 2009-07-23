@@ -11,6 +11,7 @@
 
 import("joy.Object");
 import("joy.plugins.IORMap");
+import("joy.vendors.Loader");
 
 class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORMap
 {

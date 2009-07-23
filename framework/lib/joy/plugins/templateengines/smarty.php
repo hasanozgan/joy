@@ -12,6 +12,7 @@
 import("joy.Object");
 import("joy.plugins.ITemplateEngine");
 import("joy.web.ui.RenderFactory");
+import("joy.vendors.Loader");
 
 class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugins_ITemplateEngine
 {

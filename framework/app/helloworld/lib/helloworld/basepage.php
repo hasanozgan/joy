@@ -8,7 +8,7 @@ class helloworld_BasePage extends joy_web_ui_Page
 {
     public function OnDBConnection(&$object, &$args)
     {
-        var_dump("OnConnection");
+#        var_dump("OnConnection");
         $conn = $object;
 
         $conn->setCollate('utf8_general_ci');
@@ -33,8 +33,8 @@ class helloworld_BasePage extends joy_web_ui_Page
         $app_root = rtrim($this->Config->Get("app.root"), "/");
 
         $dal_path = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.doctrine.settings.data_access_layer_dir"));
-        $model_path = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.doctrine.settings.model.dir"));
-
+        $model_path = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.doctrine.settings.model_dir"));
+        
         Doctrine::loadModels($dal_path);
         Doctrine::loadModels($model_path);
     }

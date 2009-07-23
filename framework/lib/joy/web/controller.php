@@ -14,6 +14,8 @@ import("joy.web.HttpContext");
 import("joy.web.Model");
 import("joy.web.Attribute");
 import("joy.web.ui.RenderFactory");
+import("joy.web.ui.renders.Layout");
+
 
 class joy_web_Controller extends joy_web_HttpContext
 {
@@ -32,8 +34,6 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
         $this->Models = new joy_web_Model();
         $this->SetViewFileName($this->Action);
-
-#        $this->View->SetView($this->Action, $pageMeta->Page);
     }
 
     public function GetRenderType()
