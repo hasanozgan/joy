@@ -8,7 +8,6 @@ class helloworld_BasePage extends joy_web_ui_Page
 {
     public function OnDBConnection(&$object, &$args)
     {
-#        var_dump("OnConnection");
         $conn = $object;
 
         $conn->setCollate('utf8_general_ci');

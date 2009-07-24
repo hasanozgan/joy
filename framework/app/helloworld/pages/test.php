@@ -5,7 +5,7 @@ import("helloworld.BasePage");
 /**
  * @helloworld_attributes_TestAttribute 
  * @joy_web_attributes_Layout("tes2t")
- *@joy_web_attributes_Theme("WhiteHouse")
+ * @joy_web_attributes_Theme("WhiteHouse")
  *@joy_web_attributes_ViewFolder("te2st") 
  * @joy_web_attributes_Authorization(Roles={"Admin", "Developer"}) 
  */  
@@ -23,12 +23,13 @@ class TestPage extends helloworld_BasePage
 
     public function OnLoad($obj, $args)
     {
+        $this->Data["hayri"]="test";
     //    var_dump("OnLoad");
     }
 
     public function OnRender($obj, $args)
     {
-#        $obj = "Joy Web Framework Output".$obj;
+       $obj = "Joy Web Framework Output".$obj;
     //    var_dump("OnRender");
     }
 
@@ -40,7 +41,7 @@ class TestPage extends helloworld_BasePage
 
     /**
      * @joy_web_attributes_SafeRequest
-     * @joy_web_attributes_Theme("BlueMoon")
+     *@joy_web_attributes_Theme("BlueMoon")
      * @joy_web_attributes_Layout("test")
      *@joy_web_attributes_ViewFolder("test")
      * @joy_web_attributes_View("get")
@@ -49,7 +50,7 @@ class TestPage extends helloworld_BasePage
     public function get()
     {
         $this->Data["netology"]="software foundation";
-//        $this->Models->User;
+        $this->Models->User;
 
         /*
         var_dump($this->Parameters->Get("code"));
