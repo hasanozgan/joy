@@ -29,7 +29,7 @@ class TestPage extends helloworld_BasePage
 
     public function OnRender($obj, $args)
     {
-       $obj = "Joy Web Framework Output".$obj;
+//       $obj = "Joy Web Framework Output".$obj;
     //    var_dump("OnRender");
     }
 
@@ -41,7 +41,7 @@ class TestPage extends helloworld_BasePage
 
     /**
      * @joy_web_attributes_SafeRequest
-     *@joy_web_attributes_Theme("BlueMoon")
+     * @joy_web_attributes_Theme("BlueMoon")
      * @joy_web_attributes_Layout("test")
      *@joy_web_attributes_ViewFolder("test")
      * @joy_web_attributes_View("get")

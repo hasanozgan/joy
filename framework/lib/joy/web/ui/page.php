@@ -30,7 +30,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
         parent::__construct();
         //TODO: Themes Folders..
 
-        $this->SetDefaultThemeFolder($this->Config->Get("app.folders.default_theme"));
+        $this->SetDefaultThemeFolder($this->Config->Get("app.default_theme_folder"));
         $this->SetViewFileExtensionName($this->Config->Get("joy.extensions.view"));
         $this->SetLayoutFileExtensionName($this->Config->Get("joy.extensions.layout"));
         $this->SetThemeName($this->Config->Get("app.theme"));
@@ -43,7 +43,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     public function GetViewFilePath()
     {
         $view_path = sprintf("%s/%s/%s.%s", 
-                                     rtrim($this->Config->Get("app.document_root.folders.path.view"), "/"),
+                                     rtrim($this->Config->Get("app.folders.path.view"), "/"),
                                      $this->GetViewFolderName(),
                                      $this->GetViewFileName(),
                                      $this->GetViewFileExtensionName());
@@ -58,27 +58,27 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
         }
 
         $default_theme_folder = $this->GetDefaultThemeFolder();
-        return str_replace("%theme%", $default_theme_folder, $view_path);
+        return str_replace("%app.theme%", $default_theme_folder, $view_path);
     }
 
     public function GetLayoutFilePath()
     {
         $layout_path = sprintf("%s/%s.%s", 
-                                     rtrim($this->Config->Get("app.document_root.folders.path.layout"), "/"),
+                                     rtrim($this->Config->Get("app.folders.path.layout"), "/"),
                                      $this->GetLayoutFileName(),
                                      $this->GetLayoutFileExtensionName());
 
         $theme_folder = $this->GetThemeName();
 
         if ($theme_folder) {
-            $lpath = str_replace("%theme%", $theme_folder, $layout_path);
+            $lpath = str_replace("%app.theme%", $theme_folder, $layout_path);
             if (file_exists($lpath)) {
                 return $lpath;
             }
         }
 
         $default_theme_folder = $this->GetDefaultThemeFolder();
-        return str_replace("%theme%", $default_theme_folder, $layout_path);
+        return str_replace("%app.theme%", $default_theme_folder, $layout_path);
     }
 
     public function SetDefaultThemeFolder($name)
