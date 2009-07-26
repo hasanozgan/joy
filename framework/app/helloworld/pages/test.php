@@ -4,16 +4,16 @@ import("helloworld.BasePage");
 
 /**
  * @helloworld_attributes_TestAttribute 
- * @joy_web_attributes_Layout("tes2t")
+ * @joy_web_attributes_Layout("test")
  * @joy_web_attributes_Theme("WhiteHouse")
- *@joy_web_attributes_ViewFolder("te2st") 
+ *@joy_web_attributes_ViewFolder("test") 
  * @joy_web_attributes_Authorization(Roles={"Admin", "Developer"}) 
  */  
 class TestPage extends helloworld_BasePage
 {
     public function index()
     {
-    //    var_dump("Home Page");
+        // var_dump("Home Page");
     }
 
     public function OnInit($obj, $args)
@@ -23,7 +23,7 @@ class TestPage extends helloworld_BasePage
 
     public function OnLoad($obj, $args)
     {
-        $this->Data["hayri"]="test";
+        $this->Data["page"]="data";
     //    var_dump("OnLoad");
     }
 
@@ -49,8 +49,8 @@ class TestPage extends helloworld_BasePage
      */ 
     public function get()
     {
-        $this->Data["netology"]="software foundation";
-        $this->Models->User;
+        $this->Data["action"]="data";
+//        var_dump($this->Models->User);
 
         /*
         var_dump($this->Parameters->Get("code"));

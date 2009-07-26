@@ -1,14 +1,12 @@
 <html>
+    <head>
+        <title>Test Page</title>
+        {% css_handler %}
+    </head>
+    <body>
 
-<head>
-<title>Test Page</title>
-</head>
-<body>
+        {% place_holder %}
 
-    {% place_holder %}
-
-</body>
-
+        {% js_handler %}
+    </body>
 </html>
-
-

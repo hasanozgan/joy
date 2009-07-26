@@ -1,15 +1,13 @@
 <html>
-
-<head>
-<title>Test Page</title>
-</head>
-<body>
-<fieldset>
-<legend>BlueMoon test.layout</legend>
-    {% place_holder %}
-</fieldset>
-</body>
-
+    <head>
+        <title>Test Page</title>
+        {% css_handler %}
+    </head>
+    <body>
+    <fieldset>
+        <legend>BlueMoon test.layout</legend>
+            {% place_holder %}
+    </fieldset>
+    {% js_handler %}
+    </body>
 </html>
-
-
