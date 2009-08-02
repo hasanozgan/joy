@@ -1,7 +1,6 @@
 [app]
     name = helloworld
     version = 0.1.0
-    configuration = development
     locale = tr
     root = APP_ROOT
     debug = true
