@@ -15,6 +15,8 @@ define("NAMESPACE_SHM_KEY", ftok(__FILE__, "H"));
 
 class joy_Namespace
 {
+    static $IsAddedLibraryPath;
+
     static function Items($key=null, $value=null)
     {
         $shm_id = shmop_open(NAMESPACE_SHM_KEY, "c", 0644, NAMESPACE_SHM_SIZE);
@@ -47,7 +49,20 @@ class joy_Namespace
         $lib_folders = array($config->get("joy.folders.path.library"),
                              $config->get("app.folders.path.library"));
 
-        $namespace_path_name = strtolower(str_replace(".", DIRECTORY_SEPARATOR, $namespace));
+        // Set Include Path For Library Paths
+        if (self::$IsAddedLibraryPath == false) {
+
+            $pathList = split(PATH_SEPARATOR, get_include_path());
+            foreach($lib_folders as $item) {
+                array_push($pathList, $item);
+            }
+            $pathList = array_unique($pathList);
+            set_include_path(implode(PATH_SEPARATOR, $pathList));
+            self::$IsAddedLibraryPath = true;
+        }
+
+
+        $namespace_path_name = str_replace(".", DIRECTORY_SEPARATOR, $namespace);
         foreach ($lib_folders as $lib_root) 
         {
             $lib_root = rtrim($lib_root, DIRECTORY_SEPARATOR);
