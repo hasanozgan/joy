@@ -28,14 +28,17 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     public function __construct()
     {
         parent::__construct();
-        //TODO: Themes Folders..
+        $this->Data = array();
 
         $this->SetDefaultThemeFolder($this->Config->Get("app.default_theme_folder"));
         $this->SetViewFileExtensionName($this->Config->Get("joy.extensions.view"));
         $this->SetLayoutFileExtensionName($this->Config->Get("joy.extensions.layout"));
         $this->SetThemeName($this->Config->Get("app.theme"));
         $this->SetViewFolderName(get_class($this));
+    }
 
+    public function DispatchEvents()
+    {
         $this->Event->Dispatch("Init"); 
         $this->Event->Dispatch("Load");
     }

@@ -13,23 +13,27 @@ import("joy.Object");
 
 class joy_data_Dictionary extends joy_Object
 {
-    protected $list;
+    protected $_list;
 
     public function __construct($array=null)
     {
         parent::__construct();
-
-        $this->list = $array;
+        $this->_list = $array;
     }
 
     public function Get($key)
     {
-        return $this->list[$key];
+        return $this->_list[$key];
     }
 
     public function Set($key, $value)
     {
-        $this->list[$key] = $value; 
+        $this->_list[$key] = $value; 
+    }
+
+    public function GetAll()
+    {
+        return $this->_list;
     }
 }
 

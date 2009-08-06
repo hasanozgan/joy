@@ -40,6 +40,9 @@ class joy_web_PageFactory extends joy_Object
         $page = $class->newInstance();
         $page->SetPageMeta($pageMeta);
 
+        //  Dispatch Page Events...
+        $page->DispatchEvents();
+
         return $page;
     }
 
@@ -182,11 +185,13 @@ class joy_web_PageFactory extends joy_Object
  
         // Set Home Page
         if ("/" == trim($uri)) $uri .= $config->get("app.home_page")."/";
-
+        
         // Find Page 
         foreach ($rules as $r) 
         {
             $filter = str_replace("{*}", "(.*)", $r["alias"]);
+            $filter = str_replace("{0-9}", "[0-9]", $filter);
+
             $filter = str_replace("/", "\/", $filter);
 
             if (eregi($filter, $uri)) {
