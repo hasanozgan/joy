@@ -27,6 +27,7 @@ abstract class joy_web_Attribute extends joy_Object
     public function Run(&$page)
     {
         $this->Page =& $page;
+
         if (method_exists($this, "Execute")) {
             joy_Logger::getInstance()->Debug("Execute Attribute (".get_class($this)."::Run)",
                                          __FILE__, __LINE__);
