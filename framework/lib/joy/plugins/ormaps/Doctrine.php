@@ -11,7 +11,7 @@
 
 import("joy.Object");
 import("joy.plugins.IORMap");
-import("joy.vendors.Loader");
+import("joy.vendor.Loader");
 
 class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORMap
 {
@@ -21,7 +21,7 @@ class joy_plugins_ormaps_Doctrine extends joy_Object implements joy_plugins_IORM
     {
         parent::__construct();
 
-        $doctrine = new joy_vendors_Loader("doctrine");
+        $doctrine = new joy_vendor_Loader("doctrine");
         $doctrine->Import("Doctrine.php");
         spl_autoload_register(array("doctrine", "autoload"));
 

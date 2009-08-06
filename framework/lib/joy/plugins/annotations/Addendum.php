@@ -10,13 +10,13 @@
  */
 
 import("joy.plugins.IAnnotation");
-import("joy.vendors.Loader");
+import("joy.vendor.Loader");
 
 class joy_plugins_annotations_Addendum extends joy_Object implements joy_plugins_IAnnotation
 {
     function __construct()
     {
-        $addendum = new joy_vendors_Loader("addendum");
+        $addendum = new joy_vendor_Loader("addendum");
         $addendum->Import("annotations.php");
     }
 

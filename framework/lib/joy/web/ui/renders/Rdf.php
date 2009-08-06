@@ -20,7 +20,7 @@ class joy_web_ui_renders_Rdf extends joy_Object implements joy_web_ui_renders_IR
     public function __construct($page)
     {
         parent::__construct();
-        $smartyLoader = new joy_vendors_Loader("misc");
+        $smartyLoader = new joy_vendor_Loader("misc");
         $smartyLoader->Import("rdf/HV_ArrayToRDFCollection.php");
                 
         $this->page =& $page;

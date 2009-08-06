@@ -12,7 +12,7 @@
 import("joy.Object");
 import("joy.plugins.ITemplateEngine");
 import("joy.web.ui.RenderFactory");
-import("joy.vendors.Loader");
+import("joy.vendor.Loader");
 
 class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugins_ITemplateEngine
 {
@@ -31,7 +31,7 @@ class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugi
         $plugin_dirs[] = sprintf("%s/%s", $framework_root, $this->Config->Get("joy.vendors.smarty.settings.joy_plugins_dir"));
         $plugin_dirs[] = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.smarty.settings.app_plugins_dir"));
 
-        $smartyLoader = new joy_vendors_Loader("smarty");
+        $smartyLoader = new joy_vendor_Loader("smarty");
         $smartyLoader->Import("Smarty.class.php");
 
         // Set smarty parameters app.vendors.smarty.settings section in config.ini file

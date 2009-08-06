@@ -11,7 +11,7 @@
 
 import("joy.Object");
 
-class joy_vendors_Loader extends joy_Object
+class joy_vendor_Loader extends joy_Object
 {
     public $path;
 

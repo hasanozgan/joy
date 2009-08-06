@@ -20,7 +20,7 @@ class joy_web_ui_renders_Json extends joy_Object implements joy_web_ui_renders_I
     public function __construct($page)
     {
         parent::__construct();
-        $smartyLoader = new joy_vendors_Loader("misc");
+        $smartyLoader = new joy_vendor_Loader("misc");
         $smartyLoader->Import("json/FastJSON.class.php5");
 
         $this->page =& $page;
