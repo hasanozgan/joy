@@ -28,30 +28,27 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
     
     public function Fetch()
     {
+        // Layout file is exists
+        if (!file_exists($this->page->GetLayoutFilePath())) {
+            trigger_error("Layout File Not Found", E_USER_ERROR);
+            return false;
+        }
+
         // Assign all data
         foreach ($this->page->Data as $key=>$val) {
             $this->template->Assign($key, $val);
         }
 
-        $result = $this->template->Fetch($this->page->GetViewFilePath());
+        // Render Action Output
+        $action_output = $this->template->Fetch($this->page->GetViewFilePath());
+        $this->template->Assign("ACTION_OUTPUT", $action_output);
 
-        if (file_exists($this->page->GetLayoutFilePath())) {
-            $layout = $this->template->Fetch($this->page->GetLayoutFilePath());
-            $result = str_replace(joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER, $result, $layout);
+        // Assign all data
+        foreach ($this->page->Data as $key=>$val) {
+            $this->template->Assign($key, $val);
         }
 
-        return $result;
-
-/* Page Info *
- *
-        var_dump($this->page->GetThemeName());
-        var_dump($this->page->GetLayoutFileName());
-        var_dump($this->page->GetViewFileName());  
-        var_dump($this->page->GetViewFolderName());
-
-        var_dump($this->page->GetViewFilePath());
-        var_dump($this->page->GetLayoutFilePath());
- */
+        return $this->template->Fetch($this->page->GetLayoutFilePath());
     }
 
     public function Display()
