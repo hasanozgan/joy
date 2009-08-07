@@ -161,6 +161,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
         $this->Event->Register("Init", "OnInit", $this);
         $this->Event->Register("Load", "OnLoad", $this);
+        $this->Event->Register("PreRender", "OnPreRender", $this);
         $this->Event->Register("Render", "OnRender", $this);
         $this->Event->Register("Unload", "OnUnload", $this);
         $this->PageEvents();

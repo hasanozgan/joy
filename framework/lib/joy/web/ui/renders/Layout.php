@@ -41,7 +41,9 @@ class joy_web_ui_renders_Layout extends joy_Object implements joy_web_ui_renders
 
         // Render Action Output
         $action_output = $this->template->Fetch($this->page->GetViewFilePath());
-        $this->template->Assign("ACTION_OUTPUT", $action_output);
+        $this->page->Data["page"]["PlaceHolder"] = $action_output;
+
+        $this->template->Assign("page", $this->page->Data["page"]);
 
         // Assign all data
         foreach ($this->page->Data as $key=>$val) {

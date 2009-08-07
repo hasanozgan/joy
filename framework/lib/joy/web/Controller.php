@@ -23,6 +23,8 @@ class joy_web_Controller extends joy_web_HttpContext
     protected $RenderType;
     protected $Render;
     protected $Parameters;
+    protected $Javascripts;
+    protected $Styles;
     protected $Models;
     protected $Output;
 
@@ -32,6 +34,8 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->ActionArguments = $pageMeta->ActionArguments;
         $this->RenderType = (empty($pageMeta->RenderType) ? joy_web_ui_RenderFactory::LAYOUT : $pageMeta->RenderType);
         $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
+        $this->Javascripts = new joy_data_Dictionary();
+        $this->Styles = new joy_data_Dictionary();
         $this->Models = new joy_web_Model();
         $this->SetViewFileName($this->Action);
     }
@@ -79,6 +83,9 @@ class joy_web_Controller extends joy_web_HttpContext
 
     public function Render()
     {
+        // Pre Render Process...
+        $this->Event->Dispatch("PreRender");
+
         $this->Render = joy_web_ui_RenderFactory::Builder(&$this);
         if (!$this->Render) {
             throw new Exception("Render Not Found");

@@ -31,6 +31,12 @@ class joy_plugins_templateengines_Tal extends joy_Object implements joy_plugins_
 
         $this->tal = new PHPTAL($path);
 
+        if (!empty($this->data)) {
+            foreach($this->data as $k=>$v) {
+                $this->tal->$k = $v;
+            }
+        }
+
         return $this->tal->execute();
     }
 
