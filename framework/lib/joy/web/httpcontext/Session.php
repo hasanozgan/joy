@@ -11,14 +11,22 @@
 
 import("joy.Object");
 
-class joy_web_Session extends joy_Object
+class joy_web_httpcontext_Session extends joy_Object
 {
     private $_session;
+    private static $instance;
 
-    public function __construct()
+    public static function &getInstance()
     {
-        parent::__construct();
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
 
+        return self::$instance;
+    }
+
+    public function Init()
+    {
         session_start();
         $this->_session = new joy_data_Dictionary($_SESSION);
     }

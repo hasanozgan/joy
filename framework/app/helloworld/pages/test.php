@@ -49,6 +49,9 @@ class TestPage extends helloworld_BasePage
      */ 
     public function get()
     {
+//     $product =  var_dump($this->Models->Products->getById($id));
+//     $product->Type
+// $this->View->SetTheme("Electronic");
         $this->Data["action"]="data";
 //        var_dump($this->Models->User);
 

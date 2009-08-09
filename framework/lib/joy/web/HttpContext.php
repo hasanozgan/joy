@@ -10,42 +10,39 @@
  */
 
 import("joy.Object");
-import("joy.web");
-import("joy.web.ui");
+import("joy.web.httpcontext");
 
-/* @TODO
- *   All Classes will Singleton Class
- */
 class joy_web_HttpContext extends joy_Object
 {
-    public $View;
-    public $Theme;
-    public $Region;
-    public $Translate;
     public $Request;
     public $Response;
     public $Session;
     public $Cookie;
     public $Server;
-    public $Cache;
+    public $Header;
     public $User; //Default Anonymous
+    public $Locale;
 
-    public function __construct()
+    private static $_httpContext;
+
+    public static function getInstance()
     {
-        parent::__construct();
+        if (!is_object(self::$_httpContext)) {
+            self::$_httpContext = new self();
+        }
 
-        $this->Region = new joy_web_Region($ip_address);
-        $this->Translate = new joy_web_Translate(&$this->Region->Language);
-        $this->Request = new joy_web_Request();
-        $this->Response = new joy_web_Response();
-        $this->Session = new joy_web_Session();
-        $this->Cookie = new joy_web_Cookie();
-        $this->Cache = new joy_web_Cache();
+        return self::$_httpContext;
+    }
 
-/*        $this->View = new joy_web_ui_View();
-        $this->Theme = new joy_web_ui_Theme();
-        $this->View->SetTheme($this->Theme);
-        $this->View->SetTranslate($this->Translate);*/
+    public function Init()
+    {
+        $this->Request = joy_web_httpcontext_Request::getInstance();
+        $this->Response = joy_web_httpcontext_Response::getInstance();
+        $this->Session = joy_web_httpcontext_Session::getInstance();
+        $this->Cookie = joy_web_httpcontext_Cookie::getInstance();
+        $this->Header = joy_web_httpcontext_Header::getInstance();
+        $this->Server = joy_web_httpcontext_Server::getInstance();
+        $this->User = joy_web_httpcontext_User::getInstance();
     }
 }
 

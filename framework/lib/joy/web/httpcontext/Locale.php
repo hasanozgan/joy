@@ -11,9 +11,20 @@
 
 import("joy.Object");
 
-class joy_region_Charset extends joy_Object
+class joy_web_httpcontext_Locale extends joy_Object
 {
-    
+    private static $instance;
+
+    public static function &getInstance()
+    {
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+
 }
 
 ?>

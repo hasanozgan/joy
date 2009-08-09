@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-class joy_Event 
+class joy_system_Event 
 {
     private $values;
     private static $instance;
@@ -17,7 +17,7 @@ class joy_Event
     static function &getInstance()
     {
         if (!is_object(self::$instance)) {
-            self::$instance = new joy_Event();
+            self::$instance = new joy_system_Event();
         }
 
         return self::$instance;
@@ -25,7 +25,7 @@ class joy_Event
 
     public function Register($name, $method, $class)
     {
-        joy_Logger::getInstance()->Debug("Event Register (".get_class($class)."::".$method.")",
+        joy_system_Logger::getInstance()->Debug("Event Register (".get_class($class)."::".$method.")",
                                          __FILE__, __LINE__);
 
         $this->values[$name][] = array("class"=>$class, "method"=>$method);
@@ -41,7 +41,7 @@ class joy_Event
         {
             foreach ($this->values[$name] as $item) 
             {
-                joy_Logger::getInstance()->Debug("Event Dispatch (".get_class($item["class"])."::".$item["method"].")",
+                joy_system_Logger::getInstance()->Debug("Event Dispatch (".get_class($item["class"])."::".$item["method"].")",
                                                  __FILE__, __LINE__);
 
                 $ref = new ReflectionClass($item["class"]);

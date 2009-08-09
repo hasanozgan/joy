@@ -14,7 +14,7 @@
 // 1) Required file save method
 // 2) 
 
-class joy_Logger
+class joy_system_Logger
 {
     private $log_data = array();
     private static $instance;
@@ -31,7 +31,7 @@ class joy_Logger
     static function &getInstance()
     {
         if (!is_object(self::$instance)) {
-            self::$instance = new joy_Logger();
+            self::$instance = new joy_system_Logger();
         }
 
         return self::$instance;

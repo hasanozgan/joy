@@ -11,16 +11,25 @@
 
 import("joy.Object");
 
-class joy_web_Request extends joy_data_Dictionary
+class joy_web_httpcontext_Request extends joy_data_Dictionary
 {
     public $Form;
     public $QueryString;
     public $Header;
 
-    public function __construct()
-    {
-        parent::__construct();
+    private static $instance;
 
+    public static function &getInstance()
+    {
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    public function Init()
+    {
         $this->list = new joy_data_Dictionary($_REQUEST);
         $this->Form = new joy_data_Dictionary($_POST);
         $this->QueryString = new joy_data_Dictionary($_GET);

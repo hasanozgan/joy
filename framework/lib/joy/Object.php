@@ -9,23 +9,34 @@
  * file that was distributed with this source code.
  */
 
+using("joy.system");
+
 class joy_Object
 {
     public $Config;
     public $Logger;
     public $Event;
+    public $Cache;
 
     public function __construct()
     {
         $this->Config =& joy_Configure::getInstance();
-        $this->Logger =& joy_Logger::getInstance();
-        $this->Event =& joy_Event::getInstance();
+        $this->Logger =& joy_system_Logger::getInstance();
+        $this->Event =& joy_system_Event::getInstance();
+        $this->Cache =& joy_system_Cache::getInstance();
+
         $this->RegisterEvents();
+        $this->Init();
+    }
+
+    protected function Init()
+    {
+        // Inheritance
     }
 
     protected function RegisterEvents()
     {
-        //TODO ...
+        // Inheritance
     }
 }
 

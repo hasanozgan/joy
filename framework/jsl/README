@@ -4,5 +4,20 @@ Javascript Library
 jQuery 
 jQuery Cache System
 jQuery Global Event Handler
-jQuery Page Load Handler
+jQuery Page Load Handler: Sayfa yuklenmesi sirasinda sayfa yuklendikten sonra sayfanin tum ogelerini gosteren bir
+yapidadir. Boylece sayfa yuklendiginde sayfayi tek seferde goruntulenmesini saglar.
 jQuery Dynamic Javascript, Css, Image Loader
+
+Suggest
+----------------
+FrontEnd jQueryCache
+http://plugins.jquery.com/project/jCache
+ 
+JQuery ile Event Handler Mimarisi
+http://lab.distilldesign.com/event-delegation/
+
+Lightweight js, css and images (bağımlıklar vb şeylerin widget içinde kalması için ideal görünüyor.)
+http://www.unwrongest.com/projects/lazy/
+http://code.google.com/p/ajaxsoft/wiki/xLazyLoader
+
+ 

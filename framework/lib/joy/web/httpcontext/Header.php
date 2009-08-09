@@ -11,9 +11,19 @@
 
 import("joy.Object");
 
-class joy_region_MoneyFormat extends joy_Object
+class joy_web_httpcontext_Header extends joy_Object
 {
-    
+    private static $instance;
+
+    public static function &getInstance()
+    {
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
 }
 
 ?>

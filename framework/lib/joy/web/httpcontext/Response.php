@@ -11,14 +11,22 @@
 
 import("joy.Object");
 
-class joy_web_Response extends joy_Object
+class joy_web_httpcontext_Response extends joy_Object
 {
     private $headers;
+    private static $instance;
 
-    public function __construct()
+    public static function &getInstance()
     {
-        parent::__construct();
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
 
+        return self::$instance;
+    }
+
+    public function Init()
+    {
         $this->Event->Register("Header", "OnHeader", $this);
         $this->headers = array();
     }

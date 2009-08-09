@@ -111,7 +111,7 @@ class joy_web_PageFactory extends joy_Object
             $app_rules = (array)unserialize(shmop_read($shm_id, 0, RULES_SHM_SIZE));
         }
         else {
-            joy_Logger::getInstance()->error("Cache dont usage in Router.Ini Loading time", __FILE__, __LINE__);
+            joy_system_Logger::getInstance()->error("Cache dont usage in Router.Ini Loading time", __FILE__, __LINE__);
         }
 
         if ($app_rules[$rules_file]["time"] != filectime($rules_file))
