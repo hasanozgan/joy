@@ -41,7 +41,6 @@ class joy_plugins_templateengines_Smarty extends joy_Object implements joy_plugi
         $this->smarty->right_delimiter = "%}";
         $this->smarty->compile_dir = $compile_dir;
         $this->smarty->plugins_dir = array_merge((array)$this->smarty->plugins_dir, $plugin_dirs);
-        $this->smarty->PLACE_HOLDER_MARKER = joy_web_ui_RenderFactory::PLACE_HOLDER_MARKER;
     }
 
     public function Fetch($path)

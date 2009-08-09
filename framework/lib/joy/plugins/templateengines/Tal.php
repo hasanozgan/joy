@@ -16,27 +16,46 @@ import("joy.vendor.Loader");
 
 class joy_plugins_templateengines_Tal extends joy_Object implements joy_plugins_ITemplateEngine
 {
-    private $smarty;
+    private $tal;
 
     function __construct()
     {
         parent::__construct();
         $this->data = array();
+        $talLoader = new joy_vendor_Loader("tal");
+        $talLoader->Import("PHPTAL.php");
+
+        $this->tal = new PHPTAL();
+        $this->tal->setPreFilter(using("vendors.phptal.filters.PreFilter"));
+        $this->tal->setPostFilter(using("vendors.phptal.filters.PostFilter"));
+
+        $framework_root = rtrim($this->Config->Get("joy.root"), "/");
+        $app_root = rtrim($this->Config->Get("app.root"), "/");
+
+        $plugin_dirs[] = sprintf("%s/%s", $framework_root, $this->Config->Get("joy.vendors.tal.settings.joy_modifiers_dir"));
+        $plugin_dirs[] = sprintf("%s/%s", $app_root, $this->Config->Get("joy.vendors.tal.settings.app_modifiers_dir"));
+
+        foreach ($plugin_dirs as $path) {
+            if ($dh = opendir($path)) {
+                while (($file = readdir($dh)) !== false) {
+                    if ($file == "." || $file == "..") continue;
+
+                    list($filename, $ext) = explode(".",$file);
+                    if (in_array($ext, array(CLASS_EXTENSION))) {
+                        $file = sprintf("%s%s%s", rtrim($path, DIRECTORY_SEPARATOR), 
+                                        DIRECTORY_SEPARATOR, 
+                                        ltrim($file, DIRECTORY_SEPARATOR));
+                        require_once($file);
+                    }
+                }
+                closedir($dh);
+            }
+        }
     }
 
     public function Fetch($path)
     {
-        $smartyLoader = new joy_vendor_Loader("tal");
-        $smartyLoader->Import("PHPTAL.php");
-
-        $this->tal = new PHPTAL($path);
-
-        if (!empty($this->data)) {
-            foreach($this->data as $k=>$v) {
-                $this->tal->$k = $v;
-            }
-        }
-
+        $this->tal->setTemplate($path); 
         return $this->tal->execute();
     }
 
@@ -47,7 +66,7 @@ class joy_plugins_templateengines_Tal extends joy_Object implements joy_plugins_
 
     public function Assign($key, $value)
     {
-        $this->data[$key] = $value;
+        $this->tal->$key = $value;
     }
 }
 

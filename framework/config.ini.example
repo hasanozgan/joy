@@ -18,6 +18,14 @@
     joy_plugins_dir = lib/vendors/smarty/plugins
     app_plugins_dir = lib/vendors/smarty/plugins
 
+[joy.vendors.tal.settings]
+    cache = true
+    compile_dir = tmp/tal
+    joy_modifiers_dir = lib/vendors/phptal/modifiers
+    app_modifiers_dir = lib/vendors/phptal/modifiers
+    joy_macros_dir = lib/vendors/phptal/macros
+    app_macros_dir = lib/vendors/phptal/macros
+
 [joy.extensions]
     view = view
     layout = layout
