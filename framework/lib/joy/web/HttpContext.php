@@ -19,9 +19,8 @@ class joy_web_HttpContext extends joy_Object
     public $Session;
     public $Cookie;
     public $Server;
-    public $Header;
-    public $User; //Default Anonymous
     public $Locale;
+    public $User; //Default Anonymous
 
     private static $_httpContext;
 
@@ -40,7 +39,6 @@ class joy_web_HttpContext extends joy_Object
         $this->Response = joy_web_httpcontext_Response::getInstance();
         $this->Session = joy_web_httpcontext_Session::getInstance();
         $this->Cookie = joy_web_httpcontext_Cookie::getInstance();
-        $this->Header = joy_web_httpcontext_Header::getInstance();
         $this->Server = joy_web_httpcontext_Server::getInstance();
         $this->User = joy_web_httpcontext_User::getInstance();
     }

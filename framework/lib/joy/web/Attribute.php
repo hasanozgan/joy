@@ -42,14 +42,14 @@ abstract class joy_web_Attribute extends joy_Object
         $annotation_helper = using($namespace);
 
         // Run Page Attributes
-        $attributes = $annotation_helper->GetPageAttributes($pageObject->GetPageName());
+        $attributes = $annotation_helper->GetPageAttributes($pageObject->Meta->Page);
         foreach($attributes as $attribute) {
             if ($attribute instanceof joy_web_Attribute) 
                 $attribute->Run(&$pageObject);
         }
 
         // Run Action Attributes
-        $attributes = $annotation_helper->GetActionAttributes($pageObject->GetPageName(), $pageObject->GetActionName());
+        $attributes = $annotation_helper->GetActionAttributes($pageObject->Meta->Page, $pageObject->Meta->Action);
         foreach($attributes as $attribute) {
             if ($attribute instanceof joy_web_Attribute) 
                 $attribute->Run(&$pageObject);

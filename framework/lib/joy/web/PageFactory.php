@@ -22,9 +22,23 @@ class joy_web_PageFactory extends joy_Object
 {
     static function Builder()
     {
-        $pageMeta = self::PreparePageMeta();
+        $uri = self::PrepareUri();
+        $pageMeta = self::PreparePageMeta($uri);
 
         return self::Loader($pageMeta);
+    }
+
+    static function Loader($pageMeta)
+    {
+        $page =& self::CreatePage($pageMeta);
+
+        $page->loadAttributes(); 
+
+        $page->runMethod();
+
+        $page->render();
+
+        $page->complete();
     }
 
     static function CreatePage($pageMeta)
@@ -38,7 +52,7 @@ class joy_web_PageFactory extends joy_Object
 
         // Page Instance 
         $page = $class->newInstance();
-        $page->SetPageMeta($pageMeta);
+        $page->setPageMeta($pageMeta);
 
         //  Dispatch Page Events...
         $page->DispatchEvents();
@@ -46,18 +60,6 @@ class joy_web_PageFactory extends joy_Object
         return $page;
     }
 
-    static function Loader($pageMeta)
-    {
-        $page =& self::CreatePage($pageMeta);
-
-        $page->LoadAttributes(); 
-
-        $page->RunMethod();
-
-        $page->Render();
-
-        $page->Complete();
-    }
 
     static function GetPages()
     {
@@ -176,10 +178,9 @@ class joy_web_PageFactory extends joy_Object
         return rtrim($path, "/")."/";
     }
 
-    static function PreparePageMeta()
+    static function PreparePageMeta($uri)
     {
         $rules = self::GetRules();
-        $uri = self::PrepareUri();
 
         $config = joy_Configure::getInstance();
  

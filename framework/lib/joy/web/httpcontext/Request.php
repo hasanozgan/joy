@@ -16,6 +16,8 @@ class joy_web_httpcontext_Request extends joy_data_Dictionary
     public $Form;
     public $QueryString;
     public $Header;
+    public $Parameter;
+    public $IsPostBack;
 
     private static $instance;
 
@@ -33,7 +35,9 @@ class joy_web_httpcontext_Request extends joy_data_Dictionary
         $this->list = new joy_data_Dictionary($_REQUEST);
         $this->Form = new joy_data_Dictionary($_POST);
         $this->QueryString = new joy_data_Dictionary($_GET);
+        $this->Parameter = new joy_data_Dictionary();
         $this->Header = new joy_data_Dictionary(headers_list());
+        $this->IsPostBack = (!empty($_POST));
 
         $this->Event->Register("SafeRequest", "OnSafeRequest", $this);
     }

@@ -21,7 +21,7 @@ class joy_web_ui_RenderFactory extends joy_Object
     public static function Builder($page)
     {
         if ($page instanceof joy_web_ui_IPage) {
-            $renderType = $page->GetRenderType();
+            $renderType = $page->Meta->RenderType;
             return self::ClassLoader($renderType, &$page);
         }
 

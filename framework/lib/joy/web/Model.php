@@ -15,6 +15,19 @@ class joy_web_Model extends joy_Object
 {
     public $ormap;
 
+    private static $instance;
+
+    public static function &getInstance()
+    {
+        if (!is_object(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+
+
     public function __construct()
     {
         parent::__construct();

@@ -47,8 +47,8 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     {
         $view_path = sprintf("%s/%s/%s.%s", 
                                      rtrim($this->Config->Get("app.folders.path.view"), "/"),
-                                     $this->GetViewFolderName(),
-                                     $this->GetViewFileName(),
+                                     $this->Meta->Page,
+                                     $this->Meta->Action,
                                      $this->GetViewFileExtensionName());
 
         $theme_folder = $this->GetThemeName();
@@ -161,7 +161,6 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
         $this->Event->Register("Init", "OnInit", $this);
         $this->Event->Register("Load", "OnLoad", $this);
-        $this->Event->Register("PreRender", "OnPreRender", $this);
         $this->Event->Register("Render", "OnRender", $this);
         $this->Event->Register("Unload", "OnUnload", $this);
         $this->PageEvents();

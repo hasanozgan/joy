@@ -19,6 +19,14 @@ import("joy.web.ui.renders.Layout");
 
 class joy_web_Controller extends joy_web_HttpContext
 {
+    public $View;
+    public $Model;
+    public $Meta;
+    public $Resource;
+
+    protected $_scripts;
+    protected $_styles;
+
     protected $Action;
     protected $RenderType;
     protected $Render;
@@ -28,46 +36,46 @@ class joy_web_Controller extends joy_web_HttpContext
     protected $Models;
     protected $Output;
 
-    public function SetPageMeta($pageMeta)
+    public function Init()
     {
-        $this->Action = $pageMeta->Action;
-        $this->ActionArguments = $pageMeta->ActionArguments;
-        $this->RenderType = (empty($pageMeta->RenderType) ? joy_web_ui_RenderFactory::LAYOUT : $pageMeta->RenderType);
-        $this->Parameters = new joy_data_Dictionary($pageMeta->PageArguments);
-        $this->Javascripts = new joy_data_Dictionary();
-        $this->Styles = new joy_data_Dictionary();
-        $this->Models = new joy_web_Model();
-        $this->SetViewFileName($this->Action);
+        parent::Init();
+
+        $this->View = new joy_web_View();
+        $this->Model = joy_web_Model::getInstance();
+        $this->Resource = joy_web_Resource::getInstance();
     }
 
-    public function GetRenderType()
+    protected function RegisterEvents()
     {
-        return $this->RenderType;
+        parent::RegisterEvents();
+
+        $this->Event->Register("DBConnection", "OnDBConnection", $this);
+        $this->Event->Register("PreRender", "OnPreRender", $this);
+        $this->Event->Register("PostRender", "OnPostRender", $this);
     }
 
-    public function GetPageName()
+    public function setPageMeta($pageMeta)
     {
-        return get_class($this);
+        $this->Meta =& $pageMeta;
+        $this->Request->Parameter = new joy_data_Dictionary($this->Meta->PageArguments);
+        $this->View->setRenderType($this->Meta->RenderType);
+        $this->View->setViewFile($this->Meta->Action);
+        $this->View->setViewFolder($this->Meta->Page);
     }
-
-    public function GetActionName()
+    
+    public function loadAttributes()
     {
-        return $this->Action;
-    }
-
-    public function LoadAttributes()
-    {
-        $this->Logger->Debug("Controller::LoadAttributes", __FILE__, __LINE__);
+        $this->Logger->Debug("Controller::Attributes", __FILE__, __LINE__);
 
         joy_web_Attribute::Loader(&$this);
     }
 
-    public function RunMethod()
+    public function runMethod()
     {
         $this->Logger->Debug("Controller::RunMethod (".$this->Action.")", __FILE__, __LINE__);
 
         $class = new ReflectionClass($this);
-        $class->getMethod($this->Action)->invoke($this, $this->ActionArguments);
+        $class->getMethod($this->Meta->Action)->invoke($this, $this->Meta->ActionArguments);
     }
 
     private function appendTraceLog($output)
@@ -81,7 +89,7 @@ class joy_web_Controller extends joy_web_HttpContext
         return $output;
     }
 
-    public function Render()
+    public function render()
     {
         // Pre Render Process...
         $this->Event->Dispatch("PreRender");
@@ -92,23 +100,17 @@ class joy_web_Controller extends joy_web_HttpContext
         }
         $output = $this->Render->Fetch();
       
-        $this->Event->Dispatch("Header");
+        $this->Event->Dispatch("PreHeader");
         $this->Event->Dispatch("Render", &$output);
         $this->PageOutput = $output;
     }
 
-    public function Complete()
+    public function complete()
     {
         $this->Event->Dispatch("Unload");
         echo $this->appendTraceLog($this->PageOutput);
     }
 
-    protected function RegisterEvents()
-    {
-        parent::RegisterEvents();
-
-        $this->Event->Register("DBConnection", "OnDBConnection", $this);
-    }
 }
 
 ?>

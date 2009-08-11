@@ -11,8 +11,11 @@
 
 import("joy.Object");
 
-class joy_web_httpcontext_Header extends joy_Object
+class joy_web_Resource extends joy_Object
 {
+    public $Scripts;
+    public $Styles;
+
     private static $instance;
 
     public static function &getInstance()
@@ -24,6 +27,11 @@ class joy_web_httpcontext_Header extends joy_Object
         return self::$instance;
     }
 
+    public function Init()
+    {
+        $this->Scripts = new joy_data_Dictionary();
+        $this->Styles = new joy_data_Dictionary();
+    }
 }
 
 ?>
