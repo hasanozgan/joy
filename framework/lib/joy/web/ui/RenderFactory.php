@@ -14,9 +14,9 @@ import("joy.web");
 
 class joy_web_ui_RenderFactory extends joy_Object
 {
-    const LAYOUT="layout";
-    const VIEW="view";
-    const PLACE_HOLDER_MARKER = "{* __PLACE_HOLDER__ *}";
+    const LAYOUT = "layout";
+    const VIEW = "view";
+    const DEFAULT_RENDER_TYPE = self::LAYOUT;
 
     public static function Builder($page)
     {
@@ -28,6 +28,11 @@ class joy_web_ui_RenderFactory extends joy_Object
         return null;
     }
 
+    public static function GetRenderType($type)
+    {
+        return empty($type) ? self::DEFAULT_RENDER_TYPE : $type;
+    }
+ 
     public static function ClassLoader($type, $page)
     {
         $config = joy_Configure::getInstance();

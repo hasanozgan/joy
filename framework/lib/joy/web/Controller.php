@@ -16,7 +16,6 @@ import("joy.web.Attribute");
 import("joy.web.ui.RenderFactory");
 import("joy.web.ui.renders.Layout");
 
-
 class joy_web_Controller extends joy_web_HttpContext
 {
     public $View;
@@ -24,15 +23,10 @@ class joy_web_Controller extends joy_web_HttpContext
     public $Meta;
     public $Resource;
 
-    protected $_scripts;
-    protected $_styles;
-
     protected $Action;
     protected $RenderType;
     protected $Render;
     protected $Parameters;
-    protected $Javascripts;
-    protected $Styles;
     protected $Models;
     protected $Output;
 

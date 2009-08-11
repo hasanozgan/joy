@@ -17,6 +17,7 @@ define("PAGES_SHM_SIZE", 1024*50);
 define("PAGES_SHM_KEY", ftok(__FILE__, "P"));
 
 import("joy.Object");
+import("joy.web.ui.RenderFactory");
 
 class joy_web_PageFactory extends joy_Object
 {
@@ -24,7 +25,6 @@ class joy_web_PageFactory extends joy_Object
     {
         $uri = self::PrepareUri();
         $pageMeta = self::PreparePageMeta($uri);
-
         return self::Loader($pageMeta);
     }
 
@@ -236,7 +236,7 @@ class joy_web_PageFactory extends joy_Object
             $page->PageArguments = $page_args;
             $page->PagePath = $class_path;
             $page->Action = $action_name;
-            $page->RenderType = strtolower($type);
+            $page->RenderType = joy_web_ui_RenderFactory::GetRenderType($type);
             $page->ActionArguments = $method_arguments;
         }
 

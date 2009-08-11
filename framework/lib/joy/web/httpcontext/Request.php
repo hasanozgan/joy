@@ -10,6 +10,7 @@
  */
 
 import("joy.Object");
+import("joy.data.Dictionary");
 
 class joy_web_httpcontext_Request extends joy_data_Dictionary
 {
