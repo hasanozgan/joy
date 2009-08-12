@@ -15,9 +15,7 @@ class joy_web_attributes_ViewFolder extends joy_web_Attribute
 {
     public function Execute()
     {
-        $this->Page->SetViewFolderName($this->Values["value"]);
-
-        $this->Logger->Debug("Attribute ViewFolder", __FILE__, __LINE__);
+        $this->Event->Dispatch("ChangeViewFolder", $this, array($this->Values["value"]));
     }
 }
 

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-import("joy.Object");
+import("joy.web.View");
 import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_View extends joy_Object implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_View extends joy_web_View implements joy_web_ui_renders_IRender
 {
     public function __construct($page)
     {

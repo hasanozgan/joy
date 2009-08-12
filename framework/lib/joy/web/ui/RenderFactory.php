@@ -16,32 +16,40 @@ class joy_web_ui_RenderFactory extends joy_Object
 {
     const LAYOUT = "layout";
     const VIEW = "view";
-    const DEFAULT_RENDER_TYPE = self::LAYOUT;
+    const DEFAULT_OUTPUT_MODE = self::LAYOUT;
 
-    public static function Builder($page)
+    public static function &Builder($mode)
     {
-        if ($page instanceof joy_web_ui_IPage) {
-            $renderType = $page->Meta->RenderType;
-            return self::ClassLoader($renderType, &$page);
+        $result = self::ClassLoader($mode);
+
+        if (!$result) {
+            throw new Exception("Render class not found");
         }
 
-        return null;
+        return $result;
     }
 
-    public static function GetRenderType($type)
-    {
-        return empty($type) ? self::DEFAULT_RENDER_TYPE : $type;
-    }
- 
-    public static function ClassLoader($type, $page)
+    public static function GetOutputMode($mode)
     {
         $config = joy_Configure::getInstance();
-       
-        if (!($namespace = $config->Get("joy.renders.{$type}"))) {
-            $namespace = $config->Get("joy.renders.layout");
+
+        $mode = empty($mode) ? self::DEFAULT_OUTPUT_MODE : $mode;
+        $namespace = $config->Get("joy.renders.{$mode}");
+        if (!$namespace) {
+            $mode = DEFAULT_OUTPUT_MODE;
         }
 
-        return using($namespace, &$page);
+        return $mode;
+    }
+ 
+    public static function ClassLoader($mode)
+    {
+        $config = joy_Configure::getInstance();
+    
+        $namespace = $config->Get("joy.renders.{$mode}");
+
+        //TODO: Assign View Class
+        return using($namespace);
     }    
 }
 

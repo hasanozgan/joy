@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-import("joy.Object");
+import("joy.web.View");
 
 interface joy_web_ui_renders_IRender
 {

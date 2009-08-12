@@ -15,9 +15,7 @@ class joy_web_attributes_Theme extends joy_web_Attribute
 {
     public function Execute()
     {
-        $this->Page->SetThemeName($this->Values["value"]);
-
-        $this->Logger->Debug("Attribute Theme", __FILE__, __LINE__);
+        $this->Event->Dispatch("ChangeTheme", $this, array($this->Values["value"]));
     }
 }
 

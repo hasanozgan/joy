@@ -21,6 +21,7 @@ class joy_system_Logger
 
     /* Log Levels */
     const NONE = 0;
+    const TRACE = 1;
     const DEBUG = 2;
     const INFO = 4;
     const WARNING = 8;
@@ -41,6 +42,7 @@ class joy_system_Logger
     {
         switch ($level) 
         {
+            case self::TRACE: return "TRACE";
             case self::DEBUG: return "DEBUG";
             case self::INFO: return "INFO";
             case self::WARNING: return "WARNING";
@@ -60,8 +62,14 @@ class joy_system_Logger
                                     $line, 
                                     $description);
     }
+    
+   
+    function Trace($description, $file="N/A", $line="N/A")
+    {
+        return $this->Add(self::TRACE, $description, $file, $line);
+    }
 
-    public function Debug($description, $file="N/A", $line="N/A")
+    function Debug($description, $file="N/A", $line="N/A")
     {
         return $this->Add(self::DEBUG, $description, $file, $line);
     }

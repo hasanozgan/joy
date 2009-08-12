@@ -230,13 +230,13 @@ class joy_web_PageFactory extends joy_Object
 
         if ($class_name) {
             $page = new stdClass();
-            list($action_name, $type) = split("\.", $method);
+            list($action_name, $mode) = split("\.", $method);
 
             $page->Page = $class_name;
             $page->PageArguments = $page_args;
             $page->PagePath = $class_path;
             $page->Action = $action_name;
-            $page->RenderType = joy_web_ui_RenderFactory::GetRenderType($type);
+            $page->OutputMode = joy_web_ui_RenderFactory::GetOutputMode($mode);
             $page->ActionArguments = $method_arguments;
         }
 

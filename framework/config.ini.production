@@ -1,9 +1,12 @@
 [joy]
     version = 0.0.1
     root = FRAMEWORK_ROOT
+; configuration types: development, staging, integration, production etc...
+    configuration = development
 
 [joy.vendors.path]
     smarty = /prj/joy/svn/trunk/vendors/smarty
+    tal = /prj/joy/svn/trunk/vendors/phptal/PHPTAL-1.2.0
     addendum = /prj/joy/svn/trunk/vendors/addendum
     doctrine = /prj/joy/svn/trunk/vendors/doctrine
     misc = /prj/joy/svn/trunk/vendors/misc
@@ -17,6 +20,14 @@
     compile_dir = tmp/smarty
     joy_plugins_dir = lib/vendors/smarty/plugins
     app_plugins_dir = lib/vendors/smarty/plugins
+
+[joy.vendors.tal.settings]
+    cache = true
+    compile_dir = tmp/tal
+    joy_modifiers_dir = lib/vendors/phptal/modifiers
+    app_modifiers_dir = lib/vendors/phptal/modifiers
+    joy_macros_dir = lib/vendors/phptal/macros
+    app_macros_dir = lib/vendors/phptal/macros
 
 [joy.extensions]
     view = view
@@ -32,10 +43,10 @@
     js = joy.web.ui.renders.Javascript
 
 [joy.plugins]
-    template_engine = joy.plugins.templateengines.Smarty
-    ormap = joy.plugins.ormaps.Doctrine
-    cache = joy.plugins.caches.MemCached
-    annotation = joy.plugins.annotations.Addendum
+    template_engine = joy.vendor.plugins.templateengines.Tal
+    ormap = joy.vendor.plugins.ormaps.Doctrine
+    cache = joy.vendor.plugins.caches.MemCached
+    annotation = joy.vendor.plugins.annotations.Addendum
 
 [joy.folders]
     application = app
