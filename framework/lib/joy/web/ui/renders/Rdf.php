@@ -9,26 +9,24 @@
  * file that was distributed with this source code.
  */
 
-import("joy.Object");
+import("joy.web.View");
 import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_Rdf extends joy_Object implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_Rdf extends joy_web_View implements joy_web_ui_renders_IRender
 {
     private $serializer;
-    private $page;
 
-    public function __construct($page)
+    public function Init()
     {
-        parent::__construct();
-        $smartyLoader = new joy_vendor_Loader("misc");
-        $smartyLoader->Import("rdf/HV_ArrayToRDFCollection.php");
-                
-        $this->page =& $page;
-        $this->page->Response->SetHeader("Content-Type: text/xml");
+        parent::Init();
+        $this->setContentType("text/xml");
     }
 
     public function Fetch()
     {
+        $loader = new joy_vendor_Loader("misc");
+        $loader->Import("rdf/HV_ArrayToRDFCollection.php");
+
         return HV_ArrayToRDFCollection::generateRdf($this->page->Data);
     }
 

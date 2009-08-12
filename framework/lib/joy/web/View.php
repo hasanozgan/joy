@@ -24,7 +24,6 @@ class joy_web_View extends joy_Object
     
     protected $themeName;
     protected $themeFolderName;
-    protected $outputMode;
     protected $defaultThemeFolder;
     
     protected $layoutPath;
@@ -32,6 +31,7 @@ class joy_web_View extends joy_Object
     protected $layoutFileExtensionName;
 
     protected $data;
+    protected $contentType;
 
     private static $instance;
 
@@ -48,6 +48,7 @@ class joy_web_View extends joy_Object
     {
         parent::Init();
 
+        $this->contentType = "text/html";
         $this->data = array();
         $this->defaultThemeFolder = $this->Config->Get("app.default_theme_folder");
         $this->viewFileExtensionName = $this->Config->Get("joy.extensions.view");
@@ -55,6 +56,9 @@ class joy_web_View extends joy_Object
         $this->themeName = $this->Config->Get("app.theme");
         $this->viewPath = $this->Config->Get("app.folders.path.view");
         $this->layoutPath = $this->Config->Get("app.folders.path.layout");
+
+        // Get HttpContext Instance...
+        $this->HttpContext = joy_web_HttpContext::getInstance();
     }
 
     public function RegisterEvents()
@@ -97,7 +101,10 @@ class joy_web_View extends joy_Object
 
     public function render()
     {
-         // Set Pre Filter For Render 
+        // Set Content Type
+        $this->HttpContext->Response->SetHeader(sprintf("Content-Type: %s", $this->getContentType()));
+
+        // Set Pre Filter For Render 
         $this->Event->Dispatch("PreRender");
 
         // From Render Class
@@ -110,6 +117,8 @@ class joy_web_View extends joy_Object
 
         // Set Pre Header
         $this->Event->Dispatch("PreHeader");
+
+        return $output;
     }
 
     public function setLayoutFile($name)
@@ -127,14 +136,19 @@ class joy_web_View extends joy_Object
         $this->viewFolderName = $name;
     }
 
-    public function setOutputMode($mode)
-    {
-        $this->outputMode = $mode;
-    }
-
     public function setThemeName($theme)
     {
         $this->themeName = $theme;
+    }
+
+    public function setContentType($contentType)
+    {
+        $this->contentType = $contentType;
+    }
+
+    public function getContentType()
+    {
+        return $this->contentType;
     }
 
     public function getViewFile()
@@ -147,23 +161,17 @@ class joy_web_View extends joy_Object
         return $this->viewFolderName;
     }
 
-    public function getOutputMode()
-    {
-        return $this->outputMode; 
-    }
-
     public function getThemeName()
     {
         return $this->themeName;
     }
-
 
     public function getViewFilePath()
     {
         $view_path = sprintf("%s/%s/%s.%s", 
                                      rtrim($this->viewPath, "/"),
                                      $this->viewFolderName,
-                                     $this->viewFileName,
+                                     $this->viewName,
                                      $this->viewFileExtensionName);
 
         $theme_folder = $this->getThemeName();
@@ -195,6 +203,26 @@ class joy_web_View extends joy_Object
         }
 
         return str_replace(self::LABEL_APP_THEME, $this->defaultThemeFolder, $layout_path);
+    }
+
+    public function resetData()
+    {
+        $this->data = array();
+    }
+
+    public function appendData($pData)
+    {
+        $this->data = array_merge((array)$this->data, (array)$pData);
+    }
+
+    public function setData($pData)
+    {
+        $this->data = $pData;
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 
 /*

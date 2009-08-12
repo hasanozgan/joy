@@ -1,20 +1,26 @@
+    Genel Basliklar
+    ========================================================
 [+] Config Management (Encryption Config with script)
 [+] Plugin Handler (Extendable)
+[+] MVC
 [+] Class Loading Handler
 [+] Event Handler
 [+] Page Factory
+[+] Render Factory (Serializing)
+[+] Attributes
+[+] Template Engine
 [*] Http Context
 [*] Trace Log
 [*] Log Management
-[*] Template Engine
-[*] Rendering
-[*] Serializing
-[+] Attributes
-[] Code Generating Scripts
 [*] Resource Loader (CSS, JS etc..) support with Attributes
-[] Authorization Module
-[] Validations & Form Wizards
-[] Documentation & Example Projects
-[] Web Objects (DataGrid, Paginations)
-[] Security 
-[*] MVC
+[-] Code Generating Scripts
+[-] Authorization Module
+[-] Validations & Form Wizards
+[-] Documentation & Example Projects
+[-] Web Objects (DataGrid, Paginations)
+[-] Security 
+[-] Cache
+[-] Scheduler
+[-] Multi Language
+[-] Child Config Loading..
+[-] Frontend Loader (check jsl folder)

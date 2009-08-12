@@ -9,20 +9,17 @@
  * file that was distributed with this source code.
  */
 
-import("joy.Object");
+import("joy.web.View");
 import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_Stylesheet extends joy_Object implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_Stylesheet extends joy_web_View implements joy_web_ui_renders_IRender
 {
     private $serializer;
-    private $page;
 
-    public function __construct($page)
+    public function Init()
     {
-        parent::__construct();
-
-        $this->page =& $page;
-        $this->page->Response->SetHeader("Content-Type: text/css");
+        parent::Init();
+        $this->setContentType("text/css");
     }
 
     public function Fetch()

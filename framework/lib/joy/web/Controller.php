@@ -35,7 +35,6 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->Request->Parameter = new joy_data_Dictionary($this->Meta->PageArguments);
 
         $this->View = joy_web_ui_RenderFactory::Builder($this->Meta->OutputMode);
-        $this->View->setOutputMode($this->Meta->OutputMode);
         $this->View->setViewFile($this->Meta->Action);
         $this->View->setViewFolder($this->Meta->Page);
     }
@@ -61,11 +60,11 @@ class joy_web_Controller extends joy_web_HttpContext
 
     }
 
-    public function disposal($output)
+    public function disposal()
     {
         $this->Event->Dispatch("Disposal");
 
-        print($output);
+        print($this->PageOutput);
     }
 
 }

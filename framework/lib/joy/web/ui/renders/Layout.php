@@ -16,9 +16,9 @@ class joy_web_ui_renders_Layout extends joy_web_View implements joy_web_ui_rende
 {
     private $template;
 
-    public function __construct()
+    public function Init()
     {
-        parent::__construct();
+        parent::Init();
 
         $namespace = $this->Config->Get("joy.plugins.template_engine");
         $this->template = using($namespace);
@@ -33,22 +33,21 @@ class joy_web_ui_renders_Layout extends joy_web_View implements joy_web_ui_rende
         }
 
         // Assign all data
-        foreach ($this->data as $key=>$val) {
+        $data = $this->getData();
+        foreach ($data as $key=>$val) {
             $this->template->Assign($key, $val);
         }
 
         // Render Action Output
         $action_output = $this->template->Fetch($this->getViewFilePath());
-        $this->page->Data["page"]["PlaceHolder"] = $action_output;
-
-        $this->template->Assign("page", $this->page->Data["page"]);
+        $data["page"]["PlaceHolder"] = $action_output;
 
         // Assign all data
-        foreach ($this->page->Data as $key=>$val) {
+        foreach ($data as $key=>$val) {
             $this->template->Assign($key, $val);
         }
 
-        return $this->template->Fetch($this->page->GetLayoutFilePath());
+        return $this->template->Fetch($this->getLayoutFilePath());
     }
 
     public function Display()

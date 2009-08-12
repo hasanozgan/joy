@@ -38,7 +38,7 @@ class joy_web_PageFactory extends joy_Object
 
         $page->render();
 
-        $page->complete();
+        $page->disposal();
     }
 
     static function CreatePage($pageMeta)
@@ -238,6 +238,7 @@ class joy_web_PageFactory extends joy_Object
             $page->Action = $action_name;
             $page->OutputMode = joy_web_ui_RenderFactory::GetOutputMode($mode);
             $page->ActionArguments = $method_arguments;
+            $page->Source = "Browser";
         }
 
         return $page;

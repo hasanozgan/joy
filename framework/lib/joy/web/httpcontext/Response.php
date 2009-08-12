@@ -27,11 +27,11 @@ class joy_web_httpcontext_Response extends joy_Object
 
     public function Init()
     {
-        $this->Event->Register("Header", "OnHeader", $this);
+        $this->Event->Register("Disposal", "OnDisposal", $this);
         $this->headers = array();
     }
 
-    public function OnHeader(&$object, $args)
+    public function OnDisposal(&$object, $args)
     {
         if (!empty($this->headers)) {
             foreach ($this->headers as $item) {
@@ -39,7 +39,7 @@ class joy_web_httpcontext_Response extends joy_Object
             }
         }
 
-        $this->Logger->Debug("Response Header (OnHeader)", __FILE__, __LINE__);
+        $this->Logger->Debug("Response Header (OnPreHeader)", __FILE__, __LINE__);
     }
 
     public function SetHeader($item)

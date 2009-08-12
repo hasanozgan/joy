@@ -14,23 +14,23 @@ import("joy.web.ui.renders.IRender");
 
 class joy_web_ui_renders_View extends joy_web_View implements joy_web_ui_renders_IRender
 {
-    public function __construct($page)
+    public function Init()
     {
-        parent::__construct();
+        parent::Init();
 
         $namespace = $this->Config->Get("joy.plugins.template_engine");
         $this->template = using($namespace);
-        $this->page =& $page;
     }
  
     public function Fetch()
     {
         // Assign all data
-        foreach ($this->page->Data as $key=>$val) {
+        $data = $this->getData();
+        foreach ($data as $key=>$val) {
             $this->template->Assign($key, $val);
         }
 
-        return $this->template->Fetch($this->page->GetViewFilePath());
+        return $this->template->Fetch($this->getViewFilePath());
     }
 
     public function Display()

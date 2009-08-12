@@ -15,14 +15,11 @@ import("joy.web.ui.renders.IRender");
 class joy_web_ui_renders_Javascript extends joy_web_View implements joy_web_ui_renders_IRender
 {
     private $serializer;
-    private $page;
 
-    public function __construct($page)
+    public function Init()
     {
-        parent::__construct();
-
-        $this->page =& $page;
-        $this->page->Response->SetHeader("Content-Type: application/javascript");
+        parent::Init();
+        $this->setContentType("application/javascript");
     }
 
     public function Fetch()

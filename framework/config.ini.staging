@@ -37,6 +37,7 @@
     layout = joy.web.ui.renders.Layout
     view = joy.web.ui.renders.View
     xml = joy.web.ui.renders.Xml
+    yaml = joy.web.ui.renders.Yaml
     rdf = joy.web.ui.renders.Rdf
     json = joy.web.ui.renders.Json
     css = joy.web.ui.renders.Stylesheet

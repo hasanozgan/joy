@@ -9,27 +9,23 @@
  * file that was distributed with this source code.
  */
 
-import("joy.Object");
+import("joy.web.View");
 import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_Rss extends joy_Object implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_Rss extends joy_web_View implements joy_web_ui_renders_IRender
 {
     private $serializer;
-    private $page;
 
-    public function __construct($page)
+    public function Init()
     {
-        parent::__construct();
-        $smartyLoader = new joy_vendor_Loader("misc");
-        $smartyLoader->Import("json/FastJSON.class.php5");
-
-        $this->page =& $page;
-        $this->page->Response->SetHeader("Content-Type: text/xml");
+        parent::Init();
+        $this->setContentType("application/rss+xml");
     }
 
     public function Fetch()
     {
-        return FastJSON::encode($this->page->Data);
+        //TODO:
+        return "";
     }
 
     public function Display()

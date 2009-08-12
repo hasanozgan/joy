@@ -56,7 +56,11 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     {
     }
 
-    public function OnUnload(&$object, &$args)
+    public function OnPreHeader(&$object, &$args)
+    {
+    }
+
+    public function OnDisposal(&$object, &$args)
     {
     }
 }
