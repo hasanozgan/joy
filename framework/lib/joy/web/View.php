@@ -33,6 +33,8 @@ class joy_web_View extends joy_Object
     protected $data;
     protected $contentType;
 
+    protected $HttpContext;
+
     private static $instance;
 
     public static function &getInstance()

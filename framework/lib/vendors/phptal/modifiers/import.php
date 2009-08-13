@@ -1,5 +1,8 @@
 <?php
 
+using("joy.web.PageFactory");
+using("joy.web.ui.RenderFactory");
+
 function phptal_tales_import($src, $nothrow)
 {
     ob_start();
