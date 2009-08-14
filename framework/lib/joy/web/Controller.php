@@ -31,7 +31,7 @@ class joy_web_Controller extends joy_web_HttpContext
 
     public function setPageMeta($pageMeta)
     {
-        $this->Meta =& $pageMeta;
+        $this->Meta = $pageMeta;
         $this->Request->Parameter = new joy_data_Dictionary($this->Meta->PageArguments);
 
         $this->View = joy_web_ui_RenderFactory::Builder($this->Meta->OutputMode);
@@ -57,7 +57,6 @@ class joy_web_Controller extends joy_web_HttpContext
     public function render()
     {
         $this->PageOutput = $this->View->render();
-
     }
 
     public function disposal()

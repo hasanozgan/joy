@@ -87,7 +87,7 @@ class joy_web_View extends joy_Object
         $this->setLayoutFile($name);
     }
 
-    public function OnChangeView()
+    public function OnChangeView($obj, $args)
     {
         $name = $args[0];
         $this->setViewFile($name);
