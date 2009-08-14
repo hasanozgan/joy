@@ -1,6 +1,5 @@
 <?php 
 
-
 class Encryption 
 { 
    var $scramble1;      // 1st string of ASCII characters 
@@ -48,8 +47,6 @@ class Encryption
       $key .=  "" . strlen($source);
 	  $key = md5($key);
       
-	  //echo "KEY : " . $key . "<BR>";
-	  
 	  // convert $key into a sequence of numbers 
       $fudgefactor = $this->_convertKey($key); 
       if ($this->errors) return; 
@@ -76,8 +73,6 @@ class Encryption
          // append to $target string 
          $target .= $char1; 
           
-         //echo "char1=$char1, num1=$num1, adj= $adj, factor1= $factor1, num2=$num2, char2=$char2, factor2= $factor2<br />\n"; 
-          
       } // for 
        
       return rtrim($target); 
@@ -102,8 +97,6 @@ class Encryption
       $key .=  "" . strlen($source);
 	  $key = md5($key);
       
-	  // echo "KEY : " . $key . "<BR>";
-	  
 	   // convert $key into a sequence of numbers 
       $fudgefactor = $this->_convertKey($key); 
       if ($this->errors) return; 
@@ -132,8 +125,6 @@ class Encryption
          $char2 = substr($this->scramble2, $num2, 1); 
          // append to $target string 
          $target .= $char2; 
-          
-         //echo "char1=$char1, num1=$num1, adj= $adj, factor1= $factor1, num2=$num2, char2=$char2, factor2= $factor2<br />\n"; 
           
       } // for 
        
@@ -252,4 +243,4 @@ class Encryption
 } // end Encryption 
 // **************************************************************************** 
 
-?> 
+?>
