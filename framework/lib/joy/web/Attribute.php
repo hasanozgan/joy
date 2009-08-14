@@ -13,7 +13,7 @@ import("joy.Object");
 
 abstract class joy_web_Attribute extends joy_Object
 {
-    protected $Page;
+    public $Page;
     protected $Values;
 
     abstract function Execute();

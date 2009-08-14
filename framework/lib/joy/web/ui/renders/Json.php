@@ -17,7 +17,7 @@ class joy_web_ui_renders_Json extends joy_web_View implements joy_web_ui_renders
     private $serializer;
     private $page;
 
-    public function Init()
+    protected function Init()
     {
         parent::Init();
         $this->setContentType("application/javascript");

@@ -33,7 +33,7 @@ class joy_web_HttpContext extends joy_Object
         return self::$_httpContext;
     }
 
-    public function Init()
+    protected function Init()
     {
         $this->Request = joy_web_httpcontext_Request::getInstance();
         $this->Response = joy_web_httpcontext_Response::getInstance();

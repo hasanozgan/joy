@@ -26,6 +26,11 @@ class joy_data_Dictionary extends joy_Object
         return $this->_list[$key];
     }
 
+    public function Add($value)
+    {
+        $this->_list[] = $value; 
+    }
+
     public function Set($key, $value)
     {
         $this->_list[$key] = $value; 

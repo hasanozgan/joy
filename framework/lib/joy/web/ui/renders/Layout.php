@@ -16,7 +16,7 @@ class joy_web_ui_renders_Layout extends joy_web_View implements joy_web_ui_rende
 {
     private $template;
 
-    public function Init()
+    protected function Init()
     {
         parent::Init();
 

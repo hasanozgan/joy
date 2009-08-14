@@ -25,7 +25,7 @@ class joy_web_httpcontext_Session extends joy_Object
         return self::$instance;
     }
 
-    public function Init()
+    protected function Init()
     {
         session_start();
         $this->_session = new joy_data_Dictionary($_SESSION);

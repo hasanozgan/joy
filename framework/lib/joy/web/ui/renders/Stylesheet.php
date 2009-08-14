@@ -16,7 +16,7 @@ class joy_web_ui_renders_Stylesheet extends joy_web_View implements joy_web_ui_r
 {
     private $serializer;
 
-    public function Init()
+    protected function Init()
     {
         parent::Init();
         $this->setContentType("text/css");

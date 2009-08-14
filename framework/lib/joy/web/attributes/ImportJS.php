@@ -15,7 +15,7 @@ class joy_web_attributes_ImportJS extends joy_web_Attribute
 {
     public function Execute()
     {
-        $this->Log->Debug("Attribute Import JS", __FILE__, __LINE__);
+        $this->Event->Dispatch("ImportJS", $this, array($this->Values["value"]));
     }
 }
 

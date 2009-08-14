@@ -27,11 +27,32 @@ class joy_web_Resource extends joy_Object
         return self::$instance;
     }
 
-    public function Init()
+    protected function Init()
     {
         $this->Scripts = new joy_data_Dictionary();
         $this->Styles = new joy_data_Dictionary();
     }
+
+    protected function RegisterEvents()
+    {
+        $this->Event->Register("ImportJS", "OnImportJS", $this);
+        $this->Event->Register("ImportCSS", "OnImportCSS", $this);
+    }
+
+    public function OnImportJS($object, $args)
+    {
+//        $object->Page
+       //if ( in_array($object->Page->Meta->OutputMode, array("layout", "view"))) {
+//        var_dump($object->Page);
+        $this->Scripts->Add($args[0]); 
+  //}
+    }
+
+    public function OnImportCSS($object, $args)
+    {
+    
+    }
+
 }
 
 ?>

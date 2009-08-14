@@ -25,7 +25,7 @@ class joy_web_httpcontext_Response extends joy_Object
         return self::$instance;
     }
 
-    public function Init()
+    protected function Init()
     {
         $this->Event->Register("Disposal", "OnDisposal", $this);
         $this->headers = array();

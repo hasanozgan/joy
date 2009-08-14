@@ -21,7 +21,7 @@ class joy_web_Controller extends joy_web_HttpContext
     public $Meta;
     public $Resource;
 
-    public function Init()
+    protected function Init()
     {
         parent::Init();
 

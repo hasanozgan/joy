@@ -46,7 +46,7 @@ class joy_web_View extends joy_Object
         return self::$instance;
     }
 
-    public function Init()
+    protected function Init()
     {
         parent::Init();
 
@@ -168,13 +168,17 @@ class joy_web_View extends joy_Object
         return $this->themeName;
     }
 
-    public function getViewFilePath()
+    public function getViewFilePath($fileExtension="")
     {
+        if (empty($fileExtension)) {
+            $fileExtension = $this->viewFileExtensionName;
+        }
+
         $view_path = sprintf("%s/%s/%s.%s", 
                                      rtrim($this->viewPath, "/"),
                                      $this->viewFolderName,
                                      $this->viewName,
-                                     $this->viewFileExtensionName);
+                                     $fileExtension);
 
         $theme_folder = $this->getThemeName();
 
@@ -188,12 +192,16 @@ class joy_web_View extends joy_Object
         return str_replace(self::LABEL_APP_THEME, $this->defaultThemeFolder, $view_path);
     }
 
-    public function getLayoutFilePath()
+    public function getLayoutFilePath($fileExtension="")
     {
+        if (empty($fileExtension)) {
+            $fileExtension = $this->layoutFileExtensionName;
+        }
+
         $layout_path = sprintf("%s/%s.%s", 
                                      rtrim($this->layoutPath, "/"),
                                      $this->layoutName,
-                                     $this->layoutFileExtensionName);
+                                     $fileExtension);
 
         $theme_folder = $this->getThemeName();
 

@@ -14,7 +14,7 @@ import("joy.web.ui.renders.IRender");
 
 class joy_web_ui_renders_View extends joy_web_View implements joy_web_ui_renders_IRender
 {
-    public function Init()
+    protected function Init()
     {
         parent::Init();
 

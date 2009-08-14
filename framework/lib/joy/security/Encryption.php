@@ -17,7 +17,7 @@ class joy_security_Encryption extends joy_Object
     private $_key;
     private $_encrypter;
     
-    public function Init()
+    protected function Init()
     {
         $loader = new joy_vendor_Loader("security");
         $loader->Import("clsencrypt/clsencrypt.php");
@@ -27,12 +27,12 @@ class joy_security_Encryption extends joy_Object
 
     public function encrypt($key, $value)
     {
-        $this->_encrypter->encrypt($key, $value);
+        return base64_encode($this->_encrypter->encrypt($key, serialize($value)));
     }
 
     public function decrypt($key, $value)
     {
-        $this->_encrypter->decrypt($key, $value);
+        return unserialize($this->_encrypter->decrypt($key, base64_decode($value)));
     }
 }
 
