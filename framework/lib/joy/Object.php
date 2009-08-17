@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-using("joy.system");
+import("joy.system");
 
 class joy_Object
 {
