@@ -50,7 +50,7 @@ class joy_web_Resource extends joy_Object
 
     public function OnImportCSS($object, $args)
     {
-    
+         $this->Styles->Add($args[0]); 
     }
 
 }
