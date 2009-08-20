@@ -74,6 +74,7 @@ class joy_Namespace
             }
             else if (is_dir($path)) {
                 if ($dh = opendir($path)) {
+                    // Not support folder include...
                     while (($file = readdir($dh)) !== false) {
                         if ($file == "." || $file == "..") continue;
 
@@ -82,13 +83,13 @@ class joy_Namespace
                             $file = sprintf("%s%s%s", rtrim($path, DIRECTORY_SEPARATOR), 
                                             DIRECTORY_SEPARATOR, 
                                             ltrim($file, DIRECTORY_SEPARATOR));
-                            $obj = self::ImportClass($file);
+                            self::ImportClass($file);
                         }
                     }
                     closedir($dh);
                 }
-
-                return $obj;
+                
+                return (object) array("folder"=>$path);
             }
         }
 
@@ -144,6 +145,11 @@ function import($namespace)
 function using($namespace) 
 {
     $obj = import($namespace);
+
+    // Check namespace is folder or file
+    if (!$obj->file) {
+        throw new Exception("Please set file path");
+    }
 
     $args = func_get_args();
     array_shift($args);
