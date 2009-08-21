@@ -14,10 +14,6 @@ import("joy.web");
 
 class joy_web_ui_RenderFactory extends joy_Object
 {
-    const LAYOUT = "layout";
-    const VIEW = "view";
-    const DEFAULT_OUTPUT_MODE = self::LAYOUT;
-
     public static function &Builder($mode)
     {
         $result = self::ClassLoader($mode);
@@ -33,10 +29,10 @@ class joy_web_ui_RenderFactory extends joy_Object
     {
         $config = joy_Configure::getInstance();
 
-        $mode = empty($mode) ? self::DEFAULT_OUTPUT_MODE : $mode;
+        $mode = empty($mode) ? joy_web_View::DEFAULT_OUTPUT_MODE : $mode;
         $namespace = $config->Get("joy.renders.{$mode}");
         if (!$namespace) {
-            $mode = DEFAULT_OUTPUT_MODE;
+            $mode = joy_web_View::DEFAULT_OUTPUT_MODE;
         }
 
         return $mode;

@@ -230,14 +230,23 @@ class joy_web_PageFactory extends joy_Object
 
         if ($class_name) {
             $page = new stdClass();
-            list($action_name, $mode) = split("\.", $method);
+            $extensions = split("\.", $method);
+            $action_name = array_shift($extensions);
+            $extensions = array_reverse($extensions);
+            $mode = array_shift($extensions);
+            $extensions =array_reverse($extensions);
+            $modeParams = implode(".", $extensions);
 
+            $page->SiteRoot = str_replace("/index.php", "", $_SERVER["PHP_SELF"]);
             $page->Page = $class_name;
             $page->PageArguments = $page_args;
             $page->PagePath = $class_path;
             $page->Action = $action_name;
-            $page->OutputMode = joy_web_ui_RenderFactory::GetOutputMode($mode);
             $page->ActionArguments = $method_arguments;
+            $page->Uri = sprintf("%s/%s", $page->Page, $page->Action);
+            $page->PageUri = sprintf("%s/%s", $page->SiteRoot, $page->Uri);
+            $page->OutputMode = joy_web_ui_RenderFactory::GetOutputMode($mode);
+            $page->OutputModeArguments = (empty($modeParams) ? null : $modeParams);
             $page->Source = "Browser";
         }
 

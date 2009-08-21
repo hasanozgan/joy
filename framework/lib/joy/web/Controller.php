@@ -37,6 +37,7 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->View = joy_web_ui_RenderFactory::Builder($this->Meta->OutputMode);
         $this->View->setViewFile($this->Meta->Action);
         $this->View->setViewFolder($this->Meta->Page);
+        $this->View->setMeta($this->Meta);
     }
     
     public function loadAttributes()
@@ -49,6 +50,13 @@ class joy_web_Controller extends joy_web_HttpContext
     public function runMethod()
     {
         $this->Logger->Debug("Controller::RunMethod (".$this->Action.")", __FILE__, __LINE__);
+        
+        if (in_array($this->OutputMode, array(joy_web_View::VIEW, joy_web_View::LAYOUT))) {
+            if ($this->Meta->Source == "Browser") {
+            echo $this->Resource->Scripts->Add($this->View->getLayoutFileUri("js"));
+            }
+            echo $this->View->getViewFileUri("js");
+        }
 
         $class = new ReflectionClass($this);
         $class->getMethod($this->Meta->Action)->invoke($this, $this->Meta->ActionArguments);

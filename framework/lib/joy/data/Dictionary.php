@@ -15,7 +15,7 @@ class joy_data_Dictionary extends joy_Object
 {
     protected $_list;
 
-    public function __construct($array=null)
+    public function __construct($array=array())
     {
         parent::__construct();
         $this->_list = $array;

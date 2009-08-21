@@ -11,11 +11,18 @@
 
 import("joy.Object");
 import("joy.web.ui.RenderFactory");
+import("joy.security.Encryption");
 
 class joy_web_View extends joy_Object 
 {
     const LABEL_APP_THEME = "%app.theme%";
     const LABEL_APP_DEFAULT_THEME_FOLDER = "%app.default_theme_folder%";
+    
+    const LAYOUT = "layout";
+    const VIEW = "view";
+    const DEFAULT_OUTPUT_MODE = self::LAYOUT;
+
+    const ENCRYPTION_KEY = "i-love-you-baby-2009©";
 
     protected $viewPath;
     protected $viewName;
@@ -33,6 +40,7 @@ class joy_web_View extends joy_Object
     protected $data;
     protected $contentType;
 
+    protected $Meta;
     protected $HttpContext;
 
     private static $instance;
@@ -123,6 +131,11 @@ class joy_web_View extends joy_Object
         return $output;
     }
 
+    public function setMeta($meta)
+    {
+        $this->Meta = $meta;    
+    }
+
     public function setLayoutFile($name)
     {
         $this->layoutName = $name;    
@@ -148,6 +161,11 @@ class joy_web_View extends joy_Object
         $this->contentType = $contentType;
     }
 
+    public function getMeta()
+    {
+        return $this->Meta; 
+    }
+
     public function getContentType()
     {
         return $this->contentType;
@@ -168,6 +186,14 @@ class joy_web_View extends joy_Object
         return $this->themeName;
     }
 
+    public function getViewFileUri($fileExtension="")
+    {
+        $path = $this->getViewFilePath($fileExtension);
+        if (!file_exists($path)) return false;
+
+        return sprintf("%s.%s.%s?ver=%s", $this->Meta->PageUri, self::VIEW, $fileExtension, filemtime($path));
+    }
+ 
     public function getViewFilePath($fileExtension="")
     {
         if (empty($fileExtension)) {
@@ -190,6 +216,14 @@ class joy_web_View extends joy_Object
         }
 
         return str_replace(self::LABEL_APP_THEME, $this->defaultThemeFolder, $view_path);
+    }
+
+    public function getLayoutFileUri($fileExtension="")
+    {
+        $path = $this->getLayoutFilePath($fileExtension);
+        if (!file_exists($path)) return false;
+
+        return sprintf("%s.%s.%s?ver=%s", $this->Meta->PageUri, self::LAYOUT, $fileExtension, filemtime($path));
     }
 
     public function getLayoutFilePath($fileExtension="")

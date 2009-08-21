@@ -16,7 +16,6 @@ import("joy.security.Encryption");
 class joy_web_ui_renders_Javascript extends joy_web_View implements joy_web_ui_renders_IRender
 {
     private $serializer;
-    const ENCRYPTION_KEY = "i-love-you-baby-2009©";
 
     protected function Init()
     {
@@ -26,17 +25,16 @@ class joy_web_ui_renders_Javascript extends joy_web_View implements joy_web_ui_r
 
     public function Fetch()
     {
-        $ency = new joy_security_Encryption();
-        $encrypted = $this->HttpContext->Request->Get("v");
-        $request = $ency->decrypt(self::ENCRYPTION_KEY, $encrypted);
+        $uri = $_SERVER["REQUEST_URI"];
+        $from = str_replace($this->pageUri, "", $uri);
 
-        if ($request["from"] == joy_web_ui_RenderFactory::LAYOUT) {
+        if ($this->Meta->OutputModeArguments == joy_web_View::LAYOUT) {
             $path = $this->getLayoutFilePath('js');
         }
         else {
             $path = $this->getViewFilePath('js');
         }
-
+        
         $output = "";
         if (file_exists($path)) {
             $output = file_get_contents($path); 
