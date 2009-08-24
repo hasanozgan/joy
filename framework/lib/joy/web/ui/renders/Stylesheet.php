@@ -24,7 +24,22 @@ class joy_web_ui_renders_Stylesheet extends joy_web_View implements joy_web_ui_r
 
     public function Fetch()
     {
-        return "";
+        $uri = $_SERVER["REQUEST_URI"];
+        $from = str_replace($this->pageUri, "", $uri);
+
+        if ($this->Meta->OutputModeArguments == joy_web_View::LAYOUT) {
+            $path = $this->getLayoutFilePath('css');
+        }
+        else {
+            $path = $this->getViewFilePath('css');
+        }
+        
+        $output = "";
+        if (file_exists($path)) {
+            $output = file_get_contents($path); 
+        }
+
+        return $output;
     }
 
     public function Display()

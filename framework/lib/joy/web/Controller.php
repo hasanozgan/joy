@@ -19,6 +19,7 @@ class joy_web_Controller extends joy_web_HttpContext
     public $Model;
     public $View;
     public $Meta;
+    public $Workflow;
     public $Resource;
 
     protected function Init()
@@ -27,6 +28,7 @@ class joy_web_Controller extends joy_web_HttpContext
 
         $this->Model = joy_web_Model::getInstance();
         $this->Resource = joy_web_Resource::getInstance();
+        $this->Workflow = joy_web_Workflow::getInstance();
     }
 
     public function setPageMeta($pageMeta)
@@ -40,40 +42,87 @@ class joy_web_Controller extends joy_web_HttpContext
         $this->View->setMeta($this->Meta);
     }
     
-    public function loadAttributes()
+    protected function loadAttributes()
     {
         $this->Logger->Debug("Controller::Attributes", __FILE__, __LINE__);
 
         joy_web_Attribute::Loader(&$this);
     }
 
-    public function runMethod()
+    protected function addResource()
     {
-        $this->Logger->Debug("Controller::RunMethod (".$this->Action.")", __FILE__, __LINE__);
-        
-        if (in_array($this->OutputMode, array(joy_web_View::VIEW, joy_web_View::LAYOUT))) {
+        //TODO: Locale File (for multi language) loader..
+
+        if (in_array($this->Meta->OutputMode, array(joy_web_View::VIEW, joy_web_View::LAYOUT))) {
             if ($this->Meta->Source == "Browser") {
-            echo $this->Resource->Scripts->Add($this->View->getLayoutFileUri("js"));
+                if ($file = $this->View->getLayoutFileUri("css")) {
+                    $this->Resource->AddStyle($file);
+                }
+
+                if ($file = $this->View->getLayoutFileUri("js")) {
+                    $this->Resource->AddScript($file);
+                }
             }
-            echo $this->View->getViewFileUri("js");
+
+            if ($file = $this->View->getViewFileUri("css")) {
+                $this->Resource->AddStyle($file);
+            }
+
+            if ($file = $this->View->getViewFileUri("js")) {
+                $this->Resource->AddScript($file);
+            }
         }
 
-        $class = new ReflectionClass($this);
-        $class->getMethod($this->Meta->Action)->invoke($this, $this->Meta->ActionArguments);
     }
 
-    public function render()
+    protected function invokeMethod()
+    {
+        $this->Logger->Debug("Controller::InvokeMethod (".$this->Action.")", __FILE__, __LINE__);
+       
+        $class = new ReflectionClass($this);
+
+        return $class->getMethod($this->Meta->Action)
+                            ->invoke($this, $this->Meta->ActionArguments);
+    }
+
+    protected function render()
     {
         $this->PageOutput = $this->View->render();
     }
 
-    public function disposal()
+    protected function disposal()
     {
         $this->Event->Dispatch("Disposal");
-
-        print($this->PageOutput);
     }
 
+    public function display($action="", $arguments=array())
+    {
+        echo($this->call($action, $arguments));
+    }
+
+    public function call($action="", $arguments=array())
+    {
+        if ($action) {
+            $this->Meta->Action = $action;
+            $this->Meta->ActionArguments = $arguments;
+        }
+
+        $this->loadAttributes(); 
+
+        $this->addResource();
+
+        $activity = $this->invokeMethod();
+        
+        if (is_null($activity) == false) {
+            $this->Workflow->Process($activity);
+        }
+
+        $this->render();
+
+        $this->disposal();
+
+        return $this->PageOutput;
+    }
 }
 
 ?>

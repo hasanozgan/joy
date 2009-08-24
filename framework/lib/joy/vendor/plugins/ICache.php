@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-
-import("joy.web.ui.renders.Template");
-
-class joy_web_ui_renders_Layout extends joy_web_ui_renders_Template
+interface joy_vendor_plugins_ICache
 {
-    protected function getTemplateFile()
-    {
-        return $this->getLayoutFilePath();
-    }
+    function GetRegistry();
+    function InsertToRegistry($key, $duration);
+    function RemoveFromRegistry($key);
+
+    function Delete($key);
+    function Get($key);
+    function Set($key, $value, $duration);
 }
+
 
 ?>

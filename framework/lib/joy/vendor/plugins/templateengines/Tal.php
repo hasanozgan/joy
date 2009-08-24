@@ -55,7 +55,8 @@ class joy_vendor_plugins_templateengines_Tal extends joy_Object implements joy_v
 
     public function Fetch($path)
     {
-        $this->tal->setTemplate($path); 
+        $this->tal->setTemplate($path);
+
         return $this->tal->execute();
     }
 

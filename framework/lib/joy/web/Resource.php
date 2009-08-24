@@ -39,18 +39,42 @@ class joy_web_Resource extends joy_Object
         $this->Event->Register("ImportCSS", "OnImportCSS", $this);
     }
 
+    public function AddScript($file)
+    {
+        //TODO Required View & Meta objects
+        if (stripos($file, "?ver=") === false) {
+            $uri = $this->Config->Get("app.document_root.folders.uri.script");
+            $path = sprintf("%s/%s", $this->Config->Get("app.document_root.folders.path.script"), $file);
+            if (!file_exists($path)) return false;
+
+            $file = sprintf("%s/%s?ver=%s", $uri, $file, filemtime($path));
+        }
+
+        $this->Scripts->Add($file); 
+    }
+
+    public function AddStyle($file)
+    {
+        //TODO Required View & Meta objects
+        if (stripos($file, "?ver=") === false) {
+            $uri = $this->Config->Get("app.document_root.folders.uri.style");
+            $path = sprintf("%s/%s", $this->Config->Get("app.document_root.folders.path.style"), $file);
+            if (!file_exists($path)) return false;
+
+            $file = sprintf("%s/%s?ver=%s", $uri, $file, filemtime($path));
+        }
+
+        $this->Styles->Add($file); 
+    }
+
     public function OnImportJS($object, $args)
     {
-//        $object->Page
-       //if ( in_array($object->Page->Meta->OutputMode, array("layout", "view"))) {
-//        var_dump($object->Page);
-        $this->Scripts->Add($args[0]); 
-  //}
+        $this->AddScript($args[0]);
     }
 
     public function OnImportCSS($object, $args)
     {
-         $this->Styles->Add($args[0]); 
+         $this->AddStyle($args[0]); 
     }
 
 }

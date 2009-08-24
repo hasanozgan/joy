@@ -9,35 +9,14 @@
  * file that was distributed with this source code.
  */
 
-import("joy.web.View");
-import("joy.web.ui.renders.IRender");
+import("joy.web.ui.renders.Template");
 
-class joy_web_ui_renders_View extends joy_web_View implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_View extends joy_web_ui_renders_Template
 {
-    protected function Init()
+    protected function getTemplateFile()
     {
-        parent::Init();
-
-        $namespace = $this->Config->Get("joy.plugins.template_engine");
-        $this->template = using($namespace);
+        return $this->getViewFilePath();
     }
- 
-    public function Fetch()
-    {
-        // Assign all data
-        $data = $this->getData();
-        foreach ($data as $key=>$val) {
-            $this->template->Assign($key, $val);
-        }
-
-        return $this->template->Fetch($this->getViewFilePath());
-    }
-
-    public function Display()
-    {
-        echo $this->Fetch();
-    }
-
 }
 
 ?>

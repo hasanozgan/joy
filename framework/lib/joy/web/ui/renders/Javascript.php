@@ -11,7 +11,6 @@
 
 import("joy.web.View");
 import("joy.web.ui.renders.IRender");
-import("joy.security.Encryption");
 
 class joy_web_ui_renders_Javascript extends joy_web_View implements joy_web_ui_renders_IRender
 {
@@ -41,14 +40,6 @@ class joy_web_ui_renders_Javascript extends joy_web_View implements joy_web_ui_r
         }
 
         return $output;
-/*
-        $encrypted = $this->HttpContext->Request->Get("v");
-        $file_info = array('version'=>12346575765, 
-                           'from'=>'layout');
-ob_end_clean();        
-//return        $encrypted = $ency->encrypt(self::JS_ENCRYPTION_KEY, $file_info);
-
-        return print_r($ency->decrypt(self::ENCRYPTION_KEY, $encrypted), true);*/
     }
 
     public function Display()

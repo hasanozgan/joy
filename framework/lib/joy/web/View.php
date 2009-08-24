@@ -22,8 +22,6 @@ class joy_web_View extends joy_Object
     const VIEW = "view";
     const DEFAULT_OUTPUT_MODE = self::LAYOUT;
 
-    const ENCRYPTION_KEY = "i-love-you-baby-2009©";
-
     protected $viewPath;
     protected $viewName;
     protected $viewFolderName;
@@ -122,11 +120,11 @@ class joy_web_View extends joy_Object
             $output = $this->Fetch();
         }
       
+        $output = str_replace("<!-- @@Script.AutoLoad@@ -->", $this->getScriptView(), $output);
+        $output = str_replace("<!-- @@Style.AutoLoad@@ -->", $this->getStyleView(), $output);
+
         // Set Post Filter For Render 
         $this->Event->Dispatch("PostRender", &$output);
-
-        // Set Pre Header
-        $this->Event->Dispatch("PreHeader");
 
         return $output;
     }
@@ -161,6 +159,26 @@ class joy_web_View extends joy_Object
         $this->contentType = $contentType;
     }
 
+    public function getScriptView()
+    {
+        $scripts = joy_web_Resource::getInstance()->Scripts->GetAll();
+        foreach ($scripts as $file) {
+            $result .= "<script type='text/javascript' src='$file'></script>\n";
+        }
+
+        return $result;
+    }
+
+    public function getStyleView()
+    {
+        $styles = joy_web_Resource::getInstance()->Styles->GetAll();
+        foreach ($styles as $file) {
+            $result .= "<link type='text/css' rel='stylesheet' href='$file' />\n";
+        }
+
+        return $result;
+    }
+
     public function getMeta()
     {
         return $this->Meta; 
@@ -190,7 +208,7 @@ class joy_web_View extends joy_Object
     {
         $path = $this->getViewFilePath($fileExtension);
         if (!file_exists($path)) return false;
-
+        
         return sprintf("%s.%s.%s?ver=%s", $this->Meta->PageUri, self::VIEW, $fileExtension, filemtime($path));
     }
  
@@ -222,7 +240,7 @@ class joy_web_View extends joy_Object
     {
         $path = $this->getLayoutFilePath($fileExtension);
         if (!file_exists($path)) return false;
-
+        
         return sprintf("%s.%s.%s?ver=%s", $this->Meta->PageUri, self::LAYOUT, $fileExtension, filemtime($path));
     }
 
