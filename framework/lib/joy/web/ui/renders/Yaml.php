@@ -10,9 +10,8 @@
  */
 
 import("joy.web.View");
-import("joy.web.ui.renders.IRender");
 
-class joy_web_ui_renders_Yaml extends joy_web_View implements joy_web_ui_renders_IRender
+class joy_web_ui_renders_Yaml extends joy_web_View
 {
     private $serializer;
 

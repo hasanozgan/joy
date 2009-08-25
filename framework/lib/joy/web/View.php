@@ -13,7 +13,7 @@ import("joy.Object");
 import("joy.web.ui.RenderFactory");
 import("joy.security.Encryption");
 
-class joy_web_View extends joy_Object 
+abstract class joy_web_View extends joy_Object 
 {
     const LABEL_APP_THEME = "%app.theme%";
     const LABEL_APP_DEFAULT_THEME_FOLDER = "%app.default_theme_folder%";
@@ -41,16 +41,10 @@ class joy_web_View extends joy_Object
     protected $Meta;
     protected $HttpContext;
 
-    private static $instance;
+    // Abstract Methods
+    public abstract function Fetch();
+    public abstract function Display();
 
-    public static function &getInstance()
-    {
-        if (!is_object(self::$instance)) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
 
     protected function Init()
     {
@@ -66,46 +60,36 @@ class joy_web_View extends joy_Object
         $this->layoutPath = $this->Config->Get("app.folders.path.layout");
 
         // Get HttpContext Instance...
-        $this->HttpContext = joy_web_HttpContext::getInstance();
+        $this->HttpContext =& joy_web_HttpContext::getInstance();
     }
 
-    public function RegisterEvents()
+    protected function loadPageResource($output)
     {
-        parent::RegisterEvents();
+        if (in_array($this->Meta->OutputMode, array(joy_web_View::VIEW, joy_web_View::LAYOUT))) {
+            if ($this->Meta->Source == "Browser") {
+                if ($file = $this->getLayoutFileUri("css")) {
+                    joy_web_Resource::getInstance()->AddStyle($file);
+                }
 
-        $this->Event->Register("ChangeTheme", "OnChangeTheme", $this);
-        $this->Event->Register("ChangeLayout", "OnChangeLayout", $this);
-        $this->Event->Register("ChangeView", "OnChangeView", $this);
-        $this->Event->Register("ChangeViewFolder", "OnChangeViewFolder", $this);
+                if ($file = $this->getLayoutFileUri("js")) {
+                    joy_web_Resource::getInstance()->AddScript($file);
+                }
+            }
+
+            if ($file = $this->getViewFileUri("css")) {
+                joy_web_Resource::getInstance()->AddStyle($file);
+            }
+
+            if ($file = $this->getViewFileUri("js")) {
+                joy_web_Resource::getInstance()->AddScript($file);
+            }
+        }
+
+        $output = str_replace("<!-- @@Script.AutoLoad@@ -->", $this->getScriptView(), $output);
+        $output = str_replace("<!-- @@Style.AutoLoad@@ -->", $this->getStyleView(), $output);
+
+        return $output;
     }
-
-// {{{ Events 
-
-    public function OnChangeTheme($obj, $args)
-    {
-        $name = $args[0];
-        $this->setThemeName($name);
-    }
-
-    public function OnChangeLayout($obj, $args)
-    {
-        $name = $args[0];
-        $this->setLayoutFile($name);
-    }
-
-    public function OnChangeView($obj, $args)
-    {
-        $name = $args[0];
-        $this->setViewFile($name);
-    }
-
-    public function OnChangeViewFolder()
-    {
-        $name = $args[0];
-        $this->setViewFolder($name);
-    }
-
-// }}}
 
     public function render()
     {
@@ -119,9 +103,9 @@ class joy_web_View extends joy_Object
         if (method_exists($this, "Fetch")) {
             $output = $this->Fetch();
         }
-      
-        $output = str_replace("<!-- @@Script.AutoLoad@@ -->", $this->getScriptView(), $output);
-        $output = str_replace("<!-- @@Style.AutoLoad@@ -->", $this->getStyleView(), $output);
+     
+        // Script & Style File Loading...
+        $this->loadPageResource(&$output);
 
         // Set Post Filter For Render 
         $this->Event->Dispatch("PostRender", &$output);
@@ -131,15 +115,17 @@ class joy_web_View extends joy_Object
 
     public function setMeta($meta)
     {
-        $this->Meta = $meta;    
+        $this->Meta =& $meta;
+        $this->setView($this->Meta->Action);
+        $this->setViewFolder($this->Meta->Page);
     }
 
-    public function setLayoutFile($name)
+    public function setLayout($name)
     {
         $this->layoutName = $name;    
     }
 
-    public function setViewFile($name)
+    public function setView($name)
     {
         $this->viewName = $name;    
     }
@@ -149,7 +135,7 @@ class joy_web_View extends joy_Object
         $this->viewFolderName = $name;
     }
 
-    public function setThemeName($theme)
+    public function setTheme($theme)
     {
         $this->themeName = $theme;
     }
@@ -159,10 +145,41 @@ class joy_web_View extends joy_Object
         $this->contentType = $contentType;
     }
 
+    public function getFileThemePath($p_temp, $file)
+    {
+        $path_temp = sprintf("%s/%s", rtrim($p_temp, "/"), ltrim($file, "/"));
+
+        if ($this->themeName) {
+            $theme = $this->themeName;
+            $path = str_replace(self::LABEL_APP_THEME, $this->themeName, $path_temp);
+            if (!file_exists($path)) {
+                $theme = $this->defaultThemeFolder;           
+                $path = str_replace(self::LABEL_APP_THEME, $this->defaultThemeFolder, $path_temp);
+            }
+        }
+        else {
+            $theme = $this->defaultThemeFolder;           
+            $path = str_replace(self::LABEL_APP_THEME, $this->defaultThemeFolder, $path_temp);
+        }
+        
+        if (!file_exists($path)) return false;
+        return array($path, $theme);
+    }
+
     public function getScriptView()
     {
+        $uri_temp = $this->Config->Get("app.document_root.folders.uri.script");
+        $p_temp = $this->Config->Get("app.document_root.folders.path.script");
+ 
         $scripts = joy_web_Resource::getInstance()->Scripts->GetAll();
         foreach ($scripts as $file) {
+            if (stripos($file, "?ver=") === false) {
+                 if (!(list($path, $theme) = $this->getFileThemePath($p_temp, $file))) continue;
+
+                 $uri = str_replace(self::LABEL_APP_THEME, $theme, $uri_temp);
+                 $file = sprintf("%s/%s?ver=%s", rtrim($uri, "/"), ltrim($file, "/"), filemtime($path));
+            }
+
             $result .= "<script type='text/javascript' src='$file'></script>\n";
         }
 
@@ -171,8 +188,18 @@ class joy_web_View extends joy_Object
 
     public function getStyleView()
     {
+        $uri_temp = $this->Config->Get("app.document_root.folders.uri.style");
+        $p_temp = $this->Config->Get("app.document_root.folders.path.style");
+ 
         $styles = joy_web_Resource::getInstance()->Styles->GetAll();
         foreach ($styles as $file) {
+
+            if (stripos($file, "?ver=") === false) {
+                 if (!(list($path, $theme) = $this->getFileThemePath($p_temp, $file))) continue;
+
+                 $uri = str_replace(self::LABEL_APP_THEME, $theme, $uri_temp);
+                 $file = sprintf("%s/%s?ver=%s", rtrim($uri, "/"), ltrim($file, "/"), filemtime($path));
+            }
             $result .= "<link type='text/css' rel='stylesheet' href='$file' />\n";
         }
 
@@ -189,7 +216,7 @@ class joy_web_View extends joy_Object
         return $this->contentType;
     }
 
-    public function getViewFile()
+    public function getView()
     {
         return $this->viewName; 
     }
@@ -199,7 +226,7 @@ class joy_web_View extends joy_Object
         return $this->viewFolderName;
     }
 
-    public function getThemeName()
+    public function getTheme()
     {
         return $this->themeName;
     }
@@ -224,7 +251,7 @@ class joy_web_View extends joy_Object
                                      $this->viewName,
                                      $fileExtension);
 
-        $theme_folder = $this->getThemeName();
+        $theme_folder = $this->getTheme();
 
         if ($theme_folder) {
             $vpath = str_replace(self::LABEL_APP_THEME, $theme_folder, $view_path);
@@ -255,7 +282,7 @@ class joy_web_View extends joy_Object
                                      $this->layoutName,
                                      $fileExtension);
 
-        $theme_folder = $this->getThemeName();
+        $theme_folder = $this->getTheme();
 
         if ($theme_folder) {
             $lpath = str_replace(self::LABEL_APP_THEME, $theme_folder, $layout_path);

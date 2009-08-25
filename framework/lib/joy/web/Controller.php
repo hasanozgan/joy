@@ -26,6 +26,7 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         parent::Init();
 
+        $this->RenderFactory = new joy_web_ui_RenderFactory();
         $this->Model = joy_web_Model::getInstance();
         $this->Resource = joy_web_Resource::getInstance();
         $this->Workflow = joy_web_Workflow::getInstance();
@@ -35,11 +36,6 @@ class joy_web_Controller extends joy_web_HttpContext
     {
         $this->Meta = $pageMeta;
         $this->Request->Parameter = new joy_data_Dictionary($this->Meta->PageArguments);
-
-        $this->View = joy_web_ui_RenderFactory::Builder($this->Meta->OutputMode);
-        $this->View->setViewFile($this->Meta->Action);
-        $this->View->setViewFolder($this->Meta->Page);
-        $this->View->setMeta($this->Meta);
     }
     
     protected function loadAttributes()
@@ -49,30 +45,10 @@ class joy_web_Controller extends joy_web_HttpContext
         joy_web_Attribute::Loader(&$this);
     }
 
-    protected function addResource()
+    protected function createRender()
     {
-        //TODO: Locale File (for multi language) loader..
-
-        if (in_array($this->Meta->OutputMode, array(joy_web_View::VIEW, joy_web_View::LAYOUT))) {
-            if ($this->Meta->Source == "Browser") {
-                if ($file = $this->View->getLayoutFileUri("css")) {
-                    $this->Resource->AddStyle($file);
-                }
-
-                if ($file = $this->View->getLayoutFileUri("js")) {
-                    $this->Resource->AddScript($file);
-                }
-            }
-
-            if ($file = $this->View->getViewFileUri("css")) {
-                $this->Resource->AddStyle($file);
-            }
-
-            if ($file = $this->View->getViewFileUri("js")) {
-                $this->Resource->AddScript($file);
-            }
-        }
-
+        $this->View =& $this->RenderFactory->Builder($this->Meta->OutputMode);
+        $this->View->setMeta($this->Meta);
     }
 
     protected function invokeMethod()
@@ -81,8 +57,7 @@ class joy_web_Controller extends joy_web_HttpContext
        
         $class = new ReflectionClass($this);
 
-        return $class->getMethod($this->Meta->Action)
-                            ->invoke($this, $this->Meta->ActionArguments);
+        return $class->getMethod($this->Meta->Action)->invoke($this, $this->Meta->ActionArguments);
     }
 
     protected function render()
@@ -107,9 +82,9 @@ class joy_web_Controller extends joy_web_HttpContext
             $this->Meta->ActionArguments = $arguments;
         }
 
-        $this->loadAttributes(); 
+        $this->loadAttributes();
 
-        $this->addResource();
+        $this->createRender(); 
 
         $activity = $this->invokeMethod();
         

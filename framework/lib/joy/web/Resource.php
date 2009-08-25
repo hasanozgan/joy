@@ -15,6 +15,7 @@ class joy_web_Resource extends joy_Object
 {
     public $Scripts;
     public $Styles;
+    public $Locales;
 
     private static $instance;
 
@@ -29,6 +30,7 @@ class joy_web_Resource extends joy_Object
 
     protected function Init()
     {
+        $this->Locales = new joy_data_Dictionary();
         $this->Scripts = new joy_data_Dictionary();
         $this->Styles = new joy_data_Dictionary();
     }
@@ -41,29 +43,11 @@ class joy_web_Resource extends joy_Object
 
     public function AddScript($file)
     {
-        //TODO Required View & Meta objects
-        if (stripos($file, "?ver=") === false) {
-            $uri = $this->Config->Get("app.document_root.folders.uri.script");
-            $path = sprintf("%s/%s", $this->Config->Get("app.document_root.folders.path.script"), $file);
-            if (!file_exists($path)) return false;
-
-            $file = sprintf("%s/%s?ver=%s", $uri, $file, filemtime($path));
-        }
-
         $this->Scripts->Add($file); 
     }
 
     public function AddStyle($file)
     {
-        //TODO Required View & Meta objects
-        if (stripos($file, "?ver=") === false) {
-            $uri = $this->Config->Get("app.document_root.folders.uri.style");
-            $path = sprintf("%s/%s", $this->Config->Get("app.document_root.folders.path.style"), $file);
-            if (!file_exists($path)) return false;
-
-            $file = sprintf("%s/%s?ver=%s", $uri, $file, filemtime($path));
-        }
-
         $this->Styles->Add($file); 
     }
 
@@ -76,7 +60,6 @@ class joy_web_Resource extends joy_Object
     {
          $this->AddStyle($args[0]); 
     }
-
 }
 
 ?>

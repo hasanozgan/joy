@@ -14,23 +14,75 @@ import("joy.web");
 
 class joy_web_ui_RenderFactory extends joy_Object
 {
-    public static function &Builder($mode)
-    {
-        $result = self::ClassLoader($mode);
+    protected $Theme;
+    protected $Layout;
+    protected $View;
+    protected $ViewFolder;
 
-        if (!$result) {
+// {{{ Events 
+
+    public function RegisterEvents()
+    {
+        parent::RegisterEvents();
+
+        $this->Event->Register("ChangeTheme", "OnChangeTheme", $this);
+        $this->Event->Register("ChangeLayout", "OnChangeLayout", $this);
+        $this->Event->Register("ChangeView", "OnChangeView", $this);
+        $this->Event->Register("ChangeViewFolder", "OnChangeViewFolder", $this);
+    }
+
+
+    public function OnChangeTheme($obj, $args)
+    {
+        $this->Theme = $args[0];
+    }
+
+    public function OnChangeLayout($obj, $args)
+    {
+        $this->Layout = $args[0];
+    }
+
+    public function OnChangeView($obj, $args)
+    {
+        $this->View = $args[0];
+    }
+
+    public function OnChangeViewFolder($obj, $args)
+    {
+        $this->ViewFolder = $args[0];
+    }
+
+// }}}
+
+
+    public function &Builder($mode)
+    {
+        $view = $this->ClassLoader($mode);
+
+        if (!$view) {
             throw new Exception("Render class not found");
         }
 
-        return $result;
+        if ($this->Theme) {
+            $view->setTheme($this->Theme);
+        }
+        if ($this->Layout) {
+            $view->setLayout($this->Layout);
+        }
+        if ($this->View) {
+            $view->setView($this->View);
+        }
+        if ($this->ViewFolder) {
+            $view->setViewFolder($this->ViewFolder);
+        }
+
+        return $view;
     }
 
     public static function GetOutputMode($mode)
     {
-        $config = joy_Configure::getInstance();
-
         $mode = empty($mode) ? joy_web_View::DEFAULT_OUTPUT_MODE : $mode;
-        $namespace = $config->Get("joy.renders.{$mode}");
+        $namespace = joy_Configure::getInstance()->Get("joy.renders.{$mode}");
         if (!$namespace) {
             $mode = joy_web_View::DEFAULT_OUTPUT_MODE;
         }
@@ -38,13 +90,10 @@ class joy_web_ui_RenderFactory extends joy_Object
         return $mode;
     }
  
-    public static function ClassLoader($mode)
+    public function ClassLoader($mode)
     {
-        $config = joy_Configure::getInstance();
-    
-        $namespace = $config->Get("joy.renders.{$mode}");
+        $namespace = $this->Config->Get("joy.renders.{$mode}");
 
-        //TODO: Assign View Class
         return using($namespace);
     }    
 }
