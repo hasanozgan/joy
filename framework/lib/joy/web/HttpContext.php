@@ -19,7 +19,7 @@ class joy_web_HttpContext extends joy_Object
     public $Session;
     public $Cookie;
     public $Server;
-    public $Locale;
+    public $Culture; // Localization & Globalization Class
     public $User; //Default Anonymous
 
     private static $_httpContext;

@@ -1,7 +1,7 @@
 <?php
 
-using("joy.web.PageFactory");
-using("joy.web.ui.RenderFactory");
+import("joy.web.PageFactory");
+import("joy.web.ui.RenderFactory");
 
 function phptal_tales_import($src, $nothrow)
 {
