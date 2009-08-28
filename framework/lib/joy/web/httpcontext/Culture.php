@@ -11,7 +11,7 @@
 
 import("joy.Object");
 
-class joy_web_httpcontext_Locale extends joy_Object
+class joy_web_httpcontext_Culture extends joy_Object
 {
     private static $instance;
 

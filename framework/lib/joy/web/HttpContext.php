@@ -41,6 +41,8 @@ class joy_web_HttpContext extends joy_Object
         $this->Cookie = joy_web_httpcontext_Cookie::getInstance();
         $this->Server = joy_web_httpcontext_Server::getInstance();
         $this->User = joy_web_httpcontext_User::getInstance();
+        $this->Culture = joy_web_httpcontext_Culture::getInstance();
+
     }
 }
 
