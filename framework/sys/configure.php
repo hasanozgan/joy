@@ -9,9 +9,6 @@
  * file that was distributed with this source code.
  */
 
-define("CONFIG_SHM_SIZE", 1024*100);
-define("CONFIG_SHM_KEY", ftok(__FILE__, "A"));
-
 class joy_Configure 
 {
     private $values;
@@ -86,36 +83,24 @@ class joy_Configure
     public function load($config_file)
     {
         $success = false;
-        $shm_id = shmop_open(CONFIG_SHM_KEY, "c", 0644, CONFIG_SHM_SIZE);
 
-        if ($shm_id) {
-            $config_list = (array)unserialize(shmop_read($shm_id, 0, CONFIG_SHM_SIZE));
-            $this->values = $config_list[APP_ROOT];
-        }
-        else {
-            joy_Logger::getInstance()->error("Cache dont usafe in Config Loading time", __FILE__, __LINE__);
-        }
-
-        //FIXME: En son kaydedilen config ini hepsini ezer.
-        if (file_exists($config_file))// && $this->values["files"][$config_file] != filectime($config_file))
+        if (file_exists($config_file))
         {
             $ini_file = parse_ini_file($config_file, true);
             $this->values["settings"] = array_merge((array)$this->values["settings"], $ini_file);
             $this->values["files"][$config_file]["time"] = filectime($config_file);
-            $this->prepare();
 
-            if ($shm_id) {
-                $config_list[APP_ROOT] =  $this->values; 
-                shmop_write($shm_id, serialize($config_list), 0);
+            if (($configuration = $this->get("joy.configuration")) && file_exists("$config_file.$configuration")) {
+                $ini_file = parse_ini_file("$config_file.$configuration", true);
+                $this->values["settings"] = array_merge((array)$this->values["settings"], $ini_file);
+                $this->values["files"][$config_file]["time"] = filectime($config_file);
             }
+                
+            $this->prepare();
 
             $success = true;
         }
         
-        if ($shm_id) {
-            shmop_close($shm_id);
-        }
-
         return $success;
     }
 

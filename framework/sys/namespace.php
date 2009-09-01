@@ -10,36 +10,24 @@
  */
 
 define("CLASS_EXTENSION", "php");
-define("NAMESPACE_SHM_SIZE", 1024*250);
-define("NAMESPACE_SHM_KEY", ftok(__FILE__, "H"));
 
 class joy_Namespace
 {
     static $IsAddedLibraryPath;
+    static $items;
 
     static function Items($key=null, $value=null)
     {
-        $shm_id = shmop_open(NAMESPACE_SHM_KEY, "c", 0644, NAMESPACE_SHM_SIZE);
-
-        if ($shm_id)
-        {
-            $items = (array)unserialize(shmop_read($shm_id, 0, NAMESPACE_SHM_SIZE));
-
-            if ($key == null) {
-                shmop_close($shm_id);
-                return $items[APP_ROOT];
-            }
-            else if ($value == null) {
-                shmop_close($shm_id);
-                return $items[APP_ROOT][$key];
-            }
-            
-            $items[APP_ROOT][$key] = $value;
-            shmop_write($shm_id, serialize($items), 0);
-            shmop_close($shm_id);
-
-            return $value;
+        if ($key == null) {
+            return self::$items[APP_ROOT];
         }
+        else if ($value == null) {
+            return self::$items[APP_ROOT][$key];
+        }
+        
+        self::$items[APP_ROOT][$key] = $value;
+
+        return $value;
     }
 
     static function InsertTable($namespace)

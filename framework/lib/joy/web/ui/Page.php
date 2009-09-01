@@ -43,7 +43,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
     public function OnInit(&$object, &$args)
     {
         // You dont be writing output buffer in classes!.. 
-        ob_start();
+        //ob_start();
     }
 
     public function OnLoad(&$object, &$args)
@@ -64,7 +64,7 @@ class joy_web_ui_Page extends joy_web_Controller implements joy_web_ui_IPage
 
     public function OnDisposal(&$object, &$args)
     {
-        ob_end_clean();
+        //ob_end_clean();
     }
 }
 

@@ -15,7 +15,6 @@ class joy_web_Receipt extends joy_Object
 {
     static function GetPages()
     {
-        //TODO: Use Shared Memory...
         $config = joy_Configure::getInstance();
         $page_path = $config->get("app.folders.path.page");
 
@@ -49,32 +48,21 @@ class joy_web_Receipt extends joy_Object
 
     static function GetRules()
     {
-        //TODO: Use Shared Memory
-
+        $cache = joy_Cache::getInstance();
         $config = joy_Configure::getInstance();
         $settings_path = $config->get("app.folders.path.settings");
 
         $rules_file = $settings_path."router.ini";
+        $key = md5($rules_file);
 
-        // Load Router.ini
-        // DIKKAT: Pages & Rules & Config tanımları shared memory'e eklenirken app_id'ye gore eklenmeli.
-        // Yoksa aynı anda 2 proje çalıştığında çok başımız ağrır.
-        
-        $shm_id = shmop_open(RULES_SHM_KEY, "c", 0644, RULES_SHM_SIZE);
+        $app_rules = (array)$cache->Local->Get("rules_$key");
 
-        if ($shm_id) {
-            $app_rules = (array)unserialize(shmop_read($shm_id, 0, RULES_SHM_SIZE));
-        }
-        else {
-            joy_system_Logger::getInstance()->error("Cache dont usage in Router.Ini Loading time", __FILE__, __LINE__);
-        }
-
-        if ($app_rules[$rules_file]["time"] != filectime($rules_file))
+        if ($app_rules[$key]["time"] != filectime($rules_file))
         {
             $pages = self::GetPages();
 
             // Set Rules
-            $app_rules[$rules_file]["rules"] = array();
+            $app_rules[$key]["rules"] = array();
             foreach ($pages as $class=>$file) 
             {
                 $rule = array();
@@ -82,7 +70,7 @@ class joy_web_Receipt extends joy_Object
                 $rule["class"] = $class;
                 $rule["file"] = $file;
 
-                array_push($app_rules[$rules_file]["rules"], $rule);
+                array_push($app_rules[$key]["rules"], $rule);
             }
 
             $aliases = parse_ini_file($settings_path."router.ini", true);
@@ -104,22 +92,14 @@ class joy_web_Receipt extends joy_Object
                     $rule["request"] = (array)trim($params["parameters"], ",");
                 }
 
-                array_push($app_rules[$rules_file]["rules"], $rule);
+                array_push($app_rules[$key]["rules"], $rule);
             }
 
-            // Write to Shared Memory
-            if ($shm_id) {
-                shmop_write($shm_id, serialize($app_rules), 0);
-            }
+            $cache->Local->Set("rules_$key", $app_rules, 3600);
+
         }
 
-        // Close shared memory handler
-        if ($shm_id) {
-            shmop_close($shm_id);
-        }
-
-        return $app_rules[$rules_file]["rules"];
- 
+        return $app_rules[$key]["rules"];
     }
 
 

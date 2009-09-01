@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-class joy_system_Cache
+class joy_Cache
 {
     public $Global;
     public $Local;
@@ -23,12 +23,17 @@ class joy_system_Cache
         $this->Global = using($config->Get("joy.plugins.cache_global"));
         $this->Local = using($config->Get("joy.plugins.cache_local"));
 
+        try
+        {
         $cache_servers = $config->GetSection("app.servers.cache.global");
         foreach ($cache_servers as $k=>$v) {
             $server = parse_url($v);
             $this->Global->AddServer($server["host"], $server["port"], ($server["query"] == "persist"));
         }
-
+        }
+        catch(Exception $ex) {
+        }
+/*
         if (!$this->Global->Get("test")) {
             $this->Global->Set("test", 182223, 86400);
             var_dump( $this->Global->Get("test"));
@@ -37,7 +42,7 @@ class joy_system_Cache
         if (!$this->Local->Get("test")) {
             $this->Local->Set("test", 12312399, 86400);
             var_dump( $this->Local->Get("test"));
-        }
+        }*/
     }
 
     static function &getInstance()
