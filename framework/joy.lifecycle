@@ -1,0 +1,68 @@
+
+Pseudo Code
+
+Page::instance(); // PageContext Instance 
+	$this->RequestHandler(); // router.config
+		$this->Request = Set(Module, Action, ActionArguments, RenderType, PageParameters);
+		
+	$this->LoadCanvas($this->Request->Module, $this->Request->Action);
+	
+		if (hasAuthentication == false) return "not authentication";
+		Set ContentType
+		Set Charset
+		Set Layout
+		Set Theme
+		Set SafeRequest
+		Import Stylesheets
+		Import Javascripts
+	
+	$this->Action();
+
+	
+	$this->Workflow(); // Action return ettiği string Canvas dosyasında bir sınıfı gösterir.
+	                   // Sınıfın geri dönüş değeri ise /* action=>[redirect:, call:] module:"action", widget:"profile" */ olabilir.
+
+	Assign.Render.Data();
+	
+	$this->Render();
+			LayoutFactory
+			Load Manifesto
+			BlockFactory
+				Module.Widget.Load()
+					Load Manifesto /* Stylesheet, Javascript */
+					Check Authentication
+					Import Stylesheets
+					Import Javascripts
+					Set Workflow		
+	
+	
+	
+LifeCycle
+----------------------------------------------
+* Istekler httpdocs/index.php altına gelir.
+* PageLoader sınıfı router.config dosyasını parse eder. 
+* Uri'yi router dosyası ile eşleştirir.
+* Uygun olan 
+
+View Loader
+----------------------------------------------
+Bir sayfa layout ve widget gibi görseller vardır.
+
+*.tpl => Görünüm dosyasının şablonudur.
+*.locale.yy => Dil dosyası tanımı bulunur. Dil dosyası tanımı varsa js içinde yüklenir. yy hangi dil olduğu bilgisidir.
+*.js => Görünüm dinamikleşmesi içinde kullanılan javascript işlemleri içindir.
+*.css => Görünümü özelliştirmek için kullanılacak stil dosyasıdır. 
+*.manifesto => bağımlılığı olan javascript, stylesheet gibi dosyalar ve/veya şablon içerisindeki blok tanımları bulunur.
+
+Layout: 
+	*.tpl, *.manifesto
+
+Action/Widget:
+	*.class.php, *.tpl, *.locale.yy, *.js, *.css, *.manifesto 
+
+
+
+Module
+----------------------------------------------
+İş parçalarının bütünüdür. 
+* Moduller action ve widget'lardan oluşur.

@@ -1,0 +1,8 @@
+stylesheets: []
+javascripts: []
+
+stacks:
+    helper: 
+        widget: content/fetch
+        parameters:
+            id: $router

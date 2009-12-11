@@ -1,0 +1,1 @@
+<i><a href="http://creativecommons.org/publicdomain/zero/1.0/">All rights reserved</a> - Powered by  <a href="http://joy.netology.org">Joy Web Framework</a> - Hosted by <a href="http://dahius.com">Dahius</a></i>

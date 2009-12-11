@@ -1,0 +1,19 @@
+template:
+	layout: general
+	theme: bluemoon
+	authorization: []
+	
+	actions:
+        works:
+            layout: general
+
+		index:
+			authorization: []
+			workflow:
+				success: profile
+				error: error
+	
+	widgets:
+		menu:		
+			authorization: []
+

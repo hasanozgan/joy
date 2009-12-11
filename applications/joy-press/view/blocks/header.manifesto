@@ -1,0 +1,6 @@
+stylesheets: [header.css]
+javascripts: []
+
+stacks:
+    menu: 
+        - component: main/menu 

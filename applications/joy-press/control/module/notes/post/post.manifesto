@@ -1,0 +1,19 @@
+stylesheets:    []
+javascripts:    [jquery.js]
+
+stacks:
+    sidebar:
+	    - module:  
+          widget: wizard
+		
+	header:
+        - module: account
+          action: list
+          parameters: 
+            id: 324
+            date: 20090812
+
+        - widget: menu
+          parameters: 
+            location_id: 234		
+
