@@ -1,8 +1,0 @@
-stylesheets: []
-javascripts: []
-
-stacks:
-    asistant:
-        - component: event/wizard
-        - component: content/asistant
-
