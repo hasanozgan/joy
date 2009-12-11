@@ -1,0 +1,18 @@
+Library
+-----------------------
+Zend 1.9
+Doctrine 1.2
+PHPTAL 1.2
+Addendum 0.4
+jQuery (js framework)
+960gs (css framework)
+
+Development
+-----------------------
+PHPUnit
+Phing
+PHP CodeSniffer
+phpUnderControl
+FirePHP
+XDebug
+phpDocumentor
