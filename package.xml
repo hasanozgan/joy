@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packageversion="0.0.1" version="0.0.5">
+    <dependencies>
+        <required>
+            <php>
+                <min>5.2</min>
+            </php>
+            <pearinstaller>
+                <min>1.4.6</min>
+            </pearinstaller>
+            <package>
+                <name>Doctrine</name>
+                <channel>pear.doctrine-project.org</channel>
+                <min>1.2.0</min>
+            </package>
+            <package>
+                <name>PHPTAL</name>
+                <channel>pear.phptal.org</channel>
+                <min>1.2.0</min>
+            </package>
+            <package>
+                <name>Zend</name>
+                <channel>pear.zend.com</channel>
+                <min>1.9.0</min>
+            </package>
+            <package>
+                <name>apc</name>
+                <channel>pecl.php.net</channel>
+                <min>0.4.0</min>
+            </packag>
+        </required>
+        <optional>
+        </optional>
+    </dependencies>
+</package>

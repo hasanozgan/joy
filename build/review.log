@@ -1,0 +1,2991 @@
+Failed loading /usr/lib/php5/20060613+lfs/xcache.so:  /usr/lib/php5/20060613+lfs/xcache.so: cannot open shared object file: No such file or directory
+
+FILE: /devel/netology/joy/trunk/library/Joy/Application.php
+--------------------------------------------------------------------------------
+FOUND 12 ERROR(S) AND 2 WARNING(S) AFFECTING 12 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+ 35 | ERROR   | Missing function doc comment
+ 40 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 0
+ 40 | ERROR   | Perl-style comments are not allowed. Use "// Comment." or "/*
+    |         | comment */" instead.
+ 43 | ERROR   | You must use "/**" style comments for a function comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Array.php
+--------------------------------------------------------------------------------
+FOUND 25 ERROR(S) AND 5 WARNING(S) AFFECTING 28 LINE(S)
+--------------------------------------------------------------------------------
+  22 | WARNING | PHP version not specified
+  22 | ERROR   | Missing @category tag in file comment
+  22 | ERROR   | Missing @package tag in file comment
+  22 | ERROR   | Missing @author tag in file comment
+  22 | ERROR   | Missing @license tag in file comment
+  22 | ERROR   | Missing @link tag in file comment
+  25 | ERROR   | There must be exactly one blank line before the tags in class
+     |         | comments
+  25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces
+     |         | but found 6.
+  27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+     |         | but found 3.
+  28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+     |         | <package_version>" instead
+  29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+     |         | found 8.
+  31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+     |         | found 7.
+  32 | ERROR   | Missing @category tag in class comment
+  38 | ERROR   | Missing function doc comment
+  49 | ERROR   | Missing function doc comment
+  54 | ERROR   | Missing function doc comment
+  57 | WARNING | Line exceeds 85 characters; contains 86 characters
+  60 | ERROR   | Missing function doc comment
+  66 | ERROR   | Missing function doc comment
+  66 | ERROR   | Private method name "Joy_Array::getElement" must be prefixed
+     |         | with an underscore
+  68 | WARNING | Line exceeds 85 characters; contains 93 characters
+  71 | ERROR   | Missing function doc comment
+  71 | ERROR   | Private method name "Joy_Array::setElement" must be prefixed
+     |         | with an underscore
+  73 | WARNING | Line exceeds 85 characters; contains 100 characters
+  77 | ERROR   | You must use "/**" style comments for a function comment
+  82 | ERROR   | Missing function doc comment
+  87 | ERROR   | Missing function doc comment
+  92 | ERROR   | Missing function doc comment
+  97 | ERROR   | Missing function doc comment
+ 103 | ERROR   | You must use "/**" style comments for a function comment
+ 108 | ERROR   | Missing function doc comment
+ 113 | ERROR   | Missing function doc comment
+ 118 | ERROR   | Missing function doc comment
+ 124 | ERROR   | You must use "/**" style comments for a function comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config.php
+--------------------------------------------------------------------------------
+FOUND 13 ERROR(S) AND 2 WARNING(S) AFFECTING 13 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+ 38 | ERROR   | Missing function doc comment
+ 47 | ERROR   | Missing function doc comment
+ 54 | ERROR   | Missing function doc comment
+ 59 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Exception.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Section.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 35 | ERROR   | Expected 0 spaces before opening brace; 1 found
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Section/Abstract.php
+--------------------------------------------------------------------------------
+FOUND 15 ERROR(S) AND 2 WARNING(S) AFFECTING 15 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 38 | ERROR   | Missing function doc comment
+ 44 | ERROR   | Missing function doc comment
+ 49 | ERROR   | Missing function doc comment
+ 54 | ERROR   | Missing function doc comment
+ 61 | ERROR   | Expected "} else if (...) {\n"; found "}\n        else if (...)
+    |         | {\n"
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Section/Application.php
+--------------------------------------------------------------------------------
+FOUND 12 ERROR(S) AND 2 WARNING(S) AFFECTING 12 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 26 | ERROR   | Only 1 @package tag is allowed in a class comment
+ 26 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+ 42 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Section/Framework.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Config/Section/Interface.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in
+    |         | interface comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Context.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Event.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Exception.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File.php
+--------------------------------------------------------------------------------
+FOUND 27 ERROR(S) AND 5 WARNING(S) AFFECTING 29 LINE(S)
+--------------------------------------------------------------------------------
+  22 | WARNING | PHP version not specified
+  22 | ERROR   | Missing @category tag in file comment
+  22 | ERROR   | Missing @package tag in file comment
+  22 | ERROR   | Missing @author tag in file comment
+  22 | ERROR   | Missing @license tag in file comment
+  22 | ERROR   | Missing @link tag in file comment
+  25 | ERROR   | There must be exactly one blank line before the tags in class
+     |         | comments
+  25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces
+     |         | but found 6.
+  27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+     |         | but found 3.
+  28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+     |         | <package_version>" instead
+  29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+     |         | but found 5.
+  30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+     |         | found 8.
+  31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+     |         | found 7.
+  32 | ERROR   | Missing @category tag in class comment
+  40 | ERROR   | Missing function doc comment
+  45 | ERROR   | Missing function doc comment
+  45 | ERROR   | Private method name "Joy_File::parseFile" must be prefixed
+     |         | with an underscore
+  48 | ERROR   | Closing brace must be on a line by itself
+  48 | ERROR   | Expected "if (...) {\n"; found "if (...) { "
+  48 | WARNING | Line exceeds 85 characters; contains 87 characters
+  51 | WARNING | Line exceeds 85 characters; contains 92 characters
+  53 | WARNING | Line exceeds 85 characters; contains 92 characters
+  56 | ERROR   | Missing function doc comment
+  61 | ERROR   | Missing function doc comment
+  66 | ERROR   | Missing function doc comment
+  71 | ERROR   | Missing function doc comment
+  76 | ERROR   | Missing function doc comment
+  81 | ERROR   | Missing function doc comment
+  85 | ERROR   | Line indented incorrectly; expected 8 spaces, found 12
+  86 | ERROR   | Line indented incorrectly; expected 8 spaces, found 12
+  89 | ERROR   | Line indented incorrectly; expected 8 spaces, found 12
+  90 | ERROR   | Line indented incorrectly; expected 8 spaces, found 12
+  93 | ERROR   | Line indented incorrectly; expected 8 spaces, found 12
+  98 | ERROR   | Missing function doc comment
+ 105 | ERROR   | Missing function doc comment
+ 110 | ERROR   | Missing function doc comment
+ 115 | ERROR   | You must use "/**" style comments for a function comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Exception.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Extension.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader.php
+--------------------------------------------------------------------------------
+FOUND 15 ERROR(S) AND 2 WARNING(S) AFFECTING 15 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+ 44 | ERROR   | Line indented incorrectly; expected 12 spaces, found 16
+ 47 | ERROR   | Line indented incorrectly; expected 12 spaces, found 16
+ 50 | ERROR   | Line indented incorrectly; expected 12 spaces, found 16
+ 53 | ERROR   | Line indented incorrectly; expected 12 spaces, found 16
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Abstract.php
+--------------------------------------------------------------------------------
+FOUND 12 ERROR(S) AND 2 WARNING(S) AFFECTING 12 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+ 41 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Ini.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Interface.php
+--------------------------------------------------------------------------------
+FOUND 13 ERROR(S) AND 2 WARNING(S) AFFECTING 13 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in
+    |         | interface comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+ 37 | ERROR   | Missing function doc comment
+ 38 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Json.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Json/Helper.php
+--------------------------------------------------------------------------------
+FOUND 238 ERROR(S) AND 39 WARNING(S) AFFECTING 246 LINE(S)
+--------------------------------------------------------------------------------
+   1 | ERROR   | End of line character is invalid; expected "\n" but found
+     |         | "\r\n"
+   2 | ERROR   | You must use "/**" style comments for a file comment
+  13 | WARNING | Line exceeds 85 characters; contains 88 characters
+  37 | WARNING | Line exceeds 85 characters; contains 87 characters
+  47 | WARNING | Line exceeds 85 characters; contains 91 characters
+  55 | WARNING | Line exceeds 85 characters; contains 92 characters
+  64 | WARNING | Line exceeds 85 characters; contains 110 characters
+  87 | WARNING | Line exceeds 85 characters; contains 86 characters
+  99 | WARNING | Line exceeds 85 characters; contains 132 characters
+ 119 | WARNING | Line exceeds 85 characters; contains 86 characters
+ 128 | ERROR   | Opening brace of a class must be on the line after the
+     |         | definition
+ 128 | ERROR   | You must use "/**" style comments for a class comment
+ 130 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 130 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 132 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 132 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 133 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 134 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 135 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 136 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 137 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 137 | ERROR   | Expected 1 space before variable type
+ 137 | ERROR   | Doc comment for var String does not match actual variable name
+     |         | $params at position 1
+ 137 | ERROR   | Expected 1 space after the longest type
+ 138 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 138 | ERROR   | Last parameter comment requires a blank newline after it
+ 138 | ERROR   | Expected 1 space before variable type
+ 138 | ERROR   | The variable names for parameters String (1) and optional (2)
+     |         | do not align
+ 138 | ERROR   | The comments for parameters String (1) and optional (2) do not
+     |         | align
+ 138 | ERROR   | Doc comment for var optional does not match actual variable
+     |         | name $result at position 2
+ 139 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 140 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 141 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 142 | WARNING | Line exceeds 85 characters; contains 86 characters
+ 142 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 143 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 144 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 144 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 144 | ERROR   | Opening brace should be on a new line
+ 145 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 145 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 146 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 146 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 147 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 147 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 148 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 148 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 148 | ERROR   | Expected "foreach (...) {\n"; found "foreach(...) {\n"
+ 149 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 149 | WARNING | Inline control structures are discouraged
+ 150 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 150 | WARNING | Line exceeds 85 characters; contains 86 characters
+ 151 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 151 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 152 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 152 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 153 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 153 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 154 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 154 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 155 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 155 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 156 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 156 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 157 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 157 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 158 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 158 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 159 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 159 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 160 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 160 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 160 | WARNING | Line exceeds 85 characters; contains 91 characters
+ 161 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 161 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 162 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 162 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 163 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 163 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 164 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 164 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 165 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 165 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 166 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 166 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 167 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 167 | WARNING | Line exceeds 85 characters; contains 91 characters
+ 167 | WARNING | Inline control structures are discouraged
+ 168 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 168 | WARNING | Line exceeds 85 characters; contains 140 characters
+ 169 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 169 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 170 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 170 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 171 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 171 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 172 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 172 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 172 | ERROR   | Expected "if (...) {\n"; found "if(...) {\n"
+ 173 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 173 | WARNING | Inline control structures are discouraged
+ 174 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 175 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 175 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 176 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 176 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 177 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 177 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 177 | ERROR   | Expected "foreach (...) {\n"; found "foreach(...) {\n"
+ 178 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 178 | WARNING | Inline control structures are discouraged
+ 179 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 180 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 7
+ 180 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 181 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 181 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 182 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 183 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 183 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 184 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 185 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 185 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 186 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 188 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 188 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 189 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 190 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 191 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 192 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 193 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 193 | ERROR   | Expected 1 space before variable type
+ 193 | ERROR   | Doc comment for var valid does not match actual variable name
+     |         | $encode at position 1
+ 193 | ERROR   | Expected 1 space after the longest type
+ 194 | WARNING | Line exceeds 85 characters; contains 103 characters
+ 194 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 194 | ERROR   | Last parameter comment requires a blank newline after it
+ 194 | ERROR   | Expected 1 space before variable type
+ 194 | ERROR   | The comments for parameters valid (1) and uses (2) do not
+     |         | align
+ 194 | ERROR   | Doc comment for var uses does not match actual variable name
+     |         | $stdClass at position 2
+ 195 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 196 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 197 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 198 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 199 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 200 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 201 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 202 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 203 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 204 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 205 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 206 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 207 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 208 | WARNING | Line exceeds 85 characters; contains 90 characters
+ 208 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 209 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 210 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 210 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 210 | ERROR   | Opening brace should be on a new line
+ 211 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 211 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 212 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 212 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 213 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 213 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 213 | ERROR   | Expected "if (...) {\n"; found "if(...) {\n"
+ 214 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 214 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 215 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 215 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 216 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 216 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 217 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 217 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 218 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 218 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 219 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 220 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 220 | WARNING | Inline control structures are discouraged
+ 221 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 222 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 222 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 223 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 225 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 225 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 226 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 227 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 228 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 229 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 230 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 230 | ERROR   | Last parameter comment requires a blank newline after it
+ 230 | ERROR   | Expected 1 space before variable type
+ 230 | ERROR   | Doc comment for var Array, does not match actual variable name
+     |         | $decode at position 1
+ 230 | ERROR   | Expected 1 space after the longest type
+ 231 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 232 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 233 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 234 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 235 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 236 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 237 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 238 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 239 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 240 | WARNING | Line exceeds 85 characters; contains 87 characters
+ 240 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 241 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 242 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 242 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 242 | ERROR   | Opening brace should be on a new line
+ 243 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 243 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 244 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 244 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 245 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 245 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 246 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 246 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 246 | ERROR   | Expected "if (...) {\n"; found "if(...) {\n"
+ 247 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 247 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 248 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 248 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 248 | ERROR   | Expected "foreach (...) {\n"; found "foreach(...) {\n"
+ 249 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 249 | WARNING | Inline control structures are discouraged
+ 250 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 251 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 252 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 252 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 253 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 254 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 254 | WARNING | Inline control structures are discouraged
+ 255 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 256 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 256 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 257 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 257 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 258 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 258 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 259 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 5
+ 259 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 259 | WARNING | Line exceeds 85 characters; contains 91 characters
+ 260 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 260 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 261 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 261 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 262 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 262 | WARNING | Inline control structures are discouraged
+ 263 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 264 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 5
+ 264 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 265 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 266 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 266 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 267 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 269 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 269 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 270 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 270 | ERROR   | You must use "/**" style comments for a function comment
+ 270 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 270 | ERROR   | Method name
+     |         | "Joy_File_Reader_Json_Helper::__getStaticReplacement" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 270 | ERROR   | Opening brace should be on a new line
+ 271 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 271 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 272 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 272 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 272 | ERROR   | Expected "if (...) {\n"; found "if(...) {\n"
+ 273 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 273 | ERROR   | Line indented incorrectly; expected 12 spaces, found 3
+ 273 | ERROR   | Expected "foreach (...) {\n"; found "foreach(...) {\n"
+ 274 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 4
+ 274 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 275 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 4
+ 275 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 276 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 277 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 277 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 277 | WARNING | Line exceeds 85 characters; contains 155 characters
+ 278 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 278 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 278 | WARNING | Line exceeds 85 characters; contains 125 characters
+ 279 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 280 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 280 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 281 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 282 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 282 | ERROR   | Missing function doc comment
+ 282 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 282 | ERROR   | Method name "Joy_File_Reader_Json_Helper::__decode" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 282 | ERROR   | Opening brace should be on a new line
+ 283 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 283 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 284 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 284 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 285 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 285 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 286 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 286 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 287 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 287 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 288 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 288 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 289 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 289 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 290 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 290 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 291 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 291 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 292 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 292 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 293 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 293 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 294 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 294 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 295 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 295 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 296 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 296 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 297 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 297 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 298 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 298 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 299 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 299 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 299 | ERROR   | Expected "while (...) {\n"; found "while(...) {\n"
+ 300 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 300 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 300 | WARNING | Line exceeds 85 characters; contains 97 characters
+ 301 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 301 | WARNING | Inline control structures are discouraged
+ 302 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 303 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 304 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 304 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 305 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 305 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 306 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 306 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 307 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 307 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 308 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 308 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 309 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 309 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 309 | ERROR   | Expected "while (...) {\n"; found "while(...) {\n"
+ 310 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 310 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 311 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 311 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 312 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 312 | WARNING | Inline control structures are discouraged
+ 313 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 313 | WARNING | Line exceeds 85 characters; contains 93 characters
+ 314 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 314 | WARNING | Inline control structures are discouraged
+ 315 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 315 | WARNING | Line exceeds 85 characters; contains 93 characters
+ 316 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 316 | WARNING | Inline control structures are discouraged
+ 317 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 318 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 319 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 319 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 320 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 320 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 321 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 321 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 322 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 322 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 323 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 323 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 324 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 324 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 325 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 11
+ 325 | ERROR   | Break statement indented incorrectly; expected 9 spaces, found
+     |         | 6
+ 325 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 326 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 326 | ERROR   | Line indented incorrectly; expected 12 spaces, found 5
+ 327 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 327 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 328 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 11
+ 328 | ERROR   | Break statement indented incorrectly; expected 9 spaces, found
+     |         | 6
+ 328 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 329 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 330 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 330 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 331 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 331 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 332 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 332 | ERROR   | Line indented incorrectly; expected 8 spaces, found 3
+ 333 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 333 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 334 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 334 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 334 | WARNING | Line exceeds 85 characters; contains 112 characters
+ 335 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 335 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 335 | ERROR   | Expected "if (...) {\n"; found "if(...) {\n"
+ 336 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 336 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 337 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 337 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 338 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 338 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 339 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 5
+ 339 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 340 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 341 | ERROR   | Break statement indented incorrectly; expected 7 spaces, found
+     |         | 4
+ 341 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 342 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 343 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 343 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 344 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 345 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 345 | ERROR   | Missing function doc comment
+ 345 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 345 | ERROR   | Method name "Joy_File_Reader_Json_Helper::__decodeString" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 345 | ERROR   | Opening brace should be on a new line
+ 346 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 346 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 347 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 347 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 348 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 348 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 348 | WARNING | Line exceeds 85 characters; contains 106 characters
+ 349 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 349 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 350 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 350 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 351 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 352 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 352 | ERROR   | Missing function doc comment
+ 352 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 352 | ERROR   | Method name "Joy_File_Reader_Json_Helper::__endString" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 352 | ERROR   | Opening brace should be on a new line
+ 353 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 353 | ERROR   | Line indented incorrectly; expected 8 spaces, found 2
+ 353 | ERROR   | Expected "do {\n...} while (...);\n"; found "do
+     |         | {\n...}while(...);\n"
+ 354 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 3
+ 354 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 355 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 355 | WARNING | Line exceeds 85 characters; contains 100 characters
+ 356 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 356 | WARNING | Inline control structures are discouraged
+ 357 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 358 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 358 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 359 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 360 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 360 | ERROR   | Missing function doc comment
+ 360 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 360 | ERROR   | Method name "Joy_File_Reader_Json_Helper::__exit" is invalid;
+     |         | only PHP magic methods should be prefixed with a double
+     |         | underscore
+ 360 | ERROR   | Opening brace should be on a new line
+ 361 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 361 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 361 | WARNING | Line exceeds 85 characters; contains 107 characters
+ 362 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 363 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 363 | ERROR   | Missing function doc comment
+ 363 | ERROR   | Line indented incorrectly; expected 4 spaces, found 1
+ 363 | ERROR   | Method name "Joy_File_Reader_Json_Helper::__slashedChar" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 363 | ERROR   | Opening brace should be on a new line
+ 364 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 364 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 365 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 365 | WARNING | Inline control structures are discouraged
+ 366 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 367 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 2
+ 367 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 368 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Xml.php
+--------------------------------------------------------------------------------
+FOUND 12 ERROR(S) AND 2 WARNING(S) AFFECTING 12 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+ 40 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Yaml.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+ 36 | ERROR   | Missing function doc comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Reader/Yaml/Helper.php
+--------------------------------------------------------------------------------
+FOUND 520 ERROR(S) AND 85 WARNING(S) AFFECTING 578 LINE(S)
+--------------------------------------------------------------------------------
+   4 | WARNING | Invalid version "0.4.1" in file comment; consider "CVS:
+     |         | <cvs_id>" or "SVN: <svn_id>" instead
+   4 | ERROR   | There must be exactly one blank line before the tags in file
+     |         | comment
+   4 | ERROR   | The @version tag is in the wrong order; the tag follows
+     |         | @license
+   4 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+     |         | but found 1.
+   5 | ERROR   | The @author tag is in the wrong order; the tag follows
+     |         | @subpackage (if used) or @package
+   5 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces
+     |         | but found 1.
+   6 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces
+     |         | but found 1.
+   7 | ERROR   | The @link tag is in the wrong order; the tag follows @version
+   7 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+     |         | found 1.
+   8 | ERROR   | The @copyright tag is in the wrong order; the tag follows
+     |         | @author
+   8 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+     |         | but found 1.
+   9 | ERROR   | The @license tag is in the wrong order; the tag follows
+     |         | @copyright (if used) or @author
+   9 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+     |         | but found 1.
+  10 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+     |         | but found 1.
+  12 | WARNING | PHP version not specified
+  12 | ERROR   | Missing @category tag in file comment
+  13 | ERROR   | @copyright tag must contain a year and the name of the
+     |         | copyright holder
+  15 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  16 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  17 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  17 | ERROR   | Last parameter comment requires a blank newline after it
+  17 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+  18 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  19 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  20 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+  20 | ERROR   | Function name "spyc_load" is prefixed with a package name but
+     |         | does not begin with a capital letter
+  20 | ERROR   | Opening brace should be on a new line
+  21 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+  26 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  27 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  28 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  28 | ERROR   | Last parameter comment requires a blank newline after it
+  28 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+  29 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  30 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  31 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+  31 | ERROR   | Function name "spyc_load_file" is prefixed with a package name
+     |         | but does not begin with a capital letter
+  31 | ERROR   | Opening brace should be on a new line
+  32 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+  56 | ERROR   | Missing @category tag in class comment
+  56 | ERROR   | Missing @package tag in class comment
+  56 | ERROR   | Missing @author tag in class comment
+  56 | ERROR   | Missing @license tag in class comment
+  56 | ERROR   | Missing @link tag in class comment
+  58 | ERROR   | Expected 0 spaces before opening brace; 1 found
+  60 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  62 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  63 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  64 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  65 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  66 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  67 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  68 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  70 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  71 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  72 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  73 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  74 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  75 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  79 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  80 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  81 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  82 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  83 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  84 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  85 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  86 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  87 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  87 | ERROR   | Private member variable "path" must be prefixed with an
+     |         | underscore
+  88 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  88 | ERROR   | Private member variable "result" must be prefixed with an
+     |         | underscore
+  89 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  89 | ERROR   | Private member variable "LiteralPlaceHolder" must be prefixed
+     |         | with an underscore
+  90 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  90 | ERROR   | Private member variable "SavedGroups" must be prefixed with an
+     |         | underscore
+  91 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  91 | ERROR   | Private member variable "indent" must be prefixed with an
+     |         | underscore
+  92 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  93 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  94 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  95 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 3
+  96 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  96 | ERROR   | Private member variable "delayedPath" must be prefixed with an
+     |         | underscore
+  98 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+  99 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 100 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 101 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 102 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 102 | ERROR   | Public member variable "_nodeId" must not be prefixed with an
+     |         | underscore
+ 104 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 0
+ 105 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 106 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 106 | ERROR   | Last parameter comment requires a blank newline after it
+ 106 | ERROR   | Missing comment for param "$input" at position 1
+ 106 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 107 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 108 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 109 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 109 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 109 | ERROR   | Opening brace should be on a new line
+ 110 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 113 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 114 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 115 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 115 | ERROR   | Last parameter comment requires a blank newline after it
+ 115 | ERROR   | Missing comment for param "$file" at position 1
+ 115 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 116 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 117 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 1
+ 118 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 118 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 118 | ERROR   | Opening brace should be on a new line
+ 119 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 122 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 133 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 135 | ERROR   | Parameters must appear immediately after the comment
+ 137 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 137 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 137 | ERROR   | Public method name "Joy_File_Reader_Yaml_Helper::YAMLLoad" is
+     |         | not in camel caps format
+ 137 | ERROR   | Opening brace should be on a new line
+ 138 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 139 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 142 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 154 | WARNING | Line exceeds 85 characters; contains 87 characters
+ 157 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 159 | ERROR   | Parameters must appear immediately after the comment
+ 161 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 161 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 161 | ERROR   | Public method name
+     |         | "Joy_File_Reader_Yaml_Helper::YAMLLoadString" is not in camel
+     |         | caps format
+ 161 | ERROR   | Opening brace should be on a new line
+ 162 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 163 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 166 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 182 | ERROR   | Parameters must appear immediately after the comment
+ 183 | ERROR   | The variable names for parameters $array (1) and $indent (2)
+     |         | do not align
+ 183 | ERROR   | The comments for parameters $array (1) and $indent (2) do not
+     |         | align
+ 184 | ERROR   | The comments for parameters $indent (2) and $wordwrap (3) do
+     |         | not align
+ 186 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 186 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 186 | ERROR   | Public method name "Joy_File_Reader_Yaml_Helper::YAMLDump" is
+     |         | not in camel caps format
+ 186 | ERROR   | Opening brace should be on a new line
+ 187 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 188 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 188 | ERROR   | No space found after comma in function call
+ 188 | ERROR   | No space found after comma in function call
+ 192 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 208 | ERROR   | Parameters must appear immediately after the comment
+ 209 | ERROR   | The variable names for parameters $array (1) and $indent (2)
+     |         | do not align
+ 209 | ERROR   | The comments for parameters $array (1) and $indent (2) do not
+     |         | align
+ 210 | ERROR   | The comments for parameters $indent (2) and $wordwrap (3) do
+     |         | not align
+ 212 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 212 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 212 | ERROR   | Opening brace should be on a new line
+ 213 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 214 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 216 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 217 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 218 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 219 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 220 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 223 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 224 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 225 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 226 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 229 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 230 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 232 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 233 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 234 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 235 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 235 | ERROR   | No space found after comma in function call
+ 235 | ERROR   | No space found after comma in function call
+ 235 | ERROR   | No space found after comma in function call
+ 236 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 239 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 242 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 244 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 246 | ERROR   | Parameters must appear immediately after the comment
+ 246 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $key at position 1
+ 247 | ERROR   | The variable names for parameters The (1) and The (2) do not
+     |         | align
+ 247 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $value at position 2
+ 248 | ERROR   | The variable names for parameters The (2) and The (3) do not
+     |         | align
+ 248 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $indent at position 3
+ 248 | ERROR   | Doc comment for "$previous_key" missing
+ 250 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 250 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 250 | ERROR   | Opening brace should be on a new line
+ 251 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 252 | WARNING | Inline control structures are discouraged
+ 254 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 255 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 256 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 256 | ERROR   | TRUE, FALSE and NULL must be lowercase; expected "null" but
+     |         | found "NULL"
+ 257 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 258 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 259 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 260 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 260 | ERROR   | No space found after comma in function call
+ 261 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 262 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 263 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 265 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 268 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 270 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 272 | ERROR   | Parameters must appear immediately after the comment
+ 272 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $array at position 1
+ 273 | ERROR   | The variable names for parameters The (1) and The (2) do not
+     |         | align
+ 273 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $indent at position 2
+ 275 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 275 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 275 | ERROR   | Opening brace should be on a new line
+ 276 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 277 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 278 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 279 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 280 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 281 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 283 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 284 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 285 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 289 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 291 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 293 | ERROR   | Parameters must appear immediately after the comment
+ 293 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $key at position 1
+ 294 | ERROR   | The variable names for parameters The (1) and The (2) do not
+     |         | align
+ 294 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $value at position 2
+ 295 | ERROR   | The variable names for parameters The (2) and The (3) do not
+     |         | align
+ 295 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $indent at position 3
+ 295 | ERROR   | Doc comment for "$previous_key" missing
+ 297 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 297 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 297 | ERROR   | Opening brace should be on a new line
+ 298 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 299 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 299 | ERROR   | No space found after comma in function call
+ 299 | ERROR   | No space found after comma in function call
+ 299 | ERROR   | No space found after comma in function call
+ 299 | WARNING | Line exceeds 85 characters; contains 107 characters
+ 300 | ERROR   | Multi-line IF statement not indented correctly; expected 8
+     |         | spaces but found 6
+ 300 | ERROR   | Each line in a multi-line IF statement must begin with a
+     |         | boolean operator
+ 300 | ERROR   | No space found after comma in function call
+ 300 | ERROR   | No space found after comma in function call
+ 300 | ERROR   | No space found after comma in function call
+ 300 | WARNING | Line exceeds 85 characters; contains 101 characters
+ 301 | ERROR   | Closing parenthesis of a multi-line IF statement must be on a
+     |         | new line
+ 301 | ERROR   | Multi-line IF statement not indented correctly; expected 8
+     |         | spaces but found 6
+ 301 | ERROR   | No space found after comma in function call
+ 301 | ERROR   | No space found after comma in function call
+ 301 | ERROR   | No space found after comma in function call
+ 301 | ERROR   | No space found after comma in function call
+ 301 | WARNING | Line exceeds 85 characters; contains 133 characters
+ 302 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 302 | ERROR   | No space found after comma in function call
+ 303 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 304 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 304 | ERROR   | No space found after comma in function call
+ 305 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 306 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 310 | WARNING | Inline control structures are discouraged
+ 312 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 312 | ERROR   | No space found after comma in function call
+ 314 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 315 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 316 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 317 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 318 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 319 | ERROR   | Closing brace must be on a line by itself
+ 319 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 319 | ERROR   | Expected "if (...) {\n"; found "if (...) { "
+ 320 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 322 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 325 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 327 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 329 | ERROR   | Parameters must appear immediately after the comment
+ 329 | ERROR   | Doc comment for var [ UNKNOWN ] does not match actual variable
+     |         | name $value at position 1
+ 329 | ERROR   | Missing parameter name at position 1
+ 329 | ERROR   | Missing comment for param "[ UNKNOWN ]" at position 1
+ 329 | ERROR   | Expected 1 space after the longest type
+ 330 | ERROR   | The variable names for parameters UNKNOWN (1) and int (2) do
+     |         | not align
+ 330 | ERROR   | The comments for parameters UNKNOWN (1) and int (2) do not
+     |         | align
+ 330 | ERROR   | Doc comment for var int does not match actual variable name
+     |         | $indent at position 2
+ 332 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 332 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 332 | ERROR   | Opening brace should be on a new line
+ 333 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 333 | ERROR   | No space found after comma in function call
+ 334 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 335 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 336 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 336 | ERROR   | No space found after comma in function call
+ 337 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 338 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 340 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 343 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 345 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 347 | ERROR   | Parameters must appear immediately after the comment
+ 347 | ERROR   | Doc comment for var The does not match actual variable name
+     |         | $value at position 1
+ 347 | ERROR   | Doc comment for "$indent" missing
+ 349 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 349 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 349 | ERROR   | Opening brace should be on a new line
+ 350 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 352 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 353 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 354 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 354 | ERROR   | No space found after comma in function call
+ 355 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 355 | ERROR   | No space found after comma in function call
+ 355 | ERROR   | No space found after comma in function call
+ 356 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 357 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 358 | ERROR   | Space before opening parenthesis of function call prohibited
+ 358 | WARNING | Inline control structures are discouraged
+ 363 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 366 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 0
+ 368 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 368 | ERROR   | You must use "/**" style comments for a function comment
+ 368 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 368 | ERROR   | Method name "Joy_File_Reader_Yaml_Helper::__load" is invalid;
+     |         | only PHP magic methods should be prefixed with a double
+     |         | underscore
+ 368 | ERROR   | Opening brace should be on a new line
+ 369 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 370 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 373 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 373 | ERROR   | Missing function doc comment
+ 373 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 373 | ERROR   | Method name "Joy_File_Reader_Yaml_Helper::__loadString" is
+     |         | invalid; only PHP magic methods should be prefixed with a
+     |         | double underscore
+ 373 | ERROR   | Opening brace should be on a new line
+ 374 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 375 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 378 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 378 | ERROR   | Missing function doc comment
+ 378 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 378 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::loadWithSource" must be prefixed
+     |         | with an underscore
+ 378 | ERROR   | Opening brace should be on a new line
+ 379 | WARNING | Inline control structures are discouraged
+ 380 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 380 | ERROR   | Space before opening parenthesis of function call prohibited
+ 381 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 381 | ERROR   | Space before opening parenthesis of function call prohibited
+ 382 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 385 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 386 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 388 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 389 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 390 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 392 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 393 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 394 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 395 | WARNING | Inline control structures are discouraged
+ 396 | WARNING | Inline control structures are discouraged
+ 397 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 399 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 400 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 401 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 401 | ERROR   | Space before opening parenthesis of function call prohibited
+ 402 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 403 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 405 | ERROR   | Line indented incorrectly; expected 16 spaces, found 8
+ 405 | WARNING | Line exceeds 85 characters; contains 89 characters
+ 406 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 10
+ 406 | WARNING | Line exceeds 85 characters; contains 96 characters
+ 408 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 411 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 412 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 412 | ERROR   | Space before opening parenthesis of function call prohibited
+ 412 | ERROR   | Space before opening parenthesis of function call prohibited
+ 414 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 418 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 420 | WARNING | Inline control structures are discouraged
+ 421 | ERROR   | Space before opening parenthesis of function call prohibited
+ 423 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 425 | WARNING | Inline control structures are discouraged
+ 428 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 431 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 434 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 434 | ERROR   | Missing function doc comment
+ 434 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 434 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::loadFromSource" must be prefixed
+     |         | with an underscore
+ 434 | ERROR   | Opening brace should be on a new line
+ 435 | WARNING | Inline control structures are discouraged
+ 438 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 441 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 441 | ERROR   | Missing function doc comment
+ 441 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 441 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::loadFromString" must be prefixed
+     |         | with an underscore
+ 441 | ERROR   | Opening brace should be on a new line
+ 442 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 442 | ERROR   | No space found after comma in function call
+ 443 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 444 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 444 | ERROR   | Space before opening parenthesis of function call prohibited
+ 446 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 449 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 451 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 453 | ERROR   | Parameters must appear immediately after the comment
+ 455 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 455 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 455 | ERROR   | Opening brace should be on a new line
+ 456 | WARNING | Inline control structures are discouraged
+ 457 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 458 | WARNING | Inline control structures are discouraged
+ 459 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 461 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 462 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 463 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 464 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 464 | ERROR   | Space before opening parenthesis of function call prohibited
+ 467 | WARNING | Inline control structures are discouraged
+ 470 | WARNING | Inline control structures are discouraged
+ 473 | WARNING | Inline control structures are discouraged
+ 476 | WARNING | Inline control structures are discouraged
+ 480 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 484 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 486 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 487 | ERROR   | Last parameter comment requires a blank newline after it
+ 487 | ERROR   | Parameters must appear immediately after the comment
+ 487 | ERROR   | Missing comment for param "$value" at position 1
+ 490 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 490 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 490 | ERROR   | Opening brace should be on a new line
+ 491 | WARNING | Inline control structures are discouraged
+ 492 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 493 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 495 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 496 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 497 | WARNING | Inline control structures are discouraged
+ 498 | WARNING | Inline control structures are discouraged
+ 499 | WARNING | Inline control structures are discouraged
+ 500 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 503 | WARNING | Inline control structures are discouraged
+ 504 | ERROR   | Space before opening parenthesis of function call prohibited
+ 504 | WARNING | Line exceeds 85 characters; contains 97 characters
+ 506 | WARNING | Inline control structures are discouraged
+ 507 | ERROR   | No space found after comma in function call
+ 507 | ERROR   | No space found after comma in function call
+ 509 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 510 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 511 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 511 | ERROR   | Space before opening parenthesis of function call prohibited
+ 512 | WARNING | Inline control structures are discouraged
+ 513 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 514 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 515 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 516 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 517 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 519 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 522 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 522 | ERROR   | No space found after comma in function call
+ 523 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 523 | ERROR   | No space found after comma in function call
+ 524 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 525 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 526 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 526 | ERROR   | No space found after comma in function call
+ 527 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 528 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 531 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 532 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 532 | ERROR   | Space before opening parenthesis of function call prohibited
+ 533 | WARNING | Inline control structures are discouraged
+ 534 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 535 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 536 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 537 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 538 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 539 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 540 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 541 | WARNING | Inline control structures are discouraged
+ 542 | ERROR   | Line indented incorrectly; expected 16 spaces, found 8
+ 542 | ERROR   | Space before opening parenthesis of function call prohibited
+ 543 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 10
+ 545 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 547 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 550 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 550 | WARNING | Line exceeds 85 characters; contains 100 characters
+ 551 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 554 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 554 | ERROR   | Space before opening parenthesis of function call prohibited
+ 555 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 556 | WARNING | Inline control structures are discouraged
+ 558 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 561 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 561 | ERROR   | Opening parenthesis of a multi-line function call must be the
+     |         | last content on the line
+ 562 | ERROR   | Closing parenthesis of a multi-line IF statement must be on a
+     |         | new line
+ 562 | ERROR   | Multi-line IF statement not indented correctly; expected 8
+     |         | spaces but found 17
+ 562 | ERROR   | Multi-line function call not indented correctly; expected 4
+     |         | spaces but found 17
+ 562 | ERROR   | Closing parenthesis of a multi-line function call must be on a
+     |         | line by itself
+ 562 | WARNING | Line exceeds 85 characters; contains 104 characters
+ 563 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 566 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 566 | ERROR   | Opening parenthesis of a multi-line function call must be the
+     |         | last content on the line
+ 567 | ERROR   | Closing parenthesis of a multi-line IF statement must be on a
+     |         | new line
+ 567 | ERROR   | Multi-line IF statement not indented correctly; expected 8
+     |         | spaces but found 17
+ 567 | ERROR   | Multi-line function call not indented correctly; expected 4
+     |         | spaces but found 17
+ 567 | ERROR   | Closing parenthesis of a multi-line function call must be on a
+     |         | line by itself
+ 568 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 571 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 572 | WARNING | Inline control structures are discouraged
+ 573 | ERROR   | Space before opening parenthesis of function call prohibited
+ 573 | WARNING | Inline control structures are discouraged
+ 575 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 578 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 581 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 581 | ERROR   | Doc comment for "$inline" missing
+ 583 | ERROR   | There must be exactly one blank line before the tags in
+     |         | function comment
+ 586 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 586 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 586 | ERROR   | Opening brace should be on a new line
+ 587 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 588 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 589 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 590 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 592 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 593 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 594 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 596 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 597 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 598 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 598 | ERROR   | No space found after comma in function call
+ 598 | ERROR   | No space found after comma in function call
+ 599 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 600 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 600 | ERROR   | No space found after comma in function call
+ 600 | ERROR   | No space found after comma in function call
+ 602 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 604 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 605 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 607 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 608 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 608 | ERROR   | No space found after comma in function call
+ 608 | ERROR   | No space found after comma in function call
+ 609 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 610 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 610 | WARNING | Line exceeds 85 characters; contains 104 characters
+ 613 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 614 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 614 | ERROR   | No space found after comma in function call
+ 614 | ERROR   | No space found after comma in function call
+ 615 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 616 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 6
+ 616 | WARNING | Line exceeds 85 characters; contains 102 characters
+ 619 | WARNING | Inline control structures are discouraged
+ 621 | ERROR   | Space before opening parenthesis of function call prohibited
+ 621 | ERROR   | Space before opening parenthesis of function call prohibited
+ 623 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 623 | ERROR   | No space found after comma in function call
+ 624 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 626 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 628 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 629 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 630 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 631 | ERROR   | Line indented incorrectly; expected 20 spaces, found 8
+ 631 | ERROR   | No space found after comma in function call
+ 632 | ERROR   | Line indented incorrectly; expected 24 spaces, found 10
+ 633 | ERROR   | Line indented incorrectly; expected at least 28 spaces, found
+     |         | 12
+ 633 | ERROR   | No space found after comma in function call
+ 633 | ERROR   | No space found after comma in function call
+ 634 | ERROR   | Line indented incorrectly; expected at least 28 spaces, found
+     |         | 12
+ 640 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 641 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 642 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 643 | ERROR   | Line indented incorrectly; expected 20 spaces, found 8
+ 643 | ERROR   | No space found after comma in function call
+ 644 | ERROR   | Line indented incorrectly; expected 24 spaces, found 10
+ 645 | ERROR   | Line indented incorrectly; expected at least 28 spaces, found
+     |         | 12
+ 646 | ERROR   | Line indented incorrectly; expected at least 28 spaces, found
+     |         | 12
+ 653 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 654 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 655 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 656 | ERROR   | Line indented incorrectly; expected 20 spaces, found 8
+ 656 | ERROR   | No space found after comma in function call
+ 657 | ERROR   | Line indented incorrectly; expected at least 24 spaces, found
+     |         | 10
+ 657 | ERROR   | No space found after comma in function call
+ 657 | ERROR   | No space found after comma in function call
+ 657 | WARNING | Line exceeds 85 characters; contains 91 characters
+ 658 | ERROR   | Line indented incorrectly; expected at least 24 spaces, found
+     |         | 10
+ 659 | ERROR   | Line indented incorrectly; expected at least 24 spaces, found
+     |         | 10
+ 660 | ERROR   | Line indented incorrectly; expected at least 24 spaces, found
+     |         | 10
+ 665 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 666 | ERROR   | Line indented incorrectly; expected 12 spaces, found 4
+ 667 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 667 | ERROR   | No space found after comma in function call
+ 668 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 8
+ 670 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 670 | ERROR   | No space found after comma in function call
+ 671 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 8
+ 673 | ERROR   | Line indented incorrectly; expected 16 spaces, found 6
+ 673 | ERROR   | No space found after comma in function call
+ 674 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 8
+ 677 | WARNING | Inline control structures are discouraged
+ 679 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 4
+ 680 | WARNING | Inline control structures are discouraged
+ 684 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 687 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 687 | ERROR   | You must use "/**" style comments for a function comment
+ 687 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 687 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::literalBlockContinues" must be
+     |         | prefixed with an underscore
+ 687 | ERROR   | Opening brace should be on a new line
+ 688 | WARNING | Inline control structures are discouraged
+ 689 | WARNING | Inline control structures are discouraged
+ 690 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 693 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 693 | ERROR   | Missing function doc comment
+ 693 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 693 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::addArrayInline" must be prefixed
+     |         | with an underscore
+ 693 | ERROR   | Opening brace should be on a new line
+ 694 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 6
+ 695 | WARNING | Inline control structures are discouraged
+ 697 | ERROR   | Line indented incorrectly; expected 8 spaces, found 6
+ 698 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 8
+ 699 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 8
+ 701 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 6
+ 704 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 704 | ERROR   | Missing function doc comment
+ 704 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 704 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::addArray"
+     |         | must be prefixed with an underscore
+ 704 | ERROR   | Opening brace should be on a new line
+ 706 | ERROR   | Space before opening parenthesis of function call prohibited
+ 706 | WARNING | Inline control structures are discouraged
+ 707 | ERROR   | Space before opening parenthesis of function call prohibited
+ 709 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 709 | ERROR   | Space before opening parenthesis of function call prohibited
+ 710 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 712 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 712 | WARNING | Line exceeds 85 characters; contains 130 characters
+ 713 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 714 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 715 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 715 | ERROR   | Expected "} else {\n"; found "}  else {\n"
+ 716 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 716 | ERROR   | Space before opening parenthesis of function call prohibited
+ 716 | ERROR   | Space before opening parenthesis of function call prohibited
+ 718 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 719 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 724 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 725 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 726 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 727 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 728 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 731 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 732 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 733 | ERROR   | Closing brace must be on a line by itself
+ 733 | ERROR   | Line indented incorrectly; expected 16 spaces, found 8
+ 733 | ERROR   | Expected "if (...) {\n"; found "if (...) { "
+ 733 | WARNING | Line exceeds 85 characters; contains 130 characters
+ 734 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 735 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 736 | ERROR   | Line indented incorrectly; expected 16 spaces, found 8
+ 737 | ERROR   | Line indented incorrectly; expected at least 20 spaces, found
+     |         | 10
+ 740 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 744 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 745 | WARNING | Inline control structures are discouraged
+ 747 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 748 | ERROR   | Closing brace must be on a line by itself
+ 748 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 748 | ERROR   | Expected "if (...) {\n"; found "if (...) { "
+ 748 | ERROR   | Space before opening parenthesis of function call prohibited
+ 749 | ERROR   | Closing brace must be on a line by itself
+ 749 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 749 | ERROR   | Expected "} else {\n"; found "}\n      else { "
+ 749 | ERROR   | Space before opening parenthesis of function call prohibited
+ 749 | ERROR   | Space before opening parenthesis of function call prohibited
+ 752 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 753 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 753 | ERROR   | Space before opening parenthesis of function call prohibited
+ 754 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 755 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 756 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 757 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 759 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 761 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 763 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 764 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 765 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 771 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 771 | ERROR   | You must use "/**" style comments for a function comment
+ 771 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 771 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::startsLiteralBlock" must be
+     |         | prefixed with an underscore
+ 771 | ERROR   | Opening brace should be on a new line
+ 772 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 772 | ERROR   | Space before opening parenthesis of function call prohibited
+ 773 | WARNING | Inline control structures are discouraged
+ 774 | WARNING | Inline control structures are discouraged
+ 775 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 776 | ERROR   | Space before opening parenthesis of function call prohibited
+ 776 | WARNING | Inline control structures are discouraged
+ 777 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 780 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 780 | ERROR   | You must use "/**" style comments for a function comment
+ 780 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 780 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::greedilyNeedNextLine" must be
+     |         | prefixed with an underscore
+ 780 | ERROR   | Opening brace should be on a new line
+ 781 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 781 | ERROR   | Space before opening parenthesis of function call prohibited
+ 782 | WARNING | Inline control structures are discouraged
+ 783 | ERROR   | Space before opening parenthesis of function call prohibited
+ 783 | WARNING | Inline control structures are discouraged
+ 784 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 787 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 787 | ERROR   | Missing function doc comment
+ 787 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 787 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::addLiteralLine" must be prefixed
+     |         | with an underscore
+ 787 | ERROR   | Opening brace should be on a new line
+ 788 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 789 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 789 | ERROR   | Space before opening parenthesis of function call prohibited
+ 790 | WARNING | Inline control structures are discouraged
+ 792 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 793 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 795 | WARNING | Inline control structures are discouraged
+ 798 | WARNING | Inline control structures are discouraged
+ 799 | ERROR   | Space before opening parenthesis of function call prohibited
+ 801 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 804 | ERROR   | Missing function doc comment
+ 804 | ERROR   | Line indented incorrectly; expected 4 spaces, found 3
+ 804 | ERROR   | Opening brace should be on a new line
+ 805 | ERROR   | Line indented incorrectly; expected 8 spaces, found 5
+ 806 | WARNING | Inline control structures are discouraged
+ 807 | ERROR   | Space before opening parenthesis of function call prohibited
+ 808 | ERROR   | Space before opening parenthesis of function call prohibited
+ 808 | WARNING | Line exceeds 85 characters; contains 96 characters
+ 808 | WARNING | Inline control structures are discouraged
+ 809 | ERROR   | Spaces must be used to indent lines; tabs are not allowed
+ 809 | ERROR   | Space before opening parenthesis of function call prohibited
+ 811 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 814 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 814 | ERROR   | Missing function doc comment
+ 814 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 814 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::stripIndent"
+     |         | must be prefixed with an underscore
+ 814 | ERROR   | Opening brace should be on a new line
+ 815 | WARNING | Inline control structures are discouraged
+ 816 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 816 | ERROR   | Space before opening parenthesis of function call prohibited
+ 819 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 819 | ERROR   | Missing function doc comment
+ 819 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 819 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::getParentPathByIndent" must be
+     |         | prefixed with an underscore
+ 819 | ERROR   | Opening brace should be on a new line
+ 820 | WARNING | Inline control structures are discouraged
+ 821 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 822 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 823 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 824 | ERROR   | Space before opening parenthesis of function call prohibited
+ 824 | WARNING | Inline control structures are discouraged
+ 826 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 830 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 830 | ERROR   | Missing function doc comment
+ 830 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 830 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::clearBiggerPathValues" must be
+     |         | prefixed with an underscore
+ 830 | ERROR   | Opening brace should be on a new line
+ 833 | WARNING | Inline control structures are discouraged
+ 834 | WARNING | Inline control structures are discouraged
+ 836 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 837 | WARNING | Inline control structures are discouraged
+ 840 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 844 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 844 | ERROR   | Missing function doc comment
+ 844 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 844 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::isComment"
+     |         | must be prefixed with an underscore
+ 844 | ERROR   | Opening brace should be on a new line
+ 845 | WARNING | Inline control structures are discouraged
+ 846 | WARNING | Inline control structures are discouraged
+ 847 | WARNING | Inline control structures are discouraged
+ 848 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 851 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 851 | ERROR   | Missing function doc comment
+ 851 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 851 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::isEmpty"
+     |         | must be prefixed with an underscore
+ 851 | ERROR   | Opening brace should be on a new line
+ 852 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 852 | ERROR   | Space before opening parenthesis of function call prohibited
+ 856 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 856 | ERROR   | Missing function doc comment
+ 856 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 856 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::isArrayElement" must be prefixed
+     |         | with an underscore
+ 856 | ERROR   | Opening brace should be on a new line
+ 857 | WARNING | Inline control structures are discouraged
+ 858 | WARNING | Inline control structures are discouraged
+ 859 | ERROR   | Space before opening parenthesis of function call prohibited
+ 859 | WARNING | Inline control structures are discouraged
+ 860 | ERROR   | No space found after comma in function call
+ 860 | ERROR   | No space found after comma in function call
+ 860 | WARNING | Inline control structures are discouraged
+ 862 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 865 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 865 | ERROR   | Missing function doc comment
+ 865 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 865 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::isHashElement" must be prefixed
+     |         | with an underscore
+ 865 | ERROR   | Opening brace should be on a new line
+ 866 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 869 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 869 | ERROR   | Missing function doc comment
+ 869 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 869 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::isLiteral"
+     |         | must be prefixed with an underscore
+ 869 | ERROR   | Opening brace should be on a new line
+ 870 | WARNING | Inline control structures are discouraged
+ 871 | WARNING | Inline control structures are discouraged
+ 872 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 876 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 876 | ERROR   | Missing function doc comment
+ 876 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 876 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::startsMappedSequence" must be
+     |         | prefixed with an underscore
+ 876 | ERROR   | Opening brace should be on a new line
+ 877 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 877 | ERROR   | Space before opening parenthesis of function call prohibited
+ 880 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 880 | ERROR   | Missing function doc comment
+ 880 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 880 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::returnMappedSequence" must be
+     |         | prefixed with an underscore
+ 880 | ERROR   | Opening brace should be on a new line
+ 881 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 882 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 882 | ERROR   | No space found after comma in function call
+ 882 | ERROR   | No space found after comma in function call
+ 883 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 884 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 884 | ERROR   | Space before opening parenthesis of function call prohibited
+ 885 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 888 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 888 | ERROR   | Missing function doc comment
+ 888 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 888 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::returnMappedValue" must be
+     |         | prefixed with an underscore
+ 888 | ERROR   | Opening brace should be on a new line
+ 889 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 890 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 890 | ERROR   | No space found after comma in function call
+ 890 | ERROR   | No space found after comma in function call
+ 891 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 892 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 895 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 895 | ERROR   | Missing function doc comment
+ 895 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 895 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::startsMappedValue" must be
+     |         | prefixed with an underscore
+ 895 | ERROR   | Opening brace should be on a new line
+ 896 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 896 | ERROR   | Space before opening parenthesis of function call prohibited
+ 899 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 899 | ERROR   | Missing function doc comment
+ 899 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 899 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::isPlainArray" must be prefixed
+     |         | with an underscore
+ 899 | ERROR   | Opening brace should be on a new line
+ 900 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 900 | ERROR   | Space before opening parenthesis of function call prohibited
+ 903 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 903 | ERROR   | Missing function doc comment
+ 903 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 903 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::returnPlainArray" must be
+     |         | prefixed with an underscore
+ 903 | ERROR   | Opening brace should be on a new line
+ 904 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 907 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 907 | ERROR   | Missing function doc comment
+ 907 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 907 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::returnKeyValuePair" must be
+     |         | prefixed with an underscore
+ 907 | ERROR   | Opening brace should be on a new line
+ 908 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 909 | ERROR   | Line indented incorrectly; expected 8 spaces, found 4
+ 909 | ERROR   | Space before opening parenthesis of function call prohibited
+ 910 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 911 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 912 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 912 | ERROR   | No space found after comma in function call
+ 912 | ERROR   | No space found after comma in function call
+ 912 | WARNING | Line exceeds 85 characters; contains 107 characters
+ 913 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 913 | ERROR   | No space found after comma in function call
+ 913 | ERROR   | No space found after comma in function call
+ 914 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 915 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 916 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 917 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 917 | ERROR   | No space found after comma in function call
+ 918 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 919 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 920 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 920 | ERROR   | No space found after comma in function call
+ 922 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 923 | ERROR   | Line indented incorrectly; expected at least 12 spaces, found
+     |         | 6
+ 924 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 925 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 926 | ERROR   | Line indented incorrectly; expected 12 spaces, found 6
+ 927 | ERROR   | Line indented incorrectly; expected at least 16 spaces, found
+     |         | 8
+ 931 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 935 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 935 | ERROR   | You must use "/**" style comments for a function comment
+ 935 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 935 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::returnArrayElement" must be
+     |         | prefixed with an underscore
+ 935 | ERROR   | Opening brace should be on a new line
+ 936 | WARNING | Inline control structures are discouraged
+ 937 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 938 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 938 | ERROR   | No space found after comma in function call
+ 939 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 940 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 941 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 5
+ 944 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 944 | ERROR   | You must use "/**" style comments for a function comment
+ 944 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 944 | ERROR   | Private method name
+     |         | "Joy_File_Reader_Yaml_Helper::nodeContainsGroup" must be
+     |         | prefixed with an underscore
+ 944 | ERROR   | Opening brace should be on a new line
+ 945 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 946 | WARNING | Line exceeds 85 characters; contains 106 characters
+ 946 | WARNING | Inline control structures are discouraged
+ 947 | WARNING | Line exceeds 85 characters; contains 112 characters
+ 947 | WARNING | Inline control structures are discouraged
+ 948 | WARNING | Line exceeds 85 characters; contains 113 characters
+ 948 | WARNING | Inline control structures are discouraged
+ 949 | WARNING | Line exceeds 85 characters; contains 93 characters
+ 949 | WARNING | Inline control structures are discouraged
+ 950 | WARNING | Line exceeds 85 characters; contains 94 characters
+ 950 | WARNING | Inline control structures are discouraged
+ 951 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 955 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 955 | ERROR   | You must use "/**" style comments for a function comment
+ 955 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 955 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::addGroup"
+     |         | must be prefixed with an underscore
+ 955 | ERROR   | Opening brace should be on a new line
+ 956 | ERROR   | Space before opening parenthesis of function call prohibited
+ 956 | WARNING | Inline control structures are discouraged
+ 957 | ERROR   | Space before opening parenthesis of function call prohibited
+ 957 | WARNING | Inline control structures are discouraged
+ 958 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 961 | ERROR   | Line indented incorrectly; expected at least 4 spaces, found 2
+ 961 | ERROR   | You must use "/**" style comments for a function comment
+ 961 | ERROR   | Line indented incorrectly; expected 4 spaces, found 2
+ 961 | ERROR   | Private method name "Joy_File_Reader_Yaml_Helper::stripGroup"
+     |         | must be prefixed with an underscore
+ 961 | ERROR   | Opening brace should be on a new line
+ 962 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+ 963 | ERROR   | Line indented incorrectly; expected at least 8 spaces, found 4
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/File/Type.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Loader.php
+--------------------------------------------------------------------------------
+FOUND 11 ERROR(S) AND 2 WARNING(S) AFFECTING 11 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+ 48 | ERROR   | Last parameter comment requires a blank newline after it
+ 48 | ERROR   | Missing comment for param "$class" at position 1
+ 54 | ERROR   | File is being conditionally included; use "include_once"
+    |         | instead
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Module.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Module/Interface.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in
+    |         | interface comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Object.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/Render.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View.php
+--------------------------------------------------------------------------------
+FOUND 9 ERROR(S) AND 2 WARNING(S) AFFECTING 9 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 26 | ERROR   | @author tag comment indented incorrectly. Expected 4 spaces but
+    |         | found 6.
+ 27 | ERROR   | @copyright tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 3.
+ 28 | ERROR   | @license tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 29 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 29 | ERROR   | @version tag comment indented incorrectly. Expected 3 spaces
+    |         | but found 5.
+ 30 | ERROR   | @link tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 8.
+ 31 | ERROR   | @since tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 7.
+ 32 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View/Abstract.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View/Block.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View/Interface.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in
+    |         | interface comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View/Layout.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
+
+FILE: /devel/netology/joy/trunk/library/Joy/View/Widget.php
+--------------------------------------------------------------------------------
+FOUND 10 ERROR(S) AND 2 WARNING(S) AFFECTING 10 LINE(S)
+--------------------------------------------------------------------------------
+ 22 | WARNING | PHP version not specified
+ 22 | ERROR   | Missing @category tag in file comment
+ 22 | ERROR   | Missing @package tag in file comment
+ 22 | ERROR   | Missing @author tag in file comment
+ 22 | ERROR   | Missing @license tag in file comment
+ 22 | ERROR   | Missing @link tag in file comment
+ 25 | ERROR   | There must be exactly one blank line before the tags in class
+    |         | comments
+ 25 | ERROR   | @package tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 26 | ERROR   | @subpackage tag comment indented incorrectly. Expected 1 spaces
+    |         | but found 2.
+ 27 | ERROR   | @author tag comment indented incorrectly. Expected 5 spaces but
+    |         | found 6.
+ 28 | ERROR   | @copyright tag comment indented incorrectly. Expected 2 spaces
+    |         | but found 3.
+ 29 | ERROR   | @license tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 30 | WARNING | Invalid version "$Id: $" in doc comment; consider "Release:
+    |         | <package_version>" instead
+ 30 | ERROR   | @version tag comment indented incorrectly. Expected 4 spaces
+    |         | but found 5.
+ 31 | ERROR   | @link tag comment indented incorrectly. Expected 7 spaces but
+    |         | found 8.
+ 32 | ERROR   | @since tag comment indented incorrectly. Expected 6 spaces but
+    |         | found 7.
+ 33 | ERROR   | Missing @category tag in class comment
+--------------------------------------------------------------------------------
+
