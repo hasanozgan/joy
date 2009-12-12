@@ -16,7 +16,7 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
+ *  
  * This software consists of voluntary contributions made by many individuals
  * and is licensed under the LGPL.
  */
@@ -26,7 +26,7 @@
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id:$
  * @link        http://joy.netology.org
  * @since       0.5
  */
