@@ -6,12 +6,6 @@ Joy_Loader::run();
 
 define('APPLICATION_ROOT', realpath(dirname(__FILE__)."/../"));
 
-# Application Root
-set_include_path(
-    APPLICATION_ROOT . '/library'
-    . PATH_SEPARATOR . get_include_path()
-);
-
 # Application Envirement
 defined('ENVIRONMENT_MODE') || 
     define('ENVIRONMENT_MODE', 
