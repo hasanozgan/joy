@@ -26,48 +26,43 @@
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context extends Joy_Object
+class Joy_Controller extends Joy_Controller_Abstract
 {
-    private static $_instance;
-
-    public $culture;
-    public $cookie;
-    public $server;
-    public $session;
-    public $request;
-    public $response;
-    public $user;
-
     /**
-     * __constanct
-     * @return void
+     * factory static method is instance controller
+     *
+     * @param string $name is controller class name
+     * @return Joy_Controller
      */
-    public function __construct()
+    public static function factory($name)
     {
-        $this->culture = Joy_Context_Culture::getInstance();
-        $this->session = Joy_Context_Session::getInstance();
-        $this->request = Joy_Context_Request::getInstance();
-        $this->response = Joy_Context_Response::getInstance();
-        $this->user = Joy_Context_User::getInstance();
-        $this->cookie = Joy_Context_Cookie::getInstance();
-        $this->server = Joy_Context_Server::getInstance();
+        return Joy_Controller_Factory::getInstance()->getController($name);
     }
 
     /**
-     * getInstance
-     * 
-     * @return void
+     * exists static method is check controller
+     *
+     * @param string $name is controller class name
+     * @return boolean
      */
-    public static function getInstance()
+    public static function exists($name)
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+        $ref = new Joy_Reflection($name);
+        return $ref->isA(Joy_Controller_Interface);
+    }
+
+    public function run($action, $arguments=array())
+    {
+        $ref = new ReflectionClass($this);
+
+        if (!$ref->hasMethod($action)) {
+            throw new Joy_Exception_NotFound_Method("Action Not Found ({$action})");
         }
 
-        return self::$_instance;
+        return $ref->getMethod($action)->invokeArgs($this, $arguments);
     }
 }

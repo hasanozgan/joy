@@ -51,6 +51,12 @@ abstract class Joy_Config_Section_Abstract implements Joy_Config_Section_Interfa
         return $this->_items->getPath($key);
     }
 
+    public function getAll()
+    {
+        return $this->_items->getPath("/");
+    }
+
+
     public function load($data=array())
     {
         $conf = array();

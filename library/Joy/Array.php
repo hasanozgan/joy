@@ -30,7 +30,7 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Array implements Iterator, ArrayAccess, Countable
+class Joy_Array implements IteratorAggregate, Iterator, ArrayAccess, Countable
 {
     private $_position = 0;
     private $_array;
@@ -54,7 +54,7 @@ class Joy_Array implements Iterator, ArrayAccess, Countable
     public function setPath($path, $value)
     {
         $items = split(DIRECTORY_SEPARATOR, $path);
-        $this->_array = array_merge($this->_array, $this->setElement($items, $value));
+        $this->_array = array_merge_recursive($this->_array, $this->setElement($items, $value));
     }
 
     public function getPath($path)
@@ -124,5 +124,11 @@ class Joy_Array implements Iterator, ArrayAccess, Countable
     public function count()
     {
         return count($this->_array);
+    }
+
+    // IteratorAggregate
+    public function getIterator() 
+    {
+        return new ArrayIterator((object)$this->_array);
     }
 }

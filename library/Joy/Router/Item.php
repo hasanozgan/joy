@@ -23,51 +23,70 @@
 
 /**
  * @package     Joy
+ * @subpackage  Router
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context extends Joy_Object
+class Joy_Router_Item
 {
-    private static $_instance;
-
-    public $culture;
-    public $cookie;
-    public $server;
-    public $session;
-    public $request;
-    public $response;
-    public $user;
-
     /**
-     * __constanct
-     * @return void
+     * var object $info
      */
-    public function __construct()
+    private $_info;
+
+    public function __construct($info)
     {
-        $this->culture = Joy_Context_Culture::getInstance();
-        $this->session = Joy_Context_Session::getInstance();
-        $this->request = Joy_Context_Request::getInstance();
-        $this->response = Joy_Context_Response::getInstance();
-        $this->user = Joy_Context_User::getInstance();
-        $this->cookie = Joy_Context_Cookie::getInstance();
-        $this->server = Joy_Context_Server::getInstance();
+        $this->_info = $info;
+        $this->_canvas = Joy_Controller_Canvas::getInstance($this->getController());
+        $this->_canvas->switchAction($this->getAction());
     }
 
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
+    public function getRender()
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
-        }
+        return $this->_info->render;
+    }
 
-        return self::$_instance;
+    public function getController()
+    {
+        return $this->_info->controller;
+    }
+
+    public function getAction()
+    {
+        return $this->_info->action;
+    }
+
+    public function getArguments()
+    {
+        return $this->_info->action-arguments;
+    }
+
+    public function getMethod()
+    {
+        return $this->_info->method;
+    }
+
+    public function getParameters()
+    {
+        return $this->_info->parameters;
+    }
+
+    public function getTheme()
+    {
+        return $this->_canvas->getTheme();
+    }
+
+    public function getPage()
+    {
+        return $this->_canvas->getPage();
+    }
+
+    public function getLayout()
+    {
+        return $this->_canvas->getLayout();
     }
 }

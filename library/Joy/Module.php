@@ -30,7 +30,7 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Module extends Joy_Module_Interface
+class Joy_Module extends Joy_Controller
 {
 
 }

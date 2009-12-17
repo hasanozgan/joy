@@ -23,39 +23,17 @@
 
 /**
  * @package     Joy
+ * @subpackage  Context
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context extends Joy_Object
+class Joy_Context_User extends Joy_Context_Base
 {
-    private static $_instance;
-
-    public $culture;
-    public $cookie;
-    public $server;
-    public $session;
-    public $request;
-    public $response;
-    public $user;
-
-    /**
-     * __constanct
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->culture = Joy_Context_Culture::getInstance();
-        $this->session = Joy_Context_Session::getInstance();
-        $this->request = Joy_Context_Request::getInstance();
-        $this->response = Joy_Context_Response::getInstance();
-        $this->user = Joy_Context_User::getInstance();
-        $this->cookie = Joy_Context_Cookie::getInstance();
-        $this->server = Joy_Context_Server::getInstance();
-    }
+    protected static $_instance;
 
     /**
      * getInstance

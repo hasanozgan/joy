@@ -33,21 +33,47 @@
  */
 class Joy_Config_Section_Application extends Joy_Config_Section_Abstract
 {
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
-        $filePath = sprintf("%s/Application.config", realpath(dirname(__FILE__)));
-        parent::__construct($filePath);
+        parent::__construct(null);
     }
 
+    /**
+     * __loadConfig
+     *
+     * @param string $environment $environement should be (development, production, staging, testing)
+     * @return void
+     */
     public function loadConfig($environment)
     {
-        $folders = Joy_Config::getInstance()->Framework->get("folders");
-        $files = Joy_Config::getInstance()->Framework->get("files");
-        $env_config = $files["config"]["application"]["environment"];
-        $config_folder = $folders["project"]["config"];
-        $path = sprintf("%s/%s/%s", APPLICATION_ROOT, $config_folder, $env_config);
-        $path = str_replace("{environment}", $environment, $path);
+        $config =  Joy_Config::getInstance();
+        $root_folder = $this->get("folders/root");
 
-        $this->load($path);
+        $folders = (array)$config->framework->get("folders/project");
+        foreach ($folders as $name => $folder) {
+            $this->set("folders/{$name}", "{$root_folder}/{$folder}");
+        }
+
+        // set config files
+        $config_folder = $this->get("folders/config");
+        $config_files = (array) $config->framework->get("files/config");
+        foreach ($config_files as $key => $file) {
+            $this->set("files/config/{$key}", "{$config_folder}/{$file}");
+        }
+
+        // load canvas.config file
+        $file = new Joy_File($this->get("files/config/canvas"));
+        $this->load(array("canvas"=>$file->getReader()->toArray()));
+
+        // set application.config file
+        $this->load($this->get("files/config/application"));
+
+        // set application.{environment}.config file
+        $this->load(str_replace("{environment}", $environment, $this->get("files/config/application-environment")));
     }
 }

@@ -26,48 +26,42 @@
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context extends Joy_Object
+class Joy_Test 
 {
-    private static $_instance;
-
-    public $culture;
-    public $cookie;
-    public $server;
-    public $session;
-    public $request;
-    public $response;
-    public $user;
-
-    /**
-     * __constanct
-     * @return void
-     */
-    public function __construct()
+    public function assertTrue($statement, $message)
     {
-        $this->culture = Joy_Context_Culture::getInstance();
-        $this->session = Joy_Context_Session::getInstance();
-        $this->request = Joy_Context_Request::getInstance();
-        $this->response = Joy_Context_Response::getInstance();
-        $this->user = Joy_Context_User::getInstance();
-        $this->cookie = Joy_Context_Cookie::getInstance();
-        $this->server = Joy_Context_Server::getInstance();
-    }
-
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
-    {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+        if ($statement) {
+            throw new Joy_Test_Exception("Developer Exception: {$message}");
         }
-
-        return self::$_instance;
     }
+
+    public function assertFalse($statement, $message)
+    {
+        $this->assertTrue(!($statement), $message);
+    }
+
+    public function assertNull($x)
+    {
+        $this->assertTrue(isset($x), "Object must be null");
+    }
+
+    public function assertNotNull($x)
+    {
+        $this->assertFalse(isset($x), "Object must be not null");
+    }
+
+    public function assertIsA($obj, $class)
+    {
+        $this->assertTrue(is_a($object, $class), "Developer Exception: Object is instance of {$class}");
+    }
+
+    public function assertNotA($value)
+    {
+        $this->assertFalse(isset($value), "Developer Exception Must Be Not Null");
+    }
+
 }

@@ -45,5 +45,6 @@ class Joy_Object
     public function __construct()
     {
         $this->config = Joy_Config::getInstance();
+        $this->event = Joy_Event::getInstance();
     }
 }

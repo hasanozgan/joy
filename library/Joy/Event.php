@@ -32,4 +32,58 @@
  */
 class Joy_Event
 {
+    /**
+     * var object $_instance
+     */
+    private static $_instance;
+
+    /**
+     * var array $_events
+     */
+    protected $_events;
+
+    /**
+     * getInstance
+     * 
+     * @return void
+     */
+    public static function getInstance()
+    {
+        if (!is_object(self::$_instance)) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
+    /**
+     * register
+     *
+     * @param string $name Event name 
+     * @param object $object Registered object
+     * @param string $method Method Name
+     * @return void
+     */
+    public function register($name, $object, $method)
+    {
+        $this->_events[$name][] = array("object"=>$object, "method"=>$method);
+    }
+
+    /** 
+     * dispatcher
+     *
+     * @param object $source Which is object throwing?
+     * @param string $event Event name
+     * @param array $args
+     * @return void
+     */
+    public function dispatcher($source, $name, $args=array())
+    {
+        if (!empty($this->_events[$name])) {
+            foreach ($this->_events[$name] as $item) { 
+                $ref = new ReflectionClass($item["object"]);
+                $ref->getMethod($item["method"])->invoke($item["object"], &$source, &$args);
+            }
+        }
+    }
 }

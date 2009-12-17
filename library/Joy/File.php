@@ -45,7 +45,7 @@ class Joy_File
     private function parseFile($path)
     {
         $this->_path = rtrim($path, DIRECTORY_SEPARATOR);
-        if (!is_file($this->_path)) { throw new Joy_File_Exception("File not found"); }
+        if (!is_file($this->_path)) { throw new Joy_Exception_NotFound_File("File not found ({$path})"); }
 
         $this->_directory = realpath(dirname($this->_path));
         $this->_file = array_shift(array_reverse(split(DIRECTORY_SEPARATOR, $this->_path)));

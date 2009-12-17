@@ -26,48 +26,41 @@
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context extends Joy_Object
+class Joy_Reflection
 {
-    private static $_instance;
+    protected $_reflection;
+    protected $_class;
 
-    public $culture;
-    public $cookie;
-    public $server;
-    public $session;
-    public $request;
-    public $response;
-    public $user;
-
-    /**
-     * __constanct
-     * @return void
-     */
-    public function __construct()
+    public function __construct($class)
     {
-        $this->culture = Joy_Context_Culture::getInstance();
-        $this->session = Joy_Context_Session::getInstance();
-        $this->request = Joy_Context_Request::getInstance();
-        $this->response = Joy_Context_Response::getInstance();
-        $this->user = Joy_Context_User::getInstance();
-        $this->cookie = Joy_Context_Cookie::getInstance();
-        $this->server = Joy_Context_Server::getInstance();
-    }
-
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
-    {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+        if (is_null($class)) {
+            throw new Joy_Exception_NotFound_Class($class);
         }
 
-        return self::$_instance;
+        $this->_class = $class;
+        $this->_reflection = new ReflectionClass($class);
+    }
+
+    public function isA($class)
+    {
+        if (in_array($class, $this->_reflection->getInterfaceNames())) {
+            return true;
+        }
+        else if ($this->_reflection->isSubclassOf($class)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function newInstance($args=array()) 
+    {
+        return (empty($args)) 
+            ? $this->_reflection->newInstance()
+            : $this->_reflection->newInstanceArgs($args);
     }
 }

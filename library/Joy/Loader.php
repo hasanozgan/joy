@@ -50,8 +50,23 @@ class Joy_Loader
      */
     public static function autoload($class)
     {
-        $path = sprintf("%s.php", str_replace("_", DIRECTORY_SEPARATOR, $class));
-        require_once $path;
+        if (!class_exists($class)) {
+            $include_path = get_include_path();
+            $pathList = split(":", $include_path);
+            foreach($pathList as $path) {
+                $classpath = sprintf("%s/%s.php", $path, str_replace("_", DIRECTORY_SEPARATOR, $class));
+                
+                if (file_exists($classpath)) {
+                    break;
+                }
+            }
+
+            if (!file_exists($classpath)) {
+                throw new Joy_Exception_NotFound_Class("Class Not Found ({$class})");
+            }
+
+            require_once $classpath;
+        }
     }
 }
 

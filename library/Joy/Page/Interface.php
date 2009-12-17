@@ -23,14 +23,15 @@
 
 /**
  * @package     Joy
- * @subpackage  Module
+ * @subpackage  Page
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-interface Joy_Module_Interface
+interface Joy_Page_Interface
 {
+    public function build();
 }

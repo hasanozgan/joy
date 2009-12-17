@@ -35,7 +35,12 @@ class Joy_Config
     private $_sections;
     private static $_instance;
 
-    public function getInstance()
+    /**
+     * getInstance
+     * 
+     * @return void
+     */
+    public static function getInstance()
     {
         if (!is_object(self::$_instance)) {
             self::$_instance = new self();
@@ -44,18 +49,34 @@ class Joy_Config
         return self::$_instance;
     }
 
+    /**
+     * __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->_sections = Array();
-        $this->_sections["Framework"] = new Joy_Config_Section_Framework();
-        $this->_sections["Application"] = new Joy_Config_Section_Application();
+        $this->_sections["framework"] = new Joy_Config_Section_Framework();
+        $this->_sections["application"] = new Joy_Config_Section_Application();
     }
 
+    /**
+     * __get
+     *
+     * @param string variable name
+     */
     public function __get($variable)
     {
         return $this->_sections[$variable];
     }
 
+    /**
+     * __set
+     *
+     * @param string $variable
+     * @param mixed $value
+     */
     public function __set($variable, $value) 
     {
         throw new Joy_Config_Exception("You dont set Sections");

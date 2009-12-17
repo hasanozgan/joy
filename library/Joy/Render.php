@@ -32,4 +32,8 @@
  */
 class Joy_Render
 {
+    public static function factory($className)
+    {
+        return Joy_Render_Factory::newInstance($className);
+    }
 }
