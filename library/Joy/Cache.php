@@ -33,6 +33,26 @@
 class Joy_Cache
 {
    /**
+     * var object $_instance
+     */
+    private static $_instance;
+
+    /**
+     * getInstance
+     * 
+     * @return void
+     */
+    public static function getInstance()
+    {
+        if (!is_object(self::$_instance)) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
+
+   /**
      * factory static method is instance controller
      *
      * @param string $name is controller class name

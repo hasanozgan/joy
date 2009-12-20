@@ -32,5 +32,34 @@
  */
 class Joy_Module extends Joy_Controller
 {
+    public function action($name, $arguments=array())
+    {
+        $action_info = explode('.', $name);
+        $action = array_shift($action_info);
+        $hasWidget = (boolean) ("widget" == strtolower(array_shift($action_info)));
 
+        if ($hasWidget) {
+            $action[0] = strtoupper($action[0]);
+            $widget = sprintf("%s_%s_%s", get_class($this), $this->getWidgetFolder(), $action);
+//            return Joy_View::factory($widget);
+        }
+        else {
+            parent::action($action, $arguments);
+
+        }
+
+#       $view = Joy_View($template, 
+#       $this->assign;
+
+        var_dump($hasWidget, $action);
+    }
+
+    public function getWidget()
+    {
+    }
+
+    public function getWidgetFolder()
+    {
+        return "Widget";
+    }
 }

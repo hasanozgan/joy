@@ -36,6 +36,11 @@ class Joy_Context_Response extends Joy_Context_Base
     protected static $_instance;
     protected $_render;
 
+    public function setRender($render) 
+    {
+        $this->_render = $render;
+    }
+
     /**
      * getInstance
      * 
@@ -48,10 +53,5 @@ class Joy_Context_Response extends Joy_Context_Base
         }
 
         return self::$_instance;
-    }
-
-    public function setRender($render) 
-    {
-        $this->_render = $render;
     }
 }

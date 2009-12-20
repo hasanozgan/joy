@@ -43,10 +43,10 @@ class Joy_Context extends Joy_Object
     public $user;
 
     /**
-     * __constanct
+     * _init
      * @return void
      */
-    public function __construct()
+    protected function _init()
     {
         $this->culture = Joy_Context_Culture::getInstance();
         $this->session = Joy_Context_Session::getInstance();

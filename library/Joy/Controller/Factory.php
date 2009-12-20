@@ -23,14 +23,42 @@
 
 /**
  * @package     Joy
- * @subpackage  View
+ * @subpackage  Controller
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_View_Widget extends Joy_View_Abstract
+class Joy_Controller_Factory
 {
+    private $_controllers;
+    private static $_instance;
+
+    /**
+     * getInstance
+     * 
+     * @return void
+     */
+    public static function getInstance()
+    {
+        if (!is_object(self::$_instance)) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
+    public function getController($name)
+    {
+        if (!($this->_controllers[$name] instanceof Joy_Controller_Interface)) {
+            $ref = new Joy_Reflection($name);
+            if ($ref->isA(Joy_Controller_Interface)) {
+                $this->_controllers[$name] = $ref->newInstance();
+            }
+        }
+
+        return $this->_controllers[$name];
+    } 
 }

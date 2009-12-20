@@ -63,9 +63,28 @@ class Joy_Context_Request extends Joy_Context_Base
         $this->_current->parameters = $parameters;
     }
 
+    public function getMethod()
+    {
+        return $this->_current->method;
+    }
+
     public function setMethod($method)
     {
         $this->_current->method = $method;
+    }
+
+    public function harness()
+    {
+        $view = $this->_current->controller->action($this->_current->action->name,
+                                                    $this->_current->action->arguments);
+/*
+        $this->response->render->setView($view);
+        $this->response->render->execute();
+
+        $this->response->getOutput();
+
+        $this->response->render->getContentType();
+        */
     }
 
 }

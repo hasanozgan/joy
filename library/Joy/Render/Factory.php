@@ -67,7 +67,7 @@ class Joy_Render_Factory
         $item = self::found($extension);
 
         $render = self::newInstance($item["render"]);
-        $render->setParams($item["arguments"]);
+        $render->setParams($item["render-arguments"]);
 
         if ($item["cache"]) {
             $cache = Joy_Cache::factory($item["cache.source"]);

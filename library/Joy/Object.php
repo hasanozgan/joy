@@ -38,13 +38,35 @@ class Joy_Object
     public $config;
 
     /**
+     * @var Joy_Cache $cache
+     */
+    public $cache;
+
+    /**
+     * @var Joy_Event $event
+     */
+    public $event;
+
+    /**
      * __construct
      *
      * @return void
      */
     public function __construct()
     {
-        $this->config = Joy_Config::getInstance();
-        $this->event = Joy_Event::getInstance();
+        $this->config =& Joy_Config::getInstance();
+        $this->event =& Joy_Event::getInstance();
+        $this->cache =& Joy_Cache::getInstance();
+
+        $this->_registerEvents();
+        $this->_init();
+    }
+
+    protected function _init()
+    {
+    }
+
+    protected function _registerEvents()
+    {
     }
 }

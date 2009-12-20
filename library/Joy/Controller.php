@@ -55,14 +55,31 @@ class Joy_Controller extends Joy_Controller_Abstract
         return $ref->isA(Joy_Controller_Interface);
     }
 
-    public function run($action, $arguments=array())
+    /**
+     * action method is execute action.
+     *
+     * @param string $name is action name
+     * @param array $arguments for action
+     */
+    public function action($name, $arguments=array())
     {
-        $ref = new ReflectionClass($this);
+        // check authetication
+//        if ($this->authentication($action);
 
-        if (!$ref->hasMethod($action)) {
-            throw new Joy_Exception_NotFound_Method("Action Not Found ({$action})");
+        $this->_assign = array();
+
+        $ref = new ReflectionClass($this);
+        $method = sprintf("_%s", $name);
+
+        if (!$ref->hasMethod($method) || !$ref->getMethod($method)->isProtected()) {
+            throw new Joy_Exception_NotFound_Method("Action Not Found ({$method})");
         }
 
-        return $ref->getMethod($action)->invokeArgs($this, $arguments);
+        // FIXME: ReflectionMethod class not found setAccesible method in PHP 5.2.10 version.
+        // $ref->getMethod($action)->setAccessible(TRUE);
+        // return $ref->getMethod($action)->invokeArgs($this, $arguments);
+
+        // it is temporary.        
+        return $this->$method($arguments);
     }
 }

@@ -33,4 +33,112 @@
  */
 interface Joy_View_Interface
 {
+    /**
+     * assign method is key value data setter 
+     * and parameter is just key then getter
+     *
+     * @param string $key is key for data array
+     * @param mixed $value is data
+     * @return mixed if only key setter then returned value.
+     */
+    public function assign($key, $value=null);
+
+    /**
+     * assignAll method is reset and set data.
+     * and parameter is empty then getter
+     *
+     * @param array $data is key for data array.
+     * @return array if $data param is empty then return data array
+     */
+    public function assignAll($data=array());
+
+    /**
+     * assignMerge method is merge before array setter
+     *
+     * @param array $data is key for data array.
+     * @return void
+     */
+    public function assignMerge($data);
+
+    /**
+     * reset method is empty data array
+     *
+     * @param array $data is key for data array.
+     * @return void
+     */ 
+    public function reset();
+
+    /**
+     * getManifesto method is manifesto file.
+     *
+     * @return string manifesto file path
+     */ 
+    public function getManifesto();
+
+    /**
+     * getViewFolder method is getter template folder
+     *
+     * @return string folder path.
+     */ 
+    public function getViewFolder();
+
+    /**
+     * setViewFolder method is setter for template folder
+     *
+     * @param string $folder path
+     * @return void
+     */ 
+    public function setViewFolder($folder);
+
+    /**
+     * getTemplate method is getter for template file
+     *
+     * @return string file path. 
+     */
+    public function getTemplate();
+
+    /**
+     * setName method is setter for file name
+     *
+     * @param string $file path
+     * @return void
+     */ 
+    public function setName($name);
+
+    /**
+     * getName method is getter file name
+     *
+     * @return string file name.
+     */ 
+    public function getName();
+
+    /**
+     * getLocale method is getter {name}.{language}.locale file
+     *
+     * @return string locale file path
+     */ 
+    public function getLocale();
+
+    /**
+     * getLocale method is getter javascript file
+     *
+     * @return string locale file path
+     */ 
+    public function getScript();
+
+    /**
+     * getResourceList method returns script and style list.
+     *
+     * @return array format {"javascripts"=>array(), "stylesheets"=>array()}
+     *
+     */
+    public function getResourceList();
+
+    /**
+     * getStack method returns Joy_View_Stack type.
+     *
+     * @param string $name found stacklist from manifesto file.
+     * @return Joy_View_Stack type
+     */
+    public function getStack($name);
 }

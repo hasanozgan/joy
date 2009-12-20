@@ -30,6 +30,16 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_View
+class Joy_View extends Joy_View_Abstract
 {
+    public function __construct($file)
+    {
+        //TODO
+        // file verisi set edilecek. bilgisine gore yuklenir.
+        // $name = get_file_name($file);
+        // $folder = realpath(dirname($file));
+        //
+        // $this->setName($name);
+        // $this->setViewFolder($folder);
+    }
 }

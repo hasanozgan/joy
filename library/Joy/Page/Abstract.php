@@ -33,9 +33,38 @@
  */
 abstract class Joy_Page_Abstract extends Joy_Context implements Joy_Page_Interface
 {
+    protected function _registerEvents()
+    {
+        parent::_registerEvents();
+
+        // page.init uygulama için ek objeleri ekleyebilirsiniz.
+        $this->event->register("page.init", $this, "onInit");
+
+        // page.load uygulamanın çalıştırılmaya hazır olduğu halidir.
+        $this->event->register("page.load", $this, "onLoad");
+
+        // page.assign kısmında action çalıştırılmış ve assign edilecek dataya manipülasyon yapılmasına izin verilen halidir.
+        $this->event->register("page.assign", $this, "onAssign");
+
+        // page.resource ise css ve js include listelerinde manipülasyon yapılabilmesine izin verir.
+        $this->event->register("page.resource", $this, "onResource");
+
+        // page.render kısmında ise render edilen metin içerisinde oynama yapılabilir. 
+        $this->event->register("page.render", $this, "onRender"); 
+
+        // page.disposal kısımda ise sayfa ekrana basılmış olur ve tüm sayfa verisi öldürülür.
+        $this->event->register("page.disposal", $this, "onDisposal"); 
+    }
+
     public function build()
     {
-        var_dump($this->request);
-        echo "TODO";
+        $this->event->dispatcher("page.load");
+
+        // controller executing...
+        $this->request->harness();
+
+
+
     }
+
 }

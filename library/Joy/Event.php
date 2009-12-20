@@ -77,12 +77,14 @@ class Joy_Event
      * @param array $args
      * @return void
      */
-    public function dispatcher($source, $name, $args=array())
+    public function dispatcher($name, $source=null, $args=array())
     {
         if (!empty($this->_events[$name])) {
-            foreach ($this->_events[$name] as $item) { 
+            foreach ($this->_events[$name] as $item) {
                 $ref = new ReflectionClass($item["object"]);
-                $ref->getMethod($item["method"])->invoke($item["object"], &$source, &$args);
+                if ($ref->hasMethod($item["method"])) {
+                    $ref->getMethod($item["method"])->invoke($item["object"], &$source, &$args);
+                }
             }
         }
     }

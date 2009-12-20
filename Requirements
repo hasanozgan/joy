@@ -7,6 +7,14 @@ Addendum 0.4
 jQuery (js framework)
 960gs (css framework)
 
+Tools
+----------------------
+Sphinx
+Memcached
+APC
+PEAR
+
+
 Development
 -----------------------
 PHPUnit
