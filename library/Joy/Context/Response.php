@@ -35,10 +35,37 @@ class Joy_Context_Response extends Joy_Context_Base
 {
     protected static $_instance;
     protected $_render;
+    protected $_scripts;
+    protected $_styles;
 
     public function setRender($render) 
     {
         $this->_render = $render;
+    }
+
+    public function getRender() 
+    {
+        return $this->_render;
+    }
+
+    public function getScripts()
+    {
+        return $this->_scripts;
+    }
+
+    public function getStyles()
+    {
+        return $this->_styles;
+    }
+
+    public function addScript($script)
+    {
+        $this->_scripts = array_merge((array)$this->_scripts, (array)$script);
+    }
+
+    public function addStyle($style)
+    {
+        $this->_styles = array_merge((array)$this->_styles, (array)$style);
     }
 
     /**

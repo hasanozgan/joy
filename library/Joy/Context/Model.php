@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Render
+ * @subpackage  Context
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,45 +31,21 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-abstract class Joy_Render_Abstract implements Joy_Render_Interface
+class Joy_Context_Model extends Joy_Context_Base
 {
-    protected $_theme;
-    protected $_params;
-    protected $_cache;
-
-    public function setTheme($theme)
-    {
-        $this->_theme = $theme;
-    }
-
-    public function setParams($params)
-    {
-        $this->_params = $params;
-    }
-
-    public function setCache($cache)
-    {
-        $this->_cache = $cache;
-    }
+    protected static $_instance;
 
     /**
-     * execute method is render process
-     *
-     * @param Joy_View_Interface $view
-     * @return string
+     * getInstance
+     * 
+     * @return void
      */
-    public function execute($view)
+    public static function getInstance()
     {
-        $response = Joy_Context_Response::getInstance();
+        if (!is_object(self::$_instance)) {
+            self::$_instance = new self();
+        }
 
-        $resource = $view->getResourceList();       
-        $response->addScript($resource["javascripts"]);
-        $response->addStyle($resource["stylesheets"]);
-
-        $tpl = new PHPTAL();
-        $tpl->setTemplate($view->getTemplate());
-        $tpl->PlaceHolder = "aa";
-
-        return $tpl->execute();
+        return self::$_instance;
     }
 }

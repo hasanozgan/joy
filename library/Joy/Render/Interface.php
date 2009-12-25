@@ -33,9 +33,8 @@
  */
 interface Joy_Render_Interface
 {
-    public function setParams($params);
+    public function execute($theme);
     public function setTheme($theme);
-    public function setLayout($layout);
+    public function setParams($params);
     public function setCache($cache);
-
 }

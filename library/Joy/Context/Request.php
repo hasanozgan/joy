@@ -77,14 +77,33 @@ class Joy_Context_Request extends Joy_Context_Base
     {
         $view = $this->_current->controller->action($this->_current->action->name,
                                                     $this->_current->action->arguments);
-/*
-        $this->response->render->setView($view);
-        $this->response->render->execute();
+
+        $response = Joy_Context_Response::getInstance();
+        $render = $response->getRender();
+        $output = $render->execute($view);
+
+        if ($view instanceof Joy_View_Layout) {
+            // Script Files Injection
+            $scripts = $response->getScripts();
+            foreach ($scripts as $script) {
+                $page_scripts .= sprintf("<script type='text/javascript' src='%s'></script>\n", $script);
+            }
+            $output = str_replace("<!-- @Page.Javascripts -->", $page_scripts, $output);
+            
+            // Style Files Injection
+            $styles = $response->getStyles();
+            foreach ($styles as $style) {
+                $page_styles .= sprintf("<link rel='stylesheet' type='text/css' href='%s' />\n", $style);
+            }
+            $output = str_replace("<!-- @Page.Stylesheets -->", $page_styles, $output);
+        }
+
+        echo $output;
+/*        $this->response->render->execute($view);
 
         $this->response->getOutput();
 
-        $this->response->render->getContentType();
-        */
+        $this->response->render->getContentType();*/
     }
 
 }

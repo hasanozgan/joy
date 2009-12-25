@@ -41,6 +41,7 @@ class Joy_Context extends Joy_Object
     public $request;
     public $response;
     public $user;
+    public $models;
 
     /**
      * _init
@@ -55,6 +56,7 @@ class Joy_Context extends Joy_Object
         $this->user = Joy_Context_User::getInstance();
         $this->cookie = Joy_Context_Cookie::getInstance();
         $this->server = Joy_Context_Server::getInstance();
+        $this->models = Joy_Context_Model::getInstance();
     }
 
     /**

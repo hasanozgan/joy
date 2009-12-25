@@ -31,7 +31,7 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-abstract class Joy_View_Abstract implements Joy_View_Interface
+abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interface
 {
     /**
      * var array $_assign 
@@ -207,7 +207,7 @@ abstract class Joy_View_Abstract implements Joy_View_Interface
     public function getStack($name)
     {
         $stackOrder = $this->_manifesto->get("stacks/{$name}");
-        var_dump($stackOrder);
+#       var_dump($stackOrder);
 
         return new Joy_View_Stack($stackOrder);
     }

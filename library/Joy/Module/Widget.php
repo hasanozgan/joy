@@ -58,7 +58,7 @@ class Joy_Module_Widget extends Joy_View_Abstract
     public function setName($name)
     {
         parent::setName($name);
-//todo: netology
+
         $folder = trim($this->getViewFolder(), DIRECTORY_SEPARATOR);
 
         $this->setViewFolder($folder, $name);

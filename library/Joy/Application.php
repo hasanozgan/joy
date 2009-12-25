@@ -74,10 +74,6 @@ class Joy_Application extends Joy_Object
             $theme = $item->getTheme();
             $render->setTheme($theme);
 
-            // Set Layout To Render
-            $layout = $item->getLayout();
-            $render->setLayout($layout);
-
             // Injection Render In The Response Object
             $context->response->setRender($render);
 

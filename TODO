@@ -1,0 +1,66 @@
+Mode:
+    Readonly Modes
+
+Model:
+    Doctrine Integration
+
+Job-Service:
+    Scheduler
+
+Tracing:
+    Trace class with FirePHP integration
+    Log object
+
+Scalability:
+    Session State => Distributed | Local
+    Cache State => Distributed | Local
+
+Controller:
+    Joy_Module extends Joy_Controller nasıl yükleneceğine böyle karar verecek.
+
+    Böylece herkes kendi controller mekanizmasını kurabilir.
+
+    Controller template dizin yolu ve assign edilecek template datasını Render'a verecek.
+
+    Render'da davranış tipine göre 
+
+    Joy_Module extends Joy_Controller
+    Joy_Module_Render_Javascript extends Joy_Render
+    Joy_Module_Render_Javascript_Locale extends Joy_Render
+    Joy_Module_Render_Template extends Joy_Render_Template
+
+    Joy_Render_Template
+    Joy_Render_Json
+    Joy_Render_Xml
+
+View:
+<!--
+
+    ; import objesi olacak 
+
+        __import/block/Head
+        __import/stack/List
+
+    ; helper - modifier olacak
+
+        helper: get/image_root('image/sdff');
+        helper: i18n('hello.world');
+        helper: get('version');
+        helper: set('version', '0.5.6');
+
+-->
+
+
+
+Error Handler:
+    exception_error_handler içerisine error_handler mekanizması kurulacak.
+    Joy_Exception_NotFound gibi şeyler için ayrı exceptionlar fırlatılabilir 
+    yada bir workflow engine kurulabilir.
+
+    Belki render hatalar için manipüle edilebilir. Ve oluşan html içerisinde hata enjekte edebilir.
+
+Workflow Engine:
+
+    Action ve Permission durumlarında dışarıdan müdahale etmeyi sağlayan bir workflow engine hiç fena olmayacaktır.
+
+

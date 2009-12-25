@@ -63,8 +63,12 @@ class Joy_Controller extends Joy_Controller_Abstract
      */
     public function action($name, $arguments=array())
     {
+        //switch canvas for action name...
+        $this->_canvas->switchAction($name);
+
         // check authetication
 //        if ($this->authentication($action);
+
 
         $this->_assign = array();
 
@@ -75,11 +79,20 @@ class Joy_Controller extends Joy_Controller_Abstract
             throw new Joy_Exception_NotFound_Method("Action Not Found ({$method})");
         }
 
+        // it is temporary.        
         // FIXME: ReflectionMethod class not found setAccesible method in PHP 5.2.10 version.
         // $ref->getMethod($action)->setAccessible(TRUE);
         // return $ref->getMethod($action)->invokeArgs($this, $arguments);
+        $view = $this->$method($arguments);
 
-        // it is temporary.        
-        return $this->$method($arguments);
+        // has layout
+        if (!is_null($layout = $this->_canvas->getLayout())) {
+            $layout = new Joy_View_Layout($layout);
+            $layout->setPlaceHolder($view);
+
+            return $layout;
+        }
+    
+        return $view;
     }
 }

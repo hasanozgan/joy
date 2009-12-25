@@ -1,0 +1,9 @@
+
+stylesheets:
+    - reset.css
+    - 960.css
+
+javascripts:
+    - jquery.js
+
+
