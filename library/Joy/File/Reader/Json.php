@@ -37,6 +37,6 @@ class Joy_File_Reader_Json extends Joy_File_Reader_Abstract
     {
         $data = Joy_File_Reader_Json_Helper::decode($this->_file);
 
-        return Joy_Array($data);
+        return (new Joy_Array($data));
     }
 }

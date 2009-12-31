@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Context
+ * @subpackage  Module_Render
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,50 +31,39 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context_Culture extends Joy_Context_Base
+class Joy_Render_Template_Javascript extends Joy_Render_Template
 {
-    protected static $_instance;
-
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
+    public function getContentType()
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+        return "text/javascript";
+    }
+
+    public function execute($view)
+    {
+        parent::execute($view);
+
+        $response = Joy_Context_Response::getInstance();
+
+        $scriptFile = $view->getScript();
+        if (file_exists($scriptFile)) {
+            $content = sprintf("/* %s */\n", $view->getId());
+            $content .= file_get_contents($scriptFile);
+            @preg_match_all('/\$__i18n\[[\"|\'](.+)[\"|\']\]/', $content, $matches);
+            $locale = $view->getLocale();
+
+            if (!empty($matches[1])) {
+                for ($i = 0; $i < count($matches[1]); $i++) {
+                    $key = $matches[1][$i];
+                    $text = $locale[$key] ? $locale[$key] : $key;
+                    $content = str_replace($matches[0][$i], "'{$text}'", $content);
+                }
+            }
+
+            $content = str_replace("\$__i18n", $translate, $content);
+            $response->appendContent($content);
         }
 
-        return self::$_instance;
+        return $response->getContent();
     }
 
-    public function getLanguage()
-    {
-        // @TODO
-        return "tr";
-    }
-
-    public function getCountry()
-    {
-        // @TODO
-        return "TR";
-    }
-
-    public function getLocale()
-    {
-        // @TODO
-        return sprintf("%s-%s", $this->getLanguage(), $this->getCountry());
-    }
-
-    public function getCharset()
-    {
-        // @TODO
-        return "UTF-8";
-    }
-
-    public function getCollate()
-    {
-        return "utf8_general_ci";
-    }
 }

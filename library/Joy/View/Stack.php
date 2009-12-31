@@ -33,4 +33,31 @@
  */
 class Joy_View_Stack
 {
+    protected $_stack;
+
+    public function __construct($stack)
+    {
+        $this->_stack = $stack; 
+    }
+
+    public function __toString()
+    {
+        $render = Joy_Context_Response::getInstance()->getRender();
+
+        $output = "";
+        foreach ($this->_stack as $stack) {
+            try {
+                list($class, $params) = each($stack);
+                $ref = new Joy_Reflection($class);
+                $view = $ref->newInstance(array($params));
+
+                $output .= $render->execute($view); 
+            }
+            catch(Exception $ex) {
+                $output .= $ex->getMessage();
+            }
+        }
+
+        return $output;
+    }
 }

@@ -33,7 +33,7 @@
  */
 class Joy_File_Extension
 {
-    const MANIFESTO = "manifesto",
+    const MANIFEST = "manifest",
           CONFIG = "config",
           INI = "ini",
           TEMPLATE = "tpl",

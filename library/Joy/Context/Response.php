@@ -37,6 +37,18 @@ class Joy_Context_Response extends Joy_Context_Base
     protected $_render;
     protected $_scripts;
     protected $_styles;
+    protected $_content;
+
+    public function getContent()
+    {
+        return $this->_content;
+    }
+
+    public function appendContent($content)
+    {
+        $this->_content .= $content; 
+    }
+
 
     public function setRender($render) 
     {
@@ -58,14 +70,26 @@ class Joy_Context_Response extends Joy_Context_Base
         return $this->_styles;
     }
 
-    public function addScript($script)
+    public function addScript($scripts)
     {
-        $this->_scripts = array_merge((array)$this->_scripts, (array)$script);
+        if (!is_null($scripts)) {
+            $scripts = (array)$scripts;
+            foreach ($scripts as $script) {
+                $script = trim($script, "/");
+                $this->_scripts[$script] = $script;
+            }
+        }
     }
 
-    public function addStyle($style)
+    public function addStyle($styles)
     {
-        $this->_styles = array_merge((array)$this->_styles, (array)$style);
+        if (!is_null($styles)) {
+            $styles = (array)$styles;
+            foreach ($styles as $style) {
+                $style = trim($style, "/");
+                $this->_styles[$style] = $style;
+            }
+        }
     }
 
     /**

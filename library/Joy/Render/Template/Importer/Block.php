@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Module_Render_JavaScript
+ * @subpackage  Render_Template_Importer
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,6 +31,30 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Module_Render_JavaScript_Locale extends Joy_Render_Abstract
+class Joy_Render_Template_Importer_Block
 {
+    protected $_path;
+
+    public function __construct()
+    {
+        $this->_path = array();
+    }
+
+    public function __get($key)
+    {
+        $this->_path[] = $key;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        $file = implode("/", $this->_path);
+        $this->_path = array();
+
+        $block = new Joy_View_Block(array("file"=>$file));
+        $context = Joy_Context::getInstance();
+
+        return $context->response->getRender()->execute($block);
+    }
 }

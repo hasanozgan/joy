@@ -69,11 +69,11 @@ interface Joy_View_Interface
     public function reset();
 
     /**
-     * getManifesto method is manifesto file.
+     * getmanifest method is manifest file.
      *
-     * @return string manifesto file path
+     * @return string manifest file path
      */ 
-    public function getManifesto();
+    public function getmanifest();
 
     /**
      * getViewFolder method is getter template folder
@@ -137,7 +137,7 @@ interface Joy_View_Interface
     /**
      * getStack method returns Joy_View_Stack type.
      *
-     * @param string $name found stacklist from manifesto file.
+     * @param string $name found stacklist from manifest file.
      * @return Joy_View_Stack type
      */
     public function getStack($name);

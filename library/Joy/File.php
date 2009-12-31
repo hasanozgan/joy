@@ -82,7 +82,7 @@ class Joy_File
     {
         switch ($this->getExtension()) 
         {
-            case Joy_File_Extension::MANIFESTO:
+            case Joy_File_Extension::MANIFEST:
             case Joy_File_Extension::CONFIG:
                 return Joy_File_Type::YAML;
 

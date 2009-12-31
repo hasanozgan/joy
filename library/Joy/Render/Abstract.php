@@ -42,6 +42,11 @@ abstract class Joy_Render_Abstract implements Joy_Render_Interface
         $this->_theme = $theme;
     }
 
+    public function getContentType()
+    {
+        return "text/html";
+    }
+
     public function setParams($params)
     {
         $this->_params = $params;
@@ -60,15 +65,20 @@ abstract class Joy_Render_Abstract implements Joy_Render_Interface
      */
     public function execute($view)
     {
-        $response = Joy_Context_Response::getInstance();
+        $context = Joy_Context::getInstance();
 
         $resource = $view->getResourceList();       
-        $response->addScript($resource["javascripts"]);
-        $response->addStyle($resource["stylesheets"]);
+        $context->response->addScript($resource["javascripts"]);
+        $context->response->addStyle($resource["stylesheets"]);
+
+        $application = $context->config->application->get("application");
+        $application["i18n"] = $view->getLocale();
 
         $tpl = new PHPTAL();
         $tpl->setTemplate($view->getTemplate());
-        $tpl->PlaceHolder = "aa";
+        $tpl->import = new Joy_Render_Template_Importer($view);
+        $tpl->application = $application;
+        $tpl->get = (array)$view->assignAll();
 
         return $tpl->execute();
     }

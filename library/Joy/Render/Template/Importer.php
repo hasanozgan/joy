@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Context
+ * @subpackage  Render_Template
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,50 +31,16 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context_Culture extends Joy_Context_Base
+class Joy_Render_Template_Importer
 {
-    protected static $_instance;
+    public $block;
+    public $stack;
+    public $action;
 
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
+    public function __construct($view)
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
-        }
-
-        return self::$_instance;
-    }
-
-    public function getLanguage()
-    {
-        // @TODO
-        return "tr";
-    }
-
-    public function getCountry()
-    {
-        // @TODO
-        return "TR";
-    }
-
-    public function getLocale()
-    {
-        // @TODO
-        return sprintf("%s-%s", $this->getLanguage(), $this->getCountry());
-    }
-
-    public function getCharset()
-    {
-        // @TODO
-        return "UTF-8";
-    }
-
-    public function getCollate()
-    {
-        return "utf8_general_ci";
+        $this->block = new Joy_Render_Template_Importer_Block();
+        $this->stack = new Joy_Render_Template_Importer_Stack($view);
+        $this->action = new Joy_Render_Template_Importer_Action($view); 
     }
 }

@@ -31,7 +31,7 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Module_Widget extends Joy_View_Abstract
+class Joy_Module_Widget extends Joy_View
 {
     /**
      * setViewFolder method is setter for template folder
@@ -46,7 +46,7 @@ class Joy_Module_Widget extends Joy_View_Abstract
         }
 
         $this->_folder = sprintf("%s/%s", realpath(dirname($path)), $name);
-        $this->_manifesto = $this->getManifesto();
+        $this->_manifest = $this->getManifest();
     }
 
     /**

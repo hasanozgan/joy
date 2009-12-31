@@ -87,7 +87,7 @@ class Joy_Controller extends Joy_Controller_Abstract
 
         // has layout
         if (!is_null($layout = $this->_canvas->getLayout())) {
-            $layout = new Joy_View_Layout($layout);
+            $layout = new Joy_View_Layout(array("file"=>$layout));
             $layout->setPlaceHolder($view);
 
             return $layout;

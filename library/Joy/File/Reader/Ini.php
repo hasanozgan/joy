@@ -35,6 +35,32 @@ class Joy_File_Reader_Ini extends Joy_File_Reader_Abstract
 {
     public function toArray($hasSection=false)
     {
-        return parse_ini_file($this->_file, $hasSection);
+        return $this->parse_ini($this->_file, $hasSection);
+    }
+
+    public function parse_ini($f, $hasSection=false)
+    {
+        // if cannot open file, return false
+        if (!is_file($f))
+            return false;
+
+        $ini = file($f);
+
+        // to hold the categories, and within them the entries
+        $cats = array();
+        foreach ($ini as $i) {
+            if ($hasSection) {
+                if (@preg_match('/\[(.+)\]/', $i, $matches)) {
+                    $last = $matches[1];
+                } elseif (@preg_match('/(.+)=(.+)/', $i, $matches)) {
+                    $cats[$last][$matches[1]] = $matches[2];
+                }
+            }
+            else if (@preg_match('/(.+)=(.+)/', $i, $matches)) {
+                $cats[$matches[1]] = $matches[2];
+            }
+        }
+        
+        return $cats;
     }
 }

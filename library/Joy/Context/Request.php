@@ -75,17 +75,55 @@ class Joy_Context_Request extends Joy_Context_Base
 
     public function harness()
     {
+        $response = Joy_Context_Response::getInstance();
+
         $view = $this->_current->controller->action($this->_current->action->name,
                                                     $this->_current->action->arguments);
 
-        $response = Joy_Context_Response::getInstance();
         $render = $response->getRender();
         $output = $render->execute($view);
 
-        if ($view instanceof Joy_View_Layout) {
+        $this->_includeResourceFiles(&$view, &$output);
+
+        header("Content-Type: {$render->getContentType()}");
+        print $output;
+/*        $this->response->render->execute($view);
+
+        $this->response->getOutput();
+
+        $this->response->render->getContentType();*/
+    }
+
+    protected function _includeResourceFiles($view, $output)
+    {
+        if ($view instanceof Joy_View_Layout) 
+        {
+            $culture = Joy_Context_Culture::getInstance();
+            $response = Joy_Context_Response::getInstance();
+            $site_root = $this->config->application->get("application/site_root");
+
+            $app_script = sprintf("%s/%s.initial.js",
+                              get_class($this->_current->controller), 
+                              $this->_current->action->name, 
+                              $culture->getLocale());
+
+            $page_script = sprintf("%s/%s.js", 
+                               get_class($this->_current->controller), 
+                               $this->_current->action->name);
+
+
             // Script Files Injection
             $scripts = $response->getScripts();
+            $scripts = array_reverse($scripts);
+            array_push($scripts, $app_script);
+            $scripts = array_reverse($scripts);
+            array_push($scripts, $page_script);
+
             foreach ($scripts as $script) {
+                if (strpos($script, "http") === FALSE) {
+                    $script = sprintf("%s/%s", $site_root, trim($script, "/"));
+                }
+
                 $page_scripts .= sprintf("<script type='text/javascript' src='%s'></script>\n", $script);
             }
             $output = str_replace("<!-- @Page.Javascripts -->", $page_scripts, $output);
@@ -93,17 +131,14 @@ class Joy_Context_Request extends Joy_Context_Base
             // Style Files Injection
             $styles = $response->getStyles();
             foreach ($styles as $style) {
+                if (strpos($style, "http") === FALSE) {
+                    $style = sprintf("%s/%s", $site_root, trim($style, "/"));
+                }
+
                 $page_styles .= sprintf("<link rel='stylesheet' type='text/css' href='%s' />\n", $style);
             }
             $output = str_replace("<!-- @Page.Stylesheets -->", $page_styles, $output);
         }
-
-        echo $output;
-/*        $this->response->render->execute($view);
-
-        $this->response->getOutput();
-
-        $this->response->render->getContentType();*/
     }
 
 }

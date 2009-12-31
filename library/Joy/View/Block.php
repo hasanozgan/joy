@@ -31,6 +31,11 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_View_Block extends Joy_View_Abstract
+class Joy_View_Block extends Joy_View
 {
+    protected function _init()
+    {
+        $this->_folder = $this->config->application->get("folders/block");
+        $this->setName($this->_params["file"]);
+    }
 }

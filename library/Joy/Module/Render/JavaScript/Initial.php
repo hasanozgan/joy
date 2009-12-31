@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Context
+ * @subpackage  Module_Render_JavaScript
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,50 +31,14 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context_Culture extends Joy_Context_Base
+class Joy_Render_Javascript_Initial extends Joy_Render_Abstract
 {
-    protected static $_instance;
-
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
+    public function setParams($params)
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
-        }
+        parent::setParams($params);
+        //TODO: lokasyon datası bu veriye göre çekilecek.
 
-        return self::$_instance;
-    }
-
-    public function getLanguage()
-    {
-        // @TODO
-        return "tr";
-    }
-
-    public function getCountry()
-    {
-        // @TODO
-        return "TR";
-    }
-
-    public function getLocale()
-    {
-        // @TODO
-        return sprintf("%s-%s", $this->getLanguage(), $this->getCountry());
-    }
-
-    public function getCharset()
-    {
-        // @TODO
-        return "UTF-8";
-    }
-
-    public function getCollate()
-    {
-        return "utf8_general_ci";
+        list($language, $country) = split("-", $this->_params["locale"]);
+//        var_dump("@TODO: ".__CLASS__.":".__LINE__." / --- ",$language, $country, " / --- :TODO@");
     }
 }

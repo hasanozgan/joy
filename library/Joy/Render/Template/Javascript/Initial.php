@@ -23,7 +23,7 @@
 
 /**
  * @package     Joy
- * @subpackage  Context
+ * @subpackage  Module_Render_JavaScript
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,50 +31,35 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context_Culture extends Joy_Context_Base
+class Joy_Render_Template_Javascript_Initial extends Joy_Render_Abstract
 {
-    protected static $_instance;
-
-    /**
-     * getInstance
-     * 
-     * @return void
-     */
-    public static function getInstance()
+    public function __construct()
     {
-        if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+        $this->response = Joy_Context_Response::getInstance();
+        $this->config = Joy_Config::getInstance();
+
+
+        $this->response->appendContent(sprintf("var \$__application = %s",
+                                               json_encode((array)$this->config->application->get("application"))));
+    }
+
+    public function getContentType()
+    {
+        return "text/javascript";
+    }
+
+    public function execute($view)
+    {
+        parent::execute($view);
+
+        $scriptFile = $view->getInitialScript();
+
+        if (file_exists($scriptFile)) {
+            $content = sprintf("/* %s */\n", $view->getId());
+            $content .= file_get_contents($scriptFile);
+            $this->response->appendContent($content);
         }
 
-        return self::$_instance;
-    }
-
-    public function getLanguage()
-    {
-        // @TODO
-        return "tr";
-    }
-
-    public function getCountry()
-    {
-        // @TODO
-        return "TR";
-    }
-
-    public function getLocale()
-    {
-        // @TODO
-        return sprintf("%s-%s", $this->getLanguage(), $this->getCountry());
-    }
-
-    public function getCharset()
-    {
-        // @TODO
-        return "UTF-8";
-    }
-
-    public function getCollate()
-    {
-        return "utf8_general_ci";
+        return $this->response->getContent();
     }
 }

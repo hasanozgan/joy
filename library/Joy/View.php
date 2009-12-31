@@ -32,4 +32,11 @@
  */
 class Joy_View extends Joy_View_Abstract
 {
+    public function __construct($params=array())
+    { 
+        $this->_params = (array)$params;
+        $this->_id = uniqid();
+
+        parent::__construct();
+    }
 }

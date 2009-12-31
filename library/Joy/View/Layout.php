@@ -31,25 +31,33 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_View_Layout extends Joy_View_Abstract
+class Joy_View_Layout extends Joy_View
 {
-   protected $_placeHolder;
+    protected $_placeHolder;
 
-   public function __construct($file)
-   {
-        parent::__construct();
-
+    protected function _init()
+    {
         $this->_folder = $this->config->application->get("folders/layout");
-        $this->setName($file);
-   }
+        $this->setName($this->_params["file"]);
+    }
 
-   /**
-    * setPlaceHolder method is setter for placeholder
-    *
-    * @param Joy_View_Interface $view
-    */
-   public function setPlaceHolder($view)
-   {
-       $this->_placeHolder = $view;
-   }   
+    /**
+     * setPlaceHolder method is setter for placeholder
+     * 
+     * @param Joy_View_Interface $view
+     */
+    public function setPlaceHolder($view)
+    {
+        $this->_placeHolder = $view;
+    }
+
+    /**
+     * getPlaceHolder method is setter for placeholder
+     * 
+     * @return Joy_View_Interface $view
+     */
+    public function getPlaceHolder()
+    {
+        return $this->_placeHolder;
+    }
 }

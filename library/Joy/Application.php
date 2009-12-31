@@ -56,8 +56,6 @@ class Joy_Application extends Joy_Object
 
     public function run()
     {
-        var_dump("Starting Joy Application...");
-
         $item = $this->router->match($_SERVER["REQUEST_URI"]);
 
         if ($item instanceof Joy_Router_Item) {

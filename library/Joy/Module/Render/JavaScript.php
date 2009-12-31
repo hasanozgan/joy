@@ -33,4 +33,37 @@
  */
 class Joy_Module_Render_JavaScript extends Joy_Render_Abstract
 {
+    public function getContentType()
+    {
+        return "text/javascript";
+    }
+
+    public function execute($view)
+    {
+        parent::execute($view);
+
+        $response = Joy_Context_Response::getInstance();
+
+        $scriptFile = $view->getScript();
+        if (file_exists($scriptFile)) {
+            $content = sprintf("/* %s */\n", $view->getId());
+            $content .= file_get_contents($scriptFile);
+            @preg_match_all('/\$__i18n\[[\"|\'](.+)[\"|\']\]/', $content, $matches);
+            $locale = $view->getLocale();
+
+            if (!empty($matches[1])) {
+                for ($i = 0; $i < count($matches[1]); $i++) {
+                    $key = $matches[1][$i];
+                    $text = $locale[$key] ? $locale[$key] : $key;
+                    $content = str_replace($matches[0][$i], "'{$text}'", $content);
+                }
+            }
+
+            $content = str_replace("\$__i18n", $translate, $content);
+            $response->appendContent($content);
+        }
+
+        return $response->getContent();
+    }
+
 }

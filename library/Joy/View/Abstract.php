@@ -34,6 +34,18 @@
 abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interface
 {
     /**
+     * $_id is view definition uniq_id
+     *
+     * var integer $_id;
+     */
+    protected $_id;
+
+    /**
+     * var array $_params
+     */
+    protected $_params;
+
+    /**
      * var array $_assign 
      */
     protected $_assign;
@@ -51,7 +63,7 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
     /**
      * var array $_stacks
      */
-    protected $_manifesto;
+    protected $_manifest;
 
 
     /**
@@ -69,6 +81,11 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
         }
 
         $this->_assign[$key] = $value;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
     }
 
     /**
@@ -118,7 +135,7 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
     public function setName($name)
     {
         $this->_name = $name;
-        $this->_manifesto = $this->getManifesto();
+        $this->_manifest = $this->getmanifest();
     }
 
     /**
@@ -141,7 +158,7 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
     {
         $this->_folder = realpath(dirname($path));
 
-        $this->_manifesto = $this->getManifesto();
+        $this->_manifest = $this->getmanifest();
     }
 
     /**
@@ -165,16 +182,47 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
     }
 
     /**
-     * getLocale method is getter {name}.{language}.locale file
+     * getLocalePath method is getter {name}.{language}.locale file
      *
      * @return string locale file path
      */ 
-    public function getLocale()
+    public function getLocalePath()
     {
         $context = Joy_Context::getInstance();
        
-        return sprintf("%s/%s.%s.locale", $this->getViewFolder(), $this->getName(), $context->culture->getLanguage());
+        return sprintf("%s/%s.locale", $this->getViewFolder(), $this->getName());
     }
+
+    /**
+     * getLocale method is get locale array
+     *
+     * @return array locale hashtable
+     */ 
+    public function getLocale()
+    {
+        try {
+            $path = $this->getLocalePath();
+            $file = new Joy_File($path);
+
+            $text = $file->getReader()->toArray(true);
+            return $text[$this->culture->getLanguage()];
+        }
+        catch (Joy_Exception_NotFound $ex) {
+            return array();
+        }
+    }
+
+    /**
+     * getInitialScript method is getter javascript file
+     *
+     * @return string locale file path
+     */ 
+    public function getInitialScript()
+    {
+        return sprintf("%s/%s.initial.js", $this->getViewFolder(), $this->getName());
+    }
+
+
 
     /**
      * getLocale method is getter javascript file
@@ -194,36 +242,35 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
      */
     public function getResourceList()
     {
-        return array("stylesheets" => $this->_manifesto["stylesheets"],
-                     "javascripts" => $this->_manifesto["javascripts"]);
+        return array("stylesheets" => $this->_manifest["stylesheets"],
+                     "javascripts" => $this->_manifest["javascripts"]);
     }
 
     /**
      * getStack method returns Joy_View_Stack type.
      *
-     * @param string $name found stacklist from manifesto file.
+     * @param string $name found stacklist from manifest file.
      * @return Joy_View_Stack type
      */
     public function getStack($name)
     {
-        $stackOrder = $this->_manifesto->get("stacks/{$name}");
-#       var_dump($stackOrder);
-
+        $stackOrder = $this->_manifest["stacks"][$name];
+    
         return new Joy_View_Stack($stackOrder);
     }
 
     /**
-     * getManifesto method is manifesto file.
+     * getmanifest method is manifest file.
      *
-     * @return  array manifesto data
+     * @return  array manifest data
      */ 
-    public function getManifesto()
+    public function getmanifest()
     {
         if (!(is_null($this->getName()) || is_null($this->getViewFolder()))) {
-            $manifesto = sprintf("%s/%s.manifesto", $this->getViewFolder(), $this->getName());
+            $manifest = sprintf("%s/%s.manifest", $this->getViewFolder(), $this->getName());
 
             try {
-                $file = new Joy_File($manifesto);
+                $file = new Joy_File($manifest);
                 return $file->getReader()->toArray();
             }
             catch (Joy_Exception $ex) {
@@ -232,5 +279,4 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
 
         return null;
     }
-
 }
