@@ -51,6 +51,11 @@ class Joy_Context_Request extends Joy_Context_Base
         return self::$_instance;
     }
 
+    public function getAction()
+    {
+        return $this->_current;
+    }
+
     public function setAction($controller, $action, $action_arguments=array())
     {
         $this->_current->controller = Joy_Controller::factory($controller);
@@ -62,6 +67,12 @@ class Joy_Context_Request extends Joy_Context_Base
     {
         $this->_current->parameters = $parameters;
     }
+
+    public function getParameters()
+    {
+        return $this->_current->parameters;
+    }
+
 
     public function getMethod()
     {
@@ -76,7 +87,6 @@ class Joy_Context_Request extends Joy_Context_Base
     public function harness()
     {
         $response = Joy_Context_Response::getInstance();
-
         $view = $this->_current->controller->action($this->_current->action->name,
                                                     $this->_current->action->arguments);
 

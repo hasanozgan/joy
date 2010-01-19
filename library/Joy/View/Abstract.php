@@ -172,13 +172,24 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
     }
 
     /**
-     * getTemplate method is getter for template file
+     * getTemplatePath method is getter for template file
      *
      * @return string file path. 
      */
-    public function getTemplate()
+    public function getTemplatePath()
     {
         return sprintf("%s/%s.tpl", $this->getViewFolder(), $this->getName());
+    }
+
+    /**TODO*/
+    public function getTemplate()
+    {
+        $template_file = $this->getTemplatePath();
+        if (file_exists($template_file)) {
+            return file_get_contents($template_file);
+        }
+
+        return "<span><b>{$template_file}</b> Not Found</span>";
     }
 
     /**
@@ -200,16 +211,19 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
      */ 
     public function getLocale()
     {
-        try {
-            $path = $this->getLocalePath();
-            $file = new Joy_File($path);
+        if (is_null($this->_text)) {
+            try {
+                $path = $this->getLocalePath();
+                $file = new Joy_File($path);
 
-            $text = $file->getReader()->toArray(true);
-            return $text[$this->culture->getLanguage()];
+                $this->_text = $file->getReader()->toArray(true);
+            }
+            catch (Joy_Exception_NotFound $ex) {
+                return array();
+            }
         }
-        catch (Joy_Exception_NotFound $ex) {
-            return array();
-        }
+
+        return $this->_text[$this->culture->getLanguage()];
     }
 
     /**

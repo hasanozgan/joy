@@ -75,7 +75,7 @@ abstract class Joy_Render_Abstract implements Joy_Render_Interface
         $application["i18n"] = $view->getLocale();
 
         $tpl = new PHPTAL();
-        $tpl->setTemplate($view->getTemplate());
+        $tpl->setSource($view->getTemplate());
         $tpl->import = new Joy_Render_Template_Importer($view);
         $tpl->application = $application;
         $tpl->get = (array)$view->assignAll();

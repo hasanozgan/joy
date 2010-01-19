@@ -48,4 +48,27 @@ class Joy_Context_Session extends Joy_Context_Base
 
         return self::$_instance;
     }
+
+    protected function _init()
+    {
+        parent::_init();
+        session_start();
+    }
+
+    public function get($key)
+    {
+        return $_SESSION[$key];
+    }
+
+    public function set($key, $value)
+    {
+        $_SESSION[$key] = $value;
+    }
+
+    public function delete($key)
+    {
+        session_unset();
+    }
+
+
 }

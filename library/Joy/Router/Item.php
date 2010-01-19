@@ -62,7 +62,7 @@ class Joy_Router_Item
 
     public function getArguments()
     {
-        return $this->_info->action-arguments;
+        return $this->_info->action_arguments;
     }
 
     public function getMethod()

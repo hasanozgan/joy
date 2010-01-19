@@ -48,4 +48,12 @@ class Joy_Context_Base extends Joy_Object
 
         return self::$_instance;
     }
+
+    public function get($key)
+    {
+    }
+
+    public function set($key, $value)
+    {
+    }
 }

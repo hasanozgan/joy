@@ -34,6 +34,7 @@
 class Joy_Context_Model extends Joy_Context_Base
 {
     protected static $_instance;
+    private $_modelEngine;
 
     /**
      * getInstance
@@ -47,5 +48,14 @@ class Joy_Context_Model extends Joy_Context_Base
         }
 
         return self::$_instance;
+    }
+
+    protected function _init()
+    {
+    }
+
+    public function __get($key)
+    {
+        return Doctrine::GetTable($key);
     }
 }

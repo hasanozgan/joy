@@ -63,5 +63,4 @@ abstract class Joy_Page_Abstract extends Joy_Context implements Joy_Page_Interfa
         // controller executing...
         $this->request->harness();
     }
-
 }

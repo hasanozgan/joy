@@ -35,6 +35,7 @@ class Joy_File_Extension
 {
     const MANIFEST = "manifest",
           CONFIG = "config",
+          YAML = "yml",
           INI = "ini",
           TEMPLATE = "tpl",
           LOCALE = "locale";

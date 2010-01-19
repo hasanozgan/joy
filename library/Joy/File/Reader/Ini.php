@@ -53,11 +53,11 @@ class Joy_File_Reader_Ini extends Joy_File_Reader_Abstract
                 if (@preg_match('/\[(.+)\]/', $i, $matches)) {
                     $last = $matches[1];
                 } elseif (@preg_match('/(.+)=(.+)/', $i, $matches)) {
-                    $cats[$last][$matches[1]] = $matches[2];
+                    $cats[$last][trim($matches[1])] = trim($matches[2]);
                 }
             }
             else if (@preg_match('/(.+)=(.+)/', $i, $matches)) {
-                $cats[$matches[1]] = $matches[2];
+                $cats[trim($matches[1])] = trim($matches[2]);
             }
         }
         

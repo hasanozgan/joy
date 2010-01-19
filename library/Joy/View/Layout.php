@@ -35,7 +35,7 @@ class Joy_View_Layout extends Joy_View
 {
     protected $_placeHolder;
 
-    protected function _init()
+    protected function onInit()
     {
         $this->_folder = $this->config->application->get("folders/layout");
         $this->setName($this->_params["file"]);

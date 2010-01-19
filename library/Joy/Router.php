@@ -136,15 +136,15 @@ class Joy_Router extends Joy_Object
                 }
 
                 // set action arguments
-                $item["action-arguments"] = array_merge(array_values((array)$parameters), (array)$action_arguments);
+                $item["action_arguments"] = array_merge(array_values((array)$parameters), (array)$action_arguments);
 
                 // clear action from extension
                 $action_info = split("\.", $item["action"]);
 
                  // set extension variable
-                if (!isset($item["action-extension"])) {
+                if (!isset($item["action_extension"])) {
                     array_shift($action_info);
-                    $item["action-extension"] = count($action_info) 
+                    $item["action_extension"] = count($action_info) 
                                                   ? implode(".", $action_info)
                                                   : null;
                 }
@@ -158,7 +158,7 @@ class Joy_Router extends Joy_Object
 
                 // set render variable
                 if (!isset($item["render"])) {
-                    $item["render"] = Joy_Render_Factory::get($item["action-extension"]);
+                    $item["render"] = Joy_Render_Factory::get($item["action_extension"]);
                 }
 
                 // set request method
@@ -174,7 +174,7 @@ class Joy_Router extends Joy_Object
                 $result = null;
             }
         }
-
+        
         return (is_null($result)) ? null : (new Joy_Router_Item($result));
     }
 }

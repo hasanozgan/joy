@@ -36,7 +36,23 @@ class Joy_View extends Joy_View_Abstract
     { 
         $this->_params = (array)$params;
         $this->_id = uniqid();
-
         parent::__construct();
     }
+
+    protected function _init()
+    {
+        parent::_init();
+
+        // Initial Values
+        if (method_exists($this, "onInit")) {
+            $this->onInit();
+        } 
+
+        // Assign and Logic Layer
+        if (method_exists($this, "onLoad")) {
+            $this->onLoad();
+        } 
+
+    }
+
 }

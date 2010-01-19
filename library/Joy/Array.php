@@ -45,16 +45,34 @@ class Joy_Array implements IteratorAggregate, Iterator, ArrayAccess, Countable
         $this->_array = $array;
     }
 
-
-    public function merge($_array=array())
+    public static function merge_recursive_distinct ( array &$array1, array &$array2 )
     {
-        $this->_array = array_merge($this->_array, (array)$_array);
+        $merged = $array1;
+
+        foreach ( $array2 as $key => &$value )
+        {
+            if ( is_array ( $value ) && isset ( $merged [$key] ) && is_array ( $merged [$key] ) )
+            {
+                $merged [$key] = self::merge_recursive_distinct ( $merged [$key], $value );
+            }
+            else
+            {
+                $merged [$key] = $value;
+            }
+        }
+
+        return $merged;
+    }
+
+    public function merge($_array=array(), $root="")
+    {
+        $this->_array = self::merge_recursive_distinct($this->_array, $_array); 
     }
 
     public function setPath($path, $value)
     {
         $items = split(DIRECTORY_SEPARATOR, $path);
-        $this->_array = array_merge_recursive($this->_array, $this->setElement($items, $value));
+        $this->_array = self::merge_recursive_distinct($this->_array, $this->setElement($items, $value));
     }
 
     public function getPath($path)
@@ -132,3 +150,5 @@ class Joy_Array implements IteratorAggregate, Iterator, ArrayAccess, Countable
         return new ArrayIterator((object)$this->_array);
     }
 }
+
+

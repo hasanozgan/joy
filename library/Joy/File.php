@@ -84,6 +84,7 @@ class Joy_File
         {
             case Joy_File_Extension::MANIFEST:
             case Joy_File_Extension::CONFIG:
+            case Joy_File_Extension::YAML:
                 return Joy_File_Type::YAML;
 
             case Joy_File_Extension::INI:

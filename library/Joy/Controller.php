@@ -79,11 +79,10 @@ class Joy_Controller extends Joy_Controller_Abstract
             throw new Joy_Exception_NotFound_Method("Action Not Found ({$method})");
         }
 
-        // it is temporary.        
         // FIXME: ReflectionMethod class not found setAccesible method in PHP 5.2.10 version.
-        // $ref->getMethod($action)->setAccessible(TRUE);
-        // return $ref->getMethod($action)->invokeArgs($this, $arguments);
-        $view = $this->$method($arguments);
+//        $ref->getMethod($method)->setAccessible(TRUE);
+//        return $ref->getMethod($method)->invokeArgs($this, $arguments);
+        $view = call_user_method_array($method, $this, $arguments);
 
         // has layout
         if (!is_null($layout = $this->_canvas->getLayout())) {
