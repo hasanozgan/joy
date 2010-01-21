@@ -23,7 +23,6 @@
 
 /**
  * @package     Joy
- * @subpackage  Router
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
@@ -31,28 +30,6 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Router_Item
+class Joy_Console
 {
-    /**
-     * var object $info
-     */
-    public $filter;
-    public $controller;
-    public $action;
-    public $variables;
-
-    public function __construct($url, $controller, $action)
-    {
-        $atoms = split(DIRECTORY_SEPARATOR, trim($url, DIRECTORY_SEPARATOR));
-
-        $rules = $variables = array();
-        foreach($atoms as $atom) {
-            list($rules[], $variables[]) = split(":", $atom);
-        }
-        
-        $this->filter = sprintf("^\\/%s\\/", implode("\\/", $rules));
-        $this->controller = $controller;
-        $this->action = $action;
-        $this->variables = $variables;
-    }
 }

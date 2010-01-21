@@ -31,28 +31,62 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Router_Item
+class Joy_Router_Match
 {
     /**
      * var object $info
      */
-    public $filter;
-    public $controller;
-    public $action;
-    public $variables;
+    private $_info;
 
-    public function __construct($url, $controller, $action)
+    public function __construct($info)
     {
-        $atoms = split(DIRECTORY_SEPARATOR, trim($url, DIRECTORY_SEPARATOR));
+        $this->_info = $info;
+        $this->_canvas = Joy_Controller_Canvas::getInstance($this->getController());
+        $this->_canvas->switchAction($this->getAction());
+    }
 
-        $rules = $variables = array();
-        foreach($atoms as $atom) {
-            list($rules[], $variables[]) = split(":", $atom);
-        }
-        
-        $this->filter = sprintf("^\\/%s\\/", implode("\\/", $rules));
-        $this->controller = $controller;
-        $this->action = $action;
-        $this->variables = $variables;
+    public function getRender()
+    {
+        return $this->_info->render;
+    }
+
+    public function getController()
+    {
+        return $this->_info->controller;
+    }
+
+    public function getAction()
+    {
+        return $this->_info->action;
+    }
+
+    public function getArguments()
+    {
+        return $this->_info->action_arguments;
+    }
+
+    public function getMethod()
+    {
+        return $this->_info->method;
+    }
+
+    public function getParameters()
+    {
+        return $this->_info->parameters;
+    }
+
+    public function getTheme()
+    {
+        return $this->_canvas->getTheme();
+    }
+
+    public function getPage()
+    {
+        return $this->_canvas->getPage();
+    }
+
+    public function getLayout()
+    {
+        return $this->_canvas->getLayout();
     }
 }

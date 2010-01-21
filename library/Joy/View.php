@@ -36,6 +36,8 @@ class Joy_View extends Joy_View_Abstract
     { 
         $this->_params = (array)$params;
         $this->_id = uniqid();
+//        var_dump(get_class($this), $this->_params["file"]);
+
         parent::__construct();
     }
 

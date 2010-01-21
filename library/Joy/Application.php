@@ -47,6 +47,18 @@ class Joy_Application extends Joy_Object
         $this->setIncludePath($this->config->application->get("folders/controller"));
 
         $this->router = Joy_Router::getInstance();
+
+        // Bootstrap Loader...
+        $bootstrap = $this->config->application->get("application/bootstrap");
+        if ($bootstrap) {
+            $ref = new Joy_Reflection($bootstrap);
+            $object = $ref->newInstance();
+        }
+        if (!($object instanceof Joy_Application_Bootstrap)) {
+            $object = new Joy_Application_Bootstrap();
+        }
+
+
     }
 
     public function setIncludePath($path)
@@ -56,9 +68,12 @@ class Joy_Application extends Joy_Object
 
     public function run()
     {
+        // Event Dispatcher Application_Bootstrap::onStart method trigged.
+        $this->event->dispatcher("app.start");
+
         $item = $this->router->match($_SERVER["REQUEST_URI"]);
 
-        if ($item instanceof Joy_Router_Item) {
+        if ($item instanceof Joy_Router_Match) {
             // Instance Context
             $context = Joy_Context::getInstance();
             $context->request->setAction($item->getController(), $item->getAction(), $item->getArguments());
@@ -82,7 +97,7 @@ class Joy_Application extends Joy_Object
             $page->build();
         }
         else {
-            throw new Joy_Exception_NotFound_Class("Joy_Router_Item class not found");
+            throw new Joy_Exception_NotFound_Class("Joy_Router_Match class not found");
         }
     }
 }

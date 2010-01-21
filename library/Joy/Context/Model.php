@@ -35,6 +35,7 @@ class Joy_Context_Model extends Joy_Context_Base
 {
     protected static $_instance;
     private $_modelEngine;
+    private $_connection;
 
     /**
      * getInstance
@@ -50,12 +51,40 @@ class Joy_Context_Model extends Joy_Context_Base
         return self::$_instance;
     }
 
-    protected function _init()
+    public function setBootstrap($class)
     {
+        $ref = new Joy_Reflection($class); 
+        $ref->newInstance(array($this->_connection));
     }
 
     public function __get($key)
     {
-        return Doctrine::GetTable($key);
+        try {
+            return Doctrine::GetTable($key);
+        }
+        catch (Doctrine_Connection_Exception $ex) {
+            $models = $this->config->application->get("folders/model");
+            Doctrine::loadModels("{$models}/dal");
+            Doctrine::loadModels($models);
+
+            return Doctrine::GetTable($key);
+        }
+        catch (Joy_Exception_NotFound_Class $ex) {
+            $models = $this->config->application->get("folders/model");
+            Doctrine::loadModels("{$models}/dal");
+            Doctrine::loadModels($models);
+
+            return Doctrine::GetTable($key);
+        }
+    }
+
+    protected function _init()
+    {
+        $dsn = $this->config->application->get("servers/database/master");
+
+        if ($dsn) {
+            $this->_connection = Doctrine_Manager::connection($dsn);
+            $bootstrap = new Joy_Context_Model_Bootstrap($this->_connection);
+        }
     }
 }

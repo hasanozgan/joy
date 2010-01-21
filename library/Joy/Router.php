@@ -61,20 +61,20 @@ class Joy_Router extends Joy_Object
         parent::__construct(); 
         $routers = new Joy_Config_Section($this->config->application->get("files/config/router"));
         $items = $routers->getAll();
-        foreach ($items as $key=>$item) {
-            $rules = array();
-            $variables = array();
 
-            $atoms = split(DIRECTORY_SEPARATOR, trim($item["url"], DIRECTORY_SEPARATOR));
-            foreach($atoms as $atom) {
-                list($rules[], $variables[]) = split(":", $atom);
-                
-                $this->_items[$key] = array("filter"=>sprintf("^\\/%s\\/", implode("\\/", $rules)),
-                                       "controller"=>$item["controller"],
-                                       "action"=>$item["action"],
-                                       "variables"=>$variables);
-            }
+        foreach ($items as $key=>$item) {
+            $this->_items[] = new Joy_Router_Item($item["url"], $item["controller"], $item["action"]);
         }
+    }
+
+    public function addItem(Joy_Router_Item $item)
+    {
+        $this->_items[] = $item;
+    }
+
+    public function resetItems()
+    {
+        $this->_items = array();
     }
 
     public function match($uri)
@@ -101,11 +101,11 @@ class Joy_Router extends Joy_Object
         if (empty($uri) || $uri == "/") {
             $uri = "//";
         }
-
+        
         foreach ($this->_items as $key=>$item) {
             // check uri
-            if (eregi($item["filter"], $uri)) {
-                preg_match("/^{$item["filter"]}/U", $uri, $matches);
+            if (eregi($item->filter, $uri)) {
+                preg_match("/^{$item->filter}/U", $uri, $matches);
                 $matched_uri = str_replace($matches[0], "", $uri);
                 array_shift($matches);
                 
@@ -117,55 +117,55 @@ class Joy_Router extends Joy_Object
 
                 // merge filter variables
                 $parameters = array();
-                foreach($item["variables"] as $key) {
+                foreach($item->variables as $key) {
                     if (!empty($key)) {
                         $parameters[$key] = trim(array_shift($matches), DIRECTORY_SEPARATOR);
                     }
                 }
 
                 // set controller variable
-                if (!isset($item["controller"])) {
-                    $item["controller"] = $parameters["controller"];
+                if (!isset($item->controller)) {
+                    $item->controller = $parameters["controller"];
                     unset($parameters["controller"]);
                 }
 
                 // set action variable
-                if (!isset($item["action"])) {
-                    $item["action"] = $parameters["action"];
+                if (!isset($item->action)) {
+                    $item->action = $parameters["action"];
                     unset($parameters["action"]);
                 }
 
                 // set action arguments
-                $item["action_arguments"] = array_merge(array_values((array)$parameters), (array)$action_arguments);
+                $item->action_arguments = array_merge(array_values((array)$parameters), (array)$action_arguments);
 
                 // clear action from extension
-                $action_info = split("\.", $item["action"]);
+                $action_info = split("\.", $item->action);
 
                  // set extension variable
-                if (!isset($item["action_extension"])) {
+                if (!isset($item->action_extension)) {
                     array_shift($action_info);
-                    $item["action_extension"] = count($action_info) 
+                    $item->action_extension = count($action_info) 
                                                   ? implode(".", $action_info)
                                                   : null;
                 }
 
                 //set parameters
-                $item["parameters"] = array_merge((array)$parameters, $_REQUEST);
+                $item->parameters = array_merge((array)$parameters, $_REQUEST);
 
                 // unset filter values
-                unset($item["filter"]);
-                unset($item["variables"]);
+                unset($item->filter);
+                unset($item->variables);
 
                 // set render variable
-                if (!isset($item["render"])) {
-                    $item["render"] = Joy_Render_Factory::get($item["action_extension"]);
+                if (!isset($item->render)) {
+                    $item->render = Joy_Render_Factory::get($item->action_extension);
                 }
 
                 // set request method
-                $item["method"] = $_SERVER["REQUEST_METHOD"];                
-
+                $item->method = $_SERVER["REQUEST_METHOD"];                
                 // controller exists
-                $result = (object)$item;
+                $result = clone $item;
+
                 if (Joy_Controller::exists($result->controller)) {
                     break;
                 }
@@ -175,6 +175,6 @@ class Joy_Router extends Joy_Object
             }
         }
         
-        return (is_null($result)) ? null : (new Joy_Router_Item($result));
+        return (is_null($result)) ? null : (new Joy_Router_Match($result));
     }
 }
