@@ -32,7 +32,7 @@
  */
 class Joy_Application extends Joy_Object
 {
-    public function __construct($app_dir, $app_env)
+    public function __construct($app_dir, $app_env=null)
     {
         parent::__construct();
 
@@ -57,8 +57,6 @@ class Joy_Application extends Joy_Object
         if (!($object instanceof Joy_Application_Bootstrap)) {
             $object = new Joy_Application_Bootstrap();
         }
-
-
     }
 
     public function setIncludePath($path)
@@ -71,33 +69,7 @@ class Joy_Application extends Joy_Object
         // Event Dispatcher Application_Bootstrap::onStart method trigged.
         $this->event->dispatcher("app.start");
 
-        $item = $this->router->match($_SERVER["REQUEST_URI"]);
-
-        if ($item instanceof Joy_Router_Match) {
-            // Instance Context
-            $context = Joy_Context::getInstance();
-            $context->request->setAction($item->getController(), $item->getAction(), $item->getArguments());
-            $context->request->setParameters($item->getParameters());
-            $context->request->setMethod($item->getMethod());
-
-            // Render Factory
-            $render = $item->getRender();
-
-            // Set Theme To Render
-            $theme = $item->getTheme();
-            $render->setTheme($theme);
-
-            // Injection Render In The Response Object
-            $context->response->setRender($render);
-
-            // Page Factory
-            $page = Joy_Page::factory($item->getPage());
-
-            // Page is building
-            $page->build();
-        }
-        else {
-            throw new Joy_Exception_NotFound_Class("Joy_Router_Match class not found");
-        }
+        // Hooking...
+        $this->onRunning();
     }
 }

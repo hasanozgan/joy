@@ -49,12 +49,6 @@ class Joy_View extends Joy_View_Abstract
         if (method_exists($this, "onInit")) {
             $this->onInit();
         } 
-
-        // Assign and Logic Layer
-        if (method_exists($this, "onLoad")) {
-            $this->onLoad();
-        } 
-
     }
 
 }

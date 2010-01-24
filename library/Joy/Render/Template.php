@@ -33,4 +33,26 @@
  */
 class Joy_Render_Template extends Joy_Render_Abstract
 {
+    public function execute($view)
+    {
+        parent::execute($view);
+
+        $context = Joy_Context::getInstance();
+
+        $resource = $view->getResourceList(); 
+        $context->response->addScript($resource["javascripts"]);
+        $context->response->addStyle($resource["stylesheets"]);
+
+        $application = $context->config->application->get("application");
+        $application["i18n"] = $view->getLocale();
+
+        $tpl = new PHPTAL();
+        $tpl->setSource($view->getTemplate());
+        $tpl->import = new Joy_Render_Template_Importer($view);
+        $tpl->application = $application;
+        $tpl->get = (array)$view->assignAll();
+
+        return $tpl->execute();
+    }
+
 }

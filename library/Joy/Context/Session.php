@@ -57,12 +57,12 @@ class Joy_Context_Session extends Joy_Context_Base
 
     public function get($key)
     {
-        return $_SESSION[$key];
+        return (isset($_SESSION[$key])) ? unserialize($_SESSION[$key]) : null;
     }
 
     public function set($key, $value)
     {
-        $_SESSION[$key] = $value;
+        $_SESSION[$key] = serialize($value);
     }
 
     public function delete($key)

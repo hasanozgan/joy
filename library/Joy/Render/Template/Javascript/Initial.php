@@ -31,13 +31,11 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Render_Template_Javascript_Initial extends Joy_Render_Abstract
+class Joy_Render_Template_Javascript_Initial extends Joy_Render_Template_Javascript
 {
     public function __construct()
     {
-        $this->response = Joy_Context_Response::getInstance();
-        $this->config = Joy_Config::getInstance();
-
+        parent::__construct();
 
         $this->response->appendContent(sprintf("var \$__application = %s",
                                                json_encode((array)$this->config->application->get("application"))));
@@ -50,7 +48,16 @@ class Joy_Render_Template_Javascript_Initial extends Joy_Render_Abstract
 
     public function execute($view)
     {
-        parent::execute($view);
+        if ($view instanceof joy_view_layout) {
+            $this->execute($view->getplaceholder());
+        }
+
+        $manifest = $view->getmanifest();
+        if (!empty($manifest["stacks"])) {
+            foreach($manifest["stacks"] as $name => $stack) {
+                $view->getstack($name);
+            }
+        }
 
         $scriptFile = $view->getInitialScript();
 

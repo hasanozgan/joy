@@ -64,6 +64,8 @@ class Joy_Context_Model extends Joy_Context_Base
         }
         catch (Doctrine_Connection_Exception $ex) {
             $models = $this->config->application->get("folders/model");
+            var_dump($models);
+
             Doctrine::loadModels("{$models}/dal");
             Doctrine::loadModels($models);
 

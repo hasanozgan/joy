@@ -31,8 +31,14 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Render_Template_Javascript extends Joy_Render_Template
+class Joy_Render_Template_Javascript extends Joy_Render_Abstract
 {
+    public function __construct()
+    {
+        $this->response = Joy_Context_Response::getInstance();
+        $this->config = Joy_Config::getInstance();
+    }
+
     public function getContentType()
     {
         return "text/javascript";
@@ -40,13 +46,20 @@ class Joy_Render_Template_Javascript extends Joy_Render_Template
 
     public function execute($view)
     {
-        parent::execute($view);
+        if ($view instanceof joy_view_layout) {
+            $this->execute($view->getplaceholder());
+        }
 
-        $response = Joy_Context_Response::getInstance();
+        $manifest = $view->getmanifest();
+        if (!empty($manifest["stacks"])) {
+            foreach($manifest["stacks"] as $name => $stack) {
+                $view->getstack($name);
+            }
+        }
 
         $scriptFile = $view->getScript();
         if (file_exists($scriptFile)) {
-            $content = sprintf("/* %s */\n", $view->getId());
+            $content = sprintf("/* %s - %s */\n", $view->getId(), get_class($view));
             $content .= file_get_contents($scriptFile);
             @preg_match_all('/\$__i18n\[[\"|\'](.+)[\"|\']\]/', $content, $matches);
             $locale = $view->getLocale();
@@ -60,10 +73,10 @@ class Joy_Render_Template_Javascript extends Joy_Render_Template
             }
 
             $content = str_replace("\$__i18n", $translate, $content);
-            $response->appendContent($content);
+            $this->response->appendContent($content);
         }
 
-        return $response->getContent();
+        return $this->response->getContent();
     }
 
 }

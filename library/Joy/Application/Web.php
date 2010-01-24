@@ -23,41 +23,45 @@
 
 /**
  * @package     Joy
- * @subpackage  View
+ * @subpackage  Application
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id: $
+ * @version     $Id$
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_View_Layout extends Joy_View
+class Joy_Application_Web extends Joy_Application
 {
-    protected $_placeHolder;
-
-    protected function _init()
+    public function onRunning()
     {
-        $this->_folder = $this->config->application->get("folders/layout");
-        $this->setName($this->_params["file"]);
-    }
+        $item = $this->router->match($_SERVER["REQUEST_URI"]);
 
-    /**
-     * setPlaceHolder method is setter for placeholder
-     * 
-     * @param Joy_View_Interface $view
-     */
-    public function setPlaceHolder($view)
-    {
-        $this->_placeHolder = $view;
-    }
+        if ($item instanceof Joy_Router_Match) {
+            // Instance Context
+            $context = Joy_Context::getInstance();
+            $context->request->setAction($item->getController(), $item->getAction(), $item->getArguments());
+            $context->request->setParameters($item->getParameters());
+            $context->request->setMethod($item->getMethod());
 
-    /**
-     * getPlaceHolder method is setter for placeholder
-     * 
-     * @return Joy_View_Interface $view
-     */
-    public function getPlaceHolder()
-    {
-        return $this->_placeHolder;
+            // Render Factory
+            $render = $item->getRender();
+
+            // Set Theme To Render
+            $theme = $item->getTheme();
+            $render->setTheme($theme);
+
+            // Injection Render In The Response Object
+            $context->response->setRender($render);
+
+            // Page Factory
+            $page = Joy_Page::factory($item->getPage());
+
+            // Page is building
+            $page->build();
+        }
+        else {
+            throw new Joy_Exception_NotFound_Class("Joy_Router_Match class not found");
+        }
     }
 }

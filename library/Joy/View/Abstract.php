@@ -278,7 +278,7 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
      *
      * @return  array manifest data
      */ 
-    public function getmanifest()
+    public function getManifest()
     {
         if (!(is_null($this->getName()) || is_null($this->getViewFolder()))) {
             $manifest = sprintf("%s/%s.manifest", $this->getViewFolder(), $this->getName());

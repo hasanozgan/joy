@@ -123,7 +123,7 @@ class Joy_Context_Request extends Joy_Context_Base
 
 
             // Script Files Injection
-            $scripts = $response->getScripts();
+            $scripts = (array)$response->getScripts();
             $scripts = array_reverse($scripts);
             array_push($scripts, $app_script);
             $scripts = array_reverse($scripts);
@@ -139,7 +139,7 @@ class Joy_Context_Request extends Joy_Context_Base
             $output = str_replace("<!-- @Page.Javascripts -->", $page_scripts, $output);
             
             // Style Files Injection
-            $styles = $response->getStyles();
+            $styles = (array)$response->getStyles();
             foreach ($styles as $style) {
                 if (strpos($style, "http") === FALSE) {
                     $style = sprintf("%s/%s", $site_root, trim($style, "/"));
