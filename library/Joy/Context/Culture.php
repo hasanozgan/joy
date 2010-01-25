@@ -49,21 +49,39 @@ class Joy_Context_Culture extends Joy_Context_Base
         return self::$_instance;
     }
 
+    public function __construct()
+    {
+        parent::__construct();
+        $locale = $this->config->application->get("application/locale");
+
+        $current = (isset($locale["current"]) ? $locale["current"] : "en-US");
+
+        $accepted = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, strpos($_SERVER["HTTP_ACCEPT_LANGUAGE"], ","));
+        if (in_array($accepted, (array)$locale["accepted"])) {
+            $current = $accepted;
+        }
+
+        $this->setLocale($current);
+    }
+
     public function getLanguage()
     {
-        // @TODO
-        return "tr";
+        return $this->_language;
     }
 
     public function getCountry()
     {
-        // @TODO
-        return "TR";
+        return $this->_country;
+    }
+
+    public function setLocale($locale)
+    {
+        list($this->_language, $this->_country) = split("[-_]", $locale);
+        $this->_current = $this->getLocale();
     }
 
     public function getLocale()
     {
-        // @TODO
         return sprintf("%s-%s", $this->getLanguage(), $this->getCountry());
     }
 
