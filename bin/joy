@@ -1,0 +1,71 @@
+#!/usr/bin/php
+<?php
+
+$path = realpath(dirname("./"));
+$projectFolder = isProjectFolder($path);
+
+if (!$projectFolder) {
+    echo "Please, Enter Project Folder\n";
+    die;
+}
+
+function isProjectFolder($path) 
+{
+    if ($path == "") return false;
+
+    $script = "$path/joy";
+
+    if (file_exists($script) && is_file($script)) {
+        return $path;
+    }
+
+    $result = strrchr($path, "/"); 
+    $path = str_replace($result, "", $path);
+
+    return isProjectFolder($path);
+}
+
+$items = array_reverse(split("/", trim($path, "/")));
+
+$program = array_shift($argv);
+$task = array_shift($argv);
+
+if (strpos($task, "-") !== false) {
+    $opt = $task;
+    $task = array_shift($argv);
+}
+
+list($taskCmd, $taskArgument) = split(":", $task);
+
+$arguments = $argv;
+
+#var_dump($projectFolder, $path, $program, $opt, $task, $arguments);
+#die;
+
+require "Joy/Loader.php";
+Joy_Loader::run();
+
+switch ($taskCmd)
+{
+    case "generate":
+        create_command($taskArgument);
+        break;
+}
+
+function create_command($cmd)
+{
+    global $projectFolder;
+
+    switch ($cmd) {
+        case "models":
+            $app = new Joy_Application_Console($projectFolder, null);
+            $app->run();
+
+            Doctrine::generateModelsFromDb($app->config->application->get("folders/model"),
+                                          array('doctrine'),
+                                          array('generateTableClasses' => true, 'baseClassesDirectory' => 'dal')
+                                         );
+
+            echo "Models genereted...\n";
+    }
+}

@@ -1,0 +1,101 @@
+#!/bin/sh
+echo "going to set up vim to work with cscope."
+
+# cscope-php
+cscphp="$HOME/bin/cscope-php"
+mkdir -p $HOME/bin
+if [[ ! -f $cscphp ]]; then
+	echo "creating ~/bin/cscope-php, a shell script for php files..."
+	cat >> $cscphp << EOF
+#!/bin/sh
+for arg in "$@"
+do
+        if [ -d $arg ]
+        then
+                #echo Create list of php files in cscope.files
+                find $arg \( -name "*.php" -or -name "*.tpl" \) -and -not -regex "./temp/.*" -and -not -regex ".*/language.php" -print > $arg/cscope.files
+                #echo Create cscope database in cscope.out
+                cscope -b -i $arg/cscope.files -f$arg/cscope.out
+                rm -f $arg/cscope.files
+        else
+                echo "Directory not found: $arg"
+        fi
+done
+EOF
+else
+	echo "found $cscphp"
+fi
+
+# vim keymaps plugin
+cscmaps="$HOME/.vim/plugin/cscope_maps.vim"
+mkdir -p $HOME/.vim/plugin/
+if [[ ! -f $cscmaps ]]; then
+	echo "adding cscope maps vim plugin to .vim/plugin/cscope_maps.vim..."
+	curl -o $cscmaps http://cscope.sourceforge.net/cscope_maps.vim
+else
+	echo "found $cscmaps"
+fi
+
+# cscope checks
+cscope=$(which cscope 2> /dev/null)
+if [[ $cscope ]]; then
+	echo "found $cscope."
+else
+	echo 'make sure you install cscope!!!'
+fi
+
+# .vimrc update
+if (grep cscope $HOME/.vimrc > /dev/null); then
+	vimfile="$HOME/vim-cscope"
+	echo "you already seem to have some cscope settings in your ~/.vimrc file. please
+make sure the settings are valid by comparing them to the settings i've written
+to $vimfile."
+else
+	vimfile="$HOME/.vimrc"
+	echo "now i'll add some code to your $vimfile file..."
+fi
+
+cat >> $vimfile << EOF
+
+" cscope settings
+if has("cscope")
+	" Some scsope specific settings
+	set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+	" always use cscope instead of tags
+	set cst
+
+	" path to cscope
+	set csprg=/usr/bin/cscope
+
+	" search databased before searching tag files
+	set cscopetagorder=0
+
+	" don\'t display cscope messages when adding database
+	set nocsverb
+
+	" add any database in current directory
+	if filereadable("cscope.out")
+		cs add cscope.out
+		" else add database pointed to by environment
+	elseif \$CSCOPE_DB != ""
+		cs add \$CSCOPE_DB
+	endif
+
+	" reset cscope verbosity
+	set csverb
+endif
+EOF
+
+# final output
+echo "
+to test if this worked:
+$ cd /path/to/bitweaver
+$ cscope-php
+$ vim index.php +/getLibertyObject
+  move your cursor over getLibertyObject
+  <CTRL-\\>g will go to where the function was defined
+  <CTRL-\\>s will show all places where the function has been used
+             use ':copen' to view the complete list.
+i have a cron job to regularly update the cscope db and then i do this from vim:
+:cs reset"
