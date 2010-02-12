@@ -110,7 +110,7 @@ class Joy_Context_Request extends Joy_Context_Base
         {
             $culture = Joy_Context_Culture::getInstance();
             $response = Joy_Context_Response::getInstance();
-            $site_root = $this->config->application->get("application/site_root");
+            $site_root = trim($this->config->application->get("application/site_root"), "/");
 
             $app_script = sprintf("%s/%s.initial.js",
                               get_class($this->_current->controller), 
@@ -131,7 +131,9 @@ class Joy_Context_Request extends Joy_Context_Base
 
             foreach ($scripts as $script) {
                 if (strpos($script, "http") === FALSE) {
-                    $script = sprintf("%s/%s", $site_root, trim($script, "/"));
+                    $script = ($site_root) 
+                                ? sprintf("/%s/%s", $site_root, trim($script, "/"))
+                                : sprintf("/%s", trim($script, "/"));
                 }
 
                 $page_scripts .= sprintf("<script type='text/javascript' src='%s'></script>\n", $script);
@@ -142,7 +144,9 @@ class Joy_Context_Request extends Joy_Context_Base
             $styles = (array)$response->getStyles();
             foreach ($styles as $style) {
                 if (strpos($style, "http") === FALSE) {
-                    $style = sprintf("%s/%s", $site_root, trim($style, "/"));
+                    $style = ($site_root) 
+                                ? sprintf("/%s/%s", $site_root, trim($style, "/"))
+                                : sprintf("/%s", trim($style, "/"));
                 }
 
                 $page_styles .= sprintf("<link rel='stylesheet' type='text/css' href='%s' />\n", $style);

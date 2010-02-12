@@ -89,23 +89,17 @@ class Joy_Router extends Joy_Object
            $uri .= "/$atom";
         }
 
+        $uri = sprintf("%s", trim($uri, DIRECTORY_SEPARATOR));
+
         $site_root = trim($this->config->application->get("application/site_root"), DIRECTORY_SEPARATOR);
-
         if (!empty($site_root)) {
-            $uri = sprintf("%s/", str_replace($site_root, "", trim($uri, DIRECTORY_SEPARATOR)));
-        }
-        else {
-            $uri = sprintf("%s/", trim($uri, DIRECTORY_SEPARATOR));
-        }
-
-        if (empty($uri) || $uri == "/") {
-            $uri = "//";
+            $uri = str_replace($site_root, "", $uri);
         }
         
         foreach ($this->_items as $key=>$item) {
             // check uri
-            if (eregi($item->filter, $uri)) {
-                preg_match("/^{$item->filter}/U", $uri, $matches);
+            if (eregi($item->filter, "/{$uri}/")) {
+                preg_match("/^{$item->filter}/U", "/{$uri}/", $matches);
                 $matched_uri = str_replace($matches[0], "", $uri);
                 array_shift($matches);
                 
