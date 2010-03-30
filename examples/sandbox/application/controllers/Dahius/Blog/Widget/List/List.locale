@@ -1,0 +1,9 @@
+[tr]
+hello = Merhaba, {1}
+goodbye = Güle güle
+
+[en]
+hello = Hello, {1:string}
+goodbye = Goodbye
+
+

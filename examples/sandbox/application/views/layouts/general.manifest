@@ -1,0 +1,21 @@
+stylesheets:
+    - assets/styles/960gs/reset.css
+    - assets/styles/960gs/960.css
+    - assets/styles/960gs/text.css
+    - assets/styles/main.css
+
+javascripts:
+    - http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
+
+
+stacks:
+    menu:
+        - Dahius_Blog_Widget_List:
+            id: 5
+            mail: 34554
+
+        - Joy_View_Block:
+            file: menu
+
+        - Joy_View_Block:
+            file: sidebar

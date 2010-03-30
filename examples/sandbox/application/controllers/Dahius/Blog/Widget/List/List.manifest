@@ -1,0 +1,12 @@
+stylesheets: []
+javascripts: []
+
+stacks:		
+    sidebar:
+        Dahius_Blog_List:
+            id: 345
+
+   menu: 
+        Joy_View_Block:
+            id: general/menu
+
