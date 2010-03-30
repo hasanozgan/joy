@@ -69,14 +69,6 @@
 <li><a href="Joy/Config_Section/Joy_Config_Section.html">Joy_Config_Section</a></li><li><a href="Joy/Config_Section/Joy_Config_Section_Application.html">Joy_Config_Section_Application</a></li><li><a href="Joy/Config_Section/Joy_Config_Section_Framework.html">Joy_Config_Section_Framework</a></li></ul></li>
 </ul>
 
-<h2>Root class Joy_Controller_Abstract</h2>
-<ul>
-<li><a href="Joy/Controller/Joy_Controller_Abstract.html">Joy_Controller_Abstract</a> (implements <a href="Joy/Controller/Joy_Controller_Interface.html">Joy_Controller_Interface</a>)<ul>
-<li><a href="Joy/Controller/Joy_Controller.html">Joy_Controller</a><ul>
-<li><a href="Joy/Controller/Joy_Module.html">Joy_Module</a></li></ul></li>
-</ul></li>
-</ul>
-
 <h2>Root class Joy_Controller_Factory</h2>
 <ul>
 <li><a href="Joy/Controller/Joy_Controller_Factory.html">Joy_Controller_Factory</a></li></ul>
@@ -127,11 +119,19 @@
 <ul>
 <li><a href="Joy/Joy_Object.html">Joy_Object</a><ul>
 <li><a href="Joy/Joy_Application.html">Joy_Application</a></li><li><a href="Joy/Joy_Context.html">Joy_Context</a><ul>
+<li><a href="Joy/Controller/Joy_Controller_Abstract.html">Joy_Controller_Abstract</a> (implements <a href="Joy/Controller/Joy_Controller_Interface.html">Joy_Controller_Interface</a>)<ul>
+<li><a href="Joy/Controller/Joy_Controller.html">Joy_Controller</a><ul>
+<li><a href="Joy/Controller/Joy_Module.html">Joy_Module</a></li></ul></li>
+</ul></li>
 <li><a href="Joy/Page/Joy_Page_Abstract.html">Joy_Page_Abstract</a> (implements <a href="Joy/Page/Joy_Page_Interface.html">Joy_Page_Interface</a>)<ul>
 <li><a href="Joy/Page/Joy_Page.html">Joy_Page</a></li></ul></li>
+<li><a href="Joy/View/Joy_View_Abstract.html">Joy_View_Abstract</a> (implements <a href="Joy/View/Joy_View_Interface.html">Joy_View_Interface</a>)<ul>
+<li><a href="Joy/View/Joy_View.html">Joy_View</a><ul>
+<li><a href="Joy/Module_Render/Joy_Module_Widget.html">Joy_Module_Widget</a></li><li><a href="Joy/View/Joy_View_Block.html">Joy_View_Block</a></li><li><a href="Joy/View/Joy_View_Layout.html">Joy_View_Layout</a></li></ul></li>
+</ul></li>
 </ul></li>
 <li><a href="Joy/Context/Joy_Context_Base.html">Joy_Context_Base</a><ul>
-<li><a href="Joy/Context/Joy_Context_Cookie.html">Joy_Context_Cookie</a></li><li><a href="Joy/Context/Joy_Context_Culture.html">Joy_Context_Culture</a></li><li><a href="Joy/Context/Joy_Context_Request.html">Joy_Context_Request</a></li><li><a href="Joy/Context/Joy_Context_Response.html">Joy_Context_Response</a></li><li><a href="Joy/Context/Joy_Context_Server.html">Joy_Context_Server</a></li><li><a href="Joy/Context/Joy_Context_Session.html">Joy_Context_Session</a></li><li><a href="Joy/Context/Joy_Context_User.html">Joy_Context_User</a></li></ul></li>
+<li><a href="Joy/Context/Joy_Context_Cookie.html">Joy_Context_Cookie</a></li><li><a href="Joy/Context/Joy_Context_Culture.html">Joy_Context_Culture</a></li><li><a href="Joy/Context/Joy_Context_Model.html">Joy_Context_Model</a></li><li><a href="Joy/Context/Joy_Context_Request.html">Joy_Context_Request</a></li><li><a href="Joy/Context/Joy_Context_Response.html">Joy_Context_Response</a></li><li><a href="Joy/Context/Joy_Context_Server.html">Joy_Context_Server</a></li><li><a href="Joy/Context/Joy_Context_Session.html">Joy_Context_Session</a></li><li><a href="Joy/Context/Joy_Context_User.html">Joy_Context_User</a></li></ul></li>
 <li><a href="Joy/Controller/Joy_Controller_Canvas.html">Joy_Controller_Canvas</a></li><li><a href="Joy/Joy_Router.html">Joy_Router</a></li></ul></li>
 </ul>
 
@@ -146,14 +146,30 @@
 <h2>Root class Joy_Render_Abstract</h2>
 <ul>
 <li><a href="Joy/Render/Joy_Render_Abstract.html">Joy_Render_Abstract</a> (implements <a href="Joy/Render/Joy_Render_Interface.html">Joy_Render_Interface</a>)<ul>
-<li><a href="Joy/Module_Render/Joy_Module_Render_JavaScript.html">Joy_Module_Render_JavaScript</a></li><li><a href="Joy/Module_Render_JavaScript/Joy_Module_Render_JavaScript_Locale.html">Joy_Module_Render_JavaScript_Locale</a></li><li><a href="Joy/Render/Joy_Render_Json.html">Joy_Render_Json</a></li><li><a href="Joy/Render/Joy_Render_Template.html">Joy_Render_Template</a><ul>
-<li><a href="Joy/Module_Render/Joy_Module_Render_Template.html">Joy_Module_Render_Template</a></li></ul></li>
-<li><a href="Joy/Render/Joy_Render_Xml.html">Joy_Render_Xml</a></li></ul></li>
+<li><a href="Joy/Module_Render/Joy_Module_Render_JavaScript.html">Joy_Module_Render_JavaScript</a></li><li><a href="Joy/Module_Render_JavaScript/Joy_Render_Javascript_Initial.html">Joy_Render_Javascript_Initial</a></li><li><a href="Joy/Render/Joy_Render_Json.html">Joy_Render_Json</a></li><li><a href="Joy/Render/Joy_Render_Template.html">Joy_Render_Template</a><ul>
+<li><a href="Joy/Module_Render/Joy_Module_Render_Template.html">Joy_Module_Render_Template</a></li><li><a href="Joy/Module_Render/Joy_Render_Template_Javascript.html">Joy_Render_Template_Javascript</a></li></ul></li>
+<li><a href="Joy/Module_Render_JavaScript/Joy_Render_Template_Javascript_Initial.html">Joy_Render_Template_Javascript_Initial</a></li><li><a href="Joy/Render/Joy_Render_Xml.html">Joy_Render_Xml</a></li></ul></li>
 </ul>
 
 <h2>Root class Joy_Render_Factory</h2>
 <ul>
 <li><a href="Joy/Render/Joy_Render_Factory.html">Joy_Render_Factory</a></li></ul>
+
+<h2>Root class Joy_Render_Template_Importer</h2>
+<ul>
+<li><a href="Joy/Render_Template/Joy_Render_Template_Importer.html">Joy_Render_Template_Importer</a></li></ul>
+
+<h2>Root class Joy_Render_Template_Importer_Action</h2>
+<ul>
+<li><a href="Joy/Render_Template_Importer/Joy_Render_Template_Importer_Action.html">Joy_Render_Template_Importer_Action</a></li></ul>
+
+<h2>Root class Joy_Render_Template_Importer_Block</h2>
+<ul>
+<li><a href="Joy/Render_Template_Importer/Joy_Render_Template_Importer_Block.html">Joy_Render_Template_Importer_Block</a></li></ul>
+
+<h2>Root class Joy_Render_Template_Importer_Stack</h2>
+<ul>
+<li><a href="Joy/Render_Template_Importer/Joy_Render_Template_Importer_Stack.html">Joy_Render_Template_Importer_Stack</a></li></ul>
 
 <h2>Root class Joy_Router_Item</h2>
 <ul>
@@ -165,15 +181,9 @@
 <li><a href="Joy/Test/Joy_Test_Assertion.html">Joy_Test_Assertion</a></li></ul></li>
 </ul>
 
-<h2>Root class Joy_View</h2>
+<h2>Root class Joy_View_Stack</h2>
 <ul>
-<li><a href="Joy/Joy_View.html">Joy_View</a></li></ul>
-
-<h2>Root class Joy_View_Abstract</h2>
-<ul>
-<li><a href="Joy/View/Joy_View_Abstract.html">Joy_View_Abstract</a> (implements <a href="Joy/View/Joy_View_Interface.html">Joy_View_Interface</a>)<ul>
-<li><a href="Joy/View/Joy_View_Block.html">Joy_View_Block</a></li><li><a href="Joy/View/Joy_View_Layout.html">Joy_View_Layout</a></li><li><a href="Joy/View/Joy_View_Widget.html">Joy_View_Widget</a></li></ul></li>
-</ul>
+<li><a href="Joy/View/Joy_View_Stack.html">Joy_View_Stack</a></li></ul>
 
 <h2>Root class Exception</h2>
 <ul>
@@ -184,7 +194,7 @@
 </ul>
 
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 17 Dec 2009 09:17:38 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 31 Dec 2009 17:32:05 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</body>
 </html>

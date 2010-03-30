@@ -41,6 +41,7 @@ View:
         __import/block/Head
         __import/stack/List
 
+
     ; helper - modifier olacak
 
         helper: get/image_root('image/sdff');
@@ -62,5 +63,13 @@ Error Handler:
 Workflow Engine:
 
     Action ve Permission durumlarında dışarıdan müdahale etmeyi sağlayan bir workflow engine hiç fena olmayacaktır.
+------------------------------------------
+Yapılacaklar:
+    * Action Template Render edilirken eklenen tüm view'ler Locale cache'te toplanacak.
+    * Action Javascript Render çağrılırken Locale.cache'e bakılarak tüm dosyalar yüklenecek. Böylecek template engine çalıştırılmayacak.
+    * View'lerin manifesto file'da tanımlanan parametreleri değişken değer alabilir.
+    * Model, View ve Application için Bootstrap sınıfları yazılacak.
+    * Joy_Console uygulamsı yazılacak.
+    * Log sınıfı yazılacak.
 
 

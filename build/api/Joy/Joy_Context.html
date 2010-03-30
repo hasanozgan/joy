@@ -68,7 +68,31 @@
 								 alt="Abstract class"
 								 title="Abstract class"
 								 style="vertical-align: center"/>
+						<a href="../Joy/View/Joy_View_Abstract.html">Joy_View_Abstract</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
 						<a href="../Joy/Page/Joy_Page_Abstract.html">Joy_Page_Abstract</a>
+					</td>
+					<td>
+											
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../Joy/Controller/Joy_Controller_Abstract.html">Joy_Controller_Abstract</a>
 					</td>
 					<td>
 											
@@ -92,7 +116,7 @@
 								</div>
 		<div class="info-box-body">
 			<div class="var-summary">
-																																																																								<div class="var-title">
+																																																																																<div class="var-title">
 					<img src="../media/images/Variable.png" alt=" " />
 					<span class="var-type">mixed</span>
 					<a href="#$cookie" title="details" class="var-name">$cookie</a>
@@ -101,6 +125,11 @@
 					<img src="../media/images/Variable.png" alt=" " />
 					<span class="var-type">mixed</span>
 					<a href="#$culture" title="details" class="var-name">$culture</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$models" title="details" class="var-name">$models</a>
 				</div>
 																<div class="var-title">
 					<img src="../media/images/Variable.png" alt=" " />
@@ -144,19 +173,19 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																				<div class="method-definition">
+												<div class="method-definition">
 					<img src="../media/images/StaticMethod.png" alt=" "/>
 											static <span class="method-result">void</span>
 										<a href="#getInstance" title="details" class="method-name">getInstance</a>
 										()
 									</div>
-																				<div class="method-definition">
-					<img src="../media/images/Constructor.png" alt=" "/>
+																																				<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
 											<span class="method-result">void</span>
-										<a href="#__construct" title="details" class="method-name">__construct</a>
+										<a href="#_init" title="details" class="method-name">_init</a>
 										()
 									</div>
-																			</div>
+											</div>
 		</div>
 	</div>		
 
@@ -219,8 +248,30 @@
 		
 
 </div>
-<a name="var$request" id="$request"><!-- --></A>
+<a name="var$models" id="$models"><!-- --></A>
 <div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$models</span>
+						(line <span class="line-number">44</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$request" id="$request"><!-- --></A>
+<div class="oddrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -242,7 +293,7 @@
 
 </div>
 <a name="var$response" id="$response"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -264,7 +315,7 @@
 
 </div>
 <a name="var$server" id="$server"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -286,7 +337,7 @@
 
 </div>
 <a name="var$session" id="$session"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -308,7 +359,7 @@
 
 </div>
 <a name="var$user" id="$user"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -335,7 +386,15 @@
 					<blockquote>
 													<img src="../media/images/Variable.png" />
 							<span class="var-title">
+								<span class="var-name"><a href="../Joy/Joy_Object.html#var$cache">Joy_Object::$cache</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
 								<span class="var-name"><a href="../Joy/Joy_Object.html#var$config">Joy_Object::$config</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../Joy/Joy_Object.html#var$event">Joy_Object::$event</a></span><br>
 							</span>
 											</blockquote> 
 										
@@ -355,11 +414,11 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 <a name="methodgetInstance" id="getInstance"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../media/images/StaticMethod.png" />
-		<span class="method-title">static getInstance</span> (line <span class="line-number">65</span>)
+		<span class="method-title">static getInstance</span> (line <span class="line-number">67</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -379,24 +438,24 @@
 		
 			
 	</div>
-<a name="method__construct" id="__construct"><!-- --></a>
-<div class="evenrow">
+<a name="method_init" id="_init"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
-		<img src="../media/images/Constructor.png" />
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">49</span>)
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_init</span> (line <span class="line-number">50</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">__constanct</p>
+<p class="short-description">_init</p>
 	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
+				<li><span class="field">access:</span> protected</li>
 			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
 		<span class="method-name">
-			__construct
+			_init
 		</span>
 				()
 			</div>
@@ -405,10 +464,22 @@
 			<hr class="separator" />
 		<div class="notes">Redefinition of:</div>
 		<dl>
-			<dt><a href="../Joy/Joy_Object.html#method__construct">Joy_Object::__construct()</a></dt>
-						<dd>__construct</dd>
+			<dt><a href="../Joy/Joy_Object.html#method_init">Joy_Object::_init()</a></dt>
 					</dl>
 			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Joy/View/Joy_View_Layout.html#method_init">Joy_View_Layout::_init()</a>
+							</li>
+					<li>
+				<a href="../Joy/View/Joy_View_Block.html#method_init">Joy_View_Block::_init()</a>
+							</li>
+					<li>
+				<a href="../Joy/Controller/Joy_Controller_Abstract.html#method_init">Joy_Controller_Abstract::_init()</a>
+							</li>
+				</ul>
 	</div>
 							<h4>Inherited Methods</h4>
 				<a name='inherited_methods'><!-- --></a>	
@@ -417,6 +488,10 @@
 					<blockquote>
 													<img src="../media/images/Constructor.png" alt=" "/>
 							<span class="method-name"><a href="../Joy/Joy_Object.html#method__construct">Joy_Object::__construct()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../Joy/Joy_Object.html#method_init">Joy_Object::_init()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../Joy/Joy_Object.html#method_registerEvents">Joy_Object::_registerEvents()</a></span><br>
 											</blockquote>
 										
 		</div>
@@ -424,7 +499,7 @@
 
 	
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 17 Dec 2009 09:17:41 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 31 Dec 2009 17:32:09 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

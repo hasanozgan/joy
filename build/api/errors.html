@@ -9,6 +9,7 @@
 		</head>
 		<body>
 						<a href="#Post-parsing">Post-parsing</a><br>
+<a href="#Action.php">Action.php</a><br>
 <a href="#Application.php">Application.php</a><br>
 <a href="#Array.php">Array.php</a><br>
 <a href="#Assertion.php">Assertion.php</a><br>
@@ -30,16 +31,19 @@
 <a href="#Framework.php">Framework.php</a><br>
 <a href="#Handler.php">Handler.php</a><br>
 <a href="#Helper.php">Helper.php</a><br>
+<a href="#Importer.php">Importer.php</a><br>
 <a href="#Ini.php">Ini.php</a><br>
+<a href="#Initial.php">Initial.php</a><br>
 <a href="#Interface.php">Interface.php</a><br>
 <a href="#Item.php">Item.php</a><br>
+<a href="#Javascript.php">Javascript.php</a><br>
 <a href="#JavaScript.php">JavaScript.php</a><br>
 <a href="#Json.php">Json.php</a><br>
 <a href="#Layout.php">Layout.php</a><br>
 <a href="#Loader.php">Loader.php</a><br>
-<a href="#Locale.php">Locale.php</a><br>
 <a href="#Memcached.php">Memcached.php</a><br>
 <a href="#Method.php">Method.php</a><br>
+<a href="#Model.php">Model.php</a><br>
 <a href="#Module.php">Module.php</a><br>
 <a href="#NotFound.php">NotFound.php</a><br>
 <a href="#Object.php">Object.php</a><br>
@@ -53,6 +57,7 @@
 <a href="#Section.php">Section.php</a><br>
 <a href="#Server.php">Server.php</a><br>
 <a href="#Session.php">Session.php</a><br>
+<a href="#Stack.php">Stack.php</a><br>
 <a href="#Template.php">Template.php</a><br>
 <a href="#Test.php">Test.php</a><br>
 <a href="#Type.php">Type.php</a><br>
@@ -64,26 +69,35 @@
 <a name="Abstract.php"></a>
 <h1>Abstract.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Abstract.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Abstract.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Cache/Abstract.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Config/Section/Abstract.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Abstract.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Abstract.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Page/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Cache/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Config/Section/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Abstract.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Abstract.php<br>
 <b>Warning on line 38</b> - Method "__construct" has no method-level DocBlock.<br>
-<b>Warning on line 39</b> - Method "build" has no method-level DocBlock.<br>
 <b>Warning on line 40</b> - Method "setDuration" has no method-level DocBlock.<br>
 <b>Warning on line 41</b> - Method "__construct" has no method-level DocBlock.<br>
-<b>Warning on line 43</b> - Method "setTheme" has no method-level DocBlock.<br>
+<b>Warning on line 42</b> - Method "setTheme" has no method-level DocBlock.<br>
 <b>Warning on line 43</b> - Method "toString" has no method-level DocBlock.<br>
+<b>Warning on line 44</b> - Method "_init" has no method-level DocBlock.<br>
 <b>Warning on line 46</b> - Method "set" has no method-level DocBlock.<br>
-<b>Warning on line 48</b> - Method "setLayout" has no method-level DocBlock.<br>
+<b>Warning on line 47</b> - Method "getContentType" has no method-level DocBlock.<br>
 <b>Warning on line 51</b> - Method "get" has no method-level DocBlock.<br>
-<b>Warning on line 53</b> - Method "setParams" has no method-level DocBlock.<br>
+<b>Warning on line 52</b> - Method "setParams" has no method-level DocBlock.<br>
+<b>Warning on line 56</b> - Method "_registerEvents" has no method-level DocBlock.<br>
 <b>Warning on line 56</b> - Method "getAll" has no method-level DocBlock.<br>
-<b>Warning on line 58</b> - Method "setCache" has no method-level DocBlock.<br>
+<b>Warning on line 57</b> - Method "setCache" has no method-level DocBlock.<br>
+<b>Warning on line 64</b> - Method "build" has no method-level DocBlock.<br>
 <b>Warning on line 72</b> - Method "load" has no method-level DocBlock.<br>
+<b>Warning on line 88</b> - Method "getId" has no method-level DocBlock.<br>
+<a name="Action.php"></a>
+<h1>Action.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Importer/Action.php<br>
+<b>Warning on line 40</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 51</b> - Method "__toString" has no method-level DocBlock.<br>
 <a name="Application.php"></a>
 <h1>Application.php</h1>
 <h2>Warnings:</h2><br>
@@ -128,7 +142,12 @@
 <a name="Block.php"></a>
 <h1>Block.php</h1>
 <h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Importer/Block.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Block.php<br>
+<b>Warning on line 39</b> - Method "_init" has no method-level DocBlock.<br>
+<b>Warning on line 40</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 47</b> - Method "__get" has no method-level DocBlock.<br>
+<b>Warning on line 58</b> - Method "__toString" has no method-level DocBlock.<br>
 <a name="Cache.php"></a>
 <h1>Cache.php</h1>
 <h2>Warnings:</h2><br>
@@ -160,7 +179,6 @@
 <h1>Controller.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller.php<br>
-<b>Warning on line 66</b> - Method "run" has no method-level DocBlock.<br>
 <a name="Cookie.php"></a>
 <h1>Cookie.php</h1>
 <h2>Warnings:</h2><br>
@@ -169,6 +187,11 @@
 <h1>Culture.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Context/Culture.php<br>
+<b>Warning on line 55</b> - Method "getLanguage" has no method-level DocBlock.<br>
+<b>Warning on line 61</b> - Method "getCountry" has no method-level DocBlock.<br>
+<b>Warning on line 67</b> - Method "getLocale" has no method-level DocBlock.<br>
+<b>Warning on line 73</b> - Method "getCharset" has no method-level DocBlock.<br>
+<b>Warning on line 78</b> - Method "getCollate" has no method-level DocBlock.<br>
 <a name="Event.php"></a>
 <h1>Event.php</h1>
 <h2>Warnings:</h2><br>
@@ -177,11 +200,11 @@
 <h1>Exception.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Exception.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Exception.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Loader/Exception.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Router/Exception.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Exception.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Page/Exception.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Router/Exception.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Loader/Exception.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Exception.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Exception.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Config/Exception.php<br>
 <a name="Extension.php"></a>
 <h1>Extension.php</h1>
@@ -190,8 +213,8 @@
 <a name="Factory.php"></a>
 <h1>Factory.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Factory.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Factory.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Factory.php<br>
 <b>Warning on line 62</b> - Method "found" has no method-level DocBlock.<br>
 <b>Warning on line 62</b> - Method "getController" has no method-level DocBlock.<br>
 <b>Warning on line 78</b> - Method "get" has no method-level DocBlock.<br>
@@ -232,10 +255,10 @@
 <b>Warning on line 127</b> - Unknown tag "@compatibility" used<br>
 <b>Warning on line 127</b> - Unknown tag "@site" used<br>
 <b>Warning on line 143</b> - Unknown tag "@note" used<br>
-<b>Warning on line 209</b> - Unknown tag "@note" used<br>
 <b>Warning on line 209</b> - example file "Joy_File_Reader_Json_Helper::decode('{"param":"value"}'); // associative array
         Joy_File_Reader_Json_Helper::decode('{"param":"value"}', true); // stdClass
         Joy_File_Reader_Json_Helper::decode('["one",two,true,false,null,{},[1,2]]'); // array" does not exist<br>
+<b>Warning on line 209</b> - Unknown tag "@note" used<br>
 <b>Warning on line 241</b> - example file "Joy_File_Reader_Json_Helper::encode(array(1,"two")); // '[1,"two"]'
 
         $obj = new MyClass();
@@ -294,31 +317,46 @@
 <b>Error on line 454</b> - DocBlock has multiple @access tags, illegal. ignoring additional tag "@access private"<br>
 <b>Error on line 489</b> - DocBlock has multiple @access tags, illegal. ignoring additional tag "@access private"<br>
 <b>Error on line 585</b> - DocBlock has multiple @access tags, illegal. ignoring additional tag "@access private"<br>
+<a name="Importer.php"></a>
+<h1>Importer.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Importer.php<br>
+<b>Warning on line 44</b> - Method "__construct" has no method-level DocBlock.<br>
 <a name="Ini.php"></a>
 <h1>Ini.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Ini.php<br>
 <b>Warning on line 38</b> - Method "toArray" has no method-level DocBlock.<br>
+<b>Warning on line 64</b> - Method "parse_ini" has no method-level DocBlock.<br>
+<a name="Initial.php"></a>
+<h1>Initial.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Javascript/Initial.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Render/JavaScript/Initial.php<br>
+<b>Warning on line 42</b> - Method "setParams" has no method-level DocBlock.<br>
+<b>Warning on line 43</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 48</b> - Method "getContentType" has no method-level DocBlock.<br>
+<b>Warning on line 63</b> - Method "execute" has no method-level DocBlock.<br>
 <a name="Interface.php"></a>
 <h1>Interface.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Interface.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Page/Interface.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Interface.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Loader/Interface.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Cache/Interface.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Controller/Interface.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Config/Section/Interface.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Page/Interface.php<br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Cache/Interface.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Interface.php<br>
-<b>Warning on line 35</b> - Method "__construct" has no method-level DocBlock.<br>
-<b>Warning on line 35</b> - Method "build" has no method-level DocBlock.<br>
-<b>Warning on line 35</b> - Method "setParams" has no method-level DocBlock.<br>
 <b>Warning on line 35</b> - Method "autoload" has no method-level DocBlock.<br>
+<b>Warning on line 35</b> - Method "build" has no method-level DocBlock.<br>
 <b>Warning on line 35</b> - Method "setDuration" has no method-level DocBlock.<br>
-<b>Warning on line 36</b> - Method "setTheme" has no method-level DocBlock.<br>
+<b>Warning on line 35</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 35</b> - Method "execute" has no method-level DocBlock.<br>
 <b>Warning on line 36</b> - Method "toString" has no method-level DocBlock.<br>
+<b>Warning on line 36</b> - Method "setTheme" has no method-level DocBlock.<br>
 <b>Warning on line 37</b> - Method "toArray" has no method-level DocBlock.<br>
-<b>Warning on line 37</b> - Method "setLayout" has no method-level DocBlock.<br>
+<b>Warning on line 37</b> - Method "setParams" has no method-level DocBlock.<br>
 <b>Warning on line 38</b> - Method "setCache" has no method-level DocBlock.<br>
 <a name="Item.php"></a>
 <h1>Item.php</h1>
@@ -338,24 +376,29 @@
 <h1>JavaScript.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Render/JavaScript.php<br>
+<b>Warning on line 38</b> - Method "getContentType" has no method-level DocBlock.<br>
+<b>Warning on line 66</b> - Method "execute" has no method-level DocBlock.<br>
+<a name="Javascript.php"></a>
+<h1>Javascript.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Javascript.php<br>
+<b>Warning on line 38</b> - Method "getContentType" has no method-level DocBlock.<br>
+<b>Warning on line 66</b> - Method "execute" has no method-level DocBlock.<br>
 <a name="Json.php"></a>
 <h1>Json.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Json.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Json.php<br>
-<b>Warning on line 38</b> - Method "toArray" has no method-level DocBlock.<br>
+<b>Warning on line 40</b> - Method "toArray" has no method-level DocBlock.<br>
 <a name="Layout.php"></a>
 <h1>Layout.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Layout.php<br>
+<b>Warning on line 41</b> - Method "_init" has no method-level DocBlock.<br>
 <a name="Loader.php"></a>
 <h1>Loader.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Loader.php<br>
-<a name="Locale.php"></a>
-<h1>Locale.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Render/JavaScript/Locale.php<br>
 <a name="Memcached.php"></a>
 <h1>Memcached.php</h1>
 <h2>Warnings:</h2><br>
@@ -364,10 +407,17 @@
 <h1>Method.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Exception/NotFound/Method.php<br>
+<a name="Model.php"></a>
+<h1>Model.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Context/Model.php<br>
 <a name="Module.php"></a>
 <h1>Module.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module.php<br>
+<b>Warning on line 57</b> - Method "action" has no method-level DocBlock.<br>
+<b>Warning on line 61</b> - Method "getWidget" has no method-level DocBlock.<br>
+<b>Warning on line 66</b> - Method "getWidgetFolder" has no method-level DocBlock.<br>
 <a name="NotFound.php"></a>
 <h1>NotFound.php</h1>
 <h2>Warnings:</h2><br>
@@ -376,6 +426,8 @@
 <h1>Object.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Object.php<br>
+<b>Warning on line 66</b> - Method "_init" has no method-level DocBlock.<br>
+<b>Warning on line 70</b> - Method "_registerEvents" has no method-level DocBlock.<br>
 <a name="Page.php"></a>
 <h1>Page.php</h1>
 <h2>Warnings:</h2><br>
@@ -405,12 +457,22 @@
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Context/Request.php<br>
 <b>Warning on line 58</b> - Method "setAction" has no method-level DocBlock.<br>
 <b>Warning on line 63</b> - Method "setParameters" has no method-level DocBlock.<br>
-<b>Warning on line 68</b> - Method "setMethod" has no method-level DocBlock.<br>
+<b>Warning on line 68</b> - Method "getMethod" has no method-level DocBlock.<br>
+<b>Warning on line 73</b> - Method "setMethod" has no method-level DocBlock.<br>
+<b>Warning on line 94</b> - Method "harness" has no method-level DocBlock.<br>
+<b>Warning on line 141</b> - Method "_includeResourceFiles" has no method-level DocBlock.<br>
 <a name="Response.php"></a>
 <h1>Response.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Context/Response.php<br>
+<b>Warning on line 44</b> - Method "getContent" has no method-level DocBlock.<br>
+<b>Warning on line 49</b> - Method "appendContent" has no method-level DocBlock.<br>
 <b>Warning on line 55</b> - Method "setRender" has no method-level DocBlock.<br>
+<b>Warning on line 60</b> - Method "getRender" has no method-level DocBlock.<br>
+<b>Warning on line 65</b> - Method "getScripts" has no method-level DocBlock.<br>
+<b>Warning on line 70</b> - Method "getStyles" has no method-level DocBlock.<br>
+<b>Warning on line 81</b> - Method "addScript" has no method-level DocBlock.<br>
+<b>Warning on line 92</b> - Method "addStyle" has no method-level DocBlock.<br>
 <a name="Router.php"></a>
 <h1>Router.php</h1>
 <h2>Warnings:</h2><br>
@@ -429,11 +491,20 @@
 <h1>Session.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Context/Session.php<br>
+<a name="Stack.php"></a>
+<h1>Stack.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template/Importer/Stack.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Stack.php<br>
+<b>Warning on line 40</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 40</b> - Method "__construct" has no method-level DocBlock.<br>
+<b>Warning on line 45</b> - Method "__get" has no method-level DocBlock.<br>
+<b>Warning on line 61</b> - Method "__toString" has no method-level DocBlock.<br>
 <a name="Template.php"></a>
 <h1>Template.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Render/Template.php<br>
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Render/Template.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Render/Template.php<br>
 <a name="Test.php"></a>
 <h1>Test.php</h1>
 <h2>Warnings:</h2><br>
@@ -456,10 +527,11 @@
 <h1>View.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 32</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View.php<br>
+<b>Warning on line 40</b> - Method "__construct" has no method-level DocBlock.<br>
 <a name="Widget.php"></a>
 <h1>Widget.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/View/Widget.php<br>
+<b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/Module/Widget.php<br>
 <a name="Xml.php"></a>
 <h1>Xml.php</h1>
 <h2>Warnings:</h2><br>
@@ -473,7 +545,7 @@
 <b>Warning on line 33</b> - no @package tag was used in a DocBlock for file /devel/netology/joy/trunk/library/Joy/File/Reader/Yaml.php<br>
 <b>Warning on line 38</b> - Method "toArray" has no method-level DocBlock.<br>
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 17 Dec 2009 09:17:45 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 31 Dec 2009 17:32:14 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</body>
 </html>

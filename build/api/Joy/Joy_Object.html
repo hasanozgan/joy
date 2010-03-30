@@ -138,10 +138,20 @@
 								</div>
 		<div class="info-box-body">
 			<div class="var-summary">
-																								<div class="var-title">
+																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Joy/Joy_Cache.html">Joy_Cache</a></span>
+					<a href="#$cache" title="details" class="var-name">$cache</a>
+				</div>
+																<div class="var-title">
 					<img src="../media/images/Variable.png" alt=" " />
 					<span class="var-type"><a href="../Joy/Joy_Config.html">Joy_Config</a></span>
 					<a href="#$config" title="details" class="var-name">$config</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type"><a href="../Joy/Joy_Event.html">Joy_Event</a></span>
+					<a href="#$event" title="details" class="var-name">$event</a>
 				</div>
 											</div>
 		</div>
@@ -160,10 +170,22 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																								<div class="method-definition">
+																																								<div class="method-definition">
 					<img src="../media/images/Constructor.png" alt=" "/>
 											<span class="method-result">void</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_init" title="details" class="method-name">_init</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#_registerEvents" title="details" class="method-name">_registerEvents</a>
 										()
 									</div>
 											</div>
@@ -185,8 +207,30 @@
 					</div>
 		<div class="info-box-body">
 			
-<a name="var$config" id="$config"><!-- --></A>
+<a name="var$cache" id="$cache"><!-- --></A>
 <div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Joy/Joy_Cache.html">Joy_Cache</a></span>
+			<span class="var-name">$cache</span>
+						(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$config" id="$config"><!-- --></A>
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../media/images/Variable.png" />
@@ -194,6 +238,28 @@
 			<span class="var-type"><a href="../Joy/Joy_Config.html">Joy_Config</a></span>
 			<span class="var-name">$config</span>
 						(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$event" id="$event"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../Joy/Joy_Event.html">Joy_Event</a></span>
+			<span class="var-name">$event</span>
+						(line <span class="line-number">48</span>)
 		</span>
 	</div>
 
@@ -228,7 +294,7 @@
 	
 	<div class="method-header">
 		<img src="../media/images/Constructor.png" />
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">45</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">55</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -254,8 +320,7 @@
 				<a href="../Joy/Joy_Router.html#method__construct">Joy_Router::__construct()</a>
 							</li>
 					<li>
-				<a href="../Joy/Joy_Context.html#method__construct">Joy_Context::__construct()</a>
-								: __constanct
+				<a href="../Joy/View/Joy_View.html#method__construct">Joy_View::__construct()</a>
 							</li>
 					<li>
 				<a href="../Joy/Joy_Application.html#method__construct">Joy_Application::__construct()</a>
@@ -265,13 +330,85 @@
 							</li>
 				</ul>
 	</div>
+<a name="method_init" id="_init"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_init</span> (line <span class="line-number">65</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_init
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Joy/Joy_Context.html#method_init">Joy_Context::_init()</a>
+								: _init
+							</li>
+					<li>
+				<a href="../Joy/View/Joy_View_Layout.html#method_init">Joy_View_Layout::_init()</a>
+							</li>
+					<li>
+				<a href="../Joy/View/Joy_View_Block.html#method_init">Joy_View_Block::_init()</a>
+							</li>
+					<li>
+				<a href="../Joy/Controller/Joy_Controller_Abstract.html#method_init">Joy_Controller_Abstract::_init()</a>
+							</li>
+				</ul>
+	</div>
+<a name="method_registerEvents" id="_registerEvents"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">_registerEvents</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			_registerEvents
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Joy/Page/Joy_Page_Abstract.html#method_registerEvents">Joy_Page_Abstract::_registerEvents()</a>
+							</li>
+				</ul>
+	</div>
 						
 		</div>
 	</div>
 
 	
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 17 Dec 2009 09:17:44 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 31 Dec 2009 17:32:13 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

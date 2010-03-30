@@ -1,9 +1,9 @@
 
 stylesheets:
-    - reset.css
+    - /css/general.css
     - 960.css
 
 javascripts:
-    - jquery.js
+    - jquery.fx.js
 
 

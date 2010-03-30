@@ -1,10 +1,15 @@
-
+<strong>List Template</strong>
+<label tal:content="application/site_root"></label>
 <!--
 
     ; import objesi olacak 
 
         __import/block/Head
         __import/stack/List
+
+        application/site_root
+        __application/i18n/hello
+
 
     ; helper - modifier olacak
 

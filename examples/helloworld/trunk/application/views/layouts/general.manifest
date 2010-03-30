@@ -1,0 +1,19 @@
+stylesheets:
+    - assets/styles/{$theme}/reset.css
+    - 960.css
+
+javascripts:
+    - jquery.js
+
+
+stacks:
+    menu:
+        - Dahius_Blog_Widget_List:
+            id: 5
+            mail: 34554
+
+        - Joy_View_Block:
+            file: menu
+
+        - Joy_View_Block:
+            file: sidebar

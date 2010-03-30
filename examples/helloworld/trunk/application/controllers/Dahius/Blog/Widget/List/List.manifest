@@ -1,0 +1,18 @@
+stylesheets:
+    - css/960gs/reset.css
+    - css/960gs/960.css
+    - css/960gs/text.css
+    - css/general.css
+
+javascripts:
+    - http://tweetboard.com/hasanozgan/tb.js
+
+stacks:		
+    sidebar:
+        Dahius_Blog_List:
+            id: 345
+
+    menu: 
+        Joy_View_Block:
+            id: general/menu
+
