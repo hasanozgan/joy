@@ -1,0 +1,12 @@
+Configuration:
+    Mode: [ ReadOnly, ReadWrite ] 
+    Environment: [ Development, Staging, Testing, Production ]
+
+Render:
+    Template
+    Xml
+    Json
+
+Module: < Controller
+    Javascript:
+    Javascript_Locale:
