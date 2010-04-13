@@ -181,10 +181,15 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
         return sprintf("%s/%s.tpl", $this->getViewFolder(), $this->getName());
     }
 
-    /**TODO*/
+    /**
+     * getTemplate method is getter template
+     *
+     * @return string
+     */
     public function getTemplate()
     {
         $template_file = $this->getTemplatePath();
+
         if (file_exists($template_file)) {
             return file_get_contents($template_file);
         }

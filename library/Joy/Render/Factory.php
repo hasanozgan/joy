@@ -43,10 +43,9 @@ class Joy_Render_Factory
         foreach ($extensions as $item) {
             $filter = trim($item["filter"], DIRECTORY_SEPARATOR);
 
-            if (eregi($filter, $extension)) {
+            if (preg_match("/^{$filter}/i", $extension, $matches)) {
                 // has render arguments
                 if (count($item["render-arguments"])) {
-                    preg_match("/^{$filter}/U", $extension, $matches);
                     array_shift($matches);
                     $item["render-arguments"] = array_combine((array)$item["render-arguments"], $matches);
                 }

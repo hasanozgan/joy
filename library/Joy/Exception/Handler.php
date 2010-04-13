@@ -66,9 +66,9 @@ class Joy_Exception_Handler
             $rules = array();
             $variables = array();
 
-            $atoms = split(DIRECTORY_SEPARATOR, trim($item["url"], DIRECTORY_SEPARATOR));
+            $atoms = explode(DIRECTORY_SEPARATOR, trim($item["url"], DIRECTORY_SEPARATOR));
             foreach($atoms as $atom) {
-                list($rules[], $variables[]) = split(":", $atom);
+                list($rules[], $variables[]) = explode(":", $atom);
                 
                 $this->_items[$key] = array("filter"=>sprintf("^\\/%s\\/", implode("\\/", $rules)),
                                        "controller"=>$item["controller"],
@@ -80,10 +80,10 @@ class Joy_Exception_Handler
 
     public function match($uri)
     {
-        list($uri) = split("\&", $uri);
-        list($uri) = split("\?", $uri);
+        list($uri) = explode("\&", $uri);
+        list($uri) = explode("\?", $uri);
 
-        $atoms = (array) split("/", $uri);
+        $atoms = (array) explode("/", $uri);
         $uri = "";
         foreach ($atoms as $atom) {
            if (empty($atom)) continue;
@@ -114,7 +114,7 @@ class Joy_Exception_Handler
                 // match uri
                 $action_arguments = array();
                 if ($matched_uri != "") {
-                    $action_arguments = split("/", trim($matched_uri, DIRECTORY_SEPARATOR));
+                    $action_arguments = explode("/", trim($matched_uri, DIRECTORY_SEPARATOR));
                 }
 
                 // merge filter variables
@@ -141,7 +141,7 @@ class Joy_Exception_Handler
                 $item["action-arguments"] = array_merge(array_values((array)$parameters), (array)$action_arguments);
 
                 // clear action from extension
-                $action_info = split("\.", $item["action"]);
+                $action_info = explode(".", $item["action"]);
 
                  // set extension variable
                 if (!isset($item["action-extension"])) {

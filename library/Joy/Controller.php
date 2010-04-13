@@ -69,20 +69,23 @@ class Joy_Controller extends Joy_Controller_Abstract
         // check authetication
 //        if ($this->authentication($action);
 
-
         $this->_assign = array();
 
         $ref = new ReflectionClass($this);
         $method = sprintf("_%s", $name);
 
-        if (!$ref->hasMethod($method) || !$ref->getMethod($method)->isProtected()) {
+        if (!$ref->hasMethod($method) || !$ref->getMethod($method)->isPublic()) {
             throw new Joy_Exception_NotFound_Method("Action Not Found ({$method})");
         }
 
         // FIXME: ReflectionMethod class not found setAccesible method in PHP 5.2.10 version.
-//        $ref->getMethod($method)->setAccessible(TRUE);
-//        return $ref->getMethod($method)->invokeArgs($this, $arguments);
-        $view = call_user_method_array($method, $this, $arguments);
+        $ref->getMethod($method)->setAccessible(TRUE);//->invokeArgs($this, $arguments);
+        $view = $ref->getMethod($method)->invokeArgs($this, $arguments);
+//        $view = call_user_method_array($method, $this, $arguments);
+
+        if ($view == null) {
+            $view = new Joy_View_Empty();
+        }
 
         // has layout
         if (!is_null($layout = $this->_canvas->getLayout())) {

@@ -90,6 +90,10 @@ class Joy_Context_Request extends Joy_Context_Base
         $view = $this->_current->controller->action($this->_current->action->name,
                                                     $this->_current->action->arguments);
 
+        if ($view == null) {
+            $view = new Joy_View_Empty();
+        }
+
         $render = $response->getRender();
         $output = $render->execute($view);
 
@@ -149,7 +153,7 @@ class Joy_Context_Request extends Joy_Context_Base
                                 : sprintf("/%s", trim($style, "/"));
                 }
 
-                $page_styles .= sprintf("<link rel='stylesheet' type='text/css' href='%s' />\n", $style);
+                $page_styles .= sprintf("<link rel='stylesheet' type='text/css' href='%s' media='all' />\n", $style);
             }
             $output = str_replace("<!-- @Page.Stylesheets -->", $page_styles, $output);
         }

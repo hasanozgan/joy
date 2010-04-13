@@ -76,7 +76,7 @@ class Joy_Context_Culture extends Joy_Context_Base
 
     public function setLocale($locale)
     {
-        list($this->_language, $this->_country) = split("[-_]", $locale);
+        list($this->_language, $this->_country) = explode("[-_]", $locale);
         $this->_current = $this->getLocale();
     }
 

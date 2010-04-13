@@ -25,7 +25,7 @@ function isProjectFolder($path)
     return isProjectFolder($path);
 }
 
-$items = array_reverse(split("/", trim($path, "/")));
+$items = array_reverse(explode("/", trim($path, "/")));
 
 $program = array_shift($argv);
 $task = array_shift($argv);
@@ -35,7 +35,7 @@ if (strpos($task, "-") !== false) {
     $task = array_shift($argv);
 }
 
-list($taskCmd, $taskArgument) = split(":", $task);
+list($taskCmd, $taskArgument) = explode(":", $task);
 
 $arguments = $argv;
 

@@ -79,10 +79,10 @@ class Joy_Router extends Joy_Object
 
     public function match($uri)
     {
-        list($uri) = split("\&", $uri);
-        list($uri) = split("\?", $uri);
+        list($uri) = explode("&", $uri);
+        list($uri) = explode("?", $uri);
 
-        $atoms = (array) split("/", $uri);
+        $atoms = (array) explode("/", $uri);
         $uri = "";
         foreach ($atoms as $atom) {
            if (empty($atom)) continue;
@@ -98,15 +98,14 @@ class Joy_Router extends Joy_Object
         
         foreach ($this->_items as $key=>$item) {
             // check uri
-            if (eregi($item->filter, "/{$uri}/")) {
-                preg_match("/^{$item->filter}/U", "/{$uri}/", $matches);
+            if (preg_match("/^{$item->filter}/i", "/{$uri}/", $matches)) {
                 $matched_uri = str_replace($matches[0], "", $uri);
                 array_shift($matches);
-                
+
                 // match uri
                 $action_arguments = array();
                 if ($matched_uri != "") {
-                    $action_arguments = split("/", trim($matched_uri, DIRECTORY_SEPARATOR));
+                    $action_arguments = explode("/", trim($matched_uri, DIRECTORY_SEPARATOR));
                 }
 
                 // merge filter variables
@@ -116,7 +115,7 @@ class Joy_Router extends Joy_Object
                         $parameters[$key] = trim(array_shift($matches), DIRECTORY_SEPARATOR);
                     }
                 }
-
+ 
                 // set controller variable
                 if (!isset($item->controller)) {
                     $item->controller = $parameters["controller"];
@@ -133,9 +132,9 @@ class Joy_Router extends Joy_Object
                 $item->action_arguments = array_merge(array_values((array)$parameters), (array)$action_arguments);
 
                 // clear action from extension
-                $action_info = split("\.", $item->action);
-
-                 // set extension variable
+                $action_info = explode(".", $item->action);
+                 
+                // set extension variable
                 if (!isset($item->action_extension)) {
                     array_shift($action_info);
                     $item->action_extension = count($action_info) 
@@ -168,7 +167,7 @@ class Joy_Router extends Joy_Object
                 $result = null;
             }
         }
-        
+
         return (is_null($result)) ? null : (new Joy_Router_Match($result));
     }
 }
