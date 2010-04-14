@@ -34,6 +34,13 @@
 abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interface
 {
     /**
+     * $_importer is acton, block, stack loader
+     *
+     * var Joy_Render_Template_Importer $_importer;
+     */
+    private $_importer;
+
+    /**
      * $_id is view definition uniq_id
      *
      * var integer $_id;
@@ -81,6 +88,17 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
         }
 
         $this->_assign[$key] = $value;
+    }
+
+    public function __get($key)
+    {
+        switch ($key) {
+            case "import":
+                return $this->getImporter();
+
+            default:
+                return $this->assign($key);
+        }
     }
 
     public function getId()
@@ -297,5 +315,33 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
         }
 
         return null;
+    }
+
+    /**
+     * template eval process in render function
+     *
+     */
+    public function render()
+    {
+        $resource = $this->getResourceList();
+        
+        $this->response->addScript($resource["javascripts"]);
+        $this->response->addStyle($resource["stylesheets"]);
+
+        $application = $this->config->application->get("application");
+        $application["i18n"] = $this->getLocale();
+
+        ob_start();
+        eval("; ?>{$this->getTemplate()}<?php ;");
+        return ob_get_clean();
+    }
+
+    protected function getImporter()
+    {
+        if (!($this->_importer instanceof Joy_Render_Template_Importer)) {
+            $this->_importer = new Joy_Render_Template_Importer($this);
+        }
+
+        return $this->_importer;
     }
 }

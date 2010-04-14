@@ -84,30 +84,6 @@ class Joy_Context_Request extends Joy_Context_Base
         $this->_current->method = $method;
     }
 
-    public function harness()
-    {
-        $response = Joy_Context_Response::getInstance();
-        $view = $this->_current->controller->action($this->_current->action->name,
-                                                    $this->_current->action->arguments);
-
-        if ($view == null) {
-            $view = new Joy_View_Empty();
-        }
-
-        $render = $response->getRender();
-        $output = $render->execute($view);
-
-        $this->_includeResourceFiles(&$view, &$output);
-
-        header("Content-Type: {$render->getContentType()}");
-        print $output;
-/*        $this->response->render->execute($view);
-
-        $this->response->getOutput();
-
-        $this->response->render->getContentType();*/
-    }
-
     protected function _includeResourceFiles($view, $output)
     {
         if ($view instanceof Joy_View_Layout) 

@@ -60,7 +60,19 @@ abstract class Joy_Page_Abstract extends Joy_Context implements Joy_Page_Interfa
     {
         $this->event->dispatcher("page.load");
 
-        // controller executing...
-        $this->request->harness();
+        // Call Action Method In Controller 
+        $current = $this->request->getAction();
+        $view = $current->controller->action($current->action->name, $current->action->arguments);
+
+        if (null == $view) {
+            $view = new Joy_View_Empty();
+        }
+
+        $render = $this->response->getRender();
+        $output = $render->execute($view);
+        $this->event->dispatcher("page.render", &$output);
+
+        header("Content-Type: {$render->getContentType()}");
+        print $output;
     }
 }

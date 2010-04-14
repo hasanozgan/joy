@@ -38,6 +38,24 @@ class Joy_Context_Response extends Joy_Context_Base
     protected $_scripts;
     protected $_styles;
     protected $_content;
+    const PAGE_STYLESHEETS = "<!-- @@@ Page.Stylesheets @@@ -->",
+          PAGE_JAVASCRIPTS = "<!-- @@@ Page.Javascripts @@@ -->";
+
+    protected function _init()
+    {
+        parent::_init();
+        
+        $this->event->register("page.render", $this, "onRender"); 
+    }
+
+    public function onRender($output)
+    {
+        $js = $this->flush_javascripts();
+        $css = $this->flush_stylesheets();
+
+        $output = str_replace(self::PAGE_JAVASCRIPTS, $js, $output);
+        $output = str_replace(self::PAGE_STYLESHEETS, $css, $output);
+    }
 
     public function getContent()
     {
@@ -62,12 +80,12 @@ class Joy_Context_Response extends Joy_Context_Base
 
     public function getScripts()
     {
-        return $this->_scripts;
+        return (array)$this->_scripts;
     }
 
     public function getStyles()
     {
-        return $this->_styles;
+        return (array)$this->_styles;
     }
 
     public function addScript($scripts)
@@ -90,6 +108,75 @@ class Joy_Context_Response extends Joy_Context_Base
                 $this->_styles[$style] = $style;
             }
         }
+    }
+
+    public function stylesheets()
+    {
+        print "\n";
+        print self::PAGE_STYLESHEETS;
+        print "\n";
+    }
+
+    protected function flush_stylesheets()
+    {
+        $site_root = trim($this->config->application->get("application/site_root"), "/");
+
+        // Style Files Injection
+        $styles = (array)$this->getStyles();
+        foreach ($styles as $style) 
+        {
+            if (strpos($style, "http") === FALSE) {
+                $style = ($site_root) 
+                            ? sprintf("/%s/%s", $site_root, trim($style, "/"))
+                            : sprintf("/%s", trim($style, "/"));
+            }
+
+            $page_styles .= sprintf("\t<link rel='stylesheet' type='text/css' href='%s' media='all' />\n", $style);
+        }
+
+        return $page_styles;
+    }
+
+    public function javascripts() 
+    {
+        print "\n";
+        print self::PAGE_JAVASCRIPTS;
+        print "\n";
+    }
+
+    protected function flush_javascripts()
+    {
+        $culture = Joy_Context_Culture::getInstance();
+        $request = Joy_Context_Request::getInstance();
+        $site_root = trim($this->config->application->get("application/site_root"), "/");
+
+        $app_script = sprintf("%s/%s.initial.js",
+                          get_class($request->getAction()->controller), 
+                          $request->getAction()->action->name, 
+                          $culture->getLocale());
+
+        $page_script = sprintf("%s/%s.js", 
+                           get_class($request->getAction()->controller), 
+                           $request->getAction()->action->name);
+
+        // Script Files Injection
+        $scripts = (array)$this->getScripts();
+        $scripts = array_reverse($scripts);
+        array_push($scripts, $app_script);
+        $scripts = array_reverse($scripts);
+        array_push($scripts, $page_script);
+
+        foreach ($scripts as $script) {
+            if (strpos($script, "http") === FALSE) {
+                $script = ($site_root) 
+                            ? sprintf("/%s/%s", $site_root, trim($script, "/"))
+                            : sprintf("/%s", trim($script, "/"));
+            }
+
+            $page_scripts .= sprintf("\t<script type='text/javascript' src='%s'></script>\n", $script);
+        }
+
+        return $page_scripts;
     }
 
     /**

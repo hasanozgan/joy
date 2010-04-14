@@ -27,11 +27,11 @@
  * @author      Hasan Ozgan <meddah@netology.org>
  * @copyright   2008-2009 Netology Foundation (http://www.netology.org)
  * @license     http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License
- * @version     $Id$
+ * @version     $Id: Template.php 118 2010-01-24 15:46:25Z hasanozgan $
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Render_Template extends Joy_Render_Abstract
+class Joy_Render_Template_PHPTAL extends Joy_Render_Abstract
 {
     public function execute($view)
     {
@@ -48,19 +48,13 @@ class Joy_Render_Template extends Joy_Render_Abstract
         $application = $context->config->application->get("application");
         $application["i18n"] = $view->getLocale();
 
-        ob_start();
-        eval("; ?>{$view->getTemplate()}<?php ;");
-        return ob_get_clean();
-
-        /*
-
         $tpl = new PHPTAL();
         $tpl->setSource($view->getTemplate());
         $tpl->import = new Joy_Render_Template_Importer($view);
         $tpl->application = $application;
         $tpl->get = (array)$view->assignAll();
 
-        return $tpl->execute();*/
+        return $tpl->execute();
     }
 
 }
