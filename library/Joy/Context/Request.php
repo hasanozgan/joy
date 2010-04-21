@@ -73,7 +73,6 @@ class Joy_Context_Request extends Joy_Context_Base
         return $this->_current->parameters;
     }
 
-
     public function getMethod()
     {
         return $this->_current->method;

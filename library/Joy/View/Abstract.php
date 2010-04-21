@@ -344,4 +344,10 @@ abstract class Joy_View_Abstract extends Joy_Context implements Joy_View_Interfa
 
         return $this->_importer;
     }
+
+    protected function baseUrl($path)
+    {
+        $site_root = $this->config->application->get("application/site_root");
+        return sprintf("%s/%s", rtrim($site_root, '/'), ltrim($path, '/'));
+    }
 }

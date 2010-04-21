@@ -54,6 +54,7 @@ class Joy_Application extends Joy_Object
             $ref = new Joy_Reflection($bootstrap);
             $object = $ref->newInstance();
         }
+
         if (!($object instanceof Joy_Application_Bootstrap)) {
             $object = new Joy_Application_Bootstrap();
         }

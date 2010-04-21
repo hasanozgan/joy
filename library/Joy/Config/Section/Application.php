@@ -66,6 +66,10 @@ class Joy_Config_Section_Application extends Joy_Config_Section_Abstract
             $this->set("files/config/{$key}", "{$config_folder}/{$file}");
         }
 
+        // privileges canvas.config file
+        $file = new Joy_File($this->get("files/config/privileges"));
+        $this->load(array("privileges"=>$file->getReader()->toArray()));
+
         // load canvas.config file
         $file = new Joy_File($this->get("files/config/canvas"));
         $this->load(array("canvas"=>$file->getReader()->toArray()));

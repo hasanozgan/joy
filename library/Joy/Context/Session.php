@@ -43,32 +43,17 @@ class Joy_Context_Session extends Joy_Context_Base
     public static function getInstance()
     {
         if (!is_object(self::$_instance)) {
-            self::$_instance = new self();
+            $config = Joy_Config::getInstance();
+            $session_provider = $config->application->get("application/session");
+
+            if (null == $session_provider) {
+                $session_provider = "Joy_Context_Session_Local";
+            }
+
+            $ref = new Joy_Reflection($session_provider);
+            self::$_instance = $ref->newInstance();
         }
 
         return self::$_instance;
     }
-
-    protected function _init()
-    {
-        parent::_init();
-        session_start();
-    }
-
-    public function get($key)
-    {
-        return (isset($_SESSION[$key])) ? unserialize($_SESSION[$key]) : null;
-    }
-
-    public function set($key, $value)
-    {
-        $_SESSION[$key] = serialize($value);
-    }
-
-    public function delete($key)
-    {
-        session_unset();
-    }
-
-
 }

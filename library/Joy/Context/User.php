@@ -31,10 +31,8 @@
  * @link        http://joy.netology.org
  * @since       0.5
  */
-class Joy_Context_User extends Joy_Context_Base
+class Joy_Context_User extends Joy_Membership
 {
-    protected static $_instance;
-
     /**
      * getInstance
      * 
@@ -48,4 +46,5 @@ class Joy_Context_User extends Joy_Context_Base
 
         return self::$_instance;
     }
+
 }
