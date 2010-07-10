@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+
+
+
+    echo "Usage:\n";
+    echo "\tjoy <options> rule <params>\n";

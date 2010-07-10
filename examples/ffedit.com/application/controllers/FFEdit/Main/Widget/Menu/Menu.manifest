@@ -1,0 +1,8 @@
+stylesheets: []
+javascripts: []
+
+stacks:		
+   menu: 
+        - Joy_View_Block:
+            id: general/menu
+

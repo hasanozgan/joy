@@ -1,0 +1,11 @@
+stylesheets:
+    - assets/styles/960gs/reset.css
+    - assets/styles/960gs/960.css
+    - assets/styles/960gs/text.css
+    - assets/styles/main.css
+
+javascripts:
+    - assets/scripts/jquery-1.3.2.min.js
+    - assets/scripts/core.js
+
+

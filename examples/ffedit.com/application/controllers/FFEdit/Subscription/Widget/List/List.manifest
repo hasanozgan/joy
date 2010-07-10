@@ -1,0 +1,6 @@
+javascripts: 
+	- assets/scripts/jquery.dualListBox-1.0.1.min.js
+	
+stylesheets:
+    - assets/styles/sexybuttons.css
+
