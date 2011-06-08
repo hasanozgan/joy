@@ -21,7 +21,7 @@
  * and is licensed under the LGPL.
  */
 
-/**
+/**sssssssssssss
  * @package     Joy
  * @subpackage  Cache
  * @author      Hasan Ozgan <meddah@netology.org>
@@ -32,6 +32,6 @@
  * @since       0.5
  */
 class Joy_Cache_Memcached extends Joy_Cache_Abstract
-{
+{asdf
 
 }
